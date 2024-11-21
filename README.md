@@ -9,4 +9,5 @@ to memorize.
 The .cpp files must be compiled as a C++ file.
 Its best used in a terminal emulator that splits screen.
 Run the program on one side. Copy and paste to the other side.
+I will not be accepting pull requests for this.
 

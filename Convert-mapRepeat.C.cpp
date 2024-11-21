@@ -9,8 +9,7 @@
 #include <cstdlib>
 #include <cstring>
 
-
-std::string repeat;
+char repeat[2000];
 
 void choice() {
     printf("//Enter ch for choices.\n");
@@ -53,27 +52,18 @@ void choice() {
 
 void string() {
     char string[3][15] = {"printf(\"", "\\n", "\");"};
-    char *text;
+    char text[2000];
     printf("//Enter your string, m for main.\n");
     while (1) {
-        text = (char *)malloc(2000 * sizeof(char));
-        if (text == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//");
         fgets(text, 2000, stdin);
         text[strcspn(text, "\n")] = 0;
         if (strcmp(text, "m") == 0) {
-            free(text);
-            text = NULL;
             break;
         }
         printf("\n%s%s%s%s\n\n", string[0], text, string[1], string[2]);
         printf("%s%s%s\n\n", string[0], text, string[2]);
-        free(text);
-        text == NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -81,27 +71,18 @@ void string() {
 
 void stringEmpty() {
     char t[2][12] = {"printf(", ");"};
-    char *text;
+    char text[2000];
 
     printf("//Enter text m for main.\n");
     while (1) {
-        text = (char *)malloc(2000 * sizeof(char));
-        if (text == NULL) {
-            printf("Error: Insufficiant memory.\n");
-            exit(1);
-        }
         printf("//");
         fgets(text, 2000, stdin);
         text[strcspn(text, "\n")] = 0;
         if (strcmp(text, "m") == 0) {
-            free(text);
-            text == NULL;
             break;
         }
         printf("\n%s%s%s\n\n", t[0], text, t[1]);
-        free(text);
-        text == NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -109,25 +90,17 @@ void stringEmpty() {
 
 void fgetss() {
     char f[8][15] = {"fgets(", ",", "stdin);", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';"};
-    char *v;
-    char *me;
+    char w[9][15] = {"while(fgets(", ",", "stdin)){", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';", "      "};
+
+    char v[2000];
+    char me[2000];
 
     while (1) {
-        v = (char *)malloc(2000 * sizeof(char));
-        me = (char *)malloc(2000 * sizeof(char));
-        if (v == NULL || me == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of variable m for main.\n");
         printf("//");
         fgets(v, 2000, stdin);
         v[strcspn(v, "\n")] = 0;
         if (strcmp(v, "m") == 0) {
-            free(v);
-            v == NULL;
-            free(me);
-            me == NULL;
             break;
         }
         printf("//Enter the memory to be allocated to the variable.\n");
@@ -136,13 +109,11 @@ void fgetss() {
         me[strcspn(me, "\n")] = 0;
         printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);
         printf("%s%s%s%s%s%s\n\n", v, f[3], v, f[1], f[4], f[5]);
+        printf("%s%s%s%s%s%s\n", w[0], v, w[1], me, w[1], w[2]);
+        printf("%s%s%s%s%s%s%s\n\n", w[8], v, w[3], v, w[1], w[4], w[5]);
         printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);
         printf("%s%s%s%s\n\n", v, f[6], v, f[7]);
-        free(v);
-        v = NULL;
-        free(me);
-        me = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -150,25 +121,15 @@ void fgetss() {
 
 void scanff() {
     char t[6][15] = {"scanf(\"", "%", "[^\\n]\"", ",", ");", "getchar();"};
-    char *var;
-    char *mem;
+    char var[2000];
+    char mem[2000];
 
     while (1) {
-        var = (char *)malloc(2000 * sizeof(char));
-        mem = (char *)malloc(2000 * sizeof(char));
-        if (var == NULL || mem == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of variable m for main.\n");
         printf("//");
         fgets(var, 2000, stdin);
         var[strcspn(var, "\n")] = 0;
         if (strcmp(var, "m") == 0) {
-            free(var);
-            var = NULL;
-            free(mem);
-            mem = NULL;
             break;
         }
         printf("//Enter memory allocated to variable -1 byte.\n");
@@ -177,11 +138,7 @@ void scanff() {
         mem[strcspn(mem, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n", t[0], t[1], mem, t[2], t[3], var, t[4]);
         printf("%s\n\n", t[5]);
-        free(var);
-        var = NULL;
-        free(mem);
-        mem = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -189,25 +146,15 @@ void scanff() {
 
 void scanfBasic() {
     char t[5][15] = {"scanf(\"", "%", "s\"", ", ", ");"};
-    char *var;
-    char *mem;
+    char var[2000];
+    char mem[2000];
 
     while (1) {
-        var = (char *)malloc(2000 * sizeof(char));
-        mem = (char *)malloc(2000 * sizeof(char));
-        if (var == NULL || mem == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of variable m for main.\n");
         printf("//");
         fgets(var, 2000, stdin);
         var[strcspn(var, "\n")] = 0;
         if (strcmp(var, "m") == 0) {
-            free(var);
-            var = NULL;
-            free(mem);
-            mem = NULL;
             break;
         }
         printf("//Enter memory allocated to variable -1 byte.\n");
@@ -215,11 +162,7 @@ void scanfBasic() {
         fgets(mem, 2000, stdin);
         mem[strcspn(mem, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", t[0], t[1], mem, t[2], t[3], var, t[4]);
-        free(var);
-        var = NULL;
-        free(mem);
-        mem = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -227,25 +170,15 @@ void scanfBasic() {
 
 void ifStatement() {
     char f[4][15] = {"if(strcmp(", ",", "\"", ")==0) {"};
-    char *name;
-    char *value;
+    char name[2000];
+    char value[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of the if statement m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             break;
         }
         printf("//Enter the value.\n");
@@ -253,11 +186,7 @@ void ifStatement() {
         fgets(value, 2000, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", f[0], name, f[1], f[2], value, f[2], f[3]);
-        free(name);
-        name = NULL;
-        free(value);
-        value = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -265,25 +194,15 @@ void ifStatement() {
 
 void elseIf() {
     char f[4][18] = {"} else if(strcmp(", ",", "\"", ")==0) {"};
-    char *name;
-    char *value;
+    char name[2000];
+    char value[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of the else if statement m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             break;
         }
         printf("//Enter the value.\n");
@@ -291,11 +210,7 @@ void elseIf() {
         fgets(value, 2000, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", f[0], name, f[1], f[2], value, f[2], f[3]);
-        free(name);
-        name = NULL;
-        free(value);
-        value = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -303,47 +218,23 @@ void elseIf() {
 
 void ifNumber() {
     char t[10][20] = {"if(", "} else if(", "strlen", " <= ", " == ", " >= ", " != ", "(", ")", ") {"};
-    char *select;
-    char *var;
-    char *op;
-    char *num;
+    char select[1000];
+    char var[2000];
+    char op[1000];
+    char num[2000];
     while (1) {
-        select = (char *)malloc(2000 * sizeof(char));
-        var = (char *)malloc(2000 * sizeof(char));
-        op = (char *)malloc(2000 * sizeof(char));
-        num = (char *)malloc(2000 * sizeof(char));
-        if (select == NULL || var == NULL || op == NULL || num == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter s for strlen  or i for regular if statement. Enter e for else if.\n");
         printf("//");
         fgets(select, 1000, stdin);
         select[strcspn(select, "\n")] = 0;
         if (strcmp(select, "s") != 0 && strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
             printf("//Enter s or i or e only.\n");
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
             continue;
         }
         printf("//Enter the name of if or else if statement  enter m for main.\n");
         fgets(var, 2000, stdin);
         var[strcspn(var, "\n")] = 0;
         if (strcmp(var, "m") == 0) {
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
             break;
         }
         printf("//Enter an operator, a for less than, b for equal to, c for greater than, d for not equal\n");
@@ -371,41 +262,17 @@ void ifNumber() {
         num[strcspn(num, "\n")] = 0;
         if (strcmp(select, "s") == 0) {
             printf("\n%s%s%s%s%s%s%s%s\n\n", t[0], t[2], t[7], var, t[8], op, num, t[9]);
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
             if (repeat != "r") {
                 break;
             }
         } else if (strcmp(select, "i") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[0], var, op, num, t[9]);
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(select, "e") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[1], var, op, num, t[9]);
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -413,48 +280,24 @@ void ifNumber() {
 }
 
 void ifHeap() {
-    char t[9][20] = {"if(*", "} else if(*", " <= ", " == ", " >= ", " != ", "(", ")", ") {"};
-    char *select;
-    char *var;
-    char *op;
-    char *num;
+    char t[9][20] = {"if(*", "}else if(*", " <= ", " == ", " >= ", " != ", "(", ")", "){"};
+    char select[1000];
+    char var[2000];
+    char op[1000];
+    char num[2000];
     while (1) {
-        select = (char *)malloc(2000 * sizeof(char));
-        var = (char *)malloc(2000 * sizeof(char));
-        op = (char *)malloc(2000 * sizeof(char));
-        num = (char *)malloc(2000 * sizeof(char));
-        if (select == NULL || var == NULL || op == NULL || num == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter i for if statement. Enter e for else if.\n");
         printf("//");
         fgets(select, 1000, stdin);
         select[strcspn(select, "\n")] = 0;
         if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
             printf("//Enter i or e only.\n");
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
             continue;
         }
         printf("//Enter the name of if or else if statement  enter m for main.\n");
         fgets(var, 2000, stdin);
         var[strcspn(var, "\n")] = 0;
         if (strcmp(var, "m") == 0) {
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
             break;
         }
         printf("//Enter an operator, a for less than, b for equal to, c for greater than, d for not equal\n");
@@ -482,28 +325,12 @@ void ifHeap() {
         num[strcspn(num, "\n")] = 0;
         if (strcmp(select, "i") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[0], var, op, num, t[8]);
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(select, "e") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[1], var, op, num, t[8]);
-            free(select);
-            select = NULL;
-            free(var);
-            var = NULL;
-            free(op);
-            op = NULL;
-            free(num);
-            num = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -512,25 +339,15 @@ void ifHeap() {
 
 void variable() {
     char f[3][15] = {"char ", " [", "];"};
-    char *name;
-    char *mem;
+    char name[2000];
+    char mem[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        mem = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || mem == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of variable m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(mem);
-            mem = NULL;
             break;
         }
         printf("//Enter the memory to be allocated to the variable.\n");
@@ -538,11 +355,7 @@ void variable() {
         fgets(mem, 2000, stdin);
         mem[strcspn(mem, "\n")] = 0;
         printf("\n%s%s%s%s%s\n\n", f[0], name, f[1], mem, f[2]);
-        free(name);
-        name = NULL;
-        free(mem);
-        mem = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -550,28 +363,15 @@ void variable() {
 
 void variableValue() {
     char v[6][15] = {"char ", "[", "]", " = ", "\"", ";"};
-    char *name;
-    char *mem;
-    char *value;
+    char name[2000];
+    char mem[2000];
+    char value[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        mem = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || mem == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter a name of variable m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(mem);
-            mem = NULL;
-            free(value);
-            value = NULL;
             break;
         }
         printf("//Enter the amount of memory to allocate or press enter to not allocate m for main.\n");
@@ -583,13 +383,7 @@ void variableValue() {
         fgets(value, 2000, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s%s%s%s\n\n", v[0], name, v[1], mem, v[2], v[3], v[4], value, v[4], v[5]);
-        free(name);
-        name = NULL;
-        free(mem);
-        mem = NULL;
-        free(value);
-        value = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -597,32 +391,16 @@ void variableValue() {
 
 void array() {
     char t[5][15] = {"char ", " [", "] ", "] = {", "};"};
-    char *name;
-    char *ne;
-    char *m;
-    char *elements;
+    char name[2000];
+    char ne[2000];
+    char m[2000];
+    char elements[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        ne = (char *)malloc(2000 * sizeof(char));
-        m = (char *)malloc(2000 * sizeof(char));
-        elements = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || ne == NULL || m == NULL || elements == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of array m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(ne);
-            ne = NULL;
-            free(m);
-            m = NULL;
-            free(elements);
-            elements = NULL;
             break;
         }
         printf("//Enter the amount of elements.\n");
@@ -638,15 +416,7 @@ void array() {
         fgets(elements, 2000, stdin);
         elements[strcspn(elements, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s%s%s%s\n\n", t[0], name, t[1], ne, t[2], t[1], m, t[3], elements, t[4]);
-        free(name);
-        name = NULL;
-        free(ne);
-        ne = NULL;
-        free(m);
-        m = NULL;
-        free(elements);
-        elements = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -654,20 +424,12 @@ void array() {
 
 void numArray() {
     char a[6][20] = {"int ", "double ", "[", "]", " = {", "};"};
-    char *typ;
-    char *name;
-    char *num;
-    char *elements;
+    char typ[2000];
+    char name[2000];
+    char num[2000];
+    char elements[2000];
 
     while (1) {
-        typ = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        num = (char *)malloc(2000 * sizeof(char));
-        elements = (char *)malloc(2000 * sizeof(char));
-        if (typ == NULL || name == NULL || num == NULL || elements == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter a data type i for int d for double.\n");
         printf("//");
         while (fgets(typ, 2000, stdin)) {
@@ -688,14 +450,6 @@ void numArray() {
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(typ);
-            typ = NULL;
-            free(name);
-            name = NULL;
-            free(num);
-            num = NULL;
-            free(elements);
-            elements = NULL;
             break;
         }
         printf("//Enter number of elements m for main.\n");
@@ -707,15 +461,7 @@ void numArray() {
         fgets(elements, 2000, stdin);
         elements[strcspn(elements, "\n")] = 0;
         printf("%s%s%s%s%s%s%s%s\n", typ, name, a[2], num, a[3], a[4], elements, a[5]);
-        free(typ);
-        typ = NULL;
-        free(name);
-        name = NULL;
-        free(num);
-        num = NULL;
-        free(elements);
-        elements = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -723,25 +469,15 @@ void numArray() {
 
 void funct() {
     char t[4][12] = {"void ", "(", "){", "}"};
-    char *name;
-    char *per;
+    char name[2000];
+    char per[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        per = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || per == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Name function m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(per);
-            per = NULL;
             break;
         }
         printf("//Enter parameters.\n");
@@ -749,11 +485,7 @@ void funct() {
         fgets(per, 2000, stdin);
         per[strcspn(per, "\n")] = 0;
         printf("\n%s%s%s%s%s\n\n\n%s\n\n", t[0], name, t[1], per, t[2], t[3]);
-        free(name);
-        name = NULL;
-        free(per);
-        per = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -761,24 +493,14 @@ void funct() {
 
 void callFunct() {
     char t[2][12] = {"(", ");"};
-    char *name;
-    char *per;
+    char name[2000];
+    char per[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        per = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || per == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of function m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(per);
-            per = NULL;
             break;
         }
         printf("//Enter values for parameters.\n");
@@ -786,11 +508,7 @@ void callFunct() {
         fgets(per, 2000, stdin);
         per[strcspn(per, "\n")] = 0;
         printf("\n%s%s%s%s\n\n", name, t[0], per, t[1]);
-        free(name);
-        name = NULL;
-        free(per);
-        per = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -798,25 +516,15 @@ void callFunct() {
 
 void heap() {
     char t[9][18] = {"char", " *", ";", " = (char*)malloc", "(", ");", "* sizeof(char));", "free", " = NULL;"};
-    char *name;
-    char *mem;
+    char name[2000];
+    char mem[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        mem = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || mem == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of the variable m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(mem);
-            mem = NULL;
             break;
         }
         printf("//Enter memory to allocate.\n");
@@ -829,37 +537,22 @@ void heap() {
         printf("%s%s%s%s%s\n\n", name, t[3], t[4], mem, t[6]);
         printf("%s%s%s%s\n", t[7], t[4], name, t[5]);
         printf("%s%s\n\n", name, t[8]);
-        free(name);
-        name = NULL;
-        free(mem);
-        mem = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
 }
 
 void heapNum() {
-    char t[15][20] = {"int"," *",";"," = (int*)malloc","(",");","* sizeof(int));","free"," = NULL;","double","float"," = (double*)malloc"," = (float*)malloc","* sizeof(double));","* sizeof(float));"};                  
-    char *name;
-    char *mem;
-
+    char t[15][20] = {"int"," *",";"," = (int*)malloc","(",");","* sizeof(int));","free"," = NULL;","double","float"," = (double*)malloc"," = (float*)malloc","* sizeof(double));","* sizeof(float));"};                                     
+    char name[2000];
+    char mem[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        mem = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || mem == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of the variable m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(mem);
-            mem = NULL;
             break;
         }
         printf("//Enter memory to allocate.\n");
@@ -875,11 +568,7 @@ void heapNum() {
         printf("%s%s%s%s%s\n\n", name, t[12], t[4], mem, t[14]);
         printf("%s%s%s%s\n", t[7], t[4], name, t[5]);
         printf("%s%s\n\n", name, t[8]);
-        free(name);
-        name = NULL;
-        free(mem);
-        mem = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -887,24 +576,14 @@ void heapNum() {
 
 void checkMalloc() {
     char t[6][18] = {"if(", " == NULL){", "    printf(\"", "\\n", "\");", "    exit(1);}"};
-    char *name;
-    char *em;
+    char name[2000];
+    char em[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        em = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || em == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(em);
-            em = NULL;
             break;
         }
         printf("//Enter an error message.\n");
@@ -914,11 +593,7 @@ void checkMalloc() {
         printf("\n%s%s%s\n", t[0], name, t[1]);
         printf("%s%s%s%s\n", t[2], em, t[3], t[4]);
         printf("%s\n\n", t[5]);
-        free(name);
-        name = NULL;
-        free(em);
-        em = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -926,37 +601,18 @@ void checkMalloc() {
 
 void variableNum() {
     char t[5][15] = {"double ", "int ", " = ", ";", " ;"};
-    char *ch;
-    char *name;
-    char *value;
+    char ch[2000];
+    char name[2000];
+    char value[2000];
     while (1) {
-        ch = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (ch == NULL || name == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Choose i for int d for double, m for main.\n");
         printf("//");
         fgets(ch, 2000, stdin);
         ch[strcspn(ch, "\n")] = 0;
         if (strcmp(ch, "m") == 0) {
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             break;
         } else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
             printf("Choose i or d or m only.\n");
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             continue;
         }
         printf("Enter the name.\n");
@@ -969,24 +625,12 @@ void variableNum() {
         value[strcspn(value, "\n")] = 0;
         if (strcmp(ch, "i") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[1], name, t[2], value, t[3]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(ch, "d") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[0], name, t[2], value, t[3]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -995,31 +639,17 @@ void variableNum() {
 
 void varNoValue() {
     char t[3][15] = {"double ", "int ", ";"};
-    char *ch;
-    char *name;
+    char ch[2000];
+    char name[2000];
     while (1) {
-        ch = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        if (ch == NULL || name == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Choose i for int d for double, m for main.\n");
         printf("//");
         fgets(ch, 2000, stdin);
         ch[strcspn(ch, "\n")] = 0;
         if (strcmp(ch, "m") == 0) {
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             break;
         } else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
             printf("Choose i or d or m only.\n");
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             continue;
         }
         printf("Enter the name.\n");
@@ -1028,20 +658,12 @@ void varNoValue() {
         name[strcspn(name, "\n")] = 0;
         if (strcmp(ch, "i") == 0) {
             printf("\n%s%s%s\n\n", t[1], name, t[2]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(ch, "d") == 0) {
             printf("\n%s%s%s\n\n", t[0], name, t[2]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -1050,31 +672,17 @@ void varNoValue() {
 
 void scanfNum() {
     char t[6][15] = {"scanf(\"", "\%d\"", "\%lf\"", ",", " &", ");"};
-    char *ch;
-    char *name;
+    char ch[2000];
+    char name[2000];
     while (1) {
-        ch = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        if (ch == NULL || name == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Choose i for int d for double or m for main.\n");
         printf("//");
         fgets(ch, 2000, stdin);
         ch[strcspn(ch, "\n")] = 0;
         if (strcmp(ch, "m") == 0) {
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             break;
         } else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
             printf("Choose i or d or m only.\n");
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             continue;
         }
         printf("//Enter the name of variable.\n");
@@ -1083,20 +691,12 @@ void scanfNum() {
         name[strcspn(name, "\n")] = 0;
         if (strcmp(ch, "i") == 0) {
             printf("\n%s%s%s%s%s%s\n\n", t[0], t[1], t[3], t[4], name, t[5]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(ch, "d") == 0) {
             printf("\n%s%s%s%s%s%s\n\n", t[0], t[2], t[3], t[4], name, t[5]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -1107,31 +707,17 @@ void scanfHeap() {
     char t[6][15] = {
         "scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\"",
     };
-    char *ch;
-    char *name;
+    char ch[2000];
+    char name[2000];
     while (1) {
-        ch = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        if (ch == NULL || name == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Choose i for int f for float or d for double or m for main.\n");
         printf("//");
         fgets(ch, 2000, stdin);
         ch[strcspn(ch, "\n")] = 0;
         if (strcmp(ch, "m") == 0) {
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             break;
         } else if (strcmp(ch, "i") != 0 && strcmp(ch, "f") != 0 && strcmp(ch, "d") != 0) {
             printf("Choose i, f, d  or m only.\n");
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             continue;
         }
         printf("//Enter the name of variable.\n");
@@ -1140,29 +726,17 @@ void scanfHeap() {
         name[strcspn(name, "\n")] = 0;
         if (strcmp(ch, "i") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[0], t[1], t[3], name, t[4]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(ch, "d") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[0], t[2], t[3], name, t[4]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(ch, "f") == 0) {
             printf("\n%s%s%s%s%s\n\n", t[0], t[5], t[3], name, t[4]);
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -1171,31 +745,17 @@ void scanfHeap() {
 
 void checkScanf() {
     char t[7][15] = {"if(scanf(\"", "\%d\"", "\%lf\"", ",", " &", ")!=1){", "while(scanf(\""};
-    char *ch;
-    char *name;
+    char ch[2000];
+    char name[2000];
     while (1) {
-        ch = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        if (ch == NULL || name == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Choose i for int d for double or m for main.\n");
         printf("//");
         fgets(ch, 2000, stdin);
         ch[strcspn(ch, "\n")] = 0;
         if (strcmp(ch, "m") == 0) {
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             break;
         } else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
             printf("Choose i or d or m only.\n");
-            free(ch);
-            ch = NULL;
-            free(name);
-            name = NULL;
             continue;
         }
         printf("//Enter the name of variable.\n");
@@ -1207,12 +767,8 @@ void checkScanf() {
             printf("\n%s%s%s%s%s    //Use with malloc.\n\n", t[0], t[1], t[3], name, t[5]);
             printf("\n%s%s%s%s%s%s\n\n", t[6], t[1], t[3], t[4], name, t[5]);
             printf("\n%s%s%s%s%s    //Use with malloc.\n\n", t[6], t[1], t[3], name, t[5]);
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
-                free(ch);
-                ch = NULL;
-                free(name);
-                name = NULL;
                 break;
             }
         } else if (strcmp(ch, "d") == 0) {
@@ -1222,11 +778,7 @@ void checkScanf() {
             printf("\n%s%s%s%s%s    //Use with malloc.\n\n", t[6], t[2], t[3], name, t[5]);
         }
         printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
-        free(ch);
-        ch = NULL;
-        free(name);
-        name = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1274,28 +826,19 @@ void copy() {
 
 void cppStrings() {
     char string[4][20] = {"std::cout << \"", "\\n", "\";", "\" << std::endl;"};
-    char *text;
+    char text[2000];
     printf("//Enter your string, m for main.\n");
     while (1) {
-        text = (char *)malloc(2000 * sizeof(char));
-        if (text == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//");
         fgets(text, 2000, stdin);
         text[strcspn(text, "\n")] = 0;
         if (strcmp(text, "m") == 0) {
-            free(text);
-            text = NULL;
             break;
         }
         printf("\n%s%s%s%s\n\n", string[0], text, string[1], string[2]);
         printf("\n%s%s%s\n\n", string[0], text, string[2]);
         printf("\n%s%s%s\n\n", string[0], text, string[3]);
-        free(text);
-        text = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1303,27 +846,18 @@ void cppStrings() {
 
 void estringp() {
     char t[5][20] = {"std::cout << ", "\\n", "\"", " << std::endl;", ";"};
-    char *text;
+    char text[2000];
 
     printf("//Enter text m for main.\n");
     while (1) {
-        text = (char *)malloc(2000 * sizeof(char));
-        if (text == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//");
         fgets(text, 2000, stdin);
         text[strcspn(text, "\n")] = 0;
         if (strcmp(text, "m") == 0) {
-            free(text);
-            text = NULL;
             break;
         }
         printf("\n%s%s%s\n\n", t[0], text, t[3]);
-        free(text);
-        text = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1331,28 +865,15 @@ void estringp() {
 
 void arraysp() {
     char t[4][20] = {"std::string ", " [", "] = {", "};"};
-    char *name;
-    char *ne;
-    char *elements;
+    char name[2000];
+    char ne[2000];
+    char elements[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        ne = (char *)malloc(2000 * sizeof(char));
-        elements = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || ne == NULL || elements == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of array m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(ne);
-            ne = NULL;
-            free(elements);
-            elements = NULL;
             break;
         }
         printf("//Enter the amount of elements.\n");
@@ -1364,13 +885,7 @@ void arraysp() {
         fgets(elements, 2000, stdin);
         elements[strcspn(elements, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", t[0], name, t[1], ne, t[2], elements, t[3]);
-        free(name);
-        name = NULL;
-        free(ne);
-        ne = NULL;
-        free(elements);
-        elements = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1378,25 +893,15 @@ void arraysp() {
 
 void ifStatementp() {
     char f[4][15] = {"if(", " == ", "\"", ") {"};
-    char *name;
-    char *value;
+    char name[2000];
+    char value[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of the if statement m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             break;
         }
         printf("//Enter a value.\n");
@@ -1404,11 +909,7 @@ void ifStatementp() {
         fgets(value, 2000, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", f[0], name, f[1], f[2], value, f[2], f[3]);
-        free(name);
-        name = NULL;
-        free(value);
-        value = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1416,25 +917,15 @@ void ifStatementp() {
 
 void elseIfp() {
     char f[4][15] = {"} else if(", " == ", "\"", ") {"};
-    char *name;
-    char *value;
+    char name[2000];
+    char value[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of the else if statement m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             break;
         }
         printf("//Enter the value.\n");
@@ -1442,11 +933,7 @@ void elseIfp() {
         fgets(value, 2000, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", f[0], name, f[1], f[2], value, f[2], f[3]);
-        free(name);
-        name = NULL;
-        free(value);
-        value = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1454,21 +941,14 @@ void elseIfp() {
 
 void userInput() {
     char f[7][20] = {"std::", "getline(", "std::cin", ",", ");", "std::cin >> ", ";"};
-    char *v;
+    char v[2000];
 
     while (1) {
-        v = (char *)malloc(2000 * sizeof(char));
-        if (v == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of variable m for main.\n");
         printf("//");
         fgets(v, 2000, stdin);
         v[strcspn(v, "\n")] = 0;
         if (strcmp(v, "m") == 0) {
-            free(v);
-            v = NULL;
             break;
         }
         printf("\n%s%s%s%s%s\n\n", f[1], f[2], f[3], v, f[4]);
@@ -1476,9 +956,7 @@ void userInput() {
         printf("\n%s%s%s\n\n", f[5], v, f[6]);
         printf("\nstd::cin.clear();");
         printf("\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n");
-        free(v);
-        v = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1487,45 +965,20 @@ void userInput() {
 void map() {
     char t[8][20] = {"std::map", "<", "std::string", "int", "double", "> ", ",", " = {"};
     char b[7][15] = {"    {", "},", "}", "};", "\"", ",", " "};
-    char *key_type;
-    char *value_type;
-    char *name;
-    char *key;
-    char *key_t;
-    char *value;
-    char *value_t;
+    char key_type[2000];
+    char value_type[2000];
+    char name[2000];
+    char key[2000];
+    char key_t[2000];
+    char value[2000];
+    char value_t[2000];
 
     while (1) {
-        key_type = (char *)malloc(2000 * sizeof(char));
-        value_type = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        key = (char *)malloc(2000 * sizeof(char));
-        key_t = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        value_t = (char *)malloc(2000 * sizeof(char));
-        if (key_type == NULL || value_type == NULL || name == NULL || key == NULL || key_t == NULL || value == NULL || value_t == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of the map m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(key_type);
-            key_type = NULL;
-            free(value_type);
-            value_type = NULL;
-            free(name);
-            name = NULL;
-            free(key);
-            key = NULL;
-            free(key_t);
-            key_t = NULL;
-            free(value);
-            value = NULL;
-            free(value_t);
-            value_t = NULL;
             break;
         }
         printf("//Enter a key type, s for string, i for int d for double.\n");
@@ -1534,20 +987,6 @@ void map() {
         key_type[strcspn(key_type, "\n")] = 0;
         if (strcmp(key_type, "s") != 0 && strcmp(key_type, "i") != 0 && strcmp(key_type, "d") != 0) {
             printf("Enter s i or d only.\n");
-            free(key_type);
-            key_type = NULL;
-            free(value_type);
-            value_type = NULL;
-            free(name);
-            name = NULL;
-            free(key);
-            key = NULL;
-            free(key_t);
-            key_t = NULL;
-            free(value);
-            value = NULL;
-            free(value_t);
-            value_t = NULL;
             continue;
         }
         if (strcmp(key_type, "s") == 0) {
@@ -1599,42 +1038,14 @@ void map() {
         if (strcmp(value_t, "s") == 0) {
             printf("%s%s%s%s\n", b[4], value, b[4], b[1]);
             printf("%s\n\n", b[3]);
-            free(key_type);
-            key_type = NULL;
-            free(value_type);
-            value_type = NULL;
-            free(name);
-            name = NULL;
-            free(key);
-            key = NULL;
-            free(key_t);
-            key_t = NULL;
-            free(value);
-            value = NULL;
-            free(value_t);
-            value_t = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(value_t, "s") != 0) {
             printf("%s%s\n", value, b[1]);
             printf("%s\n\n", b[3]);
         }
-        free(key_type);
-        key_type = NULL;
-        free(value_type);
-        value_type = NULL;
-        free(name);
-        name = NULL;
-        free(key);
-        key = NULL;
-        free(key_t);
-        key_t = NULL;
-        free(value);
-        value = NULL;
-        free(value_t);
-        value_t = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1643,32 +1054,16 @@ void map() {
 void mapAccess() {
     char t[9][20] = {"std::cout << ", "\\n", "\"", " << std::endl;", ";", ".at(", ")", "[", "]"};
     char string[4][20] = {" std::cout << \"", "\\n", "\";}", "\" << std::endl;}"};
-    char *var;
-    char *name;
-    char *text;
-    char *em;
+    char var[2000];
+    char name[2000];
+    char text[2000];
+    char em[2000];
     while (1) {
-        var = (char *)malloc(2000 * sizeof(char));
-        name = (char *)malloc(2000 * sizeof(char));
-        text = (char *)malloc(2000 * sizeof(char));
-        em = (char *)malloc(2000 * sizeof(char));
-        if (var == NULL || name == NULL || text == NULL || em == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter the name of the map m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(var);
-            var = NULL;
-            free(name);
-            name = NULL;
-            free(text);
-            text = NULL;
-            free(em);
-            em = NULL;
             break;
         }
         printf("//Enter the name of the variable.\n");
@@ -1688,15 +1083,7 @@ void mapAccess() {
             printf("\n } \n\n");
             printf("\ntry{ \n\n");
             printf("\n }catch(std::out_of_range){      //For map key error.\n\n");
-            free(var);
-            var = NULL;
-            free(name);
-            name = NULL;
-            free(text);
-            text = NULL;
-            free(em);
-            em = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         } else if (strcmp(em, "e") == 0) {
@@ -1711,15 +1098,7 @@ void mapAccess() {
             printf("%s%s%s%s\n\n", string[0], text, string[1], string[2]);
             printf("}catch(std::out_of_range){\n");
             printf("%s%s%s\n\n", string[0], text, string[3]);
-            free(var);
-            var = NULL;
-            free(name);
-            name = NULL;
-            free(text);
-            text = NULL;
-            free(em);
-            em = NULL;
-            if (repeat != "r") {
+            if (strcmp(repeat, "r") != 0) {
                 break;
             }
         }
@@ -1728,27 +1107,18 @@ void mapAccess() {
 
 void variablep() {
     char f[2][20] = {"std::string ", ";"};
-    char *name;
+    char name[2000];
 
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter name of variable m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
             break;
         }
         printf("\n%s%s%s\n\n", f[0], name, f[1]);
-        free(name);
-        name = NULL;
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1756,24 +1126,14 @@ void variablep() {
 
 void variableValuep() {
     char v[4][20] = {"std::string ", " = ", "\"", ";"};
-    char *name;
-    char *value;
+    char name[2000];
+    char value[2000];
     while (1) {
-        name = (char *)malloc(2000 * sizeof(char));
-        value = (char *)malloc(2000 * sizeof(char));
-        if (name == NULL || value == NULL) {
-            printf("Error: Insufficent memory.\n");
-            exit(1);
-        }
         printf("//Enter a name of variable m for main.\n");
         printf("//");
         fgets(name, 2000, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
-            free(name);
-            name = NULL;
-            free(value);
-            value = NULL;
             break;
         }
         printf("//enter a value\n");
@@ -1781,10 +1141,7 @@ void variableValuep() {
         fgets(value, 2000, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", v[0], name, v[1], v[2], value, v[2], v[3]);
-        free(name);
-        name = NULL;
-        free(value);
-        if (repeat != "r") {
+        if (strcmp(repeat, "r") != 0) {
             break;
         }
     }
@@ -1798,11 +1155,17 @@ void copyy() {
     printf("\n");
     printf("#include <map>\n");
     printf("\n");
-    printf("int main(){\n");
+    printf("#include <cstdio>\n");
+    printf("\n");
+    printf("#include <cstring>\n");
+    printf("\n");
+    printf("#include <cstdlib>\n");
+    printf("\n");
+    printf("int main() {\n");
     printf("\n");
     printf("while(true) {\n");
     printf("\n");
-    printf("else {\n");
+    printf("else{\n");
     printf("\n");
     printf("} else {\n");
     printf("\n");
@@ -1814,7 +1177,7 @@ void copyy() {
     printf("\n");
     printf("continue;}\n");
     printf("\n");
-    printf("try{\n");
+    printf("try {\n");
     printf("\n");
     printf("}catch(std::out_of_range){\n");
     printf("\n");
@@ -1828,65 +1191,67 @@ void copyy() {
 int main() {
     std::map<std::string, std::function<void()>> f = {
         {"ch",          choice},
-        {"cy",            copy},       
-        {"a",           string},
+        {"cy",            copy},
+        {"a",           string}, 
         {"c",      stringEmpty},  
-        {"f",           fgetss},
-        {"s",           scanff},
+        {"f",           fgetss},         
+        {"s",           scanff},      
         {"sb",      scanfBasic}, 
         {"i",      ifStatement},
-        {"e",           elseIf},
+        {"e",           elseIf},      
         {"in",        ifNumber},   
-        {"im",          ifHeap}, 
-        {"v",         variable},     
+        {"im",          ifHeap},          
+        {"v",         variable},    
         {"vv",   variableValue}, 
         {"aa",           array},      
         {"ia",        numArray},   
         {"fc",           funct},
         {"cf",       callFunct},  
         {"h",             heap},        
-        {"hi",         heapNum},
-        {"cm",     checkMalloc},
-        {"vi",     variableNum},
-        {"vn",      varNoValue},
-        {"si",        scanfNum},
+        {"hi",         heapNum},         
+        {"cm",     checkMalloc}, 
+        {"vi",     variableNum},   
+        {"vn",      varNoValue}, 
+        {"si",        scanfNum},   
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
-        {"sp",      cppStrings},
-        {"cp",        estringp},
-        {"aap",        arraysp},
-        {"ip",    ifStatementp},
-        {"ep",         elseIfp},
-        {"up",       userInput},
+        {"sp",      cppStrings}, 
+        {"cp",        estringp},        
+        {"aap",        arraysp},    
+        {"ip",    ifStatementp},  
+        {"ep",         elseIfp},    
+        {"up",       userInput},  
         {"mp",             map},
         {"ma",       mapAccess},  
         {"vp",       variablep},  
-        {"vvp", variableValuep},
+        {"vvp", variableValuep}, 
         {"cyp",          copyy},
     };
 
-    std::string sw;
+    char sw[2000];
 
-    std::cout << "\n\n";
-    std::cout << "          copyright 2024 Mitchell E Wise\n";
-    std::cout << "          SPDX-License-Identifier: Apache-20\n\n\n";
+    printf("\n\n");
+    printf("          copyright 2024 Mitchell E Wise\n");
+    printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
-    std::cout << "//Enter r to repeat choices enter to not.\n";
-    std::getline(std::cin, repeat);
+    printf("//Enter r to repeat choices enter to not.\n");
+    fgets(repeat, 2000, stdin);
+    repeat[strcspn(repeat, "\n")] = 0;
 
     choice();
-    while (true) {
-        std::cout << "//Enter a selection from choices x to exit ch for choices.\n";
-        std::cout << "//";
-        std::getline(std::cin, sw);
-        if (sw == "x") {
+    while (1) {
+        printf("//Enter a selection from choices x to exit ch for choices.\n");
+        printf("//");
+        fgets(sw, 2000, stdin);
+        sw[strcspn(sw, "\n")] = 0;
+        if (strcmp(sw, "x") == 0) {
             break;
         }
         auto c = f.find(sw);
         if (c != f.end()) {
             (*c).second();
         } else {
-            std::cout << "//Enter a letter in choices.\n\n";
+            printf("//Enter a letter in choices.\n\n");
         }
     }
     return 0;

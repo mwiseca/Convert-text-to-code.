@@ -940,7 +940,7 @@ void elseIfp() {
 }
 
 void userInput() {
-    char f[7][20] = {"std::", "getline(", "std::cin", ",", ");", "std::cin >> ", ";"};
+    char f[9][20] = {"std::", "getline(", "std::cin", ",", ");", "std::cin >> ", ";","while(",")) {"};
     char v[2000];
 
     while (1) {
@@ -953,6 +953,7 @@ void userInput() {
         }
         printf("\n%s%s%s%s%s\n\n", f[1], f[2], f[3], v, f[4]);
         printf("\n%s%s%s%s%s%s\n\n", f[0], f[1], f[2], f[3], v, f[4]);
+        printf("\n%s%s%s%s%s%s\n\n", f[7], f[1], f[2], f[3], v, f[8]);
         printf("\n%s%s%s\n\n", f[5], v, f[6]);
         printf("\nstd::cin.clear();");
         printf("\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n");

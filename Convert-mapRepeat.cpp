@@ -859,7 +859,7 @@ void elseIfp() {
 }
 
 void userInput() {
-    std::string f[7] = {"std::", "getline(", "std::cin", ",", ");", "std::cin >> ", ";"};
+    std::string f[9] = {"std::", "getline(", "std::cin", ",", ");", "std::cin >> ", ";","while(",")) {"};
 
     std::string v;
 
@@ -872,6 +872,7 @@ void userInput() {
         }
         std::cout << "\n" << f[1] << f[2] << f[3] << v << f[4] << "\n\n";
         std::cout << "\n" << f[0] << f[1] << f[2] << f[3] << v << f[4] << "\n\n";
+        std::cout << "\n" << f[7] << f[1] << f[2] << f[3] << v << f[8] << "\n\n";
         std::cout << "\n" << f[5] << v << f[6] << "\n\n";
         std::cout << "\nstd::cin.clear();";
         std::cout << "\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n";

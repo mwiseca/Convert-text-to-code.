@@ -637,7 +637,7 @@ def elseifp():
     
     
 def user_input():
-    f = ["std::","getline(","std::cin", ",", ");","std::cin >> ",";"]  
+    f = ["std::","getline(","std::cin", ",", ");","std::cin >> ",";","while(",")) {"]  
     while True:
         print("//Enter name of variable m for main.")
         v = input("//")
@@ -645,6 +645,7 @@ def user_input():
             return ""
         print("\n" + f[1] + f[2] + f[3] + v + f[4] + "\n\n")
         print("\n" + f[0] + f[1] + f[2] + f[3]  + v + f[4] + "\n\n")
+        print("\n" + f[7] + f[1] + f[2] + f[3]  + v + f[8] + "\n\n")
         print("\n" + f[5] +  v + f[6]  + "\n\n")
         print("\nstd::cin.clear();")
         print("std::cin.ignore(2000, '\\n');     //Clears input buffer.\n")

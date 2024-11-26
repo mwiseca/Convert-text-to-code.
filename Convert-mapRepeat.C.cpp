@@ -62,6 +62,7 @@ void string() {
             break;
         }
         printf("\n%s%s%s%s\n\n", string[0], text, string[1], string[2]);
+        printf("\n%s%s%s%s%s%s\n\n", string[0], string[1], text, string[1],string[1], string[2]);
         printf("%s%s%s\n\n", string[0], text, string[2]);
         if (strcmp(repeat, "r") != 0) {
             break;
@@ -836,6 +837,7 @@ void cppStrings() {
             break;
         }
         printf("\n%s%s%s%s\n\n", string[0], text, string[1], string[2]);
+        printf("\n%s%s%s%s%s%s\n\n", string[0], string[1], text, string[1], string[1], string[2]);
         printf("\n%s%s%s\n\n", string[0], text, string[2]);
         printf("\n%s%s%s\n\n", string[0], text, string[3]);
         if (strcmp(repeat, "r") != 0) {

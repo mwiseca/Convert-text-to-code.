@@ -56,6 +56,7 @@ def string():
         if text == "m":
             return ""
         print("\n" + t[0] + text + t[1] + t[2] + "\n")
+        print("\n" + t[0] + t[1] + text + t[1] + t[1] + t[2] + "\n")
         print("\n" + t[0] + text + t[2] + "\n")
         if repeat != "r":
             return ""
@@ -575,6 +576,8 @@ def stringg():
         if text == "m":
             return ""
         print(f"\n{st[0]}{text}{st[1]}{st[2]}\n")
+        print(f"\n{st[0]}{st[1]}{text}{st[1]}{st[1]}{st[2]}\n")
+        print(f"\n{st[0]}{text}{st[2]}\n")
         print(f"\n{st[0]}{text}{st[3]}{st[4]}\n")
         if repeat != "r":
             return ""

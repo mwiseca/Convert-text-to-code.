@@ -59,6 +59,8 @@ void string() {
         }
         std::cout << "\n" << string[0] << text << string[2] << "\n\n";
         std::cout << "\n" << string[0] << text << string[1] << string[2] << "\n\n";
+        std::cout << "\n" << string[0] << string[1] << text << string[1] << string[1] << string[2] << "\n\n";
+
         if (repeat != "r") {
             break;
         }
@@ -763,6 +765,7 @@ void cppStrings() {
             break;
         }
         std::cout << "\n" << string[0] << text << string[1] << string[2] << "\n\n";
+        std::cout << "\n" << string[0] << string[1] << text << string[1] << string[1] << string[2] << "\n\n";
         std::cout << "\n" << string[0] << text << string[2] << "\n\n";
         std::cout << "\n" << string[0] << text << string[3] << "\n\n";
         if (repeat != "r") {

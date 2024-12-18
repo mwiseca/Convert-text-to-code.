@@ -39,6 +39,7 @@ def choice():
     print("//Enter cp for C++ empty strings.")
     print("//Enter aap for C++ string arrays.")
     print("//Enter ip and ep for if and else if statements in C++")
+    print("//Enter mip for if else if statements with 2 conditiions C++.")
     print("//Enter up for user input in C++.")
     print("//Enter mp to start a C++ map with one key value pair.")
     print("//Enter ma for map access C++.")
@@ -699,7 +700,67 @@ def elseifp():
         print("\n" + f[0] +  name + f[1] + f[2] + value + f[2] + f[3] + "\n\n")
         if repeat != "r":
             return ""
-    
+
+def multiIfCpp():
+    t =["if(","} else if("," == ", " != ",'"'," && "," || ",") {"]
+    while True:
+        print("//Enter i for if, e for elseif.")
+        while True: 
+            select = input("//")
+            if select != "i" and select != "e":
+                print("//Enter i or e only.")
+            else:
+                break
+        if select == "i":
+            select = t[0]
+        elif select == "e":
+            select = t[1]
+        print("//Enter a name of first m for main.")
+        name = input("//")
+        if name == "m":
+            return ""
+        print("//Enter a value.")
+        value = input("//")
+        print("Enter a comparison a for equal b for not equal.")
+        while True:
+            compare = input("//")
+            if compare != "a" and compare != "b":
+                print("//Enter a or b only.")
+            else:
+                break
+        if compare == "a":
+            compare = t[2]
+        elif compare == "b":
+            compare = t[3]
+        print("//Enter a operator a for and o for or.")
+        while True:
+            op = input("//")
+            if op != "a" and op != "o":
+                print("//Enter a or o only.")
+            else:
+                break
+        if op == "a":
+            op = t[5]
+        elif op == "o":
+            op = t[6]
+        print("Enter the second name.")
+        sname = input("//")
+        print("//Enter the second value.")
+        svalue = input("//")
+        print("//Enter a second comparison a for equal b for not equal")
+        while True:
+            scompare = input("//")
+            if scompare != "a" and scompare != "b":
+                print("//Enter a or b only.")
+            else:
+                break
+        if scompare == "a":
+            scompare = t[2]
+        elif scompare == "b":
+            scompare = t[3]
+        print("\n\n" + select + name + compare + t[4] + value + t[4] + op + sname + scompare + t[4] + svalue + t[4] + t[7] + "\n\n")
+        if repeat != "r":
+            return "" 
     
 def user_input():
     f = ["std::","getline(","std::cin", ",", ");","std::cin >> ",";","while(",")) {"]  
@@ -913,7 +974,8 @@ switch = {
          "cp": estring,
          "aap": arrayCPP,
          "ip": ifStatementp,
-         "ep": elseifp, 
+         "ep": elseifp,
+         "mip": multiIfCpp,
          "up": user_input,
          "mp": mapp,
          "ma": map_access,

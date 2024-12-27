@@ -5,7 +5,7 @@ It has things needed to combine C and C++ in on file.
 It has been used to test new functions and features for the others.
 This is more suitable for people teaching than new learners as there are many choices
 to memorize.
-**To use**:
+## To use
 The .cpp files must be compiled as a C++ file.
 Its best used in a terminal emulator that splits screen.
 Run the program on one side. Copy and paste to the other side.

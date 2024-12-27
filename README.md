@@ -8,7 +8,7 @@ to memorize.
 ## To use
 The .cpp files must be compiled as a C++ file.
 Its best used in a terminal emulator that splits screen.
-Run the program on one side. Copy and paste to the other side.  Finished code must be copied and pasted to the program.  
+Run the program on one side. Copy and paste to the other side. Finished code must be copied and pasted to the program.  
 I will not be accepting pull requests for this.
 ## Example
 Below is a example of how it works.  Click on the image to enlarge.

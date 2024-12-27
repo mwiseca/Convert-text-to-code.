@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/3565a22c-b35e-4a23-9c3d-a7c4432252c7)
-![image](https://github.com/user-attachments/assets/3f982322-0034-4970-86e8-368d1caabe2c)
 # Convert-text-to-code.
 Converts text to code for C C++.
 This is C-strings and Cpp-syntax combined.

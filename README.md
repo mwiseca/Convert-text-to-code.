@@ -2,7 +2,8 @@
 Converts text to code for C C++.
 This is C-strings and Cpp-syntax combined.
 It has things needed to combine C and C++ in on file.
-It has been used to test new functions and features for the others.
+It has been used to test new functions and features for the others.<br>
+This is best used for learning C C++ syntax, not to enhance productivity.
 ## To use
 The .cpp files must be compiled as a C++ file.    
 Python must be installed to use the .py file.<br>

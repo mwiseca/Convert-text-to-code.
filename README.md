@@ -11,6 +11,6 @@ Its best used in a terminal emulator that splits screen.<br>
 Run the program on one side. Copy and paste to the other side.    
 I will not be accepting pull requests for this.
 ## Example
-**Below is a example of how it works.  Click on the image to enlarge.
+** Below is a example of how it works.  Click on the image to enlarge.
 
 ![image](https://github.com/user-attachments/assets/7b9c3f9e-5c21-48df-a3a9-64451fffabb3)

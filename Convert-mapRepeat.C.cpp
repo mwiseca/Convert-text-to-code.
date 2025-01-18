@@ -1158,6 +1158,7 @@ void userInput() {
         printf("\n%s%s%s\n\n", f[5], v, f[6]);
         printf("\nstd::cin.clear();");
         printf("\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n");
+	printf("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');    //Clears entire input buffer.\n\n");
         if (strcmp(repeat, "r") != 0) {
             break;
         }
@@ -1357,6 +1358,8 @@ void copyy() {
     printf("\n");
     printf("#include <map>\n");
     printf("\n");
+    printf("#include <limits>\n");
+    printf("\n");
     printf("#include <cstdio>\n");
     printf("\n");
     printf("#include <cstring>\n");
@@ -1382,6 +1385,9 @@ void copyy() {
     printf("try {\n");
     printf("\n");
     printf("}catch(std::out_of_range){\n");
+    printf("\n");
+    printf("std::cin.clear();\n");
+    printf("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n");
     printf("\n");
     printf("        }\n");
     printf("}\n");

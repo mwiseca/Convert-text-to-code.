@@ -1046,6 +1046,7 @@ void userInput() {
         std::cout << "\n" << f[5] << v << f[6] << "\n\n";
         std::cout << "\nstd::cin.clear();";
         std::cout << "\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n";
+	std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');     //Clears entire input buffer.\n\n";
         if (repeat != "r") {
             break;
         }
@@ -1231,6 +1232,8 @@ void copyy() {
     std::cout << "\n";
     std::cout << "#include <map>\n";
     std::cout << "\n";
+    std::cout << "#include <limits>\n";
+    std::cout << "\n";
     std::cout << "#include <cstdio>\n";
     std::cout << "\n";
     std::cout << "#include <cstring>\n";
@@ -1256,6 +1259,9 @@ void copyy() {
     std::cout << "try {\n";
     std::cout << "\n";
     std::cout << "}catch(std::out_of_range){\n";
+    std::cout << "\n";
+    std::cout << "std::cin.clear();\n";
+    std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n";
     std::cout << "\n";
     std::cout << "        }\n";
     std::cout << "}\n";

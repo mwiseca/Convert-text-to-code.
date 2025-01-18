@@ -775,6 +775,7 @@ def user_input():
         print("\n" + f[5] +  v + f[6]  + "\n\n")
         print("\nstd::cin.clear();")
         print("std::cin.ignore(2000, '\\n');     //Clears input buffer.\n")
+        print("\nstd::cin.clear();")
         print("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');    //Clears entire input buffer\n")
         if repeat != "r":
             return ""

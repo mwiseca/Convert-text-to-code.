@@ -1046,7 +1046,7 @@ void userInput() {
         std::cout << "\n" << f[5] << v << f[6] << "\n\n";
         std::cout << "\nstd::cin.clear();";
         std::cout << "\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n";
-	std::cout << "\nstd::cin.clear();";
+	std::cout << "\nstd::cin.clear();\n";
 	std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');     //Clears entire input buffer.\n\n";
         if (repeat != "r") {
             break;

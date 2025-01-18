@@ -1,4 +1,4 @@
-// Copyright 2023-2024 Mitchell E Wise
+// Copyright 2023-2025 Mitchell E Wise
 // SPDX-License-Identifier: Apache-20
 
 #include <functional>
@@ -1046,6 +1046,8 @@ void userInput() {
         std::cout << "\n" << f[5] << v << f[6] << "\n\n";
         std::cout << "\nstd::cin.clear();";
         std::cout << "\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n";
+	std::cout << "\nstd::cin.clear();\n";
+	std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');     //Clears entire input buffer.\n\n";
         if (repeat != "r") {
             break;
         }
@@ -1231,6 +1233,8 @@ void copyy() {
     std::cout << "\n";
     std::cout << "#include <map>\n";
     std::cout << "\n";
+    std::cout << "#include <limits>\n";
+    std::cout << "\n";
     std::cout << "#include <cstdio>\n";
     std::cout << "\n";
     std::cout << "#include <cstring>\n";
@@ -1256,6 +1260,9 @@ void copyy() {
     std::cout << "try {\n";
     std::cout << "\n";
     std::cout << "}catch(std::out_of_range){\n";
+    std::cout << "\n";
+    std::cout << "std::cin.clear();\n";
+    std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n";
     std::cout << "\n";
     std::cout << "        }\n";
     std::cout << "}\n";
@@ -1308,7 +1315,7 @@ int main() {
     std::string sw;
 
     std::cout << "\n\n";
-    std::cout << "          copyright 2024 Mitchell E Wise\n";
+    std::cout << "          copyright 2025 Mitchell E Wise\n";
     std::cout << "          SPDX-License-Identifier: Apache-20\n\n\n";
 
     std::cout << "//Enter r to repeat choices enter to not.\n";

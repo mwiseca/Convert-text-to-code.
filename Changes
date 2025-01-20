@@ -22,3 +22,6 @@ December 18 2024.
 Flush entire input buffer was added.
 Check cyp and up in choices.
 January 18 2025.
+A function to clear input buffer in C++ was added.
+Check cbp in choices and clearBuff in the code.
+January 20 2025.

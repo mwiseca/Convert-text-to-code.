@@ -41,6 +41,7 @@ def choice():
     print("//Enter ip and ep for if and else if statements in C++")
     print("//Enter mip for if else if statements with 2 conditiions C++.")
     print("//Enter up for user input in C++.")
+    print("//Enter cbp for a function to clear input buffer C++.")
     print("//Enter mp to start a C++ map with one key value pair.")
     print("//Enter ma for map access C++.")
     print("//Enter vp for string variables no value C++.")
@@ -779,6 +780,19 @@ def user_input():
         print("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');    //Clears entire input buffer\n")
         if repeat != "r":
             return ""
+def clear_buff():
+    t = ["void ","(","){","}"]
+    while True:
+        print("//Name the function m for main.")
+        name = input("//")
+        if name == "m":
+            return ""
+        print("\n" + t[0] + name + t[1] + t[2])  
+        print("    std::cin.clear();")
+        print("    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');") 
+        print(t[3] + "\n")
+        if repeat != "r":
+            return ""
 
 def mapp():
     t = ["std::map","<","std::string","int","double","> ",",", " = {"]
@@ -984,6 +998,7 @@ switch = {
          "ep": elseifp,
          "mip": multiIfCpp,
          "up": user_input,
+         "cbp": clear_buff,
          "mp": mapp,
          "ma": map_access,
          "vp": variablep,

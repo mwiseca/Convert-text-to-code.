@@ -42,6 +42,7 @@ void choice() {
     cout << "//Enter ep for C++ string else if statements.\n";
     cout << "//Enter mip for string if and else if with 2 conditions C++.\n";
     cout << "//Enter up for C++ user input.\n";
+    cout << "//Enter cbp for a function to clear input buffer C++.\n";
     cout << "//Enter mp to start a C++ map.\n";
     cout << "//Enter ma for map acces C++.\n";
     cout << "//Enter vp for string variables no value C++.\n";
@@ -1054,6 +1055,27 @@ void userInput() {
     }
 }
 
+void clearBuff() {
+    std::string t[4] = {"void ", "(", "){", "}"};
+    std::string name;
+
+    while (true) {
+        std::cout << "//Name function m for main.\n";
+        std::cout << "//";
+        getline(std::cin, name);
+        if (name == "m") {
+            break;
+        }
+        std::cout << "\n" << t[0] << name << t[1] << t[2] << "\n"; 
+	std::cout << "    std::cin.clear();\n";
+        std::cout << "    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n";
+	std::cout << t[3] << "\n\n";
+        if (repeat != "r") {
+            break;
+        }
+    }
+}
+
 void map() {
     std::string t[8] = {"std::map", "<", "std::string", "int", "double", "> ", ",", " = {"};
     std::string b[7] = {"    {", "},", "}", "};", "\"", ",", " "};
@@ -1304,7 +1326,8 @@ int main() {
         {"ip",    ifStatementp},
         {"ep",         elseIfp},
         {"mip",     multiIfCpp}, 	
-        {"up",       userInput}, 
+        {"up",       userInput},
+        {"cbp",      clearBuff},	
         {"mp",             map},        
         {"ma",       mapAccess},  
         {"vp",       variablep},   

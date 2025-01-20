@@ -46,6 +46,7 @@ void choice() {
     printf("//Enter ep for C++ string else if statements.\n");
     printf("//Enter mip for if statements with 2 conditions C++.\n");
     printf("//Enter up for C++ user input.\n");
+    printf("// Enter cbp for a function to clear input buffer C++.\n");
     printf("//Enter mp to start a C++ map.\n");
     printf("//Enter ma for map acces C++.\n");
     printf("//Enter vp for string variables no value C++.\n");
@@ -1782,6 +1783,36 @@ void userInput() {
     }
 }
 
+void clearBuff() {
+    char t[4][12] = {"void ", "(", "){", "}"};
+    char *name;
+
+    while (1) {
+        name = (char*)malloc(2000* sizeof(char));
+        if(name == NULL){
+            printf("Error: Insufficent memory.\n");
+            exit(1);}
+        printf("//Name function m for main.\n");
+        printf("//");
+        fgets(name, 2000, stdin);
+        name[strcspn(name, "\n")] = 0;
+        if (strcmp(name, "m") == 0) {
+	    free(name);
+            name = NULL;
+            break;
+        }
+        printf("\n%s%s%s%s\n", t[0], name, t[1], t[2]);
+        printf("    std::cin.clear();\n");
+        printf("    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n");
+	printf("%s\n\n",t[3]);
+	free(name);
+        name = NULL;
+        if (repeat != "r") {
+            break;
+        }
+    }
+}
+
 void map() {
     char t[8][20] = {"std::map", "<", "std::string", "int", "double", "> ", ",", " = {"};
     char b[7][15] = {"    {", "},", "}", "};", "\"", ",", " "};
@@ -2169,6 +2200,7 @@ int main() {
         {"ep",         elseIfp},
 	{"mip",     multiIfCpp},
         {"up",       userInput},
+	{"cbp",      clearBuff},
         {"mp",             map},
         {"ma",       mapAccess},  
         {"vp",       variablep},  

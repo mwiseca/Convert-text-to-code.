@@ -1056,7 +1056,7 @@ void userInput() {
 }
 
 void clearBuff() {
-    std::string t[4] = {"void ", "(", "){", "}"};
+    std::string t[5] = {"void ", "(", "){", "}","();"};
     std::string name;
 
     while (true) {
@@ -1070,6 +1070,7 @@ void clearBuff() {
 	std::cout << "    std::cin.clear();\n";
         std::cout << "    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n";
 	std::cout << t[3] << "\n\n";
+	std::cout << name << t[4] << "\n\n";
         if (repeat != "r") {
             break;
         }

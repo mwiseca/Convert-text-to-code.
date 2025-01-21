@@ -1784,7 +1784,7 @@ void userInput() {
 }
 
 void clearBuff() {
-    char t[4][12] = {"void ", "(", "){", "}"};
+    char t[5][12] = {"void ", "(", "){", "}","();"};
     char *name;
 
     while (1) {
@@ -1805,6 +1805,7 @@ void clearBuff() {
         printf("    std::cin.clear();\n");
         printf("    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n");
 	printf("%s\n\n",t[3]);
+	printf("%s%s\n\n",name,t[4]);
 	free(name);
         name = NULL;
         if (repeat != "r") {

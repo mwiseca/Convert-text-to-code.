@@ -780,8 +780,9 @@ def user_input():
         print("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');    //Clears entire input buffer\n")
         if repeat != "r":
             return ""
+
 def clear_buff():
-    t = ["void ","(","){","}"]
+    t = ["void ","(","){","}","();"]
     while True:
         print("//Name the function m for main.")
         name = input("//")
@@ -791,6 +792,7 @@ def clear_buff():
         print("    std::cin.clear();")
         print("    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');") 
         print(t[3] + "\n")
+        print(name + t[4] + "\n")
         if repeat != "r":
             return ""
 

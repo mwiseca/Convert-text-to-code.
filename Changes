@@ -1,2 +1,7 @@
 This branch is for ideas that may or may not be merged to main in the future.
 Febuary 1 2025.
+A new file was added. ConvertLowMem.Cpp.
+It has low limits on user inputs and lets the user know when to many
+characters were entered.
+Febuary 1 2025.
+

@@ -26,6 +26,7 @@ void choice() {
     cout << "//Enter si for scanf for integers and doubles.\n";
     cout << "//Enter sh for scanf for ints and doubles on the heap.\n";
     cout << "//Enter sc for check scanf.\n";
+    cout << "//Enter cb to clear input buffer in C.\n";
     cout << "//Enter h to allocate memory on the heap.\n";
     cout << "//Enter cm to check malloc.\n";
     cout << "//Enter fc for void functions C-C++.\n";
@@ -158,6 +159,28 @@ void scanfBasic() {
             break;
         }
     }
+}
+
+void clearBuffC() {
+    std::string t[5] = {"void ", "(", "){", "}","();"};	
+    std::string name;
+    while (true) {
+	std::cout << "//Name function m for main.\n";
+	std::cout << "//";
+	getline(std::cin,name);
+    if (name == "m") {
+	break;
+    }
+        std::cout << "\n" <<  t[0] <<  name << t[1] << t[2] << "\n";
+	std::cout << "    int clear;\n";   
+	std::cout << "    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n";
+	std::cout << "    " << t[3] << "\n";	
+	std::cout << t[3] << "\n\n";
+	std::cout << name << t[4] << "\n\n";
+	if (repeat != "r")  {
+	    break;
+	}
+    }	
 }
 
 void ifStatement() {
@@ -1303,6 +1326,7 @@ int main() {
         {"f",           fgetss},       
         {"s",           scanff},           
         {"sb",      scanfBasic},
+	{"cb",      clearBuffC},
         {"i",      ifStatement}, 
         {"e",           elseIf},
         {"mi",         multiIf},	

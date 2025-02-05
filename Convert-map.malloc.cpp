@@ -29,6 +29,7 @@ void choice() {
     printf("//Enter si for scanf for integers and doubles.\n");
     printf("//Enter sh for scanf for ints and doubles on the heap.\n");
     printf("//Enter sc for check scanf.\n");
+    printf("//Enter cb to clear input buffer in C.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
     printf("//Enter cm to check malloc.\n");
@@ -232,6 +233,39 @@ void scanfBasic() {
     }
 }
 
+void clearBuffC() {
+    char t[5][12] = {"void ", "(", "){", "}","();"};	
+    char *name;
+    
+
+    while (1) {
+	name = (char*)malloc(2000* sizeof(char));
+	if(name == NULL){
+            printf("Error: Insufficent memory.\n");
+            exit(1);}
+	printf("//Name function m for main.\n");
+	printf("//");
+	fgets(name, 2000, stdin);
+	name[strcspn(name, "\n")] = 0;
+    if (strcmp(name, "m") == 0) {
+        free(name);
+        name = NULL;
+	break;
+    }
+	printf("\n%s%s%s%s\n", t[0], name, t[1], t[2]);
+	printf("    int clear;\n");   
+	printf("    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n");
+	printf("%s%s\n","    ",t[3]);	
+	printf("%s\n\n",t[3]);
+	printf("%s%s\n\n",name,t[4]);
+        free(name);
+        name = NULL;
+	if (repeat != "r") {
+	    break;
+	}
+    }	
+}
+
 void ifStatement() {
     char f[4][15] = {"if(strcmp(", ",", "\"", ")==0) {"};
     char *name;
@@ -265,7 +299,7 @@ void ifStatement() {
         free(value);
         value = NULL;
         if (repeat != "r") {
-            break;
+	    break;
         }
     }
 }
@@ -2175,6 +2209,7 @@ int main() {
         {"f",           fgetss},
         {"s",           scanff},
         {"sb",      scanfBasic}, 
+	{"cb",      clearBuffC},
         {"i",      ifStatement},
         {"e",           elseIf},
 	{"mi",         multiIf},

@@ -28,6 +28,7 @@ void choice() {
     printf("//Enter si for scanf for integers and doubles.\n");
     printf("//Enter sh for scanf for ints and doubles on the heap.\n");
     printf("//Enter sc for check scanf.\n");
+    printf("//Enter csl to check scanf and limmit size.\n");
     printf("Enter cb to clear input buffer in C.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
@@ -913,6 +914,52 @@ void checkScanf() {
     }
 }
 
+void checkScanfL() {
+    char t[8][15] = {"if(scanf(\"", "%","d\"", "lf\"", ",", " &", ")!=1){", "while(scanf(\""};
+    char ch[2000];
+    char name[2000];
+    char mem[2000];
+    while (1) {
+	printf("//Choose i for int d for double or m for main.\n");
+	printf("//");
+	fgets(ch, 2000, stdin);
+	ch[strcspn(ch, "\n")] = 0;
+	if (strcmp(ch, "m") == 0) {
+	    break;
+	} else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
+	    printf("Choose i or d or m only.\n");
+	    continue;
+	}
+	printf("//Enter the name of variable.\n");
+	printf("//");
+	fgets(name, 2000, stdin);
+	name[strcspn(name, "\n")] = 0;
+	printf("//Enter memory allocated to variable.\n");
+	printf("//");
+	fgets(mem,2000,stdin);
+	mem[strcspn(mem,"\n")]=0;
+	if (strcmp(ch, "i") == 0) {
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[0], t[1],mem,t[2], t[4], t[5], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0], t[1],mem,t[2], t[4], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[2], t[4],t[5], name,t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem,t[2], t[4], name, t[6]);
+	    if (strcmp(ch, "r") == 0) {
+		printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
+		break;
+	   }	
+	} else if (strcmp(ch, "d") == 0) {
+	    printf("\n%s%s%s%s%s%s%s%s\n \n", t[0],t[1],mem, t[3], t[4], t[5], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0],t[1],mem, t[3], t[4], name, t[6]);
+            printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[3], t[4], t[5],name, t[6]);
+            printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem, t[3], t[4],name, t[6]);
+            }
+        printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }         
+    }
+}
+
 void copy() {
     printf("\n");
     printf("#include <stdio.h>\n");
@@ -1476,6 +1523,7 @@ int main() {
         {"si",        scanfNum},   
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
+	{"csl",    checkScanfL},
         {"sp",      cppStrings}, 
         {"cp",        estringp},        
         {"aap",        arraysp},    

@@ -20,6 +20,8 @@ def choice():
     print("//Enter si for scanf for integers and doubles.")
     print("//Enter sh for scanf for ints and doubles on the heap.")
     print("//Enter sc for check scanf.")
+    print("//Enter csl to check scanf and limmit size.")
+    print("//Enter cb to clear input buffer in C.")
     print("//Enter h to allocate memory on the heap.")
     print("//Enter hi to allocate int float or double memory on the heap.")
     print("//Enter cm to check malloc.")
@@ -139,6 +141,21 @@ def scanf_basic():
         if repeat != "r":
             return ""
 
+def clear_buffC():
+    t = ["void ","(","){","}","();"]
+    while True:
+        print("//Name the function m for main.")
+        name = input("//")
+        if name == "m":
+            return ""
+        print("\n" + t[0] + name + t[1] + t[2])  
+        print("    int clear;");   
+        print("    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {"); 
+        print(t[3] + "\n")
+        print(name + t[4] + "\n")
+        if repeat != "r":
+            return ""
+
 
 def if_statement():
     t = ["if(strcmp(",",",'"',")==0) {"]
@@ -155,8 +172,7 @@ def if_statement():
         if repeat != "r":
             return ""
 
-
-def elif_statement():
+def elif_statement(): 
     while True:
         t = ["} else if(strcmp(",",",'"',")==0) {"] 
         print("//Enter The name of else if statement m for main.")
@@ -549,7 +565,33 @@ def check_scanf():
         if repeat != "r":
             return ""
 
-
+def check_scanfL():
+    t = ['if(scanf("', "%",'d"', 'lf"', ",", " &", ")!=1){", 'while(scanf("']
+    while True:
+        print("//Choose i for int or d for double or m for main.")
+        ch = input("//")
+        if ch == "m":
+            return ""
+        elif ch != "i" and ch != "d":
+            continue
+        print("//Enter the name of variable.")
+        name = input("//")
+        print("//Enter the limit in memory.")
+        mem = input("//");
+        if ch == "i":
+            print("\n" + t[0] + t[1] + mem + t[2] + t[4] + t[5] + name + t[6] + "\n\n")
+            print("\n" + t[0]  + t[1] + mem + t[2] + t[4] + name + t[6] + "    //Use with malloc.\n\n")
+            print("\n" + t[7] + t[1] + mem + t[2] + t[4] + t[5] + name + t[6] + "\n\n")
+            print("\n" + t[7] + t[1] + mem + t[2] + t[4] + name + t[6] + "    //Use with malloc.\n\n")
+        elif ch == "d":
+            print("\n" + t[0] + t[1] + mem + t[3] + t[4] + t[5] +  name + t[6] + "\n\n")
+            print("\n" + t[0] + t[1] + mem + t[3] + t[4] + name + t[6] + "    //Use with malloc.\n\n") 
+            print("\n" + t[7] + t[1] + mem + t[3] + t[4] + t[5] + name + t[6] + "\n\n")
+            print("\n" +  t[7] + t[1] + mem + t[3] + t[4] + name + t[6] + "    //Use with malloc.\n\n")        
+        print("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n")
+        if repeat != "r":
+            return ""
+    
 def variable_number():
     t = ["double ","int "," = ", ";", " ;"]
     while True:
@@ -973,6 +1015,7 @@ switch = {
          "f": fgets,
          "s": scanf,
          "sb": scanf_basic,
+         "cb": clear_buffC,
          "i": if_statement,
          "e": elif_statement,
          "mi": multi_if,
@@ -990,6 +1033,7 @@ switch = {
          "si": scan_number,
          "sh": scan_heap,
          "sc": check_scanf,
+         "csl": check_scanfL,
          "vi": variable_number, 
          "vn": variable_no_value,
          "cy": copy,

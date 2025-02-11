@@ -26,6 +26,7 @@ void choice() {
     cout << "//Enter si for scanf for integers and doubles.\n";
     cout << "//Enter sh for scanf for ints and doubles on the heap.\n";
     cout << "//Enter sc for check scanf.\n";
+    cout << "//Enter csl to check scanf and limmit size.\n";
     cout << "//Enter cb to clear input buffer in C.\n";
     cout << "//Enter h to allocate memory on the heap.\n";
     cout << "//Enter cm to check malloc.\n";
@@ -803,6 +804,7 @@ void checkScanf() {
             std::cout << "\n" << t[6] << t[1] << t[3] << t[4] << name << t[5] << "\n\n";
             std::cout << "\n" << t[6] << t[1] << t[3] << name << t[5] << "     //Use with malloc.\n\n";
             if (repeat != "r") {
+                std::cout << "\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n"; 
                 break;
             }
         } else if (ch == "d") {
@@ -812,6 +814,49 @@ void checkScanf() {
             std::cout << "\n" << t[6] << t[2] << t[3] << name << t[5] << "     //Use with malloc.\n\n";
         }
         std::cout << "\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n";
+        if (repeat != "r") {
+            break;
+        }
+    }
+}
+
+void checkScanfL() {
+    std::string  t [8] = {"if(scanf(\"", "%","d\"", "lf\"", ",", " &", ")!=1){", "while(scanf(\""};
+    std::string ch;
+    std::string name;
+    std::string mem;
+    while (true) {
+        std::cout << "//Choose i for int d for double or m for main.\n";
+        std::cout << "//";
+        getline(std::cin,ch);
+        if (ch == "m") {
+            break;
+        } else if (ch != "i"  && ch != "d") {
+            std::cout << "//Choose i or d or m only.\n";
+	    continue;
+	}
+	std::cout << "//Enter the name of variable.\n";
+	std::cout << "//";
+	getline(std::cin,name);
+	std::cout << "//Enter memory allocated to variable.\n";
+	std::cout << "//";
+	getline(std::cin,mem);
+	if (ch == "i") {
+	    std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[4] << t[5] << name << t[6] << "\n\n";
+	    std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[4] << name << t[6] << "    //Use with malloc.\n\n";
+	    std::cout << "\n" << t[7] << t[1] << mem << t[2] << t[4] << t[5] << name << t[6] << "\n\n";
+	    std::cout << "\n" << t[7] << t[1] << mem << t[2] << t[4] << name << t[6] << "    //Use with malloc.\n\n"; 
+            if (repeat != "r") {
+	        std::cout << "\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n";
+                break;
+            }
+        } else if (ch == "d") {
+	    std::cout << "\n" << t[0] << t[1] << mem << t[3] << t[4] << t[5] <<  name << t[6] << "\n\n";
+	    std::cout << "\n" << t[0] << t[1] << mem << t[3] << t[4] << name << t[6] << "    //Use with malloc.\n\n"; 
+	    std::cout << "\n" << t[7] << t[1] << mem << t[3] << t[4] << t[5] << name << t[6] << "\n\n";
+	    std::cout << "\n" <<  t[7] << t[1] << mem << t[3] << t[4] << name << t[6] << "    //Use with malloc.\n\n";
+	}
+	std::cout << "\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n";
         if (repeat != "r") {
             break;
         }
@@ -1348,6 +1393,7 @@ int main() {
         {"si",        scanfNum},
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
+	{"csl",    checkScanfL},
         {"sp",      cppStrings},
         {"cp",        estringp},    
         {"aap",        arraysp}, 

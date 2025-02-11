@@ -29,6 +29,7 @@ void choice() {
     printf("//Enter si for scanf for integers and doubles.\n");
     printf("//Enter sh for scanf for ints and doubles on the heap.\n");
     printf("//Enter sc for check scanf.\n");
+    printf("//Enter csl to check scanf and limmit size.\n");
     printf("//Enter cb to clear input buffer in C.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
@@ -1389,7 +1390,7 @@ void checkScanf() {
             printf("\n%s%s%s%s%s%s\n\n", t[0], t[1], t[3], t[4], name, t[5]);
             printf("\n%s%s%s%s%s    //Use with malloc.\n\n", t[0], t[1], t[3], name, t[5]);
             printf("\n%s%s%s%s%s%s\n\n", t[6], t[1], t[3], t[4], name, t[5]);
-            printf("\n%s%s%s%s%s    //Use with malloc.\n\n", t[6], t[1], t[3], name, t[5]);
+            printf("\n%s%s%s%s%s    //Use with malloc.\n\n", t[6], t[1], t[3], name, t[5]);	
             if (repeat != "r") {
                 printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
                 free(ch);
@@ -1409,6 +1410,82 @@ void checkScanf() {
         ch = NULL;
         free(name);
         name = NULL;
+        if (repeat != "r") {
+            break;
+        }
+    }
+}
+
+void checkScanfL() {
+    char t[8][15] = {"if(scanf(\"", "%","d\"", "lf\"", ",", " &", ")!=1){", "while(scanf(\""};
+	char *ch;
+	char *name;
+	char *mem;
+	while (1) {
+	ch = (char *)malloc(2000 * sizeof(char));
+	name = (char *)malloc(2000 * sizeof(char));
+	mem = (char *)malloc(2000 * sizeof(char));
+	if (ch == NULL || name == NULL || mem == NULL) {
+	    printf("Error: Insufficent memory.\n");
+	    exit(1);
+	}
+	printf("//Choose i for int d for double or m for main.\n");
+	printf("//");
+	fgets(ch, 2000, stdin);
+	ch[strcspn(ch, "\n")] = 0;
+	if (strcmp(ch, "m") == 0) {
+	    free(ch);
+	    ch = NULL;
+	    free(name);
+	    name = NULL;
+	    free(mem);
+	    mem = NULL;
+	    break;
+	} else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
+	    printf("Choose i or d or m only.\n");
+	    free(ch);
+	    ch = NULL;
+	    free(name);
+	    name = NULL;
+	    free(mem);
+	    mem = NULL;
+	    continue;
+	}
+	printf("//Enter the name of variable.\n");
+	printf("//");
+	fgets(name, 2000, stdin);
+	name[strcspn(name, "\n")] = 0;
+	printf("//Enter memory allocated to variable.\n");
+	printf("//");
+	fgets(mem,2000,stdin);
+	mem[strcspn(mem,"\n")]=0;
+	if (strcmp(ch, "i") == 0) {
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[0], t[1],mem,t[2], t[4], t[5], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0], t[1],mem,t[2], t[4], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[2], t[4],t[5], name,t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem,t[2], t[4], name, t[6]); 
+            if (repeat != "r") {
+                printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
+	    free(ch);
+	    ch = NULL;
+	    free(name);
+	    name = NULL;
+	    free(mem);
+	    mem = NULL;
+	    break;
+	    }
+	} else if (strcmp(ch, "d") == 0) {
+	    printf("\n%s%s%s%s%s%s%s%s\n \n", t[0],t[1],mem, t[3], t[4], t[5], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0],t[1],mem, t[3], t[4], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[3], t[4], t[5],name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem, t[3], t[4],name, t[6]);
+	}
+	printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
+	free(ch);
+        ch = NULL;
+        free(name);
+        name = NULL;
+        free(mem);
         if (repeat != "r") {
             break;
         }
@@ -2229,6 +2306,7 @@ int main() {
         {"si",        scanfNum},
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
+	{"csl",    checkScanfL},
         {"sp",      cppStrings},
         {"cp",        estringp},
         {"aap",        arraysp},

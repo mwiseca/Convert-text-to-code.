@@ -30,3 +30,6 @@ January 21 2025.
 A function to clear input buffer in C was added.
 Check cb in choices and clearBuffC in code.
 Febuary 5 2025.
+A check scanf that can set memory limmits has been added.
+Check csl in choices and checkScanfL in the code.
+febuary 11 2025.

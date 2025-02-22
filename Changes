@@ -33,7 +33,7 @@ Febuary 5 2025.
 A check scanf that can set memory limmits has been added.
 Check csl in choices and checkScanfL in the code.
 febuary 11 2025.
-A curly brace was add to close while loop in clearBuffC was added to the Python file.
+Fixed missing brace to close while loop in clearBuffC in the Python file.
 Check cb in choices and clearBuff in code.
 Febuary 21 2025.
 

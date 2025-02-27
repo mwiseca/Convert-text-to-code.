@@ -13,5 +13,6 @@ They force users to set bounds limmits to scanf to strings.
 Febuary 27 2025.
 The scanf for strings have been updated to force users to set bounds limmits.
 Check s and sb in choices.
+Check the functions void scanff and void scanfBasic to see the code.
 Febuary 27 2025.
 

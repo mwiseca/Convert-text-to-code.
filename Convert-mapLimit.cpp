@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <cstdlib>
 
 char repeat[100];
 
@@ -147,62 +148,78 @@ void fgetss() {
 
 void scanff() {
     char t[6][15] = {"scanf(\"", "%", "[^\\n]\"", ",", ");", "getchar();"};
-    char var[100];
-    char mem[100];
+    char var[125];
+    char mem[10];
+    int m;
 
     while (1) {
-        printf("//Enter the name of variable m for main.\n");
-        printf("//");
-        fgets(var,100, stdin);
-        var[strcspn(var, "\n")] = 0;
-	if (strlen(var) >= 99) {
-            clear();
-        }
-        if (strcmp(var, "m") == 0) {
-            break;
-        }
-        printf("//Enter memory allocated to variable -1 byte.\n");
-        printf("//");
-        fgets(mem,100, stdin);
-        mem[strcspn(mem, "\n")] = 0;
-	if (strlen(var) >= 99) {
-            clear();
-        }
-        printf("\n%s%s%s%s%s%s%s\n", t[0], t[1], mem, t[2], t[3], var, t[4]);
-        printf("%s\n\n", t[5]);
-        if (strcmp(repeat, "r") != 0) {
-            break;
-        }
+	printf("//Enter the name of variable m for main.\n");
+	printf("//");
+	fgets(var,125, stdin);
+	var[strcspn(var, "\n")] = 0;
+	if (strlen(var) >= 124) {
+	    clear();
+	}
+	if (strcmp(var, "m") == 0) {
+	    break;
+	}
+	printf("//Enter memory allocated to variable 2 or more.\n");
+	printf("//");
+	while(fgets(mem,10, stdin)){
+	      mem[strcspn(mem, "\n")] = 0;
+	    if (strlen(mem) >= 9) {
+	        clear();
+	    }
+            m = atoi(mem);
+	    if (m < 2){
+	        printf("\nEnter a valid number only.\n\n");
+	    }else{
+	        break;
+	    }
+	}	
+	printf("\n%s%s%d%s%s%s%s\n", t[0], t[1], m - 1, t[2], t[3], var, t[4]);
+	printf("%s\n\n", t[5]);
+	if (strcmp(repeat, "r") != 0) {
+	     break;
+	}
     }
 }
 
 void scanfBasic() {
     char t[5][15] = {"scanf(\"", "%", "s\"", ", ", ");"};
-    char var[100];
-    char mem[100];
+    char var[125];
+    char mem[10];
+    int m;
 
     while (1) {
-        printf("//Enter the name of variable m for main.\n");
-        printf("//");
-        fgets(var, 100, stdin);
-        var[strcspn(var, "\n")] = 0;
-	if (strlen(var) >= 99) {
-            clear();
-        }
-        if (strcmp(var, "m") == 0) {
-            break;
-        }
-        printf("//Enter memory allocated to variable -1 byte.\n");
-        printf("//");
-        fgets(mem,100, stdin);
-        mem[strcspn(mem, "\n")] = 0;
-	if (strlen(mem) >= 99) {
-            clear();
-        }
-        printf("\n%s%s%s%s%s%s%s\n\n", t[0], t[1], mem, t[2], t[3], var, t[4]);
-        if (strcmp(repeat, "r") != 0) {
-            break;
-        }
+	printf("//Enter the name of variable m for main.\n");
+	printf("//");
+	fgets(var,125, stdin);
+	var[strcspn(var, "\n")] = 0;
+	if (strlen(var) >= 124) {
+	    clear();
+	}
+	if (strcmp(var, "m") == 0) {
+	    break;
+	}
+	printf("//Enter memory allocated to variable 2 or higher.\n");
+	printf("//");
+	while(fgets(mem,10, stdin)){
+	      mem[strcspn(mem, "\n")] = 0;
+	    if (strlen(mem) >= 9) {
+	        clear();
+	    }
+	   m = atoi(mem);
+	   if (m < 2){
+	       printf("\nEnter a valid number only.\n\n");
+	   }else{
+	       break; 
+	   }
+	}
+	printf("\n%s%s%d%s%s%s%s\n\n", t[0], t[1], m - 1, t[2], t[3], var, t[4]);
+	if (strcmp(repeat, "r") != 0) {
+	    break;
+	}
     }
 }
 

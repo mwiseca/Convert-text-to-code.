@@ -8,4 +8,7 @@ Febuary 1 2025.
 A new file was added. Convert-mapLimit.cpp.
 It limits memory allocated to user inputs without letting the user know.
 Febuary 2 2025.
+Two files have been added scanfMemSafe.c and scanfSpaceMemsafe.c.
+They force users to set bounds limmits to scanf to strings.
+Febuary 27 2025.
 

@@ -11,4 +11,7 @@ Febuary 2 2025.
 Two files have been added scanfMemSafe.c and scanfSpaceMemsafe.c.
 They force users to set bounds limmits to scanf to strings.
 Febuary 27 2025.
+The scanf for strings have been updated to force users to set bounds limmits.
+Check s and sb in choices.
+Febuary 27 2025.
 

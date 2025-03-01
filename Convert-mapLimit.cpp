@@ -39,6 +39,8 @@ void choice() {
     printf("//Enter si for scanf for integers and doubles.\n");
     printf("//Enter sh for scanf for ints and doubles on the heap.\n");
     printf("//Enter sc for check scanf.\n");
+    printf("//Enter csl to check scanf and limmit size.\n");
+    printf("Enter cb to clear input buffer in C.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
     printf("//Enter cm to check malloc.\n");
@@ -221,6 +223,33 @@ void scanfBasic() {
 	    break;
 	}
     }
+}
+
+void clearBuffC() {
+    char t[5][12] = {"void ", "(", "){", "}","();"};	
+    char name[100];
+
+    while (1) {
+	printf("//Name function m for main.\n");
+	printf("//");
+	fgets(name, 100, stdin);
+	name[strcspn(name, "\n")] = 0;
+    if (strlen(name) >= 99) {
+        clear();
+    }
+    if (strcmp(name, "m") == 0) {
+	break;
+    }
+	printf("\n%s%s%s%s\n", t[0], name, t[1], t[2]);
+	printf("    int clear;\n");   
+	printf("    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n");
+	printf("%s%s\n","    ",t[3]);	
+	printf("%s\n\n",t[3]);
+	printf("%s%s\n\n",name,t[4]);
+	if (strcmp(repeat, "r") != 0) {
+	    break;
+	}
+    }	
 }
 
 void ifStatement() {
@@ -1006,9 +1035,7 @@ void scanfNum() {
 }
 
 void scanfHeap() {
-    char t[6][15] = {
-        "scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\"",
-    };
+    char t[6][15] = {"scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\"",};
     char ch[100];
     char name[100];
     while (1) {
@@ -1095,6 +1122,61 @@ void checkScanf() {
         if (strcmp(repeat, "r") != 0) {
             break;
         }
+    }
+}
+
+void checkScanfL() {
+    char t[8][15] = {"if(scanf(\"", "%","d\"", "lf\"", ",", " &", ")!=1){", "while(scanf(\""};
+    char ch[100];
+    char name[100];
+    char mem[100];
+    while (1) {
+	printf("//Choose i for int d for double or m for main.\n");
+	printf("//");
+	fgets(ch, 100, stdin);
+	ch[strcspn(ch, "\n")] = 0;
+	if (strlen(ch) >= 99) {
+            clear();
+        }	    
+	if (strcmp(ch, "m") == 0) {
+	    break;
+	} else if (strcmp(ch, "i") != 0 && strcmp(ch, "d") != 0) {
+	    printf("Choose i or d or m only.\n");
+	    continue;
+	}
+	printf("//Enter the name of variable.\n");
+	printf("//");
+	fgets(name, 100, stdin);
+	name[strcspn(name, "\n")] = 0;
+	if (strlen(name) >= 99) {
+	    clear();
+	}
+	printf("//Enter memory allocated to variable.\n");
+	printf("//");
+	fgets(mem,100,stdin);
+	mem[strcspn(mem,"\n")]=0;
+	if (strlen(mem) >= 99) {
+	    clear();
+	}
+	if (strcmp(ch, "i") == 0) {
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[0], t[1],mem,t[2], t[4], t[5], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0], t[1],mem,t[2], t[4], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[2], t[4],t[5], name,t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem,t[2], t[4], name, t[6]);
+	    if (strcmp(ch, "r") == 0) {
+		printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
+		break;
+	   }	
+	} else if (strcmp(ch, "d") == 0) {
+	    printf("\n%s%s%s%s%s%s%s%s\n \n", t[0],t[1],mem, t[3], t[4], t[5], name, t[6]);
+	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0],t[1],mem, t[3], t[4], name, t[6]);
+            printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[3], t[4], t[5],name, t[6]);
+            printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem, t[3], t[4],name, t[6]);
+            }
+        printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }         
     }
 }
 
@@ -1739,6 +1821,7 @@ int main() {
         {"f",           fgetss},         
         {"s",           scanff},      
         {"sb",      scanfBasic}, 
+	{"cb",      clearBuffC},
         {"i",      ifStatement},
         {"e",           elseIf},
         {"mi",         multiIf},	
@@ -1758,6 +1841,7 @@ int main() {
         {"si",        scanfNum},   
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
+	{"csl",    checkScanfL},
         {"sp",      cppStrings}, 
         {"cp",        estringp},        
         {"aap",        arraysp},    

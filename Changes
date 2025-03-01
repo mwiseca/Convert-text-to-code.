@@ -15,4 +15,11 @@ The scanf for strings have been updated to force users to set bounds limits.
 Check s and sb in choices.
 Check the functions void scanff and void scanfBasic to see the code.
 Febuary 27 2025.
+Clear input buffer function for C was added.
+Check cb in choices.
+Check function clearBuffC for the code.
+A check scanf with bounds limits was added.
+Check csl in choices.
+Check function checkScanfL for the code.
+Febuary28 2025.
 

@@ -834,9 +834,7 @@ void scanfNum() {
 }
 
 void scanfHeap() {
-    char t[6][15] = {
-        "scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\"",
-    };
+    char t[6][15] = {"scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\""};  
     char ch[2000];
     char name[2000];
     while (1) {

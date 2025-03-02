@@ -747,9 +747,7 @@ void scanfNum() {
 }
 
 void scanfHeap() {
-    std::string t[6] = {
-        "scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\"",
-    };
+    std::string t[6] = {"scanf(\"", "\%d\"", "\%lf\"", ",", ");", "\%f\""};    
     std::string ch;
     std::string name;
     while (true) {

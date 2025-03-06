@@ -36,4 +36,6 @@ febuary 11 2025.
 Fixed missing brace to close while loop in clearBuffC in the Python file.
 Check cb in choices and clearBuff in code.
 Febuary 21 2025.
+The file names have been changed. Map has been removed as all the C++ files use a map to call functions.
+March 6 2025.
 

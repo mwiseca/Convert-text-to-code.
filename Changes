@@ -38,7 +38,7 @@ Check cb in choices and clearBuff in code.
 Febuary 21 2025.
 The C++ file names have been changed. Map has been removed as all the C++ files use a map to call functions.
 March 6 2025.
-ConvertLimit.cpp has been added to main. Its for devices with low memory as less stack memory has been allocated to user inputs.
+ConvertLimit.cpp has been added to main. Its for devices with low memory as less memory has been allocated to user inputs.
 This one also forces users to set limits on s and sb.
 march 6 2025.
 

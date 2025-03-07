@@ -7,7 +7,6 @@ It has what's needed to complete simple programs.<br>
 This is best used for learning C C++ syntax, not to enhance productivity.
 ## To use
 The .cpp files must be compiled as a C++ file.    
-Python must be installed to use the .py file.<br>
 Its best used in a terminal emulator that splits screen.<br>
 Run the program on one side. Copy and paste completed code to the other side.    
 I will not be accepting pull requests for this.

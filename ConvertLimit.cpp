@@ -177,7 +177,8 @@ void scanff() {
 	    }
             m = atoi(mem);
 	    if (m < 2){
-	        printf("\nEnter a valid number only.\n\n");
+	        printf("\n//Enter a valid number only.\n\n");
+		printf("//");
 	    }else{
 	        break;
 	    }
@@ -216,7 +217,8 @@ void scanfBasic() {
 	    }
 	   m = atoi(mem);
 	   if (m < 2){
-	       printf("\nEnter a valid number only.\n\n");
+	       printf("\n//Enter a valid number only.\n\n");
+	       printf("//");
 	   }else{
 	       break; 
 	   }

@@ -1,49 +1,5 @@
 This is Cstrings and Cpp-syntax combined.
 It will have a few things that the others dont like. Write c code within a c++ program.
-November 21 2024.
-A fgets with while loop was added to the malloc file.
-November 21 2024.
-A Python file was added.
-November 22 2024.
-In up-user input in choices getline with a while loop was added.
-November 24 2024.
-A string with a space above and below was added.
-Check a and sp in choices.
-November 25 2024.
-Convert mapRepeat.cpp and Convert-mapRepeat.C.cpp had 2 condition C if statements for strings added.
-Check mi in choices and Multiif for code.
-November 30 2024.
-Convert.py and Convert-mapRepeat.malloc.cpp had 2 condition C if statements for strings added.
-Check mi in choices and multiIf for code.
-December2 2024.
-Two condition if statements was added.
-See mip in choices and the multiIfCpp function to see the code.
-December 18 2024.
-Flush entire input buffer was added.
-Check cyp and up in choices.
-January 18 2025.
-A function to clear input buffer in C++ was added.
-Check cbp in choices and clearBuff in the code.
-January 20 2025.
-Call function was added to cbp.
-January 21 2025.
-A function to clear input buffer in C was added.
-Check cb in choices and clearBuffC in code.
-Febuary 5 2025.
-A check scanf that can set memory limmits has been added.
-Check csl in choices and checkScanfL in the code.
-febuary 11 2025.
-Fixed missing brace to close while loop in clearBuffC in the Python file.
-Check cb in choices and clearBuff in code.
-Febuary 21 2025.
-The C++ file names have been changed. Map has been removed as all the C++ files use a map to call functions.
-March 6 2025.
-ConvertLimit.cpp has been added to main. Its for devices with low memory as less memory has been allocated to user inputs.
-This one also forces users to set limits on s and sb.
-March 6 2025.
-Convert-malloc.cpp has been moved to the malloc branch as ConvertLimit.cpp is a better solution for devices with low resources.
-March 7 2025.
-ConvertLimit.cpp has been changed to allow to set the size of most user inputs at once before its compiled.
-March 10 2025.
+This branch is for files entirely written in C.
 
 

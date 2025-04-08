@@ -24,3 +24,6 @@ Check function checkScanfL for the code.
 Febuary 28 2025.
 The name changed to Convert-mapLimit.cpp to ConvertLimit.cpp as all The C++ files use a map.
 March 6 2025.
+A new file was added. ConvertBin.cpp.
+It has binary for letters.
+April 7 2025.

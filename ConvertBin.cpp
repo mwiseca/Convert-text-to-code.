@@ -995,15 +995,16 @@ void bin() {
 	    getline(std::cin,b);
 	    if(b == "ii") {
 	        keys();
+		continue;
 	    } else if(b == "mn") {
 	        break;
             }
 	    std::cout << bin.at(b) << "\n";
+	    if(repeat != "r") {
+	        break;
+	    }
 	    } catch(std::out_of_range){
 	        std::cout << "\nEnter a name from index ii or mn for main.\n\n";
-	    if(repeat != "r") {
-	    break;
-	    }
 	}
     }
 }

@@ -924,6 +924,7 @@ void keys() {
     std::cout << "      ,\n";
     std::cout << "      ;\n";
     std::cout << "      :\n";
+    std::cout << "      !\n";
 }
 
 void bin() {
@@ -986,10 +987,11 @@ void bin() {
 	{",",   "\n00101100\n\n0b00101100\n"}, 
 	{";",   "\n00111011\n\n0b00111011\n"},
 	{":",   "\n00111010\n\n0b00111010\n"},
+	{"!",   "\n00100001\n\n0b00100001\n"},
 	{"ii",                            ""},	
     };
     std::string b;
-    std::cout << "Enter a leter to get a binary ii for index mn for main.\n";
+    std::cout << "//Enter a leter to get a binary ii for index mn for main.\n";
     while(true) {
         try {
 	    getline(std::cin,b);
@@ -1004,7 +1006,7 @@ void bin() {
 	        break;
 	    }
 	    } catch(std::out_of_range){
-	        std::cout << "\nEnter a name from index ii or mn for main.\n\n";
+	        std::cout << "\n//Enter a name from index ii or mn for main.\n\n";
 	}
     }
 }

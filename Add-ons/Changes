@@ -1,4 +1,7 @@
 This is for features that can be added to the main program but may not be this best fit.
 A new file was added. TextToBinHex.cpp. It converts letters to binary and hexadecimal numbers.
 this was not included in the Convert programs becouse i feel it does not have much teaching value.
+To add to program the void keys(){ function must be above the void binHex(){ function not in it.
+Its made this way with 2 seprate functions and a function call in main to make it easy to copy paste
+into the original.
 April 28 2025.

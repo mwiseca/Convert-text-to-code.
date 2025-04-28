@@ -1,1 +1,4 @@
 This is for features that can be added to the main program but may not be this best fit.
+A new file was added. TextToBinHex.cpp. It converts letters to binary and hexadecimal numbers.
+this was not included in the Convert programs becouse i feel it does not have much teaching value.
+April 28 2025.

@@ -22,7 +22,7 @@ char repeat[100];
 void clear(){
     int clear;
     while ((clear = getc(stdin)) != '\n' && clear != EOF) {
-     }
+    }
 }
 
 void choice() {

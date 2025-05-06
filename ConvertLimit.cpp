@@ -368,8 +368,9 @@ void multiIf() {
         while (fgets(compare,SIZE, stdin)) {
             compare[strcspn(compare, "\n")] = 0;
 	    if (strlen(compare) >= MAX) {
-                clear(); 
-	    } else if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0) {
+                clear();
+	    }
+	    if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0) {
                 printf("//Enter a or b only.\n");
             } else {
                 break;
@@ -385,8 +386,9 @@ void multiIf() {
         while (fgets(op, SIZE, stdin)) {
             op[strcspn(op, "\n")] = 0;
 	    if (strlen(op) >= MAX) {
-                clear(); 
-	    } else if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
+                clear();
+	    }
+	    if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
                 printf("//Enter a or o only.\n");
             } else {
                 break;
@@ -418,7 +420,8 @@ void multiIf() {
             scompare[strcspn(scompare, "\n")] = 0;
 	    if (strlen(scompare) >= MAX) {
                 clear();
-	    } else if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0) {
+	    }
+	    if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0) {
                 printf("//Enter a or b only.\n");
             } else {
                 break;

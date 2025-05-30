@@ -21,6 +21,7 @@ void choice() {
     cout << "//Enter in for if and else if statements for numbers C-C++.\n";
     cout << "//Enter im for if and else if statements for numbers if malloc is used.\n";
     cout << "//Enter f for fgets.\n";
+    cout << "//Enter fs for fgets with sizeof operator.\n";
     cout << "//Enter s for scanf for strings to allow for white spaces.\n";
     cout << "//Enter sb for scanf basic no white spaces.\n";
     cout << "//Enter si for scanf for integers and doubles.\n";
@@ -115,6 +116,29 @@ void fgetss() {
         if (repeat != "r") {
             break;
         }
+    }
+}
+
+void fgetsSizeof() {
+    std::string f[12] = {"fgets(", ",","sizeof(", "),stdin);", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';","while(", "      ", "),stdin)) {"};
+    std::string name;
+
+    while (true) {
+        std::cout << "//Enter name of variable m for main.\n";
+	std::cout << "//";
+	getline(std::cin,name);
+	if (name == "m") {
+	    break;
+	}
+	std::cout << "\n" <<  f[0] << name << f[1] << f[2] << name << f[3] << "\n";
+	std::cout << name << f[4] << name << f[1] << f[5] << f[6] << "\n\n";
+	std::cout << "\n" << f[9] << f[0] << name << f[1] << f[2] << name << f[11] << "\n";
+	std::cout << f[10] << name << f[4] << name << f[1] << f[5] << f[6] << "\n\n";
+	std::cout << "\n" << f[0] << name << f[1] << f[2] << name << f[3] << "\n";
+	std::cout << name << f[7] << name << f[8] << "\n\n";
+	if (repeat != "r") {
+	    break;
+	}
     }
 }
 
@@ -1372,7 +1396,8 @@ int main() {
         {"cy",            copy},
         {"a",           string},
         {"c",      stringEmpty}, 
-        {"f",           fgetss},       
+        {"f",           fgetss},
+        {"fs",     fgetsSizeof},	
         {"s",           scanff},           
         {"sb",      scanfBasic},
 	{"cb",      clearBuffC},

@@ -23,6 +23,7 @@ void choice() {
     printf("//Enter in for if and else if statements for numbers C-C++.\n");
     printf("//Enter im for if and else if statements for numbers if malloc is used.\n");
     printf("//Enter f for fgets.\n");
+    printf("//Enter fs for fgets with sizeof operator.\n");
     printf("//Enter s for scanf for strings to allow for white spaces.\n");
     printf("//Enter sb for scanf basic no white spaces.\n");
     printf("//Enter si for scanf for integers and doubles.\n");
@@ -122,6 +123,31 @@ void fgetss() {
         if (strcmp(repeat, "r") != 0) {
             break;
         }
+    }
+}
+
+void fgetsSizeof() {
+    char f[12][15] = {"fgets(", ",","sizeof(", "),stdin);", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';","while(", "      ", "),stdin)) {"};
+    char name[2000];
+            
+    while (1) {
+        printf("//Enter name of variable m for main.\n");
+	printf("//");
+	fgets(name, sizeof(name), stdin);
+	name[strcspn(name, "\n")] = 0;
+	if (strcmp(name, "m") == 0) {
+	    break;
+	}
+	printf("//Enter the memory to be allocated to the variable.\n");
+	printf("\n%s%s%s%s%s%s\n", f[0], name, f[1],  f[2],name, f[3]);
+	printf("%s%s%s%s%s%s\n\n", name, f[4], name, f[1], f[5], f[6]);
+	printf("\n%s%s%s%s%s%s%s\n",f[9], f[0], name, f[1], f[2] ,name, f[11]);
+	printf("%s%s%s%s%s%s%s\n\n",f[10], name, f[4], name, f[1], f[5], f[6]);
+	printf("\n%s%s%s%s%s%s\n", f[0], name, f[1],  f[2],name, f[3]); 
+	printf("%s%s%s%s\n\n", name, f[7], name, f[8]);
+	if (strcmp(repeat, "r") != 0) {
+	    break;
+	}
     }
 }
 
@@ -1498,7 +1524,8 @@ int main() {
         {"cy",            copy},
         {"a",           string}, 
         {"c",      stringEmpty},  
-        {"f",           fgetss},         
+        {"f",           fgetss},  
+        {"fs",     fgetsSizeof},	
         {"s",           scanff},      
         {"sb",      scanfBasic}, 
 	{"cb",      clearBuffC},

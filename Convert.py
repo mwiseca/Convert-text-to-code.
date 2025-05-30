@@ -14,7 +14,8 @@ def choice():
     print("//Enter c for strings with no quotation marks.")
     print("//Enter cy for what's needed to copy and paste to finish a simple program.")
     print("//Enter f for fgets and removal of new line character.")
-    print("//Enter fc for void functions C C++.");
+    print("//Enter fs for fgets with sizeof operator.\n")
+    print("//Enter fc for void functions C C++.")
     print("//Enter s for scanf for strings.")
     print("//Enter sb for scanf basic no white spaces.")
     print("//Enter si for scanf for integers and doubles.")
@@ -111,7 +112,24 @@ def fgets():
         if repeat != "r":
             return ""
     
-    
+
+def fgets_sizeof():
+    t = ["fgets(",",","sizeof(","),stdin);","[strcspn(",'"\\n"',")]=0;","[strlen(", ")-1] = '\\0';","while(","      ","),stdin)) {"]
+    while True:
+        print("//Enter name of variable m for main.")
+        name = input("//")
+        if name == "m":
+            return ""
+        print("\n" + t[0] + name + t[1] + t[2] +name + t[3])
+        print(name + t[4] +  name  + t[1] +  t[5] + t[6] + "\n")
+        print("\n" +t[9] + t[0] + name + t[1] + t[2] + name + t[11])
+        print(t[10] + name + t[4] +  name  + t[1] +  t[5] + t[6] + "\n")
+        print("\n" + t[0] + name + t[1] + t[2] + name + t[3])
+        print(name + t[7] + name + t[8] + "\n")
+        if repeat != "r":
+            return ""
+
+
 def scanf():
     t = ['scanf("%','[^\\n]",',");","getchar();"]
 
@@ -1014,6 +1032,7 @@ switch = {
          "hd": hide_text,
          "c": empty_string,
          "f": fgets,
+         "fs": fgets_sizeof,
          "s": scanf,
          "sb": scanf_basic,
          "cb": clear_buffC,

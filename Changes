@@ -45,5 +45,7 @@ Convert-malloc.cpp has been moved to the malloc branch as ConvertLimit.cpp is a 
 March 7 2025.
 ConvertLimit.cpp has been changed to allow to set the size of most user inputs at once before its compiled.
 March 10 2025.
-
+Added: fgets with sizeof operator was added.
+Check fs in choices.
+may 30 2025.
 

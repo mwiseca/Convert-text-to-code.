@@ -8,7 +8,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#define MAX 2000
+#define MAX 2000 
 
 char repeat[MAX];
 

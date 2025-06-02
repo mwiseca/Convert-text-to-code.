@@ -8,8 +8,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#define MAX
 
-char repeat[2000];
+char repeat[MAX];
 
 void choice() {
     printf("//Enter ch for choices.\n");
@@ -58,11 +59,11 @@ void choice() {
 
 void string() {
     char string[3][15] = {"printf(\"", "\\n", "\");"};
-    char text[2000];
+    char text[MAX];
     printf("//Enter your string, m for main.\n");
     while (1) {
         printf("//");
-        fgets(text, 2000, stdin);
+        fgets(text, MAX, stdin);
         text[strcspn(text, "\n")] = 0;
         if (strcmp(text, "m") == 0) {
             break;
@@ -78,12 +79,12 @@ void string() {
 
 void stringEmpty() {
     char t[2][12] = {"printf(", ");"};
-    char text[2000];
+    char text[MAX];
 
     printf("//Enter text m for main.\n");
     while (1) {
         printf("//");
-        fgets(text, 2000, stdin);
+        fgets(text, MAX, stdin);
         text[strcspn(text, "\n")] = 0;
         if (strcmp(text, "m") == 0) {
             break;
@@ -1571,14 +1572,14 @@ int main() {
     printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
     printf("//Enter r to repeat choices enter to not.\n");
-    fgets(repeat, 2000, stdin);
+    fgets(repeat, MAX, stdin);
     repeat[strcspn(repeat, "\n")] = 0;
 
     choice();
     while (1) {
         printf("//Enter a selection from choices x to exit ch for choices.\n");
         printf("//");
-        fgets(sw, 2000, stdin);
+        fgets(sw, MAX, stdin);
         sw[strcspn(sw, "\n")] = 0;
         if (strcmp(sw, "x") == 0) {
             break;

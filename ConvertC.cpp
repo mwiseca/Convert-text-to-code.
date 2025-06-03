@@ -100,20 +100,20 @@ void fgetss() {
     char f[8][15] = {"fgets(", ",", "stdin);", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';"};
     char w[9][15] = {"while(fgets(", ",", "stdin)){", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';", "      "};
 
-    char v[2000];
-    char me[2000];
+    char v[MAX];
+    char me[MAX];
 
     while (1) {
         printf("//Enter name of variable m for main.\n");
         printf("//");
-        fgets(v, 2000, stdin);
+        fgets(v, MAX, stdin);
         v[strcspn(v, "\n")] = 0;
         if (strcmp(v, "m") == 0) {
             break;
         }
         printf("//Enter the memory to be allocated to the variable.\n");
         printf("//");
-        fgets(me, 2000, stdin);
+        fgets(me, MAX, stdin);
         me[strcspn(me, "\n")] = 0;
         printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);
         printf("%s%s%s%s%s%s\n\n", v, f[3], v, f[1], f[4], f[5]);
@@ -129,12 +129,12 @@ void fgetss() {
 
 void fgetsSizeof() {
     char f[12][15] = {"fgets(", ",","sizeof(", "),stdin);", "[strcspn(", "\"\\n", "\")]=0;", "[strlen(", ")-1] = '\\0';","while(", "      ", "),stdin)) {"};
-    char name[2000];
+    char name[MAX];
             
     while (1) {
         printf("//Enter name of variable m for main.\n");
 	printf("//");
-	fgets(name, sizeof(name), stdin);
+	fgets(name, MAX, stdin);
 	name[strcspn(name, "\n")] = 0;
 	if (strcmp(name, "m") == 0) {
 	    break;
@@ -154,20 +154,20 @@ void fgetsSizeof() {
 
 void scanff() {
     char t[6][15] = {"scanf(\"", "%", "[^\\n]\"", ",", ");", "getchar();"};
-    char var[2000];
-    char mem[2000];
+    char var[MAX];
+    char mem[MAX];
 
     while (1) {
         printf("//Enter the name of variable m for main.\n");
         printf("//");
-        fgets(var, 2000, stdin);
+        fgets(var, MAX, stdin);
         var[strcspn(var, "\n")] = 0;
         if (strcmp(var, "m") == 0) {
             break;
         }
         printf("//Enter memory allocated to variable -1 byte.\n");
         printf("//");
-        fgets(mem, 2000, stdin);
+        fgets(mem, MAX, stdin);
         mem[strcspn(mem, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n", t[0], t[1], mem, t[2], t[3], var, t[4]);
         printf("%s\n\n", t[5]);
@@ -179,20 +179,20 @@ void scanff() {
 
 void scanfBasic() {
     char t[5][15] = {"scanf(\"", "%", "s\"", ", ", ");"};
-    char var[2000];
-    char mem[2000];
+    char var[MAX];
+    char mem[MAX];
 
     while (1) {
         printf("//Enter the name of variable m for main.\n");
         printf("//");
-        fgets(var, 2000, stdin);
+        fgets(var, MAX, stdin);
         var[strcspn(var, "\n")] = 0;
         if (strcmp(var, "m") == 0) {
             break;
         }
         printf("//Enter memory allocated to variable -1 byte.\n");
         printf("//");
-        fgets(mem, 2000, stdin);
+        fgets(mem, MAX, stdin);
         mem[strcspn(mem, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", t[0], t[1], mem, t[2], t[3], var, t[4]);
         if (strcmp(repeat, "r") != 0) {
@@ -203,13 +203,12 @@ void scanfBasic() {
 
 void clearBuffC() {
     char t[5][12] = {"void ", "(", "){", "}","();"};	
-    char name[2000];
-    char per[2000];
+    char name[MAX];
 
     while (1) {
 	printf("//Name function m for main.\n");
 	printf("//");
-	fgets(name, 2000, stdin);
+	fgets(name, MAX, stdin);
 	name[strcspn(name, "\n")] = 0;
     if (strcmp(name, "m") == 0) {
 	break;

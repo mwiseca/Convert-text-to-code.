@@ -1066,20 +1066,20 @@ void estringp() {
 
 void arraysp() {
     char t[4][20] = {"std::string ", " [", "] = {", "};"};
-    char name[2000];
-    char ne[2000];
-    char elements[2000];
+    char name[MAX];
+    char ne[MAX];
+    char elements[MAX];
     while (1) {
         printf("//Enter the name of array m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//Enter the amount of elements.\n");
         printf("//");
-        fgets(ne, 2000, stdin);
+        fgets(ne, MAX, stdin);
         ne[strcspn(ne, "\n")] = 0;
         printf("//Enter elements with quotations and commas between each.\n");
         printf("//");
@@ -1094,20 +1094,20 @@ void arraysp() {
 
 void ifStatementp() {
     char f[4][15] = {"if(", " == ", "\"", ") {"};
-    char name[2000];
-    char value[2000];
+    char name[MAX];
+    char value[MAX];
 
     while (1) {
         printf("//Enter name of the if statement m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//Enter a value.\n");
         printf("//");
-        fgets(value, 2000, stdin);
+        fgets(value, MAX, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", f[0], name, f[1], f[2], value, f[2], f[3]);
         if (strcmp(repeat, "r") != 0) {
@@ -1118,20 +1118,20 @@ void ifStatementp() {
 
 void elseIfp() {
     char f[4][15] = {"} else if(", " == ", "\"", ") {"};
-    char name[2000];
-    char value[2000];
+    char name[MAX];
+    char value[MAX];
 
     while (1) {
         printf("//Enter name of the else if statement m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//Enter the value.\n");
         printf("//");
-        fgets(value, 2000, stdin);
+        fgets(value, MAX, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", f[0], name, f[1], f[2], value, f[2], f[3]);
         if (strcmp(repeat, "r") != 0) {
@@ -1142,18 +1142,18 @@ void elseIfp() {
 
 void multiIfCpp() {
     char t[8] [20] ={"if(","} else if("," == ", " != ","\""," && "," || ",") {"};
-    char select[2000];
-    char name[2000];
-    char value[2000];
-    char op[2000];
-    char compare[2000];
-    char sname[2000];
-    char svalue[2000];
-    char scompare[2000];
+    char select[MAX];
+    char name[MAX];
+    char value[MAX];
+    char op[MAX];
+    char compare[MAX];
+    char sname[MAX];
+    char svalue[MAX];
+    char scompare[MAX];
 
     while (1) {
         printf("//Enter i for if, e for else if.\n");
-        while (fgets(select, 2000, stdin)) {
+        while (fgets(select, MAX, stdin)) {
             select[strcspn(select, "\n")] = 0;
             if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
                 printf("//Enter i or e only.\n");
@@ -1168,18 +1168,18 @@ void multiIfCpp() {
         }
         printf("//Enter a name of first m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//Enter a value.\n");
         printf("//");
-        fgets(value, 2000, stdin);
+        fgets(value, MAX, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("//Enter a comparison a for equal b for not equal.\n");
         printf("//");
-        while (fgets(compare, 2000, stdin)) {
+        while (fgets(compare, MAX, stdin)) {
             compare[strcspn(compare, "\n")] = 0;
             if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0) {
                 printf("//Enter a or b only.\n");
@@ -1194,7 +1194,7 @@ void multiIfCpp() {
         }
         printf("//Enter a operator a for and o for or.\n");
         printf("//");
-        while (fgets(op, 2000, stdin)) {
+        while (fgets(op, MAX, stdin)) {
             op[strcspn(op, "\n")] = 0;
             if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
                 printf("//Enter a or o only.\n");
@@ -1210,11 +1210,11 @@ void multiIfCpp() {
 
         printf("//Enter the second name,\n");
         printf("//");
-        fgets(sname, 2000, stdin);
+        fgets(sname, MAX, stdin);
         sname[strcspn(sname, "\n")] = 0;
         printf("Enter the second value.\n");
         printf("//");
-        fgets(svalue, 2000, stdin);
+        fgets(svalue, MAX, stdin);
         svalue[strcspn(svalue, "\n")] = 0;
         printf("Enter a second comparison a for equal b for not equal\n");
         printf("//");
@@ -1240,12 +1240,12 @@ void multiIfCpp() {
 
 void userInput() {
     char f[9][20] = {"std::", "getline(", "std::cin", ",", ");", "std::cin >> ", ";","while(",")) {"};
-    char v[2000];
+    char v[MAX];
 
     while (1) {
         printf("//Enter name of variable m for main.\n");
         printf("//");
-        fgets(v, 2000, stdin);
+        fgets(v, MAX, stdin);
         v[strcspn(v, "\n")] = 0;
         if (strcmp(v, "m") == 0) {
             break;
@@ -1266,12 +1266,12 @@ void userInput() {
 
 void clearBuff() {
     char t[5][12] = {"void ", "(", "){", "}","();"};
-    char name[2000];
-    char per[2000];
+    char name[MAX];
+    char per[MAX];
     while (1) {
         printf("//Name function m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
@@ -1290,25 +1290,25 @@ void clearBuff() {
 void map() {
     char t[8][20] = {"std::map", "<", "std::string", "int", "double", "> ", ",", " = {"};
     char b[7][15] = {"    {", "},", "}", "};", "\"", ",", " "};
-    char key_type[2000];
-    char value_type[2000];
-    char name[2000];
-    char key[2000];
-    char key_t[2000];
-    char value[2000];
-    char value_t[2000];
+    char key_type[MAX];
+    char value_type[MAX];
+    char name[MAX];
+    char key[MAX];
+    char key_t[MAX];
+    char value[MAX];
+    char value_t[MAX];
 
     while (1) {
         printf("//Enter the name of the map m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//Enter a key type, s for string, i for int d for double.\n");
         printf("//");
-        fgets(key_type, 2000, stdin);
+        fgets(key_type, MAX, stdin);
         key_type[strcspn(key_type, "\n")] = 0;
         if (strcmp(key_type, "s") != 0 && strcmp(key_type, "i") != 0 && strcmp(key_type, "d") != 0) {
             printf("Enter s i or d only.\n");
@@ -1323,7 +1323,7 @@ void map() {
         }
         printf("//Enter a value type, s for string, i for int d for double.\n");
         printf("//");
-        while (fgets(value_type, 2000, stdin)) {
+        while (fgets(value_type, MAX, stdin)) {
             value_type[strcspn(value_type, "\n")] = 0;
             if (strcmp(value_type, "s") != 0 && strcmp(value_type, "i") != 0 && strcmp(value_type, "d") != 0) {
                 printf("//Enter s i or d only.\n");
@@ -1340,19 +1340,19 @@ void map() {
         }
         printf("//Enter a key.\n");
         printf("//");
-        fgets(key, 2000, stdin);
+        fgets(key, MAX, stdin);
         key[strcspn(key, "\n")] = 0;
         printf("//Enter s if key is a string.\n");
         printf("//");
-        fgets(key_t, 2000, stdin);
+        fgets(key_t, MAX, stdin);
         key_t[strcspn(key_t, "\n")] = 0;
         printf("//Enter a value.\n");
         printf("//");
-        fgets(value, 2000, stdin);
+        fgets(value, MAX, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("//Enter s if the value is a string.\n");
         printf("//");
-        fgets(value_t, 2000, stdin);
+        fgets(value_t, MAX, stdin);
         value_t[strcspn(value_t, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
         if (strcmp(key_t, "s") == 0) {
@@ -1379,26 +1379,26 @@ void map() {
 void mapAccess() {
     char t[9][20] = {"std::cout << ", "\\n", "\"", " << std::endl;", ";", ".at(", ")", "[", "]"};
     char string[4][20] = {" std::cout << \"", "\\n", "\";}", "\" << std::endl;}"};
-    char var[2000];
-    char name[2000];
-    char text[2000];
-    char em[2000];
+    char var[MAX];
+    char name[MAX];
+    char text[MAX];
+    char em[MAX];
     while (1) {
         printf("//Enter the name of the map m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//Enter the name of the variable.\n");
         printf("//");
-        fgets(var, 2000, stdin);
+        fgets(var, MAX, stdin);
         var[strcspn(var, "\n")] = 0;
         printf("To enter a key error message for exception press e.\n");
         printf("//Press enter to not enter a error message.\n");
         printf("//");
-        fgets(em, 2000, stdin);
+        fgets(em, MAX, stdin);
         em[strcspn(em, "\n")] = 0;
         if (strcmp(em, "e") != 0) {
             printf("\n%s%s%s%s%s%s\n\n", t[0], name, t[5], var, t[6], t[3]);
@@ -1414,7 +1414,7 @@ void mapAccess() {
         } else if (strcmp(em, "e") == 0) {
             printf("//Enter error message.\n");
             printf("//");
-            fgets(text, 2000, stdin);
+            fgets(text, MAX, stdin);
             text[strcspn(text, "\n")] = 0;
             printf("\n%s%s%s%s%s%s\n\n", t[0], name, t[5], var, t[6], t[3]);
             printf("\n}\n\n");
@@ -1432,12 +1432,12 @@ void mapAccess() {
 
 void variablep() {
     char f[2][20] = {"std::string ", ";"};
-    char name[2000];
+    char name[MAX];
 
     while (1) {
         printf("//Enter name of variable m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
@@ -1451,19 +1451,19 @@ void variablep() {
 
 void variableValuep() {
     char v[4][20] = {"std::string ", " = ", "\"", ";"};
-    char name[2000];
-    char value[2000];
+    char name[MAX];
+    char value[MAX];
     while (1) {
         printf("//Enter a name of variable m for main.\n");
         printf("//");
-        fgets(name, 2000, stdin);
+        fgets(name, MAX, stdin);
         name[strcspn(name, "\n")] = 0;
         if (strcmp(name, "m") == 0) {
             break;
         }
         printf("//enter a value\n");
         printf("//");
-        fgets(value, 2000, stdin);
+        fgets(value, MAX, stdin);
         value[strcspn(value, "\n")] = 0;
         printf("\n%s%s%s%s%s%s%s\n\n", v[0], name, v[1], v[2], value, v[2], v[3]);
         if (strcmp(repeat, "r") != 0) {

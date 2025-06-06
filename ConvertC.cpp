@@ -10,6 +10,11 @@
 #include <cstring>
 #define MAX 2000 
 
+/*To use the const int MAX comment out
+the #define MAX and uncomment the const int variable.*/
+
+//const int MAX = 2000;
+
 char repeat[MAX];
 
 void choice() {

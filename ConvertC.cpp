@@ -736,7 +736,7 @@ void heapNum() {
 }
 
 void checkMalloc() {
-    char t[6][18] = {"if(", " == NULL){", "    printf(\"", "\\n", "\");", "    exit(1);}"};
+    char t[8][18] = {"if(", " == NULL){", "    printf(\"", "\\n", "\");", "    exit(1);}","    exit(1);","}"};
     char name[MAX];
     char em[MAX];
     while (1) {
@@ -754,6 +754,10 @@ void checkMalloc() {
         printf("\n%s%s%s\n", t[0], name, t[1]);
         printf("%s%s%s%s\n", t[2], em, t[3], t[4]);
         printf("%s\n\n", t[5]);
+        printf("\n%s%s%s\n", t[0], name, t[1]);
+        printf("%s%s%s%s\n", t[2], em, t[3], t[4]);
+        printf("%s\n", t[6]);
+	printf("%s\n\n", t[7]);    
         if (strcmp(repeat, "r") != 0) {
             break;
         }

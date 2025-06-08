@@ -651,7 +651,7 @@ void heap() {
 }
 
 void checkMalloc() {
-    std::string t[6] = {"if(", " == NULL){", "    printf(\"", "\\n", "\");", "    exit(1);}"};
+    std::string t[8] = {"if(", " == NULL){", "    printf(\"", "\\n", "\");", "    exit(1);}","    exit(1);","}"};
     std::string name;
     std::string em;
     while (true) {
@@ -667,6 +667,10 @@ void checkMalloc() {
         std::cout << "\n" << t[0] << name << t[1] << "\n";
         std::cout << t[2] << em << t[3] << t[4] << "\n";
         std::cout << t[5] << "\n\n";
+        std::cout << "\n" << t[0] << name << t[1] << "\n";
+        std::cout << t[2] << em << t[3] << t[4] << "\n";
+        std::cout << t[6] << "\n";
+        std::cout << t[7] << "\n\n";    
         if (repeat != "r") {
             break;
         }

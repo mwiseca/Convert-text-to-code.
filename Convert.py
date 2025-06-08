@@ -503,7 +503,7 @@ def heap_numbers():
 
 
 def check_malloc():
-    t = ["if("," == NULL){",'    printf("',"\\n",'");',"    exit(1);}"]
+    t = ["if("," == NULL){",'    printf("',"\\n",'");',"    exit(1);}","    exit(1);","}"]
     while True:
         print("//Enter the name m for main.")
         name = input("//")
@@ -514,6 +514,10 @@ def check_malloc():
         print("\n"+t[0]+name+t[1])
         print(t[2]+em+t[3]+t[4])
         print(t[5]+"\n")
+        print("\n"+t[0]+name+t[1])
+        print(t[2]+em+t[3]+t[4])
+        print(t[6])
+        print(t[7]+"\n")
         if repeat != "r":
             return ""
 

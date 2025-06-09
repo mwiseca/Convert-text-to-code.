@@ -22,14 +22,19 @@ void fgetsBuffer() {
 	}
 	std::cout << "//Enter the memory to be allocated to the variable 5 minimum.\n";
 	std::cout << "//";
-	while(getline(std::cin,me)) {
-	    m = std::stoi(me);
-	    if(m <=4) {
-	        std::cout << "//\nEnter a number 5 or more.\n\n";
-            } else {
-	        break;
-	    }
-	}
+        while(true) {
+	    try {	
+                getline(std::cin,me);	        
+	            m = std::stoi(me);
+	        if(m <=4) {
+	            std::cout << "//\nEnter a number 5 or more.\n\n";
+                } else {
+	            break;
+	        } 
+	    }catch(std::invalid_argument){
+	        std::cout << "\n//Enter a number only.\n\n";
+		}
+	 }
 	std::cout << "//enter the function name.\n";
 	std::cout << "//";
 	getline(std::cin,function);

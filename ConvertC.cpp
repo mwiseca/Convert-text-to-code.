@@ -31,7 +31,7 @@ void choice() {
     printf("//Enter f for fgets.\n");
     printf("//Enter fs for fgets with sizeof operator.\n");
     printf("//Enter fb for fgets to use with cb to clear input buffer without having ");
-    printf("//to press enter twice.\n");
+    printf("to press enter twice.\n");
     printf("//Enter s for scanf for strings to allow for white spaces.\n");
     printf("//Enter sb for scanf basic no white spaces.\n");
     printf("//Enter si for scanf for integers and doubles.\n");

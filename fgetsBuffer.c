@@ -38,23 +38,23 @@ void fgetsBuffer () {
 	function[strcspn(function,"\n")]=0;
 	printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);
 	printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
-	printf("if(strlen(%s) > %d) {\n",v,m - 1);
+	printf("if(strlen(%s) >= %d) {\n",v,m - 1);
 	printf("    %s();\n",function);
 	printf("}\n\n");
 	printf("\n%s%s%s%s%s%s%s\n",f[6], f[0], v, f[1], me, f[1], f[8]);
 	printf("%s%s%s%s%s%s%s\n",f[7], v, f[3], v, f[1], f[4], f[5]);
-	printf("    if(strlen(%s) > %d) {\n",v,m - 1);
+	printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
 	printf("        %s();\n",function);
 	printf("    }\n\n");
 
-	printf("\n%s%s%s%s%s%s%s\n", f[0], v, f[1],f[9],v,f[10], f[1]);
+	printf("\n%s%s%s%s%s%s%s\n", f[0], v, f[1],f[9],v,f[10]);
 	printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
-	printf("if(strlen(%s) > %d) {\n",v,m - 1);
+	printf("if(strlen(%s) >= %d) {\n",v,m - 1);
 	printf("    %s();\n",function);
 	printf("}\n\n");
 	printf("\n%s%s%s%s%s%s%s\n",f[6], f[0], v, f[1],f[9],v, f[11]);	
 	printf("%s%s%s%s%s%s%s\n",f[7], v, f[3], v, f[1], f[4], f[5]);
-	printf("    if(strlen(%s) > %d) {\n",v,m - 1);
+	printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
 	printf("        %s();\n",function);
 	printf("    }\n\n");
 

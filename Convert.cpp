@@ -171,8 +171,10 @@ void fgetsBuffer() {
 	        } 
 	    }catch(std::invalid_argument){
 	        std::cout << "\n//Enter a number only.\n\n";
-		}
-	 }
+	    }catch(std::out_of_range){
+	        std::cout << "\n//Enter a lower number.\n";
+	    }  
+	}
 	std::cout << "//enter the function name.\n";
 	std::cout << "//";
 	getline(std::cin,function);

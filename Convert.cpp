@@ -165,7 +165,7 @@ void fgetsBuffer() {
                 getline(std::cin,me);	        
 	            m = std::stoi(me);
 	        if(m <=4) {
-	            std::cout << "//\nEnter a number 5 or more.\n\n";
+	            std::cout << "\n//Enter a number 5 or more.\n\n";
                 } else {
 	            break;
 	        } 

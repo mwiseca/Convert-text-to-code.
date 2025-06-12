@@ -168,7 +168,7 @@ def fgets_Buffer():
         print("}\n");
         print(f"{f[6]}{f[0]}{v}{f[1]}{f[9]}{v}{f[11]}")
         print(f[7] + v + f[3] + v + f[1] + f[4] + f[5])
-        print(f"    if(strlen({v}) >= me-1){{") 
+        print(f"    if(strlen({v}) >= {me-1}){{") 
         print("        " + function + "();") 
         print("    }\n")
         if repeat != "r":

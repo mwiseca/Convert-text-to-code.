@@ -214,7 +214,7 @@ void fgetsBuffer() {
 	        break;
 	    }
 	}
-	printf("//enter the function name.\n");
+	printf("//Enter the function name.\n");
 	fgets(function,SIZE,stdin);
 	function[strcspn(function,"\n")]=0;
 	if(strlen(v) >= MAX){ 

@@ -180,12 +180,12 @@ void fgetsBuffer() {
 	      me[strcspn(me, "\n")] = 0;
 	    m = atoi(me);
 	    if(m <=4) {
-	        printf("//\nEnter a number 5 or more.\n\n");
+	        printf("\n//Enter a number 5 or more.\n\n");
             } else {
 	        break;
 	    }
 	}
-	printf("//enter the function name.\n");
+	printf("//Enter the function name.\n");
 	fgets(function,MAX,stdin);
 	function[strcspn(function,"\n")]=0;
 	printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);

@@ -182,7 +182,7 @@ void fgetsSizeof() {
 }
 
 void fgetsBuffer() {
-    //char f[12][15] = {"fgets(", ",", "stdin);", "[strcspn(", "\"\\n", "\")]=0;", "while(", "      ", "stdin)) {","sizeof(","),stdin);","),stdin)) {"};
+    char f[12][15] = {"fgets(", ",", "stdin);", "[strcspn(", "\"\\n", "\")]=0;", "while(", "      ", "stdin)) {","sizeof(","),stdin);","),stdin)) {"};
     char v[SIZE];
     char me[10];
     char function[SIZE];

@@ -51,4 +51,6 @@ may 30 2025.
 Added: ConvertLimit.cpp fgets to use with cb to clear the input buffer and not have to press enter twice.
 Check fb in choices.
 June 11 2025.
-
+Added: fgets with sizeof operator was added to the other files.
+Check fb in choices.
+June 15 2025.

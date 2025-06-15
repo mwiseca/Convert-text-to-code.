@@ -15,7 +15,7 @@ Check mi in choices and Multiif for code.
 November 30 2024.
 Convert.py and Convert-mapRepeat.malloc.cpp had 2 condition C if statements for strings added.
 Check mi in choices and multiIf for code.
-December2 2024.
+December 2 2024.
 Two condition if statements was added.
 See mip in choices and the multiIfCpp function to see the code.
 December 18 2024.
@@ -48,4 +48,7 @@ March 10 2025.
 Added: fgets with sizeof operator was added.
 Check fs in choices.
 may 30 2025.
+Added: ConvertLimit.cpp fgets to use with cb to clear the input buffer and not have to press enter twice.
+Check fb in choices.
+June 11 2025.
 

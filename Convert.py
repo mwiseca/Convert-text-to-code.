@@ -14,7 +14,8 @@ def choice():
     print("//Enter c for strings with no quotation marks.")
     print("//Enter cy for what's needed to copy and paste to finish a simple program.")
     print("//Enter f for fgets and removal of new line character.")
-    print("//Enter fs for fgets with sizeof operator.\n")
+    print("//Enter fs for fgets with sizeof operator.")
+    print("///Enter fb for fgets to use with cb to clear input buffer without having to press enter twice.")
     print("//Enter fc for void functions C C++.")
     print("//Enter s for scanf for strings.")
     print("//Enter sb for scanf basic no white spaces.")
@@ -130,6 +131,50 @@ def fgets_sizeof():
             return ""
 
 
+def fgets_Buffer():
+    f = ["fgets(", ",", "stdin);", "[strcspn(", "\"\\n", "\")]=0;", "while(", "      ", "stdin)) {","sizeof(","),stdin);","),stdin)) {"]
+    while True:
+        print("//Enter the name of the variable m for main.")
+        v = input("//")
+        if v == "m":
+            break
+        print("//Enter the memory to be allocated to the variable 5 minimum.\n")
+        while True:
+            try:
+                me = int(input("//"))
+                if me <= 4:
+                    print("//\nEnter a number 5 or more.\n")  
+                else:
+                    break
+            except ValueError:
+                print("\n//Enter a number only.\n")
+        print("//Enter the function name.")
+        function = input("//")
+        print("\n")
+        print(f"{f[0]}{v}{f[1]}{me}{f[1]}{f[2]}")
+        print(v + f[3] + v + f[1] + f[4] + f[5])
+        print(f"if(strlen({v}) >= {me-1}){{")
+        print("    " + function + "();")
+        print("}\n");
+        print(f"{f[6]} {f[0]}{v}{f[1]}{me}{f[1]} {f[8]}")
+        print(f[7] + v + f[3] + v + f[1] + f[4] + f[5])
+        print(f"    if(strlen({v}) >= {me-1}){{") 
+        print("        " + function + "();") 
+        print("    }\n")
+        print(f"{f[0]}{v}{f[1]}{f[9]}{v}{f[10]}")
+        print(v + f[3] + v + f[1] + f[4] + f[5])
+        print(f"if(strlen({v}) >= {me-1}){{")
+        print("    " + function + "();") 
+        print("}\n");
+        print(f"{f[6]}{f[0]}{v}{f[1]}{f[9]}{v}{f[11]}")
+        print(f[7] + v + f[3] + v + f[1] + f[4] + f[5])
+        print(f"    if(strlen({v}) >= {me-1}){{") 
+        print("        " + function + "();") 
+        print("    }\n")
+        if repeat != "r":
+            return ""
+    
+        
 def scanf():
     t = ['scanf("%','[^\\n]",',");","getchar();"]
 
@@ -503,7 +548,7 @@ def heap_numbers():
 
 
 def check_malloc():
-    t = ["if("," == NULL){",'    printf("',"\\n",'");',"    exit(1);}"]
+    t = ["if("," == NULL){",'    printf("',"\\n",'");',"    exit(1);}","    exit(1);","}"]
     while True:
         print("//Enter the name m for main.")
         name = input("//")
@@ -514,6 +559,10 @@ def check_malloc():
         print("\n"+t[0]+name+t[1])
         print(t[2]+em+t[3]+t[4])
         print(t[5]+"\n")
+        print("\n"+t[0]+name+t[1])
+        print(t[2]+em+t[3]+t[4])
+        print(t[6])
+        print(t[7]+"\n")
         if repeat != "r":
             return ""
 
@@ -1033,6 +1082,7 @@ switch = {
          "c": empty_string,
          "f": fgets,
          "fs": fgets_sizeof,
+         "fb": fgets_Buffer,
          "s": scanf,
          "sb": scanf_basic,
          "cb": clear_buffC,

@@ -17,7 +17,6 @@ and the #define MAX and uncomment the const int variables.*/
 
 //const int SIZE = 100;
 //const int MAX = 99;
-
 char repeat[100];
 
 void clear(){

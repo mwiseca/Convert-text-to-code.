@@ -127,20 +127,20 @@ void fgetsSizeof() {
 
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
-	std::cout << "//";
-	getline(std::cin,name);
-	if (name == "m") {
-	    break;
-	}
-	std::cout << "\n" <<  f[0] << name << f[1] << f[2] << name << f[3] << "\n";
-	std::cout << name << f[4] << name << f[1] << f[5] << f[6] << "\n\n";
-	std::cout << "\n" << f[9] << f[0] << name << f[1] << f[2] << name << f[11] << "\n";
-	std::cout << f[10] << name << f[4] << name << f[1] << f[5] << f[6] << "\n\n";
-	std::cout << "\n" << f[0] << name << f[1] << f[2] << name << f[3] << "\n";
-	std::cout << name << f[7] << name << f[8] << "\n\n";
-	if (repeat != "r") {
-	    break;
-	}
+	    std::cout << "//";
+	    getline(std::cin,name);
+	    if (name == "m") {
+	        break;
+	    }
+	    std::cout << "\n" <<  f[0] << name << f[1] << f[2] << name << f[3] << "\n";
+	    std::cout << name << f[4] << name << f[1] << f[5] << f[6] << "\n\n";
+	    std::cout << "\n" << f[9] << f[0] << name << f[1] << f[2] << name << f[11] << "\n";
+	    std::cout << f[10] << name << f[4] << name << f[1] << f[5] << f[6] << "\n\n";
+	    std::cout << "\n" << f[0] << name << f[1] << f[2] << name << f[3] << "\n";
+	    std::cout << name << f[7] << name << f[8] << "\n\n";
+	    if (repeat != "r") {
+	        break;
+	    }
     }
 }
 
@@ -153,54 +153,54 @@ void fgetsBuffer() {
 
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
-	std::cout << "//";
-	getline(std::cin,v);
-	if (v  ==  "m") {
-	    break;
-	}
-	std::cout << "//Enter the memory to be allocated to the variable 5 minimum.\n";
-	std::cout << "//";
+	    std::cout << "//";
+	    getline(std::cin,v);
+	    if (v  ==  "m") {
+	       break;
+	    }
+	    std::cout << "//Enter the memory to be allocated to the variable 5 minimum.\n";
+	    std::cout << "//";
         while(true) {
-	    try {	
+	        try {	
                 getline(std::cin,me);	        
 	            m = std::stoi(me);
-	        if(m <=4) {
-	            std::cout << "\n//Enter a number 5 or more.\n\n";
+	            if(m <=4) {
+	                std::cout << "\n//Enter a number 5 or more.\n\n";
                 } else {
 	            break;
 	        } 
-	    }catch(std::invalid_argument){
-	        std::cout << "\n//Enter a number only.\n\n";
-	    }catch(std::out_of_range){
-	        std::cout << "\n//Enter a lower number.\n\n";
-	    }  
-	}
-	std::cout << "//enter the function name.\n";
-	std::cout << "//";
-	getline(std::cin,function);
-	std::cout << "\n" <<  f[0] << v << f[1] << me << f[1] << f[2] << "\n";
-	std::cout << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
-	std::cout << "if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
-	std::cout << "    " << function << "();\n";
-	std::cout << "}\n\n";	
-	std::cout << "\n" << f[6] << f[0] << v << f[1] << me << f[1] << f[8] << "\n";
-	std::cout << f[7] << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
-	std::cout << "    if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
-	std::cout << "        " << function << "();\n";
-	std::cout << "    }\n\n";
+	        }catch(std::invalid_argument){
+	            std::cout << "\n//Enter a number only.\n\n";
+	        }catch(std::out_of_range){
+	            std::cout << "\n//Enter a lower number.\n\n";
+	        }  
+	    }
+	    std::cout << "//enter the function name.\n";
+	    std::cout << "//";
+	    getline(std::cin,function);
+	    std::cout << "\n" <<  f[0] << v << f[1] << me << f[1] << f[2] << "\n";
+	    std::cout << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+	    std::cout << "if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
+	    std::cout << "    " << function << "();\n";
+	    std::cout << "}\n\n";	
+	    std::cout << "\n" << f[6] << f[0] << v << f[1] << me << f[1] << f[8] << "\n";
+	    std::cout << f[7] << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+	    std::cout << "    if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
+	    std::cout << "        " << function << "();\n";
+	    std::cout << "    }\n\n";
 
-	std::cout  << "\n" << f[0] << v << f[1] << f[9] << v << f[10] << "\n";
-	std::cout  <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
-	std::cout << "if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
-	std::cout << "    " << function << "();\n";
-	std::cout << "}\n\n";	
-	std::cout << "\n" << f[6] << f[0] << v << f[1] << f[9] << v << f[11] << "\n";	
-	std::cout << f[7] << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
-	std::cout << "    if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
-	std::cout << "        " << function << "();\n";
-	std::cout << "    }\n\n";	
-	if (repeat != "r") {
-	    break;
+	    std::cout  << "\n" << f[0] << v << f[1] << f[9] << v << f[10] << "\n";
+	    std::cout  <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+	    std::cout << "if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
+	    std::cout << "    " << function << "();\n";
+	    std::cout << "}\n\n";	
+	    std::cout << "\n" << f[6] << f[0] << v << f[1] << f[9] << v << f[11] << "\n";	
+	    std::cout << f[7] << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+	    std::cout << "    if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
+	    std::cout << "        " << function << "();\n";
+	    std::cout << "    }\n\n";	
+	    if (repeat != "r") {
+	        break;
         }	
     }
 }
@@ -253,21 +253,21 @@ void clearBuffC() {
     std::string t[5] = {"void ", "(", "){", "}","();"};	
     std::string name;
     while (true) {
-	std::cout << "//Name function m for main.\n";
-	std::cout << "//";
-	getline(std::cin,name);
-    if (name == "m") {
-	break;
-    }
+	    std::cout << "//Name function m for main.\n";
+	    std::cout << "//";
+	    getline(std::cin,name);
+        if (name == "m") {
+	        break;
+        }
         std::cout << "\n" <<  t[0] <<  name << t[1] << t[2] << "\n";
-	std::cout << "    int clear;\n";   
-	std::cout << "    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n";
-	std::cout << "    " << t[3] << "\n";	
-	std::cout << t[3] << "\n\n";
-	std::cout << name << t[4] << "\n\n";
-	if (repeat != "r")  {
-	    break;
-	}
+	    std::cout << "    int clear;\n";   
+	    std::cout << "    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n";
+	    std::cout << "    " << t[3] << "\n";	
+	    std::cout << t[3] << "\n\n";
+	    std::cout << name << t[4] << "\n\n";
+	    if (repeat != "r")  {
+	        break;
+	    }
     }	
 }
 
@@ -338,17 +338,17 @@ void multiIf() {
         } else if (select == "e") {
             select = t[2];
         }
-	std::cout << "//Enter a name of first m for main.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a name of first m for main.\n";
+	    std::cout << "//";
         getline(std::cin,name);
         if (name == "m") {
             break;
         }
-	std::cout << "//Enter a value.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a value.\n";
+	    std::cout << "//";
         getline(std::cin,value);
-	std::cout << "//Enter a comparison a for equal b for not equal.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a comparison a for equal b for not equal.\n";
+	    std::cout << "//";
         while (getline(std::cin,compare)) {
             if (compare != "a" && compare != "b") {
 	        std::cout << "//Enter a or b only.\n";
@@ -361,8 +361,8 @@ void multiIf() {
         } else if (compare == "b") {
             compare = t[5];
         }
-	std::cout << "//Enter a operator a for and o for or.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a operator a for and o for or.\n";
+	    std::cout << "//";
         while (getline(std::cin,op)) {
             if (op !=  "a" && op != "o") {
 	        std::cout << "//Enter a or o only.\n";
@@ -376,14 +376,14 @@ void multiIf() {
             op = t[9];
         }
 
-	std::cout << "//Enter the second name,\n";
-	std::cout << "//";
+	    std::cout << "//Enter the second name,\n";
+	    std::cout << "//";
         getline(std::cin,sname);
-	std::cout << "Enter the second value.\n";
-	std::cout << "//";
+	    std::cout << "Enter the second value.\n";
+	    std::cout << "//";
         getline(std::cin,svalue);
-	std::cout << "Enter a second comparison a for equal b for not equal\n";
-	std::cout << "//";
+	    std::cout << "Enter a second comparison a for equal b for not equal\n";
+	    std::cout << "//";
         while (getline(std::cin,scompare)) {
             if (scompare != "a" && scompare != "b") {
 	        std::cout << "//Enter a or b only.\n";
@@ -391,7 +391,7 @@ void multiIf() {
                 break;
             }
         }
-	if (scompare == "a") {
+	    if (scompare == "a") {
             scompare = t[6];
         } else if (scompare == "b") {
             scompare = t[7];
@@ -926,14 +926,14 @@ void checkScanfL() {
         } else if (ch != "i"  && ch != "d") {
             std::cout << "//Choose i or d or m only.\n";
 	    continue;
-	}
-	std::cout << "//Enter the name of variable.\n";
-	std::cout << "//";
-	getline(std::cin,name);
-	std::cout << "//Enter memory allocated to variable.\n";
-	std::cout << "//";
-	getline(std::cin,mem);
-	if (ch == "i") {
+	    }
+	    std::cout << "//Enter the name of variable.\n";
+	    std::cout << "//";
+	    getline(std::cin,name);
+	    std::cout << "//Enter memory allocated to variable.\n";
+	    std::cout << "//";
+	    getline(std::cin,mem);
+	    if (ch == "i") {
 	    std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[4] << t[5] << name << t[6] << "\n\n";
 	    std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[4] << name << t[6] << "    //Use with malloc.\n\n";
 	    std::cout << "\n" << t[7] << t[1] << mem << t[2] << t[4] << t[5] << name << t[6] << "\n\n";
@@ -947,8 +947,8 @@ void checkScanfL() {
 	    std::cout << "\n" << t[0] << t[1] << mem << t[3] << t[4] << name << t[6] << "    //Use with malloc.\n\n"; 
 	    std::cout << "\n" << t[7] << t[1] << mem << t[3] << t[4] << t[5] << name << t[6] << "\n\n";
 	    std::cout << "\n" <<  t[7] << t[1] << mem << t[3] << t[4] << name << t[6] << "    //Use with malloc.\n\n";
-	}
-	std::cout << "\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n";
+	    }
+	    std::cout << "\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n";
         if (repeat != "r") {
             break;
         }
@@ -1114,7 +1114,7 @@ void multiIfCpp(){
     std::string scompare;
 
     while (true) {
-	std::cout << "//Enter i for if, e for else if.\n";
+	    std::cout << "//Enter i for if, e for else if.\n";
         while (getline(std::cin,select)) {
             if (select != "i" && select != "e") {
 	        std::cout << "//Enter i or e only.\n";
@@ -1127,17 +1127,17 @@ void multiIfCpp(){
         } else if (select == "e") {
             select = t[1];
         }
-	std::cout << "//Enter a name of first m for main.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a name of first m for main.\n";
+	    std::cout << "//";
         getline(std::cin,name);
         if (name == "m") {
             break;
         }
-	std::cout << "//Enter a value.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a value.\n";
+	    std::cout << "//";
         getline(std::cin,value);
-	std::cout << "//Enter a comparison a for equal b for not equal.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a comparison a for equal b for not equal.\n";
+	    std::cout << "//";
         while (getline(std::cin,compare)) {
             if (compare != "a" && compare != "b") {
 	        std::cout << "//Enter a or b only.\n";
@@ -1150,8 +1150,8 @@ void multiIfCpp(){
         } else if (compare == "b") {
             compare = t[3];
         }
-	std::cout << "//Enter a operator a for and o for or.\n";
-	std::cout << "//";
+	    std::cout << "//Enter a operator a for and o for or.\n";
+	    std::cout << "//";
         while (getline(std::cin,op)) {
             if (op !=  "a" && op != "o") {
 	        std::cout << "//Enter a or o only.\n";
@@ -1165,14 +1165,14 @@ void multiIfCpp(){
             op = t[6];
         }
 
-	std::cout << "//Enter the second name,\n";
-	std::cout << "//";
+	    std::cout << "//Enter the second name,\n";
+	    std::cout << "//";
         getline(std::cin,sname);
-	std::cout << "Enter the second value.\n";
-	std::cout << "//";
+	    std::cout << "Enter the second value.\n";
+	    std::cout << "//";
         getline(std::cin,svalue);
-	std::cout << "Enter a second comparison a for equal b for not equal\n";
-	std::cout << "//";
+	    std::cout << "Enter a second comparison a for equal b for not equal\n";
+	    std::cout << "//";
         while (getline(std::cin,scompare)) {
             if (scompare != "a" && scompare != "b") {
 	        std::cout << "//Enter a or b only.\n";
@@ -1180,7 +1180,7 @@ void multiIfCpp(){
                 break;
             }
         }
-	if (scompare == "a") {
+	    if (scompare == "a") {
             scompare = t[2];
         } else if (scompare == "b") {
             scompare = t[3];
@@ -1210,8 +1210,8 @@ void userInput() {
         std::cout << "\n" << f[5] << v << f[6] << "\n\n";
         std::cout << "\nstd::cin.clear();";
         std::cout << "\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n";
-	std::cout << "\nstd::cin.clear();\n";
-	std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');     //Clears entire input buffer.\n\n";
+	    std::cout << "\nstd::cin.clear();\n";
+	    std::cout << "std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');     //Clears entire input buffer.\n\n";
         if (repeat != "r") {
             break;
         }
@@ -1230,10 +1230,10 @@ void clearBuff() {
             break;
         }
         std::cout << "\n" << t[0] << name << t[1] << t[2] << "\n"; 
-	std::cout << "    std::cin.clear();\n";
+	    std::cout << "    std::cin.clear();\n";
         std::cout << "    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n";
-	std::cout << t[3] << "\n\n";
-	std::cout << name << t[4] << "\n\n";
+	    std::cout << t[3] << "\n\n";
+	    std::cout << name << t[4] << "\n\n";
         if (repeat != "r") {
             break;
         }
@@ -1465,10 +1465,10 @@ int main() {
         {"c",      stringEmpty}, 
         {"f",           fgetss},
         {"fs",     fgetsSizeof},
-	{"fb",     fgetsBuffer},
+	    {"fb",     fgetsBuffer},
         {"s",           scanff},           
         {"sb",      scanfBasic},
-	{"cb",      clearBuffC},
+	    {"cb",      clearBuffC},
         {"i",      ifStatement}, 
         {"e",           elseIf},
         {"mi",         multiIf},	
@@ -1487,7 +1487,7 @@ int main() {
         {"si",        scanfNum},
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
-	{"csl",    checkScanfL},
+	    {"csl",    checkScanfL},
         {"sp",      cppStrings},
         {"cp",        estringp},    
         {"aap",        arraysp}, 

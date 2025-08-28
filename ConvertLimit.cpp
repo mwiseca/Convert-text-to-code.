@@ -427,10 +427,10 @@ void multiIf() {
         printf("//Enter i for if, e for else if.\n");
         while (fgets(select, SIZE, stdin)) {
             select[strcspn(select, "\n")] = 0;
-	    if (strlen(select) >= MAX) {
+	        if (strlen(select) >= MAX) {
                 clear(); 
             }
-	    if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
+	        if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
                 printf("//Enter i or e only.\n");
             } else {
                 break;
@@ -566,10 +566,10 @@ void ifNumber() {
         printf("//");
         while (fgets(op, SIZE, stdin)) {
             op[strcspn(op, "\n")] = 0;
-	    if (strlen(op) >= MAX) {
+	        if (strlen(op) >= MAX) {
                 clear(); 
-	    }
-	    if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
+	        }
+	        if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
                 printf("//Enter a or b or c or d only.\n");
             } else {
                 break;
@@ -641,9 +641,9 @@ void ifHeap() {
         printf("//");
         while (fgets(op, SIZE, stdin)) {
             op[strcspn(op, "\n")] = 0;
-	    if (strlen(op) >= MAX) {
+	        if (strlen(op) >= MAX) {
                 clear(); 
-	    }
+	        }
             if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
                 printf("//Enter a or b or c or d only.\n");
             } else {
@@ -804,7 +804,7 @@ void numArray() {
         printf("//");
         while (fgets(typ,SIZE, stdin)) {
             typ[strcspn(typ, "\n")] = 0;
-	    if (strlen(typ) >= MAX) {
+	        if (strlen(typ) >= MAX) {
                 clear(); 
             } 
             if (strcmp(typ, "i") != 0 && strcmp(typ, "d") != 0) {
@@ -1718,21 +1718,21 @@ void map() {
         printf("//");
         fgets(key_t,SIZE, stdin);
         key_t[strcspn(key_t, "\n")] = 0;
-	if (strlen(key_t) >= MAX) {
+	    if (strlen(key_t) >= MAX) {
             clear(); 
         } 
         printf("//Enter a value.\n");
         printf("//");
         fgets(value,SIZE, stdin);
         value[strcspn(value, "\n")] = 0;
-	if (strlen(value) >= MAX) {
+	    if (strlen(value) >= MAX) {
             clear(); 
         } 
         printf("//Enter s if the value is a string.\n");
         printf("//");
         fgets(value_t,SIZE, stdin);
         value_t[strcspn(value_t, "\n")] = 0;
-	if (strlen(value_t) >= MAX) {
+	    if (strlen(value_t) >= MAX) {
             clear(); 
         } 
         printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
@@ -1769,7 +1769,7 @@ void mapAccess() {
         printf("//");
         fgets(name, SIZE, stdin);
         name[strcspn(name, "\n")] = 0;
-	if (strlen(name) >= MAX) {
+	    if (strlen(name) >= MAX) {
             clear(); 
         } 
         if (strcmp(name, "m") == 0) {
@@ -1779,7 +1779,7 @@ void mapAccess() {
         printf("//");
         fgets(var,SIZE, stdin);
         var[strcspn(var, "\n")] = 0;
-	if (strlen(name) >= MAX) {
+	    if (strlen(name) >= MAX) {
             clear(); 
         } 
         printf("To enter a key error message for exception press e.\n");
@@ -1787,7 +1787,7 @@ void mapAccess() {
         printf("//");
         fgets(em, SIZE, stdin);
         em[strcspn(em, "\n")] = 0;
-	if (strlen(em) >= MAX) {
+	    if (strlen(em) >= MAX) {
             clear(); 
         } 
         if (strcmp(em, "e") != 0) {

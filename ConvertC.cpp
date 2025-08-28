@@ -140,22 +140,22 @@ void fgetsSizeof() {
             
     while (1) {
         printf("//Enter name of variable m for main.\n");
-	printf("//");
-	fgets(name, MAX, stdin);
-	name[strcspn(name, "\n")] = 0;
-	if (strcmp(name, "m") == 0) {
-	    break;
-	}
-	printf("//Enter the memory to be allocated to the variable.\n");
-	printf("\n%s%s%s%s%s%s\n", f[0], name, f[1],  f[2],name, f[3]);
-	printf("%s%s%s%s%s%s\n\n", name, f[4], name, f[1], f[5], f[6]);
-	printf("\n%s%s%s%s%s%s%s\n",f[9], f[0], name, f[1], f[2] ,name, f[11]);
-	printf("%s%s%s%s%s%s%s\n\n",f[10], name, f[4], name, f[1], f[5], f[6]);
-	printf("\n%s%s%s%s%s%s\n", f[0], name, f[1],  f[2],name, f[3]); 
-	printf("%s%s%s%s\n\n", name, f[7], name, f[8]);
-	if (strcmp(repeat, "r") != 0) {
-	    break;
-	}
+	    printf("//");
+	    fgets(name, MAX, stdin);
+	    name[strcspn(name, "\n")] = 0;
+	    if (strcmp(name, "m") == 0) {
+	        break;
+	    }
+	    printf("//Enter the memory to be allocated to the variable.\n");
+	    printf("\n%s%s%s%s%s%s\n", f[0], name, f[1],  f[2],name, f[3]);
+	    printf("%s%s%s%s%s%s\n\n", name, f[4], name, f[1], f[5], f[6]);
+	    printf("\n%s%s%s%s%s%s%s\n",f[9], f[0], name, f[1], f[2] ,name, f[11]);
+	    printf("%s%s%s%s%s%s%s\n\n",f[10], name, f[4], name, f[1], f[5], f[6]);
+	    printf("\n%s%s%s%s%s%s\n", f[0], name, f[1],  f[2],name, f[3]); 
+	    printf("%s%s%s%s\n\n", name, f[7], name, f[8]);
+	    if (strcmp(repeat, "r") != 0) {
+	        break;
+	    }
     }
 }
 
@@ -168,48 +168,48 @@ void fgetsBuffer() {
 
     while (1) {
         printf("//Enter name of variable m for main.\n");
-	printf("//");
-	fgets(v, MAX, stdin);
-	v[strcspn(v, "\n")] = 0;
-	if (strcmp(v, "m") == 0) {
-	    break;
-	}
-	printf("//Enter the memory to be allocated to the variable 5 minimum.\n");
-	printf("//");
-	while(fgets(me, MAX, stdin)) {
-	      me[strcspn(me, "\n")] = 0;
-	    m = atoi(me);
-	    if(m <=4) {
-	        printf("\n//Enter a number 5 or more.\n\n");
-            } else {
+	    printf("//");
+	    fgets(v, MAX, stdin);
+	    v[strcspn(v, "\n")] = 0;
+	    if (strcmp(v, "m") == 0) {
 	        break;
 	    }
-	}
-	printf("//Enter the function name.\n");
-	fgets(function,MAX,stdin);
-	function[strcspn(function,"\n")]=0;
-	printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);
-	printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
-	printf("if(strlen(%s) >= %d) {\n",v,m - 1);
-	printf("    %s();\n",function);
-	printf("}\n\n");
-	printf("\n%s%s%s%s%s%s%s\n",f[6], f[0], v, f[1], me, f[1], f[8]);
-	printf("%s%s%s%s%s%s%s\n",f[7], v, f[3], v, f[1], f[4], f[5]);
-	printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
-	printf("        %s();\n",function);
-	printf("    }\n\n");
-	printf("\n%s%s%s%s%s%s\n", f[0], v, f[1],f[9],v,f[10]);
-	printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
-	printf("if(strlen(%s) >= %d) {\n",v,m - 1);
-	printf("    %s();\n",function);
-	printf("}\n\n");
-	printf("\n%s%s%s%s%s%s%s\n",f[6], f[0], v, f[1],f[9],v, f[11]);	
-	printf("%s%s%s%s%s%s%s\n",f[7], v, f[3], v, f[1], f[4], f[5]);
-	printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
-	printf("        %s();\n",function);
-	printf("    }\n\n");
-	if (strcmp(repeat, "r") != 0) {
-	    break;
+	    printf("//Enter the memory to be allocated to the variable 5 minimum.\n");
+	    printf("//");
+	    while(fgets(me, MAX, stdin)) {
+	          me[strcspn(me, "\n")] = 0;
+	        m = atoi(me);
+	        if(m <=4) {
+	            printf("\n//Enter a number 5 or more.\n\n");
+                } else {
+	            break;
+	        }
+	    }
+	    printf("//Enter the function name.\n");
+	    fgets(function,MAX,stdin);
+	    function[strcspn(function,"\n")]=0;
+	    printf("\n%s%s%s%s%s%s\n", f[0], v, f[1], me, f[1], f[2]);
+	    printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
+	    printf("if(strlen(%s) >= %d) {\n",v,m - 1);
+	    printf("    %s();\n",function);
+	    printf("}\n\n");
+	    printf("\n%s%s%s%s%s%s%s\n",f[6], f[0], v, f[1], me, f[1], f[8]);
+	    printf("%s%s%s%s%s%s%s\n",f[7], v, f[3], v, f[1], f[4], f[5]);
+	    printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
+	    printf("        %s();\n",function);
+	    printf("    }\n\n");
+	    printf("\n%s%s%s%s%s%s\n", f[0], v, f[1],f[9],v,f[10]);
+	    printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
+	    printf("if(strlen(%s) >= %d) {\n",v,m - 1);
+	    printf("    %s();\n",function);
+	    printf("}\n\n");
+	    printf("\n%s%s%s%s%s%s%s\n",f[6], f[0], v, f[1],f[9],v, f[11]);	
+	    printf("%s%s%s%s%s%s%s\n",f[7], v, f[3], v, f[1], f[4], f[5]);
+	    printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
+	    printf("        %s();\n",function);
+	    printf("    }\n\n");
+	    if (strcmp(repeat, "r") != 0) {
+	        break;
         }	
     }
 }
@@ -268,22 +268,22 @@ void clearBuffC() {
     char name[MAX];
 
     while (1) {
-	printf("//Name function m for main.\n");
-	printf("//");
-	fgets(name, MAX, stdin);
-	name[strcspn(name, "\n")] = 0;
-    if (strcmp(name, "m") == 0) {
-	break;
-    }
-	printf("\n%s%s%s%s\n", t[0], name, t[1], t[2]);
-	printf("    int clear;\n");   
-	printf("    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n");
-	printf("%s%s\n","    ",t[3]);	
-	printf("%s\n\n",t[3]);
-	printf("%s%s\n\n",name,t[4]);
-	if (strcmp(repeat, "r") != 0) {
+	    printf("//Name function m for main.\n");
+	    printf("//");
+	    fgets(name, MAX, stdin);
+	    name[strcspn(name, "\n")] = 0;
+        if (strcmp(name, "m") == 0) {
 	    break;
-	}
+        }
+	    printf("\n%s%s%s%s\n", t[0], name, t[1], t[2]);
+	    printf("    int clear;\n");   
+	    printf("    while ((clear = getc(stdin)) != '\\n' && clear != EOF) {\n");
+	    printf("%s%s\n","    ",t[3]);	
+	    printf("%s\n\n",t[3]);
+	    printf("%s%s\n\n",name,t[4]);
+	    if (strcmp(repeat, "r") != 0) {
+	        break;
+	    }
     }	
 }
 
@@ -814,7 +814,7 @@ void checkMalloc() {
         printf("\n%s%s%s\n", t[0], name, t[1]);
         printf("%s%s%s%s\n", t[2], em, t[3], t[4]);
         printf("%s\n", t[6]);
-	printf("%s\n\n", t[7]);    
+	    printf("%s\n\n", t[7]);    
         if (strcmp(repeat, "r") != 0) {
             break;
         }
@@ -1040,9 +1040,9 @@ void checkScanfL() {
 	} else if (strcmp(ch, "d") == 0) {
 	    printf("\n%s%s%s%s%s%s%s%s\n \n", t[0],t[1],mem, t[3], t[4], t[5], name, t[6]);
 	    printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[0],t[1],mem, t[3], t[4], name, t[6]);
-            printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[3], t[4], t[5],name, t[6]);
-            printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem, t[3], t[4],name, t[6]);
-            }
+        printf("\n%s%s%s%s%s%s%s%s\n\n", t[7], t[1],mem, t[3], t[4], t[5],name, t[6]);
+        printf("\n%s%s%s%s%s%s%s    //Use with malloc.\n\n", t[7], t[1],mem, t[3], t[4],name, t[6]);
+        }
         printf("\ncontinue;}\n\nbreak;}\n\nexit(1);}\n\n__fpurge(stdin);\n\nfflush(stdin);\n\n}\n\n");
         if (strcmp(repeat, "r") != 0) {
             break;
@@ -1322,8 +1322,8 @@ void userInput() {
         printf("\n%s%s%s\n\n", f[5], v, f[6]);
         printf("\nstd::cin.clear();");
         printf("\nstd::cin.ignore(2000, '\\n');     //Clears input buffer.\n\n");
-	printf("\nstd::cin.clear();\n");    
-	printf("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');    //Clears entire input buffer.\n\n");
+	    printf("\nstd::cin.clear();\n");    
+	    printf("std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');    //Clears entire input buffer.\n\n");
         if (strcmp(repeat, "r") != 0) {
             break;
         }
@@ -1345,8 +1345,8 @@ void clearBuff() {
         printf("\n%s%s%s%s\n", t[0], name, t[1], t[2]);
         printf("    std::cin.clear();\n");
         printf("    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\\n');\n");
-	printf("%s\n\n",t[3]);
-	printf("%s%s\n\n",name,t[4]);
+	    printf("%s\n\n",t[3]);
+	    printf("%s%s\n\n",name,t[4]);
         if (strcmp(repeat, "r") != 0) {
             break;
         }
@@ -1592,10 +1592,10 @@ int main() {
         {"c",      stringEmpty},  
         {"f",           fgetss},  
         {"fs",     fgetsSizeof},
-	{"fb",     fgetsBuffer},
+	    {"fb",     fgetsBuffer},
         {"s",           scanff},      
         {"sb",      scanfBasic}, 
-	{"cb",      clearBuffC},
+	    {"cb",      clearBuffC},
         {"i",      ifStatement},
         {"e",           elseIf},
         {"mi",         multiIf},	
@@ -1615,7 +1615,7 @@ int main() {
         {"si",        scanfNum},   
         {"sh",       scanfHeap},
         {"sc",      checkScanf},
-	{"csl",    checkScanfL},
+	    {"csl",    checkScanfL},
         {"sp",      cppStrings}, 
         {"cp",        estringp},        
         {"aap",        arraysp},    

@@ -165,7 +165,7 @@ void fgetsSizeof() {
         name[strcspn(name, "\n")] = 0;
 	    if (strlen(name) >= MAX) {
             clear();
-	}
+	    }
         if (strcmp(name, "m") == 0) {
                 break;
         }

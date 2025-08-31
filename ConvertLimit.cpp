@@ -1514,7 +1514,7 @@ void ifStatementp() {
     while (1) {
         printf("//Enter name of the if statement m for main.\n");
         printf("//");
-        while(fgets(name, SIZE, stdin) == NULL
+        while(fgets(name, SIZE, stdin) == NULL) {
 			checkInput();
 		}
         name[strcspn(name, "\n")] = 0;

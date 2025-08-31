@@ -2092,7 +2092,7 @@ int main() {
 		    checkInput();
 		}
         sw[strcspn(sw, "\n")] = 0;
-        if (strlen(repeat) >= 99) {
+        if (strlen(sw) >= 99) {
             clear();  
         } else if (strcmp(sw, "x") == 0) {
             break;

@@ -467,11 +467,12 @@ void multiIf() {
 
     while (1) {
         printf("//Enter i for if, e for else if.\n");
-        while (fgets(select, SIZE, stdin)) {
-            select[strcspn(select, "\n")] = 0;
+        while (fgets(select, SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin); 
 	        if (strlen(select) >= MAX) {
                 clear(); 
             }
+			select[strcspn(select, "\n")] = 0;
 	        if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
                 printf("//Enter i or e only.\n");
             } else {
@@ -485,7 +486,9 @@ void multiIf() {
         }
         printf("//Enter a name of first m for main.\n");
         printf("//");
-        fgets(name, SIZE, stdin);
+        while(fgets(name, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         name[strcspn(name, "\n")] = 0;
 	    if (strlen(name) >= MAX) {
             clear();
@@ -495,19 +498,23 @@ void multiIf() {
         }
         printf("//Enter a value.\n");
         printf("//");
-        fgets(value,SIZE, stdin);
+        while(fgets(value,SIZE, stdin) == NULL) {
+			checkInput();
+		}
         value[strcspn(value, "\n")] = 0;
 	    if (strlen(value) >= MAX) {
             clear();
         }
         printf("//Enter a comparison a for equal b for not equal.\n");
         printf("//");
-        while (fgets(compare,SIZE, stdin)) {
-            compare[strcspn(compare, "\n")] = 0;
-	    if (strlen(compare) >= MAX) {
+        while (fgets(compare,SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin);
+            
+	        if (strlen(compare) >= MAX) {
                 clear();
-	    }
-	    if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0) {
+	        }
+			compare[strcspn(compare, "\n")] = 0;
+	        if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0) {
                 printf("//Enter a or b only.\n");
             } else {
                 break;
@@ -520,12 +527,13 @@ void multiIf() {
         }
         printf("//Enter a operator a for and o for or.\n");
         printf("//");
-        while (fgets(op, SIZE, stdin)) {
-            op[strcspn(op, "\n")] = 0;
-	    if (strlen(op) >= MAX) {
+        while (fgets(op, SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin);     
+	        if (strlen(op) >= MAX) {
                 clear();
-	    }
-	    if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
+	        }
+			op[strcspn(op, "\n")] = 0;
+	        if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
                 printf("//Enter a or o only.\n");
             } else {
                 break;
@@ -539,26 +547,31 @@ void multiIf() {
 
         printf("//Enter the second name,\n");
         printf("//");
-        fgets(sname, SIZE, stdin);
+        while(fgets(sname, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         sname[strcspn(sname, "\n")] = 0;
 	    if (strlen(sname) >= MAX) {
             clear();
         }
         printf("Enter the second value.\n");
         printf("//");
-        fgets(svalue,SIZE, stdin);
+        while(fgets(svalue,SIZE, stdin) == NULL) {
+			checkInput();
+		}
         svalue[strcspn(svalue, "\n")] = 0;
 	    if (strlen(sname) >= MAX) {
             clear();
         }
         printf("Enter a second comparison a for equal b for not equal\n");
         printf("//");
-        while (fgets(scompare, SIZE, stdin)) {
-            scompare[strcspn(scompare, "\n")] = 0;
-	    if (strlen(scompare) >= MAX) {
+        while (fgets(scompare, SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin);    
+	        if (strlen(scompare) >= MAX) {
                 clear();
-	    }
-	    if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0) {
+	        }
+			scompare[strcspn(scompare, "\n")] = 0;
+	        if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0) {
                 printf("//Enter a or b only.\n");
             } else {
                 break;
@@ -586,7 +599,9 @@ void ifNumber() {
     while (1) {
         printf("//Enter s for strlen  or i for regular if statement. Enter e for else if.\n");
         printf("//");
-        fgets(select, SIZE, stdin);
+        while(fgets(select, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         select[strcspn(select, "\n")] = 0;
 	    if (strlen(select) >= MAX) {
                 clear(); 
@@ -596,7 +611,9 @@ void ifNumber() {
             continue;
         }
         printf("//Enter the name of if or else if statement  enter m for main.\n");
-        fgets(var,SIZE, stdin);
+        while(fgets(var,SIZE, stdin) == NULL) {
+			checkInput();
+		}
         var[strcspn(var, "\n")] = 0;
 	    if (strlen(var) >= MAX) {
                 clear(); 
@@ -606,11 +623,13 @@ void ifNumber() {
         }
         printf("//Enter an operator, a for less than, b for equal to, c for greater than, d for not equal\n");
         printf("//");
-        while (fgets(op, SIZE, stdin)) {
-            op[strcspn(op, "\n")] = 0;
+        while (fgets(op, SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin);
+            
 	        if (strlen(op) >= MAX) {
                 clear(); 
 	        }
+			op[strcspn(op, "\n")] = 0;
 	        if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
                 printf("//Enter a or b or c or d only.\n");
             } else {
@@ -628,7 +647,9 @@ void ifNumber() {
         }
         printf("//Enter a number to compare to.\n");
         printf("//");
-        fgets(num, SIZE, stdin);
+        while(fgets(num, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         num[strcspn(num, "\n")] = 0;
 	    if (strlen(num) >= MAX) {
                 clear(); 
@@ -661,7 +682,9 @@ void ifHeap() {
     while (1) {
         printf("//Enter i for if statement. Enter e for else if.\n");
         printf("//");
-        fgets(select, SIZE, stdin);
+        while(fgets(select, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         select[strcspn(select, "\n")] = 0;
 	    if (strlen(select) >= MAX) {
                 clear(); 
@@ -681,11 +704,13 @@ void ifHeap() {
         }
         printf("//Enter an operator, a for less than, b for equal to, c for greater than, d for not equal\n");
         printf("//");
-        while (fgets(op, SIZE, stdin)) {
-            op[strcspn(op, "\n")] = 0;
+        while (fgets(op, SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin);
+            
 	        if (strlen(op) >= MAX) {
                 clear(); 
 	        }
+			op[strcspn(op, "\n")] = 0;
             if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
                 printf("//Enter a or b or c or d only.\n");
             } else {
@@ -703,7 +728,9 @@ void ifHeap() {
         }
         printf("//Enter a number to compare to.\n");
         printf("//");
-        fgets(num, SIZE, stdin);
+        while(fgets(num, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         num[strcspn(num, "\n")] = 0;
 	    if (strlen(num) >= MAX) {
                 clear(); 

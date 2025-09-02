@@ -1845,7 +1845,7 @@ void map() {
             clear(); 
         } 
         if (strcmp(key_type, "s") != 0 && strcmp(key_type, "i") != 0 && strcmp(key_type, "d") != 0) {
-            printf("Enter s i or d only.\n");
+            printf("Enter s i or d only start again.\n");
             continue;
         }
         if (strcmp(key_type, "s") == 0) {

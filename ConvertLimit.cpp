@@ -474,7 +474,7 @@ void multiIf() {
             }
 			select[strcspn(select, "\n")] = 0;
 	        if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
-                printf("//Enter i or e only.\n");
+                printf("\n//Enter i or e only.\n\n");
             } else {
                 break;
             }
@@ -515,7 +515,7 @@ void multiIf() {
 	        }
 			compare[strcspn(compare, "\n")] = 0;
 	        if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0) {
-                printf("//Enter a or b only.\n");
+                printf("\n//Enter a or b only.\n\n");
             } else {
                 break;
             }
@@ -572,7 +572,7 @@ void multiIf() {
 	        }
 			scompare[strcspn(scompare, "\n")] = 0;
 	        if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0) {
-                printf("//Enter a or b only.\n");
+                printf("\n//Enter a or b only.\n\n");
             } else {
                 break;
             }
@@ -607,7 +607,7 @@ void ifNumber() {
                 clear(); 
             }
         if (strcmp(select, "s") != 0 && strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
-            printf("//Enter s or i or e only.\n");
+            printf("\n//Enter s or i or e only.\n\n");
             continue;
         }
         printf("//Enter the name of if or else if statement  enter m for main.\n");
@@ -631,7 +631,7 @@ void ifNumber() {
 	        }
 			op[strcspn(op, "\n")] = 0;
 	        if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
-                printf("//Enter a or b or c or d only.\n");
+                printf("\n//Enter a or b or c or d only.\n\n");
             } else {
                 break;
             }
@@ -690,7 +690,7 @@ void ifHeap() {
                 clear(); 
             }
         if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
-            printf("//Enter i or e only.\n");
+            printf("\n//Enter i or e only.\n\n");
             continue;
         }
         printf("//Enter the name of if or else if statement  enter m for main.\n");
@@ -712,7 +712,7 @@ void ifHeap() {
 	        }
 			op[strcspn(op, "\n")] = 0;
             if (strcmp(op, "a") != 0 && strcmp(op, "b") != 0 && strcmp(op, "c") != 0 && strcmp(op, "d") != 0) {
-                printf("//Enter a or b or c or d only.\n");
+                printf("\n//Enter a or b or c or d only.\n\n");
             } else {
                 break;
             }

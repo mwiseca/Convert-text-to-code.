@@ -1825,7 +1825,9 @@ void map() {
     while (1) {
         printf("//Enter the name of the map m for main.\n");
         printf("//");
-        fgets(name,SIZE, stdin);
+        while(fgets(name,SIZE, stdin) == NULL) {
+			checkInput();
+		}
         name[strcspn(name, "\n")] = 0;
 	    if (strlen(name) >= MAX) {
             clear(); 
@@ -1835,7 +1837,9 @@ void map() {
         }
         printf("//Enter a key type, s for string, i for int d for double.\n");
         printf("//");
-        fgets(key_type,SIZE, stdin);
+        while(fgets(key_type,SIZE, stdin) == NULL) {
+			checkInput();
+		}
         key_type[strcspn(key_type, "\n")] = 0;
 	    if (strlen(key_type) >= MAX) {
             clear(); 
@@ -1853,11 +1857,12 @@ void map() {
         }
         printf("//Enter a value type, s for string, i for int d for double.\n");
         printf("//");
-        while (fgets(value_type,SIZE, stdin)) {
-            value_type[strcspn(value_type, "\n")] = 0;
-	    if (strlen(value_type) >= MAX) {
+        while (fgets(value_type,SIZE, stdin) == NULL || (1)) {
+			clearerr(stdin); 
+	        if (strlen(value_type) >= MAX) {
                 clear(); 
             } 
+			value_type[strcspn(value_type, "\n")] = 0;
             if (strcmp(value_type, "s") != 0 && strcmp(value_type, "i") != 0 && strcmp(value_type, "d") != 0) {
                 printf("//Enter s i or d only.\n");
             } else {
@@ -1873,28 +1878,36 @@ void map() {
         }
         printf("//Enter a key.\n");
         printf("//");
-        fgets(key,SIZE, stdin);
+        while(fgets(key,SIZE, stdin) == NULL) {
+			checkInput();
+		}
         key[strcspn(key, "\n")] = 0;
 	    if (strlen(key) >= MAX) {
                 clear(); 
             } 
         printf("//Enter s if key is a string.\n");
         printf("//");
-        fgets(key_t,SIZE, stdin);
+        while(fgets(key_t,SIZE, stdin) == NULL) {
+		    checkInput();
+		}
         key_t[strcspn(key_t, "\n")] = 0;
 	    if (strlen(key_t) >= MAX) {
             clear(); 
         } 
         printf("//Enter a value.\n");
         printf("//");
-        fgets(value,SIZE, stdin);
+        while(fgets(value,SIZE, stdin) == NULL) {
+		    checkInput();
+		}
         value[strcspn(value, "\n")] = 0;
 	    if (strlen(value) >= MAX) {
             clear(); 
         } 
         printf("//Enter s if the value is a string.\n");
         printf("//");
-        fgets(value_t,SIZE, stdin);
+        while(fgets(value_t,SIZE, stdin) == NULL) {
+		    checkInput();
+		}
         value_t[strcspn(value_t, "\n")] = 0;
 	    if (strlen(value_t) >= MAX) {
             clear(); 

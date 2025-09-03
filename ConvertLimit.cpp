@@ -1686,8 +1686,7 @@ void multiIfCpp() {
         printf("//Enter a comparison a for equal b for not equal.\n");
         printf("//");
         while (fgets(compare,SIZE, stdin) == NULL || (1)) {
-			clearerr(stdin);
-            
+			clearerr(stdin); 
 	        if (strlen(compare) >= MAX) {
                     clear(); 
             } 
@@ -1713,7 +1712,7 @@ void multiIfCpp() {
             }
 			op[strcspn(op, "\n")] = 0;
             if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
-                printf("//Enter a or o only.\n");
+                printf("\n//Enter a or o only.\n\n");
             } else {
                 break;
             }
@@ -1751,7 +1750,7 @@ void multiIfCpp() {
             } 
 			scompare[strcspn(scompare, "\n")] = 0;
             if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0) {
-                printf("//Enter a or b only.\n");
+                printf("\n//Enter a or b only.\n\n");
             } else {
                 break;
             }

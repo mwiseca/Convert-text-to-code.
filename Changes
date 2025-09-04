@@ -54,3 +54,5 @@ June 11 2025.
 Added: fgets with sizeof operator was added to the other files.
 Check fb in choices.
 June 15 2025.
+ ConvertLimit.cpp.had all fgets in a while loop to prevent a infinite loop when ctrl + d is pressed.
+September 4 2025.

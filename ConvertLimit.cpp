@@ -694,7 +694,9 @@ void ifHeap() {
             continue;
         }
         printf("//Enter the name of if or else if statement  enter m for main.\n");
-        fgets(var, SIZE, stdin);
+        while(fgets(var, SIZE, stdin) == NULL) {
+			checkInput();
+		}
         var[strcspn(var, "\n")] = 0;
 	    if (strlen(var) >= MAX) {
                 clear(); 

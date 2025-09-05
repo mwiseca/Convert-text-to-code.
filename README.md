@@ -6,7 +6,7 @@ It has been used to test new functions and features for the others.<br>
 It has what's needed to complete simple programs.<br>
 This is best used for learning C C++ syntax, not to enhance productivity.
 ## To use
-The .cpp files must be compiled as a C++ file.
+The .cpp files must be compiled as a C++ file.<br>
 The .c file must be compiled as a C file.<br>
 Python must be installed to use the .py file.<br>
 Its best used in a terminal emulator that splits screen.<br>

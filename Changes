@@ -56,3 +56,5 @@ Check fb in choices.
 June 15 2025.
  ConvertLimit.cpp.had all fgets in a while loop to prevent a infinite loop when ctrl + d is pressed.
 September 4 2025.
+ConvertC.cpp was deleted and replaced by Convert.c a all C version. ConvertLimit.cpp was renamed ConvertC.cpp.
+September 5 2025.

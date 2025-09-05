@@ -1133,6 +1133,8 @@ while True:
         (switch[call]())
     except KeyError:
         print("Enter a letter in choices.")
+    except EOFError:
+        print("Invalid input start over.)
       
     
     

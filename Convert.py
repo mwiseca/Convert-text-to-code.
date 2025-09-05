@@ -1134,7 +1134,7 @@ while True:
     except KeyError:
         print("Enter a letter in choices.")
     except EOFError:
-        print("Invalid input start over.)
+        print("Invalid input start over.")
       
     
     

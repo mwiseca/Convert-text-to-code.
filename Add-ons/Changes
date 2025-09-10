@@ -5,3 +5,7 @@ To add to program the void keys(){ function must be above the void binHex(){ fun
 Its made this way with 2 seprate functions and a function call in main to make it easy to copy paste
 into the original.
 April 28 2025.
+The break statement on TextToBin.c on line 226 was removed.
+It was used to fix another error;
+September 10 2025.
+

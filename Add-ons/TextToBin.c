@@ -223,7 +223,6 @@ void binHex() {
         while( i < 59){ 
             if(strcmp(select,key[i])==0){
                 number = i;
-                break;
             }
             i++;
         }

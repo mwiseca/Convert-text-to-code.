@@ -14,6 +14,6 @@ A new file was added CheckFgets.c.
 It makes fgets that uses clearerr(stdin); to check EOF errors as
 well as some other errors.
 It also calls the flush input function to clear input buffer
-if user selected fb.
+if the user selected cb.
 September 25 2025.
 

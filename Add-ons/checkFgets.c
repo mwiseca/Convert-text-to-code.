@@ -7,7 +7,7 @@
 #define SIZE 200
 #define MAX 199
 
-void clean(){
+void clear(){
     int clear;
     while ((clear = getc(stdin)) != '\n' && clear != EOF) {
     }
@@ -34,7 +34,7 @@ void checkFgets() {
         }
         v[strcspn(v, "\n")] = 0;
         if(strlen(v) >= MAX){
-            clean();
+            clear();
         }
         if (strcmp(v, "m") == 0) {
             break;
@@ -44,7 +44,7 @@ void checkFgets() {
         while(fgets(me, sizeof(me), stdin) == NULL || (1)) {
             clearerr(stdin);    
             if(strlen(me) >= 9){
-                clean();
+                clear();
             }            
             m = atoi(me);
             if(m <=4) {
@@ -60,7 +60,7 @@ void checkFgets() {
         }
         em[strcspn(em,"\n")]=0;
         if(strlen(em) >= MAX){
-            clean();
+            clear();
         }
         printf("//Enter the function name.\n");
         while(fgets(function,SIZE,stdin) == NULL) {
@@ -68,7 +68,7 @@ void checkFgets() {
         }
         function[strcspn(function,"\n")]=0;
         if(strlen(v) >= MAX){
-            clean();
+            clear();
         }
         printf("\n%s%s%s%s%s%s\n",f[0], v, f[1], me, f[1], f[2]);
         printf("%sclearerr(stdin);\n",f[6]);

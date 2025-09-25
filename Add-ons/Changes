@@ -10,4 +10,10 @@ It was used to fix another error;
 September 10 2025.
 TextToBinHex.py was added.
 September 22 2025.
+A new file was added CheckFgets.c.
+It makes fgets that uses clearerr(stdin); to check EOF errors as
+well as some other errors.
+It also calls the flush input function to clear input buffer
+if user selected fb.
+September 25 2025.
 

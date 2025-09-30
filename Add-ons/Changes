@@ -16,4 +16,6 @@ well as some other errors.
 It also calls the flush input function to clear input buffer
 if the user selected cb.
 September 25 2025.
+Added: checkFgets.cpp same as checkFgets.c in C++.
+September 30 2025.
 

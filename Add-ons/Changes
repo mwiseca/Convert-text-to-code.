@@ -20,4 +20,6 @@ Added: checkFgets.cpp same as checkFgets.c in C++.
 September 30 2025.
 Added: checkFgets.py check fgets in Python.
 October1 2025.
-
+The memory for arrays in TextToBin.c key value was lowered to 10 for key.
+The value array was lowered to 50.
+Oct 10 2025.

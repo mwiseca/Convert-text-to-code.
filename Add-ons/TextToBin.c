@@ -74,7 +74,7 @@ void keys() {
 }
 
 void binHex() {
-    char key [59] [100];
+    char key [59] [10];
     sprintf(key[0],    "A");
     sprintf(key[1],    "B");
     sprintf(key[2],    "C");
@@ -137,7 +137,7 @@ void binHex() {
 
 
 
-    char value [59] [100];
+    char value [59] [50];
     sprintf(value[0],  "\n01000001\n\n0b01000001\n\n41\n\n0x41\n");
     sprintf(value[1],  "\n01000010\n\n0b01000010\n\n42\n\n0x42\n");
     sprintf(value[2],  "\n01000011\n\n0b01000011\n\n43\n\n0x43\n");

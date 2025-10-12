@@ -1,5 +1,5 @@
 # Convert-text-to-code.
-Converts text to code for C C++.
+Converts text to code snippets for C C++.
 This is C-strings and Cpp-syntax combined.
 It has things needed to combine C and C++ in on file.
 It has been used to test new functions and features for the others.<br>

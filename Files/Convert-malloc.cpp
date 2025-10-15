@@ -293,7 +293,7 @@ void checkFgets() {
             checkInput();     
         }
         function[strcspn(function,"\n")]=0;
-        if(strlen(v) >= MAX){
+        if(strlen(function) >= MAX){
             clean();
         }
         printf("\n%s%s%s%s%s%s\n",f[0], v, f[1], me, f[1], f[2]);

@@ -839,6 +839,7 @@ void multiIf() {
                 continue;
             }
             if(strlen(select) >= MAX) {
+                clean();
             }
             select[strcspn(select, "\n")] = 0;
             if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {

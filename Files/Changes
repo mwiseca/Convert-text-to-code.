@@ -2,6 +2,7 @@ Files are for code that may not have a practical use but made differently.
 Convert malloc.cpp has been added.
 It allocates most user inputs to the heap. It can be used to compare code to the stack allocated ones.
 This may be useful for users who want to modify it.
+October 11 2025.
 A all C version was added. Convert-malloc.c.
 October 27 2025.
 

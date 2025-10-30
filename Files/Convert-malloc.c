@@ -1383,7 +1383,7 @@ void array() {
         }
         name[strcspn(name, "\n")] = 0;
         if(strlen(name) >= MAX) {
-            checkInput();
+            clean();
         }
         if (strcmp(name, "m") == 0) {
             free(name);

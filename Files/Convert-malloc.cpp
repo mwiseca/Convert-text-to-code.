@@ -2017,6 +2017,9 @@ void scanfHeap() {
             checkInput();
         }
         ch[strcspn(ch, "\n")] = 0;
+        if(strlen(ch) >= MAX) {
+            clean();
+        }
         if (strcmp(ch, "m") == 0) {
             free(ch);
             ch = NULL;

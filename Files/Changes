@@ -5,4 +5,6 @@ This may be useful for users who want to modify it.
 October 11 2025.
 A all C version was added. Convert-malloc.c.
 October 27 2025.
-
+Added: A new file was added to files. ConvertMallocArray.c.
+It uses 2 arrays for key value pairs not a if else if chain to switch functions.
+November 5 2025.

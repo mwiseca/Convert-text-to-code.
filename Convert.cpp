@@ -24,6 +24,7 @@ void choice() {
     cout << "//Enter fs for fgets with sizeof operator.\n";
     cout << "//Enter fb for fgets to use with cb to clear input buffer without having ";
     cout << "to press enter twice.\n";
+	cout << "//Enter fcb to check fgets and clear input buffer after selecting cb.\n";
     cout << "//Enter s for scanf for strings to allow for white spaces.\n";
     cout << "//Enter sb for scanf basic no white spaces.\n";
     cout << "//Enter si for scanf for integers and doubles.\n";
@@ -203,6 +204,79 @@ void fgetsBuffer() {
 	        break;
         }	
     }
+}
+
+void checkFgets() {
+    std::string f[12] = {"while(fgets(", ",", "stdin) == NULL) {", "[strcspn(", "\"\\n", "\")]=0;", "    ","sizeof(","),stdin) == NULL) {","printf(\"","\\n","\");"};
+    std::string v;
+    std::string me;
+    std::string em;
+    std::string function;
+    int m;
+    
+    while (true) {
+        std::cout << "//Enter name of variable m for main.\n";
+        std::cout << "//";
+        getline(std::cin,v);
+        if (v == "m") {
+            break;
+        }
+        std::cout << "//Enter the memory to be allocated to the variable 5 minimum.\n";
+        std::cout << "//";
+        while(true) {
+            try {
+                std::getline(std::cin,me); 
+                m = std::stoi(me);
+            }catch(std::invalid_argument) {
+                std::cout << "\nEnter a valid number.\n\n";
+                continue;
+            }catch(std::out_of_range) {
+                std::cout << "\nNumber out of range.\n\n";
+                continue;
+            }
+            if(m <=4) {
+                printf("\n//Enter a number 5 or more.\n\n");
+            } else {
+                break;
+            }
+        } 
+        std::cout << "//Enter a error message. Invalid input is good.\n";
+        getline(std::cin,em);
+        std::cout << "//Enter the function name.\n";
+        getline(std::cin,function);     
+        std::cout << "\n" << f[0] << v << f[1] << me << f[1] << f[2] << "\n";
+        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n"; 
+        std::cout << "}\n";
+        std::cout << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+        std::cout << "if(strlen(" << v << ") >= " << m - 1 << ") {\n";
+        std::cout << "    " << function << "();\n";
+        std::cout << "}\n\n";
+        std::cout << "\n" << f[0] << v << f[1] << f[7] << v << f[8] << "\n";
+        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n";
+        std::cout << "}\n";
+        std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+        std::cout << "if(strlen(" << v << ") >= " << m - 1 << ") {\n";
+        std::cout << "    " << function << "();\n"; 
+        std::cout << "}\n\n";
+        std::cout << "\n" << f[0] << v << f[1] << me << f[1] << f[2] << "\n";
+        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n"; 
+        std::cout << "}\n";
+        std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+        std::cout << "\n\n";
+        std::cout << "\n" << f[0] << v << f[1] << f[7] << v << f[8] << "\n";
+        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n";
+        std::cout << "}\n";
+        std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
+        std::cout << "\n\n";
+        //memset(me, '\0', sizeof(me));
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }
+    }	    
 }
 
 void scanff() {
@@ -1466,6 +1540,7 @@ int main() {
         {"f",           fgetss},
         {"fs",     fgetsSizeof},
 	    {"fb",     fgetsBuffer},
+	    {"fcb",     checkFgets},
         {"s",           scanff},           
         {"sb",      scanfBasic},
 	    {"cb",      clearBuffC},

@@ -245,7 +245,7 @@ void checkFgets() {
         std::cout << "//Enter the function name.\n";
         getline(std::cin,function);     
         std::cout << "\n" << f[0] << v << f[1] << me << f[1] << f[2] << "\n";
-        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << "clearerr(stdin);\n";
         std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n"; 
         std::cout << "}\n";
         std::cout << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
@@ -253,7 +253,7 @@ void checkFgets() {
         std::cout << "    " << function << "();\n";
         std::cout << "}\n\n";
         std::cout << "\n" << f[0] << v << f[1] << f[7] << v << f[8] << "\n";
-        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << "clearerr(stdin);\n";
         std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n";
         std::cout << "}\n";
         std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
@@ -261,13 +261,13 @@ void checkFgets() {
         std::cout << "    " << function << "();\n"; 
         std::cout << "}\n\n";
         std::cout << "\n" << f[0] << v << f[1] << me << f[1] << f[2] << "\n";
-        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << "clearerr(stdin);\n";
         std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n"; 
         std::cout << "}\n";
         std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
         std::cout << "\n\n";
         std::cout << "\n" << f[0] << v << f[1] << f[7] << v << f[8] << "\n";
-        std::cout << f[6] << "clearerr(stdin)\n";
+        std::cout << f[6] << "clearerr(stdin);\n";
         std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n";
         std::cout << "}\n";
         std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";

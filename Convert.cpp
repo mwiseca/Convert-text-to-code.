@@ -272,8 +272,7 @@ void checkFgets() {
         std::cout << "}\n";
         std::cout <<  v << f[3] << v << f[1] << f[4] << f[5] << "\n";
         std::cout << "\n\n";
-        //memset(me, '\0', sizeof(me));
-        if (strcmp(repeat, "r") != 0) {
+        if (repeat != "r") {
             break;
         }
     }	    

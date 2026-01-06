@@ -63,3 +63,8 @@ This will work with Convert.c.
 September 8 2025.
 TextToBinHex.py was added to Add-ons.
 September 22 2025.
+A new feature was added. check fgets and clear input buffer. To clear the input buffer cb in choices must be selected first.  
+This creates a function thats clears the input buffer.
+This also error checks fgets. This was not added to files in Files directory.
+Check fcb in choices.
+January 6 2026.

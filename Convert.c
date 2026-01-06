@@ -1656,6 +1656,8 @@ void copy() {
     printf("\n");
     printf("#include <stdlib.h>\n");
     printf("\n");
+    printf("#include <errno.h>\n");
+    printf("\n");
     printf("while(1) {\n");
     printf("\n");
     printf("break;\n");

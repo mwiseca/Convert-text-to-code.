@@ -25,6 +25,7 @@ void choice() {
     cout << "//Enter fb for fgets to use with cb to clear input buffer without having ";
     cout << "to press enter twice.\n";
 	cout << "//Enter fcb to check fgets and clear input buffer after selecting cb.\n";
+	cout << "//Enter fi to convert a string to a int or double to use with fgets.\n";
     cout << "//Enter s for scanf for strings to allow for white spaces.\n";
     cout << "//Enter sb for scanf basic no white spaces.\n";
     cout << "//Enter si for scanf for integers and doubles.\n";
@@ -276,6 +277,89 @@ void checkFgets() {
             break;
         }
     }	    
+}
+
+void stringToInt() {
+    std::string  t[26]  = {"long int", ";","char *"," = strtol(","&",",10);","    ","printf(\"","\\n", "\");","} else if","(*"," == 0x20) {","printf(\"","\\n","\");","("," == ",") {"," != '\\0') {", "} else {",","," = strtod(",")"," &",");"};
+    std::string type;
+    std::string string;
+    std::string longInt;
+    std::string ptrName;
+    std::string rangePrintf;
+    std::string spacesPrintf; 
+    std::string numberOnly;
+    std::string textAfterNumber;
+	
+    while(true){
+        std::cout << "//Enter type i for int d for double.\n";
+        getline(std::cin,type);
+        if(type != "i"  && type != "d") {
+            std::cout << "\n//Enter i or d only.\n\n";
+            continue;
+        }
+        std::cout << "//Enter the string name to be converted m for main.\n";
+        getline(std::cin,string);
+        if(string == "m") {
+            break;
+        }
+        std::cout << "//Enter the converted integer or double name.\n";
+        getline(std::cin,longInt);
+        std::cout <<"//Enter the name of the pointer endptr or ptr will do.\n";
+        getline(std::cin, ptrName);
+        std::cout << "//Enter a error message for out of range.\n";
+        getline(std::cin, rangePrintf);
+        std::cout << "//Enter a error message for spaces between numbers.\n";
+        getline(std::cin,spacesPrintf);
+        std::cout << "//Enter a error message for enter a number only.\n";
+        getline(std::cin,numberOnly);
+        std::cout << "//Enter a error message for text after number.\n";
+        getline(std::cin,textAfterNumber);
+        std::cout << "\n#include <errno.h>          Place at top of file.\n\n";
+        if(type == "i") {
+            std::cout << "long int " << longInt << ";\n";
+           std::cout << "char *" << ptrName << ";\n";
+        } else if(type == "d") {
+           std::cout << "double " << longInt << ";\n"; 
+           std::cout << "char *" << ptrName << ";\n\n";
+        }
+        std::cout << "\nerrno = 0;\n";
+        if(type == "i") {
+            std::cout << longInt << t[3] << string << t[21] << t[4] << ptrName << t[5] << "\n";
+        } else if(type == "d") {
+            std::cout << longInt << t[22] << string << t[21] << t[24] << ptrName << t[25] << "\n";
+        }
+        std::cout << "if(errno == ERANGE) {\n";
+        std::cout << t[6] << t[7] << t[8] << rangePrintf << t[8] << t[8] << t[9] << "\n";
+        std::cout << t[10] << t[11] << ptrName << t[12] << "\n";
+        std::cout << t[6] << t[7] << t[8] << spacesPrintf << t[8] << t[8] << t[9] << "\n";
+        std::cout << t[10] << t[16] << ptrName << t[17] << string << t[18] << "\n";
+        std::cout << t[6] << t[7] << t[8] << numberOnly << t[8] << t[8] << t[9] << "\n";
+        std::cout << t[10] << t[11] << ptrName << t[19] << "\n";
+        std::cout << t[6] << t[7] << t[8] << textAfterNumber << t[8] << t[8] << t[9] << "\n";
+        std::cout << t[20] << "\n\n\n";
+        std::cout << "\nerrno = 0;\n";
+        if(type == "i") {
+            std::cout << longInt << t[3] << string << t[21] << t[4] << ptrName << t[5] << "\n";
+        } else if(type == "d") {
+            std::cout << longInt << t[22] << string << t[21] << t[24] << ptrName << t[25] << "\n";
+        }
+        printf("if(errno == ERANGE) {\n");
+        std::cout << t[6] << t[7] << t[8] << rangePrintf << t[8] << t[8] << t[9] << "\n"; 
+        std::cout << t[6] << "continue;\n";
+        std::cout << t[10] << t[11] << ptrName << t[12] << "\n";
+        std::cout << t[6] << t[7] << t[8] << spacesPrintf << t[8] << t[8] << t[9] << "\n"; 
+        std::cout << t[6] << "continue;\n";
+        std::cout << t[10] << t[16] << ptrName << t[17] << string << t[18] << "\n";
+        std::cout << t[6] << t[7] << t[8] << numberOnly << t[8] << t[8] << t[9] << "\n";
+        std::cout << t[6] << "continue;\n"; 
+        std::cout << t[10] << t[11] << ptrName << t[19] << "\n"; 
+        std::cout << t[6] << t[7] << t[8] << textAfterNumber << t[8] << t[8] << t[9] << "\n";
+        std::cout << t[6] << "continue;\n"; 
+        std::cout << "}\n\n";
+        if(repeat != "r") {
+            break;
+        }
+    } 
 }
 
 void scanff() {
@@ -1038,6 +1122,8 @@ void copy() {
     std::cout << "\n";
     std::cout << "#include <stdlib.h>\n";
     std::cout << "\n";
+	std::cout << "#include <errno.h>\n";
+	std::cout << "\n";
     std::cout << "while(1) {\n";
     std::cout << "\n";
     std::cout << "break;\n";
@@ -1540,6 +1626,7 @@ int main() {
         {"fs",     fgetsSizeof},
 	    {"fb",     fgetsBuffer},
 	    {"fcb",     checkFgets},
+	    {"fi",     stringToInt},
         {"s",           scanff},           
         {"sb",      scanfBasic},
 	    {"cb",      clearBuffC},

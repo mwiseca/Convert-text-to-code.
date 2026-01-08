@@ -68,3 +68,7 @@ This creates a function that clears the input buffer.
 This also error checks fgets. This was not added to files in Files directory.
 Check fcb in choices.
 January 6 2026.
+A convert string to int or double feature was added.
+This was not added to files in Files directory.
+January 8 2026.
+

@@ -451,7 +451,7 @@ def multi_if_number():
         name = input("//Enter a name of first m for main.\n//")
         if name == "m": 
             return ""
-        print("//Enter a comparison a for less or equal b for equal c for Grater or equal d for not equal.")
+        print("//Enter a comparison a for less or equal b for equal c for Greater or equal d for not equal.")
         while True:
             compare = input("//")
             if compare != "a" and compare != "b"  and compare != "c" and compare != "d":
@@ -466,7 +466,7 @@ def multi_if_number():
             compare = t[4]
         elif compare == "d":
             compare = t[5] 
-        value = input("//Enter a value.\n//")
+        value = input("//Enter a value number.\n//")
         print("//Enter a operator a for and o for or.")
         while True:
             op = input("//")
@@ -494,7 +494,7 @@ def multi_if_number():
             scompare = t[4]
         elif scompare == "d":
             scompare = t[5]  
-        svalue = input("Enter the second value.\n//") 
+        svalue = input("Enter the second value number.\n//") 
         print("\n" + select + name + compare + value + op + sname + scompare + svalue + t[8] + "\n")
         if repeat != "r":
             return ""

@@ -71,4 +71,5 @@ January 6 2026.
 A convert string to int or double feature was added.
 This was not added to files in Files directory.
 January 8 2026.
-
+Added: Multi if for numbers with 2 conditions was added to ConvertC.cpp.
+January 9 2026.

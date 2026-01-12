@@ -34,6 +34,7 @@ void choice() {
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");
     printf("//Enter i for if statements e for else if for strings.\n");
     printf("//Enter mi for if statements with 2 conditions.\n");
+    printf("//Enter min for multi if statements for numbers with 2 conditions.\n");
     printf("//Enter in for if and else if statements for numbers C-C++.\n");
     printf("//Enter im for if and else if statements for numbers if malloc is used.\n");
     printf("//Enter f for fgets.\n");
@@ -42,6 +43,7 @@ void choice() {
     printf("to press enter twice.\n");
     printf("//Enter fcb to check fgets and clear input buffer after selecting cb.\n");
     printf("//Enter fi to convert a string to a int or double to use with fgets.\n");
+    printf("//Enter fib to convert a string to a int or double with only one error message.\n");
     printf("//Enter s for scanf for strings to allow for white spaces.\n");
     printf("//Enter sb for scanf basic no white spaces.\n");
     printf("//Enter si for scanf for integers and doubles.\n");
@@ -482,6 +484,100 @@ void stringToInt() {
     } 
 }
 
+void stringToIntBasic() {
+    const char *t [] = {"long int", ";","char *"," = strtol(","&",",10);","    ","printf(\"","\\n", "\");","*"," == 0x20","printf(\"","\\n","\");","("," == ",") {"," != '\\0') {", "} else {",","," = strtod(",")"," &",");"," || "};
+    char type [SIZE];
+    char string [SIZE];
+    char longInt [SIZE];
+    char ptrName [SIZE];
+    char errorMessage [SIZE];
+    while(1){
+        printf("//Enter type i for int d for double.\n");
+        while(fgets(type,SIZE,stdin) == NULL) {
+            checkInput(); 
+        }
+        type[strcspn(type,"\n")]=0;
+        if(strlen(type) >= MAX) {
+            clear();
+        }
+        if(strcmp(type,"i") !=0 && strcmp(type, "d")!=0){
+            printf("\n//Enter i or d only.\n\n");
+            continue;
+        }
+        printf("//Enter the string name to be converted m for main.\n");
+        while(fgets(string,SIZE,stdin) == NULL) {
+            checkInput(); 
+        }
+        string[strcspn(string,"\n")]=0;
+        if(strlen(string) >= MAX) {
+            clear();
+        }
+        if(strcmp(string,"m")==0) {
+            break;
+        }
+        printf("//Enter the converted integer or double name.\n");
+        while(fgets(longInt,SIZE,stdin) == NULL) {
+            checkInput(); 
+        }
+        longInt[strcspn(longInt,"\n")]=0;
+        if(strlen(longInt) >= MAX) {
+            clear();
+        }
+        printf("//Enter the name of the pointer endptr or ptr will do.\n");
+        while(fgets(ptrName,SIZE,stdin) == NULL) {
+            checkInput(); 
+        }
+        ptrName[strcspn(ptrName,"\n")]=0;
+        if(strlen(ptrName) >= MAX) {
+            clear();
+        }
+        printf("//Enter a error message.\n");
+        while(fgets(errorMessage,SIZE,stdin) == NULL) {
+            checkInput(); 
+        }
+        errorMessage[strcspn(errorMessage,"\n")]=0;
+        if(strlen(errorMessage) >= MAX) {
+            clear();
+        }
+        printf("\n#include <errno.h>          Place at top of file.\n\n");
+        if(strcmp(type,"i")==0) {
+            printf("long int %s;\n",longInt);
+            printf("char *%s;\n",ptrName);
+        } else if(strcmp(type,"d")==0) {
+            printf("double %s;\n",longInt); 
+            printf("char *%s;\n\n",ptrName);
+        } 
+        printf("\nerrno = 0;\n");
+        if(strcmp(type,"i")==0) {
+            printf("%s%s%s%s%s%s%s\n",longInt,t[3],string,t[20],t[4],ptrName,t[5]);
+        } else if(strcmp(type,"d")==0) {
+            printf("%s%s%s%s%s%s%s\n",longInt,t[21],string,t[20], t[23],ptrName,t[24]);
+        }
+        printf("if(errno == ERANGE || ");
+        printf("%s%s%s",t[10],ptrName,t[11]); 
+        printf("%s%s%s%s",t[25],ptrName,t[16],string); 
+        printf("%s%s%s%s\n",t[25],t[10],ptrName,t[18]);
+        printf("%s%s%s%s%s%s%s\n",t[6],t[7],t[8],errorMessage,t[8],t[8],t[9]);
+        printf("%s\n\n",t[19]);
+        printf("\nerrno = 0;\n");
+        if(strcmp(type,"i")==0) {
+            printf("%s%s%s%s%s%s%s\n",longInt,t[3],string,t[20],t[4],ptrName,t[5]);
+        } else if(strcmp(type,"d")==0) {
+            printf("%s%s%s%s%s%s%s\n",longInt,t[21],string,t[20], t[23],ptrName,t[24]);
+        }
+        printf("if(errno == ERANGE || ");
+        printf("%s%s%s",t[10],ptrName,t[11]); 
+        printf("%s%s%s%s",t[25],ptrName,t[16],string); 
+        printf("%s%s%s%s\n",t[25],t[10],ptrName,t[18]);
+        printf("%s%s%s%s%s%s%s\n",t[6],t[7],t[8],errorMessage,t[8],t[8],t[9]);
+        printf("%scontinue;\n",t[6]);
+        printf("}\n\n");
+        if(strcmp(repeat,"r")!=0) {
+            break;
+        }              
+    } 
+}
+
 void scanff() {
     char t[6][15] = {"scanf(\"", "%", "[^\\n]\"", ",", ");", "getchar();"};
     char var[SIZE];
@@ -798,6 +894,149 @@ void multiIf() {
         }
 
         printf("\n%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s\n\n", select, name, t[1], t[3], value, t[3], compare, op, t[10], sname, t[1], t[3], svalue, t[3], scompare);
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }
+    }
+}
+
+void multiIfNumber() {
+    char t[9][30] = {"if(", "} else if(",  " <= ", " == "," >= "," != ", " && ", " || ",") {"};
+    char select[SIZE];  
+    char name[SIZE];
+    char compare[SIZE];
+    char value[SIZE];
+    char op[SIZE];
+    char sname[SIZE];
+    char scompare[SIZE];
+    char svalue[SIZE];
+
+    while (1) {
+        printf("//Enter i for if, e for else if.\n");
+        while (fgets(select, SIZE, stdin) == NULL || (1)) {
+            clearerr(stdin); 
+            if (strlen(select) >= MAX) {
+                clear(); 
+            }
+            select[strcspn(select, "\n")] = 0;
+            if (strcmp(select, "i") != 0 && strcmp(select, "e") != 0) {
+                printf("\n//Enter i or e only.\n\n");
+            } else {
+                break;
+            }
+        }
+        if (strcmp(select, "i") == 0) {
+            strcpy(select, t[0]);
+        } else if (strcmp(select, "e") == 0) {
+            strcpy(select, t[1]);
+        }
+        printf("//Enter a name of first m for main.\n");
+        printf("//");
+        while(fgets(name, SIZE, stdin) == NULL) {
+            checkInput();
+        }
+        name[strcspn(name, "\n")] = 0;
+        if (strlen(name) >= MAX) {
+            clear();
+        }
+        if (strcmp(name, "m") == 0) {
+            break;
+        }
+        printf("//Enter a comparison a for less or equal b for equal c for Greater or equal d for not equal.\n");
+        printf("//");
+        while (fgets(compare,SIZE, stdin) == NULL || (1)) {
+            clearerr(stdin);
+
+            if (strlen(compare) >= MAX) {
+                clear();
+            }
+            compare[strcspn(compare, "\n")] = 0;
+            if (strcmp(compare, "a") != 0 && strcmp(compare, "b") != 0 && strcmp(compare, "c") !=0 && strcmp(compare, "d")!=0) {
+                printf("\n//Enter a or b c or d only.\n\n");
+            } else {
+                break;
+            }
+        }
+        if (strcmp(compare, "a") == 0) {
+            strcpy(compare, t[2]);
+        } else if (strcmp(compare, "b") == 0) {
+            strcpy(compare, t[3]);
+        } else if (strcmp(compare, "c") == 0) {
+            strcpy(compare, t[4]);
+        } else if (strcmp(compare, "d") == 0) {
+            strcpy(compare, t[5]); 
+        }
+        printf("//Enter a value number.\n");
+        printf("//");
+        while(fgets(value,SIZE, stdin) == NULL) {
+            checkInput();
+        }
+        value[strcspn(value, "\n")] = 0;
+        if (strlen(value) >= MAX) {
+            clear();
+        } 
+        printf("//Enter a operator a for and o for or.\n");
+        printf("//");
+        while (fgets(op, SIZE, stdin) == NULL || (1)) {
+            clearerr(stdin);     
+            if (strlen(op) >= MAX) {
+                clear();
+            }
+            op[strcspn(op, "\n")] = 0;
+            if (strcmp(op, "a") != 0 && strcmp(op, "o") != 0) {
+                printf("\n//Enter a or o only.\n\n");
+            } else {
+                break;
+            }
+        }
+        if (strcmp(op, "a") == 0) {
+            strcpy(op, t[6]);
+        } else if (strcmp(op, "o") == 0) {
+            strcpy(op, t[7]);
+        }
+
+        printf("//Enter the second name,\n");
+        printf("//");
+        while(fgets(sname, SIZE, stdin) == NULL) {
+            checkInput();
+        }
+        sname[strcspn(sname, "\n")] = 0;
+        if (strlen(sname) >= MAX) {
+            clear();
+        }
+        printf("//Enter a second comparison a for less or equal b for equal c for Greater or equal d for not equal.\n");
+        printf("//");
+        while (fgets(scompare, SIZE, stdin) == NULL || (1)) {
+            clearerr(stdin);    
+            if (strlen(scompare) >= MAX) {
+                clear();
+            }
+            scompare[strcspn(scompare, "\n")] = 0;
+            if (strcmp(scompare, "a") != 0 && strcmp(scompare, "b") != 0 && strcmp(scompare, "c") !=0 && strcmp(scompare, "d")!=0) {
+                printf("\n//Enter a or b c or d only.\n\n");
+            } else {
+                break;
+            }
+        }
+        if (strcmp(scompare, "a") == 0) {
+            strcpy(scompare, t[2]);
+        } else if (strcmp(scompare, "b") == 0) {
+            strcpy(scompare, t[3]);
+        } else if (strcmp(scompare, "c") == 0) {
+            strcpy(scompare, t[4]);
+        } else if (strcmp(scompare, "d") == 0) {
+            strcpy(scompare, t[5]); 
+        }  
+        printf("Enter the second value number.\n");
+        printf("//");
+        while(fgets(svalue,SIZE, stdin) == NULL) {
+            checkInput();
+        }
+        svalue[strcspn(svalue, "\n")] = 0;
+        if (strlen(sname) >= MAX) {
+            clear();
+        } 
+        printf("\n%s%s%s%s%s%s%s%s%s\n\n",select,name,compare,value,op,sname,scompare,svalue,t[8]);
         if (strcmp(repeat, "r") != 0) {
             break;
         }
@@ -2382,6 +2621,8 @@ int main() {
             checkFgets();
         } else if(strcmp(sw, "fi")==0) {
             stringToInt();
+        } else if(strcmp(sw, "fib")==0) {
+            stringToIntBasic();
         } else if(strcmp(sw, "s")==0) {
             scanff();
         } else if(strcmp(sw, "sb")==0) {
@@ -2394,6 +2635,8 @@ int main() {
             elseIf();
         } else if(strcmp(sw, "mi")==0) {
             multiIf();
+        } else if(strcmp(sw, "min")==0) {  
+            multiIfNumber();
         } else if(strcmp(sw, "in")==0) {
             ifNumber();
         } else if(strcmp(sw, "im")==0) {

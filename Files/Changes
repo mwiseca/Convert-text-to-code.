@@ -8,3 +8,7 @@ October 27 2025.
 Added: A new file was added to files. ConvertMallocArray.c.
 It uses 2 arrays for key value pairs not a if else if chain to switch functions.
 November 5 2025.
+Features were added to ConvertMallocArray.c.
+Convert string to int Convert string to int basic and multi if statements for numbers with 2 conditions was added.
+Check fi fib and min in choices.
+January 16 2026.

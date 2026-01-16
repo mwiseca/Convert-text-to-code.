@@ -1325,7 +1325,7 @@ void multiIf() {
 }
 
 void multiIfNumber() {
-    const char *t[] = {"if(", "} else if(",  " <= ", " == "," >= "," != ", " && ", " || ",") {"};
+    char t[9] [20] = {"if(", "} else if(",  " <= ", " == "," >= "," != ", " && ", " || ",") {"};
     char *select; 
     char *name;
     char *compare;

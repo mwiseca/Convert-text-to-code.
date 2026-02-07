@@ -1350,8 +1350,12 @@ void multiIfNumber() {
             exit(1);
        } 
         printf("//Enter i for if, e for else if.\n");
-        while (fgets(select, SIZE, stdin) == NULL || (1)) {
-            clearerr(stdin); 
+        while(1) {
+            if (fgets(select, SIZE, stdin) == NULL) {
+                clearerr(stdin); 
+                printf("\nInvalid input.\n\n");
+                continue;
+            }
             if (strlen(select) >= MAX) {
                 clean(); 
             }
@@ -1397,9 +1401,12 @@ void multiIfNumber() {
         }
         printf("//Enter a comparison a for less or equal b for equal c for Greater or equal d for not equal.\n");
         printf("//");
-        while (fgets(compare,SIZE, stdin) == NULL || (1)) {
-            clearerr(stdin);
-
+        while(1) {
+            if (fgets(compare,SIZE, stdin) == NULL) {
+                clearerr(stdin);
+                printf("\nInvalid input.\n\n");
+                continue;
+            }
             if (strlen(compare) >= MAX) {
                 clean();
             }
@@ -1430,8 +1437,12 @@ void multiIfNumber() {
         } 
         printf("//Enter a operator a for and o for or.\n");
         printf("//");
-        while (fgets(op, SIZE, stdin) == NULL || (1)) {
-            clearerr(stdin);     
+        while(1) {
+            if (fgets(op, SIZE, stdin) == NULL) {
+                clearerr(stdin);
+                printf("\nInvalid input.\n\n");
+                continue;
+            }
             if (strlen(op) >= MAX) {
                 clean();
             }
@@ -1459,8 +1470,12 @@ void multiIfNumber() {
         }
         printf("//Enter a second comparison a for less or equal b for equal c for Greater or equal d for not equal.\n");
         printf("//");
-        while (fgets(scompare, SIZE, stdin) == NULL || (1)) {
-            clearerr(stdin);    
+        while(1) {
+            if (fgets(scompare, SIZE, stdin) == NULL) {
+                clearerr(stdin);
+                printf("\nInvalid input.\n\n");
+                continue;
+            }
             if (strlen(scompare) >= MAX) {
                 clean();
             }

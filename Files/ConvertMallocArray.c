@@ -25,6 +25,7 @@ void choice() {
     printf("//Enter a for strings.\n");
     printf("//Enter aa for arrays.\n");
     printf("//Enter ia for arrays with numbers C C++.\n");
+    printf("//Enter ma to build a simple map that maps 2 arrays.\n");
     printf("//Enter c for strings with no quotation marks.\n");
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");
     printf("//Enter i for if statements e for else if for strings.\n");
@@ -2048,6 +2049,183 @@ void numArray() {
     }
 }
 
+void mapArrays() {
+    char loop [7] [25] = {"int "," = -1;","for(int "," = 0;","<",";","++) {"};
+    char ifStatement [11] [25] = {"    if(strcmp(",", ","[","]",") == 0) {"," = ",";","}","    }","}","        "};
+    char keyError [7] [25] = {"if(", " == -1) {", "    printf(\"", "\\n", "\");","    continue;","}"}; 
+    char end [10] [25] = {"printf(\"","%s","%d","%f","\\n","\"",",","[","]",");"};
+    char *keyArray;
+    char *valueArray;
+    char *select;
+    char *input;
+    char *forLoopInt;
+    char *elements;
+    char *error;
+    char *format;
+
+    while(1) {
+        keyArray = (char*)malloc(SIZE* sizeof(char));
+        valueArray = (char*)malloc(SIZE* sizeof(char));
+        select = (char*)malloc(SIZE* sizeof(char));
+        input = (char*)malloc(SIZE* sizeof(char));
+        forLoopInt = (char*)malloc(SIZE* sizeof(char));
+        elements = (char*)malloc(SIZE* sizeof(char));
+        error = (char*)malloc(SIZE* sizeof(char));
+        format = (char*)malloc(SIZE* sizeof(char));
+        if(keyArray == NULL || valueArray == NULL || select == NULL || input == NULL || forLoopInt == NULL || elements == NULL || error == NULL || format == NULL) {
+            printf("\nInsufficent memory.\n\n");
+            exit(1);
+        }
+        printf("//Enter the name of the key array m for main.\n");
+        while(fgets(keyArray,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        keyArray[strcspn(keyArray,"\n")]=0;
+        if(strlen(keyArray) >= MAX) {
+            clear();
+        }
+        if(strcmp(keyArray,"m") == 0) {
+            free(keyArray);
+            keyArray = NULL;
+            free(valueArray);
+            valueArray = NULL; 
+            free(select);
+            select = NULL;
+            free(input);
+            input = NULL;
+            free(forLoopInt);
+            forLoopInt = NULL;
+            free(elements);
+            elements = NULL;
+            free(error);
+            error = NULL;
+            free(format);
+            format = NULL;
+            break;
+        }
+        printf("//Enter the value array name.\n");
+        while(fgets(valueArray,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        valueArray[strcspn(valueArray,"\n")]=0;
+        if(strlen(valueArray) >= MAX) {                                    
+            clear();
+        }
+        printf("//Enter the name of the user input.\n");
+        while(fgets(select,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        select[strcspn(select,"\n")]=0;
+        if(strlen(select) >= MAX) {
+            clear();
+        }
+        printf("//Select the name of the variable that stores the key to be selected.\n");
+        printf("//Index or number is good.\n");
+        while(fgets(input,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        input[strcspn(input,"\n")]=0;
+        if(strlen(input) >= MAX) {
+            clear();
+        }
+        printf("//Select a name for the for loop int i is the usual.\n");
+        while(fgets(forLoopInt,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        forLoopInt[strcspn(forLoopInt,"\n")]=0;
+        if(strlen(forLoopInt) >= MAX) {
+            clear();
+        }
+        if(strcmp(forLoopInt,"m")==0) {
+            free(keyArray);
+            keyArray = NULL;
+            free(valueArray);
+            valueArray = NULL; 
+            free(select);
+            select = NULL;
+            free(input);
+            input = NULL;
+            free(forLoopInt);
+            forLoopInt = NULL;
+            free(elements);
+            elements = NULL;
+            free(error);
+            error = NULL;
+            free(format);
+            format = NULL;
+            break;
+        }
+        printf("//Enter the number of elements in arrays.\n");
+        while(fgets(elements,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        elements[strcspn(elements,"\n")]=0;
+        if(strlen(elements) >= MAX) {
+            clear();
+        }
+        printf("//Enter a key error message m for main.\n");
+        while(fgets(error,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        error[strcspn(error,"\n")]=0;
+        if(strlen(error) >= MAX) {
+            clear();
+        }
+        printf("//Enter a format specifier s for string i for int d for double.\n");
+        while(1) {
+            if(fgets(format,SIZE,stdin) == NULL) {
+                checkInput();
+                continue;
+            }
+            if(strlen(format) >= MAX) {
+                clear();
+            }
+            format[strcspn(format,"\n")]=0;
+            if(strcmp(format,"s")!=0 && strcmp(format,"i")!=0 && strcmp(format,"d")!=0){
+                printf("//\nEnter s i or d only.\n\n");
+            }else{
+                break;
+            }
+        }
+        if(strcmp(format,"s")==0){
+            strcpy(format,end[1]);
+        }else if(strcmp(format,"i")==0) {
+            strcpy(format,end[2]);
+        }else if(strcmp(format,"d")==0) {
+            strcpy(format,end[3]);
+        }             
+        printf("\n%s%s%s\n",loop[0],input,loop[1]); 
+        printf("%s%s%s%s%s%s%s%s%s\n",loop[2],forLoopInt,loop[3],forLoopInt,loop[4],elements,loop[5],forLoopInt,loop[6]);
+        printf("%s%s%s%s%s%s%s%s\n",ifStatement[0],select,ifStatement[1],keyArray,ifStatement[2],forLoopInt,ifStatement[3],ifStatement[4]);
+        printf("%s%s%s%s%s\n",ifStatement[10],input,ifStatement[5],forLoopInt,ifStatement[6]);
+        printf("%s\n%s\n",ifStatement[8],ifStatement[9]);
+        printf("%s%s%s\n",keyError[0],input,keyError[1]);
+        printf("%s%s%s%s%s%s\n",keyError[2],keyError[3],error,keyError[3],keyError[3],keyError[4]);
+        printf("%s\n",keyError[5]);
+        printf("%s\n",keyError[6]); 
+        printf("%s%s%s%s%s%s%s%s%s%s\n\n",end[0],format,end[4],end[5],end[6],valueArray,end[7],input,end[8],end[9]);
+        free(keyArray);
+        keyArray = NULL;
+        free(valueArray);
+        valueArray = NULL; 
+        free(select);
+        select = NULL;
+        free(input);
+        input = NULL;
+        free(forLoopInt);
+        forLoopInt = NULL;
+        free(elements);
+        elements = NULL;
+        free(error);
+        error = NULL;
+        free(format);
+        format = NULL;
+        if (strcmp(repeat, "r") != 0) {
+        break;
+        }
+    }
+}
+
 void funct() {
     const char* t[] = {"void ", "(", "){", "}"};
     char *name;
@@ -3790,6 +3968,7 @@ int main() {
         variableValue,
         array,
         numArray,
+        mapArrays,
         funct,
         callFunct,
         heap,
@@ -3844,7 +4023,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<47;i++) {
+        for(int i = 0; i<48;i++) {
             if(strcmp(sw, keys[i])==0){
                 index = i;
             }

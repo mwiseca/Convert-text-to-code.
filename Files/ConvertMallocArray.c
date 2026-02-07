@@ -25,7 +25,7 @@ void choice() {
     printf("//Enter a for strings.\n");
     printf("//Enter aa for arrays.\n");
     printf("//Enter ia for arrays with numbers C C++.\n");
-    printf("//Enter ma to build a simple map that maps 2 arrays.\n");
+    printf("//Enter mas to build a simple map that maps 2 arrays.\n");
     printf("//Enter c for strings with no quotation marks.\n");
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");
     printf("//Enter i for if statements e for else if for strings.\n");
@@ -3918,7 +3918,7 @@ int main() {
         "vv",
         "aa",
         "ia",
-        "ma",
+        "mas",
         "fc",
         "cf",
         "h",

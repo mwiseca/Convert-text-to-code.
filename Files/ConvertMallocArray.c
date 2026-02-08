@@ -1,4 +1,4 @@
-// Copyright 2023-2025 Mitchell E Wise
+// Copyright 2023-2026 Mitchell E Wise
 // SPDX-License-Identifier: Apache-20
 
 #include <stdio.h>
@@ -25,7 +25,7 @@ void choice() {
     printf("//Enter a for strings.\n");
     printf("//Enter aa for arrays.\n");
     printf("//Enter ia for arrays with numbers C C++.\n");
-    printf("//Enter mas to build a simple map that maps 2 arrays.\n");
+    printf("//Enter sm to build a simple map that maps 2 arrays.\n");
     printf("//Enter c for strings with no quotation marks.\n");
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");
     printf("//Enter i for if statements e for else if for strings.\n");
@@ -3933,7 +3933,7 @@ int main() {
         "vv",
         "aa",
         "ia",
-        "mas",
+        "sm",
         "fc",
         "cf",
         "h",
@@ -4013,7 +4013,7 @@ int main() {
 
     char sw[SIZE];
 
-    printf("          copyright 2025 Mitchell E Wise\n");
+    printf("          copyright 2026 Mitchell E Wise\n");
     printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
     printf("//Enter r to repeat choices enter to not.\n");

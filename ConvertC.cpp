@@ -2744,7 +2744,7 @@ int main() {
         {"vv",     variableValue}, 
         {"aa",             array},      
         {"ia",          numArray},
-	    {"ms",         mapArrays},
+	    {"sm",         mapArrays},
         {"fc",             funct},
         {"cf",         callFunct},  
         {"h",               heap},        

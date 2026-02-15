@@ -10,6 +10,7 @@ def choice():
     print("//Enter ch for choices.")
     print("//Enter hd for strings hd to hide user input with getpass.")
     print("//Enter aa for arrays ia for numbers C C++")
+    print("//Enter sm to build a simple map that maps 2 arrays.")
     print("//Enter a for strings.")
     print("//Enter c for strings with no quotation marks.")
     print("//Enter cy for what's needed to copy and paste to finish a simple program.")
@@ -661,7 +662,69 @@ def num_array():
         print(typ + name + a[2] + num + a[3] + a[4] + elements + a[5]) 
         if repeat != "r":
             return ""
-       
+
+def mapArrays():
+    loop = ["int "," = -1;","for(int "," = 0;","<",";","++) {"]
+    ifStatement = ["    if(strcmp(",", ","[","]",") == 0) {"," = ",";","}","    }","}","        "]
+    keyError = ["if(", " == -1) {", '    printf("', "\\n", '");',"    continue;","}"]
+    end = ["printf(\"","%s","%d","%f","\\n","\"",",","[","]",");"]
+    
+    while True:
+        print("//Enter the name of the key array m for main.")
+        keyArray = input("//")
+        if keyArray == "m":
+            return ""
+        print("//Enter the value array name m for main.")
+        valueArray = input("//")
+        if valueArray == "m":
+            return ""
+        print("//Enter the name of the user input m for main.")
+        select = input("//")
+        if select == "m":
+            return ""
+        print("//Select the name of the variable that stores the key to be selected.")
+        print("//Index or number is good. m for main.")
+        inputt = input("//")
+        if inputt == "m":
+            return "" 
+        print("//Select a name for the for loop int i is the usual.")
+        forLoopInt = input("//")
+        if forLoopInt == "m":
+            return "" 
+        print("//Enter the number of elements in arrays.")
+        elements = input("//")
+        if elements == "m":
+            return ""
+        print("//Enter a key error message m for main.")
+        error = input("//")
+        if error == "m":
+            return ""
+        print("//Enter a format specifier s for string i for int d for double.")
+        while True:
+            formatt = input("//")
+            if formatt != "s" and formatt != "i" and formatt != "d":
+                print("//\nEnter s i or d only.\n")
+            else:
+                break 
+        if formatt == "s":
+            formatt = end[1]
+        elif formatt == "i":
+            formatt = end[2]
+        elif formatt == "d":
+            formatt = end[3]
+        print("\n" + loop[0] + inputt + loop[1])
+        print(loop[2] + forLoopInt + loop[3] + forLoopInt + loop[4] + elements + loop[5] + forLoopInt + loop[6])
+        print(ifStatement[0] + select + ifStatement[1] + keyArray + ifStatement[2] + forLoopInt + ifStatement[3] + ifStatement[4])
+        print(ifStatement[10] + inputt + ifStatement[5] + forLoopInt + ifStatement[6])
+        print(ifStatement[8] +  "\n" + ifStatement[9])
+        print(keyError[0] + inputt +keyError[1])
+        print(keyError[2] + keyError[3] + error + keyError[3] + keyError[3] + keyError[4])
+        print(keyError[5])
+        print(keyError[6])
+        print(end[0] + formatt + end[4] + end[5] + end[6] + valueArray + end[7] + inputt + end[8] + end[9] + "\n")
+        if repeat != "r":
+            return ""
+               
     
 def function():
     t = ["void ","(","){","}"]
@@ -1287,6 +1350,7 @@ switch = {
          "vv": variable_value,
          "aa": array,
          "ia": num_array,
+         "sm": mapArrays,
          "fc": function,
          "cf": call_function,
          "h": heap,

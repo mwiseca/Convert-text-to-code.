@@ -82,4 +82,7 @@ January 12 2026.
 Multi if statement for numbers with 2 conditions was added.
 Check min in choices.
 January 12 2026.
+A simple map was added It uses 2 arrays for key value pairs.
+A string key array and string int or double values array must be add first.
+User input must also be added first.
 

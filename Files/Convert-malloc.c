@@ -7,7 +7,7 @@
 #define SIZE 500
 #define MAX 499
 
-char repeat [SIZE];
+char repeat [50];
 
 void clean(){
     int clear;
@@ -3194,28 +3194,28 @@ void copyy() {
 }
 
 int main() {
-    char sw[SIZE];
+    char sw[10];
 
     printf("          copyright 2025 Mitchell E Wise\n");
     printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
     printf("//Enter r to repeat choices enter to not.\n");
-    while(fgets(repeat,SIZE, stdin) == NULL) {
+    while(fgets(repeat,sizeof(repeat), stdin) == NULL) {
         checkInput();
     }
     repeat[strcspn(repeat, "\n")] = 0;
-    if (strlen(repeat) >= MAX) {
+    if (strlen(repeat) >= 49) {
         clean(); 
     }
     choice();
     while (1) {
         printf("//Enter a selection from choices x to exit ch for choices.\n");
         printf("//");
-        while(fgets(sw,SIZE, stdin) == NULL) {
+        while(fgets(sw,sizeof(sw), stdin) == NULL) {
             checkInput();
         }
         sw[strcspn(sw, "\n")] = 0;
-        if (strlen(sw) >= MAX) {
+        if (strlen(sw) >= 9) {
             clean(); 
         }
         if(strcmp(sw,"ch")==0){

@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define SIZE 50
-#define MAX 49
+#define SIZE 1000
+#define MAX 999
 
-char repeat [SIZE];
+char repeat [50];
 
 void clean(){
     int clear;
@@ -4011,28 +4011,28 @@ int main() {
         copyy  
     };
 
-    char sw[SIZE];
+    char sw[10];
 
     printf("          copyright 2026 Mitchell E Wise\n");
     printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
     printf("//Enter r to repeat choices enter to not.\n");
-    while(fgets(repeat,SIZE, stdin) == NULL) {
+    while(fgets(repeat,sizeof(repeat), stdin) == NULL) {
         checkInput();
     }
     repeat[strcspn(repeat, "\n")] = 0;
-    if (strlen(repeat) >= MAX) {
+    if (strlen(repeat) >= 49) {
         clean(); 
     }
     choice();
     while (1) {
         printf("//Enter a selection from choices x to exit ch for choices.\n");
         printf("//");
-        while(fgets(sw,SIZE, stdin) == NULL) {
+        while(fgets(sw,sizeof(sw), stdin) == NULL) {
             checkInput();
         }
         sw[strcspn(sw, "\n")] = 0;
-        if (strlen(sw) >= MAX) {
+        if (strlen(sw) >= 9) {
             clean(); 
         }
         if(strcmp(sw,"x")==0){

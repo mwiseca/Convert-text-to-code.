@@ -2276,7 +2276,7 @@ void mapNum() {
         }
         keyArray[strcspn(keyArray,"\n")]=0;
         if(strlen(keyArray) >= MAX) {
-            clear();
+            clean();
         }
         if(strcmp(keyArray,"m") == 0) {
             free(keyArray);
@@ -2303,7 +2303,7 @@ void mapNum() {
         }
         valueArray[strcspn(valueArray,"\n")]=0;
         if(strlen(valueArray) >= MAX) {
-            clear();
+            clean();
         }
         printf("//Enter the name of the  int or double user input.\n");
         while(fgets(select,SIZE,stdin) == NULL) {
@@ -2311,7 +2311,7 @@ void mapNum() {
         }
         select[strcspn(select,"\n")]=0;
         if(strlen(select) >= MAX) {
-            clear();
+            clean();
         } 
         printf("//Select the name of the variable that stores the key to be selected.\n");
         printf("//Index or number is good.\n");
@@ -2320,7 +2320,7 @@ void mapNum() {
         }
         input[strcspn(input,"\n")]=0;
         if(strlen(input) >= MAX) {
-            clear();
+            clean();
         }
         printf("//Select a name for the for loop int i is the usual m for main.\n");
         while(fgets(forLoopInt,SIZE,stdin) == NULL) {
@@ -2328,7 +2328,7 @@ void mapNum() {
         }
         forLoopInt[strcspn(forLoopInt,"\n")]=0;
         if(strlen(forLoopInt) >= MAX) {
-            clear();
+            clean();
         }
         if(strcmp(forLoopInt,"m") == 0) {
             free(keyArray);
@@ -2355,7 +2355,7 @@ void mapNum() {
         }
         elements[strcspn(elements,"\n")]=0;
         if(strlen(elements) >= MAX) {
-            clear();
+            clean();
         }
         printf("//Enter a key error message.\n");
         while(fgets(error,SIZE,stdin) == NULL) {
@@ -2363,7 +2363,7 @@ void mapNum() {
         }
         error[strcspn(error,"\n")]=0;
         if(strlen(error) >= MAX) {
-            clear();
+            clean();
         }
         printf("//Enter a format specifier for the value array s for string i for int d for double.\n");
         while(1) {
@@ -2372,7 +2372,7 @@ void mapNum() {
                 continue;
             }
             if(strlen(format) >= MAX) {
-                clear(); 
+                clean(); 
             }
             format[strcspn(format,"\n")]=0;
             if(strcmp(format,"s")!=0 && strcmp(format,"i")!=0 && strcmp(format,"d")!=0){

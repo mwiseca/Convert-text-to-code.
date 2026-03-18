@@ -15,6 +15,7 @@ void choice() {
     cout << "//Enter aa for arrays.\n";
     cout << "//Enter ia for arrays with numbers C C++.\n";
 	cout << "//Enter sm to build a simple map that maps 2 arrays.\n";
+	cout << "//Enter mn to build a simple map were the key array is numbers.\n";
     cout << "//Enter c for strings with no quotation marks.\n";
     cout << "//Enter cy for what's needed to copy and paste to finish a simple program.\n";
     cout << "//Enter i for if statements e for else if for strings.\n";
@@ -973,6 +974,90 @@ void mapArrays() {
     }
 }
 
+void mapNum() {
+    std::string loop [7] = {"int "," = -1;","for(int "," = 0;","<",";","++) {"};
+    std::string ifStatement [12] = {"    if(",", ","[","]",") {"," = ",";","}","    }","}","        "," == "};
+    std::string keyError [7] = {"if(", " == -1) {", "    printf(\"", "\\n", "\");","    continue;","}"}; 
+    std::string end [10] = {"printf(\"","%s","%d","%f","\\n","\"",",","[","]",");"};
+    std::string keyArray;
+    std::string valueArray;
+    std::string select;
+    std::string input;
+    std::string forLoopInt;
+    std::string elements;
+    std::string error;
+    std::string format;
+
+    while(true) {
+        std::cout << "//Enter the name of the int or double key array m for main.\n";
+        getline(std::cin,keyArray);
+        if(keyArray == "m") {
+            break;
+        }
+        std::cout << "//Enter the value array name m for main.\n";
+        getline(std::cin,valueArray);
+        if(valueArray == "m") {
+            break;
+        }
+        std::cout << "//Enter the name of the user input m for main.\n";
+        getline(std::cin,select);
+        if(select == "m") {
+            break;
+        }
+        std::cout << "//Select the name of the variable that stores the key to be selected.\n";
+        std::cout << "//Index or number is good. m for main.\n";
+        getline(std::cin,input);
+        if(input == "m") {
+            break;
+        }
+        std::cout << "//Select a name for the for loop int i is the usual.\n";
+        getline(std::cin,forLoopInt);
+        if(input == "m") {
+            break;
+        }
+        std::cout << "//Enter the number of elements in arrays.\n";
+        getline(std::cin,elements);
+        if(elements == "m") {
+            break;
+        }
+        std::cout << "//Enter a key error message m for main.\n";
+        getline(std::cin,error);
+        if(error == "m") {
+            break;
+        }
+        std::cout << "//Enter a format specifier for the value array s for string i for int d for double..\n";
+        while(true) {
+        getline(std::cin,format);
+            clearerr(stdin);
+            if(format != "s" && format != "i" && format != "d"){
+                std::cout << "//\nEnter s i or d only.\n\n";
+            }else{
+                break;
+            }
+        }
+        if(format == "s") {
+            format = end[1];
+        }else if(format == "i") {
+            format = end[2];
+        }else if(format == "d") {
+            format = end[3];
+        }             
+        std::cout << "\n" << loop[0] << input << loop[1] << "\n"; 
+        std::cout << loop[2] << forLoopInt << loop[3] << forLoopInt << loop[4] << elements << loop[5] << forLoopInt << loop[6] << "\n";
+        std::cout << ifStatement[0] << select << ifStatement[11] << keyArray << ifStatement[2] << forLoopInt << ifStatement[3] << ifStatement[4] << "\n";
+        std::cout << ifStatement[10] << input << ifStatement[5] << forLoopInt << ifStatement[6] << "\n";
+        std::cout << ifStatement[8] << "\n" << ifStatement[9] << "\n";
+        std::cout << keyError[0] << input << keyError[1] << "\n";
+        std::cout << keyError[2] << keyError[3] << error << keyError[3] << keyError[3] << keyError[4] << "\n";
+        std::cout << keyError[5] << "\n";
+        std::cout << keyError[6] << "\n"; 
+        std::cout << end[0] << format << end[4] << end[5] << end[6] << valueArray << end[7] << input << end[8] << end[9] << "\n\n";
+        if (repeat != "r") {
+            break;
+        }
+    }
+}
+
 void funct() {
     std::string t[4] = {"void ", "(", "){", "}"};
     std::string name;
@@ -1824,6 +1909,7 @@ int main() {
         {"aa",           array},
         {"ia",        numArray},
 	    {"sm",       mapArrays},
+	    {"mn",          mapNum},
         {"fc",           funct},     
         {"cf",       callFunct},  
         {"h",             heap},       

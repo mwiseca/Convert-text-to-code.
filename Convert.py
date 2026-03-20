@@ -292,6 +292,8 @@ def string_to_int():
             print(t[6] + t[7] + t[8] + text_after_number + t[8] + t[8] + t[9])
             print(f"{t[6]}continue;")
             print("}\n") 
+            if repeat != "r":
+                return ""
         except EOFError:
             print("\nInvalid input.\n")
      

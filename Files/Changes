@@ -19,3 +19,9 @@ Check sm in choices.
 February 15 2026.
 A simple map for a key array with numbers has been added to ConvertMallocArray.c.
 Check mn in choices.
+A new file was added. ConvertMallocOut.c.
+It allocates memory outside the loop.
+Its harder to read the code than the others.
+It will be more efficient for users who iterate through the loops often.
+Otherwise, use the others.
+March 30 2026.

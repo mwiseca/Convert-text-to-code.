@@ -52,7 +52,7 @@ void choice() {
     printf("//Enter si for scanf for integers and doubles.\n");
     printf("//Enter sh for scanf for ints and doubles on the heap.\n");
     printf("//Enter sc for check scanf.\n");
-    printf("//Enter csl to check scanf and limmit size.\n");
+    printf("//Enter csl to check scanf and limit size.\n");
     printf("//Enter cb to clear input buffer in C.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
@@ -73,7 +73,7 @@ void choice() {
     printf("//Enter up for C++ user input.\n");
     printf("//Enter cbp for a function to clear input buffer C++.\n");
     printf("//Enter mp to start a C++ map.\n");
-    printf("//Enter ma for map acces C++.\n");
+    printf("//Enter ma for map access C++.\n");
     printf("//Enter vp for string variables no value C++.\n");
     printf("//Enter vvp for string variables with a value c++.\n");
     printf("//Enter cyp for what's needed to copy and paste to finish a simple C++ program.\n");

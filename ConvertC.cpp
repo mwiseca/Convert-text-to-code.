@@ -38,6 +38,7 @@ void choice() {
 	printf("//Enter sm to build a simple map that maps 2 arrays.\n");
 	printf("//Enter mn to build a simple map were the key array is numbers.\n");
     printf("//Enter c for strings with no quotation marks.\n");
+	printf("//Enter bl for string literals.\n");
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");
     printf("//Enter i for if statements e for else if for strings.\n");
     printf("//Enter mi for if statements with 2 conditions.\n");
@@ -129,6 +130,50 @@ void stringEmpty() {
         if (strcmp(repeat, "r") != 0) {
             break;
         }
+    }
+}
+
+void stringLiteral() {
+    char data [10] [2] = { "\"", ","};
+    char string [SIZE];
+    char cont [SIZE];
+    char nextString [SIZE];
+    while(1) {
+        printf("//Enter a string m for main.\n");
+        while(fgets(string,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        string[strcspn(string,"\n")]=0;
+        if(strlen(string) >= MAX) {
+            clear();
+        }
+        if(strcmp(string,"m")==0) {
+            break;
+        }
+        printf("//To add another string with a comma between enter c. ");
+        printf("Or press enter.\n");
+        while(fgets(cont,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        cont[strcspn(cont,"\n")]=0;
+        if(strlen(cont) >= MAX) {
+            clear();
+        }
+        if(strcmp(cont,"c")!=0) {
+            printf("\n%s%s%s\n",data[0],string,data[0]);
+            printf("%s%s%s%s\n\n",data[0],string,data[0],data[1]);
+        } else if (strcmp(cont,"c")==0) {
+            printf("//Enter the next string.\n");
+            while(fgets(nextString,SIZE,stdin) == NULL) {
+                checkInput();
+            }
+            nextString[strcspn(nextString,"\n")]=0;
+            if(strlen(nextString) >= MAX) {
+                clear();
+            }
+            printf("\n%s%s%s%s%s%s%s\n",data[0],string,data[0],data[1],data[0],nextString,data[0]);
+            printf("%s%s%s%s%s%s%s%s\n\n",data[0],string,data[0],data[1],data[0],nextString,data[0],data[1]); 
+        } 
     }
 }
 
@@ -2856,7 +2901,8 @@ int main() {
         {"ch",            choice},
         {"cy",              copy},
         {"a",             string}, 
-        {"c",        stringEmpty},  
+        {"c",        stringEmpty},
+	    {"bl",     stringLiteral},
         {"f",             fgetss},
         {"fs",       fgetsSizeof},
 	    {"fb",       fgetsBuffer},

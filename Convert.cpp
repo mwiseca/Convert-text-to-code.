@@ -1,4 +1,4 @@
-// Copyright 2023-2025 Mitchell E Wise
+// Copyright 2023-2026 Mitchell E Wise
 // SPDX-License-Identifier: Apache-20
 
 #include <functional>
@@ -1966,7 +1966,7 @@ int main() {
     std::string sw;
 
     std::cout << "\n\n";
-    std::cout << "          copyright 2025 Mitchell E Wise\n";
+    std::cout << "          copyright 2023-2026 Mitchell E Wise\n";
     std::cout << "          SPDX-License-Identifier: Apache-20\n\n\n";
 
     std::cout << "//Enter r to repeat choices enter to not.\n";

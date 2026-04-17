@@ -17,6 +17,7 @@ void choice() {
 	cout << "//Enter sm to build a simple map that maps 2 arrays.\n";
 	cout << "//Enter mn to build a simple map were the key array is numbers.\n";
     cout << "//Enter c for strings with no quotation marks.\n";
+	cout << "//Enter bl for string literals.\n";
     cout << "//Enter cy for what's needed to copy and paste to finish a simple program.\n";
     cout << "//Enter i for if statements e for else if for strings.\n";
     cout << "//Enter mi for string if and else if with 2 conditions.\n";
@@ -34,7 +35,7 @@ void choice() {
     cout << "//Enter si for scanf for integers and doubles.\n";
     cout << "//Enter sh for scanf for ints and doubles on the heap.\n";
     cout << "//Enter sc for check scanf.\n";
-    cout << "//Enter csl to check scanf and limmit size.\n";
+    cout << "//Enter csl to check scanf and limit size.\n";
     cout << "//Enter cb to clear input buffer in C.\n";
     cout << "//Enter h to allocate memory on the heap.\n";
     cout << "//Enter cm to check malloc.\n";
@@ -54,7 +55,7 @@ void choice() {
     cout << "//Enter up for C++ user input.\n";
     cout << "//Enter cbp for a function to clear input buffer C++.\n";
     cout << "//Enter mp to start a C++ map.\n";
-    cout << "//Enter ma for map acces C++.\n";
+    cout << "//Enter ma for map access C++.\n";
     cout << "//Enter vp for string variables no value C++.\n";
     cout << "//Enter vvp for string variables with a value c++.\n";
     cout << "//Enter cyp for what's needed to copy and paste to finish a simple C++ program.\n";
@@ -94,6 +95,32 @@ void stringEmpty() {
         if (repeat != "r") {
             break;
         }
+    }
+}
+
+void stringLiteral() {
+    std::string data [2] = { "\"", ","};
+    std::string string;
+    std::string cont;
+    std::string nextString;
+    while(1) {
+        std::cout << "//Enter a string m for main.\n";
+        std::getline(std::cin,string);
+        if(string == "m") {
+            break;
+        }
+        std::cout << "//To add another string with a comma between enter c. ";
+        std::cout << "Or press enter.\n";
+        std::getline(std::cin,cont);
+        if(cont != "c") {
+            std::cout << "\n" << data[0] << string << data[0] << "\n";
+            std::cout << data[0] << string << data[0] << data[1] << "\n\n";
+        } else if (cont == "c") {
+            std::cout << "//Enter the next string.\n";
+            std::getline(std::cin,nextString);
+            std::cout << "\n" << data[0] << string << data[0] << data[1] << data[0] << nextString << data[0] << "\n";
+            std::cout << data[0] << string << data[0] << data[1] << data[0] << nextString << data[0] << data[1] << "\n"; 
+        } 
     }
 }
 
@@ -1889,7 +1916,8 @@ int main() {
         {"ch",          choice},
         {"cy",            copy},
         {"a",           string},
-        {"c",      stringEmpty}, 
+        {"c",      stringEmpty},
+	    {"bl",   stringLiteral},
         {"f",           fgetss},
         {"fs",     fgetsSizeof},
 	    {"fb",     fgetsBuffer},

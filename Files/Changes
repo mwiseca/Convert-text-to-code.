@@ -25,3 +25,5 @@ Its harder to read the code than the others.
 It will be more efficient for users who iterate through the loops often.
 Otherwise, use the others.
 March 30 2026.
+String literals was added to ConvertMallocOut.c.
+Check bl in choices.

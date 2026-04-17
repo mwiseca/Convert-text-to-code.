@@ -14,6 +14,7 @@ def choice():
     print("//Enter mn to build a simple map were the key array is numbers.\n")
     print("//Enter a for strings.")
     print("//Enter c for strings with no quotation marks.")
+    print("//Enter bl for string literals.")
     print("//Enter cy for what's needed to copy and paste to finish a simple program.")
     print("//Enter f for fgets and removal of new line character.")
     print("//Enter fs for fgets with sizeof operator.")
@@ -26,7 +27,7 @@ def choice():
     print("//Enter si for scanf for integers and doubles.")
     print("//Enter sh for scanf for ints and doubles on the heap.")
     print("//Enter sc for check scanf.")
-    print("//Enter csl to check scanf and limmit size.")
+    print("//Enter csl to check scanf and limit size.")
     print("//Enter cb to clear input buffer in C.")
     print("//Enter h to allocate memory on the heap.")
     print("//Enter hi to allocate int float or double memory on the heap.")
@@ -95,6 +96,22 @@ def empty_string():
         print("\n" + t[0] + text + t[1] + "\n")
         if repeat != "r":
             return ""
+
+
+def string_literal():
+    data = [ "\"", ","]
+    while True:
+        string = input("//Enter a string m for main.\n//")
+        if string == "m":
+            break 
+        cont = input("//To add another string with a comma between enter c. Or press enter.\n//")
+        if cont != "c":
+            print("\n" + data[0] + string + data[0])
+            print(data[0] + string + data[0] + data[1] + "\n")
+        elif cont == "c":
+            nextString = input("//Enter the next string.\n//") 
+            print("\n" + data[0] + string + data[0] + data[1] + data[0] + nextString + data[0])
+            print(data[0] + string + data[0] + data[1] + data[0] + nextString + data[0] + data[1] + "\n") 
 
 
 def fgets():
@@ -1398,6 +1415,7 @@ switch = {
          "a": string,
          "hd": hide_text,
          "c": empty_string,
+         "bl": string_literal,
          "f": fgets,
          "fs": fgets_sizeof,
          "fb": fgets_Buffer,

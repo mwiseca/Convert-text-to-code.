@@ -79,7 +79,7 @@ void string() {
 
     text = (char*)malloc(SIZE* sizeof(char));
     if (text == NULL) {
-        printf("Error: Insufficent memory.\n");
+        printf("Error: Insufficient memory.\n");
         exit(1);
     }
     printf("//Enter your string, m for main.\n");

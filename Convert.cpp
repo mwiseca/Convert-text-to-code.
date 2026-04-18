@@ -1,7 +1,6 @@
 // Copyright 2023-2026 Mitchell E Wise
 // SPDX-License-Identifier: Apache-20
 
-#include <functional>
 #include <iostream>
 #include <map>
 #include <string>
@@ -1912,7 +1911,7 @@ void copyy() {
 }
 
 int main() {
-    std::map<std::string, std::function<void()>> f = {
+	std::unordered_map<std::string, void(*)()> f = {
         {"ch",          choice},
         {"cy",            copy},
         {"a",           string},
@@ -1974,17 +1973,16 @@ int main() {
 
     choice();
     while (true) {
-        std::cout << "//Enter a selection from choices x to exit ch for choices.\n";
-        std::cout << "//";
-        std::getline(std::cin, sw);
-        if (sw == "x") {
-            break;
-        }
-        auto c = f.find(sw);
-        if (c != f.end()) {
-            (*c).second();
-        } else {
-            std::cout << "//Enter a letter in choices.\n\n";
+		try {
+            std::cout << "//Enter a selection from choices x to exit ch for choices.\n";
+            std::cout << "//";
+            std::getline(std::cin, sw);
+            if (sw == "x") {
+                break;
+            }
+            f.at(sw)();
+        }catch(std::out_of_range){
+            std::cout << "\nKey error: Enter a name in choices.\n\n";
         }
     }
     return 0;

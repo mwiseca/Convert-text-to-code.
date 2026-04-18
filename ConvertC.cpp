@@ -1,10 +1,9 @@
 // Copyright 2023-2026 Mitchell E Wise
 // SPDX-License-Identifier: Apache-20
 
-#include <functional>
 #include <iostream>
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -2897,7 +2896,7 @@ void copyy() {
 }
 
 int main() {
-    std::map<std::string, std::function<void()>> f = {
+	std::unordered_map<std::string, void(*)()> f = {
         {"ch",            choice},
         {"cy",              copy},
         {"a",             string}, 

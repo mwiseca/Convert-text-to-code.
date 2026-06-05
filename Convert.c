@@ -2889,14 +2889,75 @@ void copyy() {
     printf("\n");
 }
 
+struct Menu {
+    const char* keys;
+    void(*values)(void);  
+};
+
 int main() {
+
+    struct Menu m1[] = {
+        {"ch",             choice},
+        {"cy",               copy}, 
+        {"a",              string},
+        {"c",         stringEmpty},                  
+        {"f",             fgetss },
+        {"fs",        fgetsSizeof},
+        {"fb",        fgetsBuffer},
+        {"fcb",        checkFgets},            
+        {"fi",        stringToInt},   
+        {"fib",  stringToIntBasic},
+        {"s",              scanff},
+        {"sb",         scanfBasic},
+        {"cb",         clearBuffC},
+        {"i",         ifStatement},
+        {"e",              elseIf},   
+        {"mi",            multiIf},
+        {"min",     multiIfNumber},
+        {"in",           ifNumber},
+        {"im",             ifHeap},  
+        {"v",            variable},
+        {"vv"       variableValue},  
+        {"aa",              array},        
+        {"ia",          numArrays}, 
+        {"sm",          mapArrays},
+        {"mn",             mapNum},
+        {"fc",              funct},      
+        {"cf",          callFunct},
+        {"h",                heap},
+        {"hi",            heapNum},
+        {"cm",        checkMalloc}, 
+        {"vi",        variableNum},
+        {"vn",         varNoValue},
+        {"si",           scanfNum},
+        {"sh",          scanfHeap},
+        {"sc",         checkScanf},
+        {"csl",       checkScanfL},
+        {"sp",         cppStrings},
+        {"cp",           estringp},
+        {"aap",           arraysp},
+        {"ip",       ifStatementp}, 
+        {"ep",            elseifp},
+        {"mip",          multiIfp},
+        {"up",          userinput},
+        {"cbp",         clearBuff},
+        {"mp",                map},
+        {"ma",          mapAccess},
+        {"vp",          variablep},
+        {"vvp",    variableValuep},
+        {"cyp",             copyy},
+
+    };
+
     char sw[SIZE];
 
-    printf("          copyright 2023-2026 Mitchell E Wise\n");
+    printf("\n          copyright 2023-2026 Mitchell E Wise\n");
     printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
     printf("//Enter r to repeat choices enter to not.\n");
-    fgets(repeat,SIZE, stdin);
+    while(fgets(repeat,SIZE, stdin) == NULL) {
+        checkInput();
+    }
     repeat[strcspn(repeat, "\n")] = 0;
     if (strlen(repeat) >= MAX) {
         clear(); 
@@ -2905,118 +2966,33 @@ int main() {
     while (1) {
         printf("//Enter a selection from choices x to exit ch for choices.\n");
         printf("//");
-        fgets(sw,SIZE, stdin);
+        while(fgets(sw,SIZE, stdin) == NULL) {
+            checkInput();
+        }
         sw[strcspn(sw, "\n")] = 0;
         if (strlen(sw) >= MAX) {
             clear(); 
         }
-        if(strcmp(sw,"ch")==0){
-            choice();
-        } else if(strcmp(sw,"cy")==0) {
-            copy();
-        } else if(strcmp(sw, "a")==0) {
-            string();
-        } else if(strcmp(sw, "c")==0) {
-            stringEmpty();
-        } else if(strcmp(sw, "bl")==0) {
-            stringLiteral();  
-        } else if(strcmp(sw,"f")==0) {
-            fgetss();
-        } else if(strcmp(sw, "fs")==0) {
-            fgetsSizeof();
-        } else if(strcmp(sw, "fb")==0) {
-            fgetsBuffer(); 
-        } else if(strcmp(sw, "fcb")==0) {
-            checkFgets();
-        } else if(strcmp(sw, "fi")==0) {
-            stringToInt();
-        } else if(strcmp(sw, "fib")==0) {
-            stringToIntBasic();
-        } else if(strcmp(sw, "s")==0) {
-            scanff();
-        } else if(strcmp(sw, "sb")==0) {
-            scanfBasic();
-        } else if(strcmp(sw, "cb")==0) {
-            clearBuffC();
-        } else if(strcmp(sw, "i")==0) {
-            ifStatement();
-        } else if(strcmp(sw, "e")==0) {
-            elseIf();
-        } else if(strcmp(sw, "mi")==0) {
-            multiIf();
-        } else if(strcmp(sw, "min")==0) {  
-            multiIfNumber();
-        } else if(strcmp(sw, "in")==0) {
-            ifNumber();
-        } else if(strcmp(sw, "im")==0) {
-            ifHeap();
-        } else if(strcmp(sw, "v")==0) {
-            variable();    
-        } else if(strcmp(sw, "vv")==0) { 
-            variableValue();  
-        } else if(strcmp(sw, "aa")==0) { 
-            array(); 
-        } else if(strcmp(sw, "ia")==0) {
-            numArray(); 
-        } else if(strcmp(sw, "sm")==0) {
-            mapArrays();
-        } else if(strcmp(sw, "mn")==0) {
-            mapNum();  
-        } else if(strcmp(sw, "fc")==0) {
-            funct();
-        } else if(strcmp(sw, "cf")==0) {
-            callFunct();
-        } else if(strcmp(sw, "h")==0) {
-            heap();
-        } else if(strcmp(sw, "hi")==0) {
-            heapNum();
-        } else if(strcmp(sw, "cm")==0) {
-            checkMalloc(); 
-        } else if(strcmp(sw, "vi")==0) {
-            variableNum();   
-        } else if(strcmp(sw, "vn")==0) {
-            varNoValue(); 
-        } else if(strcmp(sw, "si")==0) {
-            scanfNum();   
-        } else if(strcmp(sw, "sh")==0) {
-            scanfHeap();
-        } else if(strcmp(sw, "sc")==0) {
-            checkScanf();
-        } else if(strcmp(sw, "csl")==0) {
-            checkScanfL();
-        } else if(strcmp(sw, "sp")==0) {
-            cppStrings(); 
-        } else if(strcmp(sw, "cp")==0) {
-            estringp();        
-        } else if(strcmp(sw, "aap")==0) {
-            arraysp();   
-        } else if(strcmp(sw, "ip")==0) {
-            ifStatementp();  
-        } else if(strcmp(sw, "ep")==0) {
-            elseIfp();
-        } else if(strcmp(sw, "mip")==0) {
-            multiIfCpp();	
-        } else if(strcmp(sw, "up")==0) {
-            userInput();
-        } else if(strcmp(sw, "cbp")==0) {
-            clearBuff();	
-        } else if(strcmp(sw, "mp")==0) {
-            map();
-        } else if(strcmp(sw, "ma")==0) {
-            mapAccess();  
-        } else if(strcmp(sw, "vp")==0) {
-            variablep();  
-        } else if(strcmp(sw, "vvp")==0) {
-            variableValuep(); 
-        } else if(strcmp(sw, "cyp")==0) {
-            copyy();
-        } else if (strcmp(sw, "x") == 0) {
+        if(strcmp(sw,"x")==0){
             break;
-        } else {
-            printf("//Enter a letter in main.\n");
         } 
-    }  
-    return 0;
+        int index = -1;
+        for(int i = 0; i<38;i++) {
+            if(strcmp(sw, m1[i].keys)==0){
+                index = i;
+            }
+        }
+        if(index == -1) {
+            printf("\n//Enter a name in choices.\n\n");
+            continue;
+        }
+        m1[index].values();
+    }
+return 0;
 }
+
+
+
+
 
 

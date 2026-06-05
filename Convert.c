@@ -2900,7 +2900,8 @@ int main() {
         {"ch",             choice},
         {"cy",               copy}, 
         {"a",              string},
-        {"c",         stringEmpty},                  
+        {"c",         stringEmpty}, 
+        {"bl",      stringLiteral},
         {"f",             fgetss },
         {"fs",        fgetsSizeof},
         {"fb",        fgetsBuffer},
@@ -2977,7 +2978,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<49;i++) {
+        for(int i = 0; i<50;i++) {
             if(strcmp(sw, m1[i].keys)==0){
                 index = i;
             }

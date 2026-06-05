@@ -107,7 +107,6 @@ void string() {
 void stringEmpty() {
     char t[2][12] = {"printf(", ");"};
     char text[SIZE];
-
     printf("//Enter text m for main.\n");
     while (1) {
         printf("//");

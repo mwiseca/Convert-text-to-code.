@@ -2977,7 +2977,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<38;i++) {
+        for(int i = 0; i<49;i++) {
             if(strcmp(sw, m1[i].keys)==0){
                 index = i;
             }

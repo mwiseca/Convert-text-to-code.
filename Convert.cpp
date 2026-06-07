@@ -30,6 +30,7 @@ void choice() {
 	cout << "//Enter fcb to check fgets and clear input buffer after selecting cb.\n";
 	cout << "//Enter fi to convert a string to a int or double to use with fgets.\n";
     cout << "//Enter s for scanf for strings to allow for white spaces.\n";
+	cout << "//Enter scb to check scanf and clear buffer.\n";
     cout << "//Enter sb for scanf basic no white spaces.\n";
     cout << "//Enter si for scanf for integers and doubles.\n";
     cout << "//Enter sh for scanf for ints and doubles on the heap.\n";
@@ -411,6 +412,65 @@ void scanff() {
         if (repeat != "r") {
             break;
         }
+    }
+}
+
+void CheckScanfClear() {
+    std::string t [12] = {"while(scanf(\"","if(scanf(\"" ,"%","while(1) {", "[^\\n]\"", ",", ")!=1) {","    ","();","clearerr(stdin);","}","continue;" };
+    std::string error [3] = {"printf(\"", "\\n", "\");"};
+    std::string var;
+    std::string mem;
+    int m;
+    std::string buff;
+    std::string err;
+
+    while (true) {
+        std::cout << "//Enter the name of variable m for main.\n";
+        std::cout << "//";
+        std::getline(std::cin,var);
+        if (var == "m") {
+            break;
+        }
+        std::cout << "//Enter memory allocated to variable  5 or more.\n";
+        std::cout << "//";
+        while(1) {
+            try {
+                std::getline(std::cin,mem);
+                m = stoi(mem);
+                }catch (std::invalid_argument) {
+                    std::cout << "\nEnter a number only.\n\n";
+                    continue;
+                }catch(std::out_of_range) {
+                    std::cout << "\nNumber to large.\n\n";
+                    continue;
+                }
+                if (m < 5){
+                    std::cout << "\n//Enter a valid number  5 or more only.\n\n";
+                    std::cout << "//";
+            } else {
+                break;
+            }
+        }
+        std::cout << "//Enter the name of the function to flush input buffer.\n";
+        std::cout << "//";
+        std::getline(std::cin,buff);
+        std::cout << "//Enter a error message. Enter valid text only will do.\n";
+        std::cout << "//";
+        std::getline(std::cin,err);
+        std::cout << "\n" << t[0] << t[2] << m-1 << t[4] << t[5] << var << t[6]  << "\n";
+        std::cout << t[7] << buff << t[8] << "\n";       
+        std::cout << t[7] << error[0] << error[1] << err << error[1] << error[1] << error[2] << "\n";
+        std::cout << t[7] << t[9] << "\n";
+        std::cout << t[10] << "\n\n";
+        std::cout << "\n" << t[3] << "\n";
+        std::cout << t[7] << t[1] << t[2] << m-1 << t[4] << t[5] << var << t[6] << "\n";
+        std::cout << t[7] << t[7] << buff << t[8] << "\n";       
+        std::cout << t[7] << t[7] <<  error[0] << error[1] << err << error[1] << error[1] << error[2] << "\n";
+        std::cout << t[7] << t[7] << t[9] << "\n";
+        std::cout << t[7] << t[7] << t[11] << "\n"; 
+        std::cout << t[7] << t[10] << "\n\n";
+		if (repeat != "r") {
+		}
     }
 }
 
@@ -1912,54 +1972,55 @@ void copyy() {
 
 int main() {
 	std::unordered_map<std::string, void(*)()> f = {
-        {"ch",          choice},
-        {"cy",            copy},
-        {"a",           string},
-        {"c",      stringEmpty},
-	    {"bl",   stringLiteral},
-        {"f",           fgetss},
-        {"fs",     fgetsSizeof},
-	    {"fb",     fgetsBuffer},
-	    {"fcb",     checkFgets},
-	    {"fi",     stringToInt},
-        {"s",           scanff},           
-        {"sb",      scanfBasic},
-	    {"cb",      clearBuffC},
-        {"i",      ifStatement}, 
-        {"e",           elseIf},
-        {"mi",         multiIf},
-	    {"min",  multiIfNumber},
-        {"in",        ifNumber},  
-        {"im",          ifHeap}, 
-        {"v",         variable},     
-        {"vv",   variableValue},   
-        {"aa",           array},
-        {"ia",        numArray},
-	    {"sm",       mapArrays},
-	    {"mn",          mapNum},
-        {"fc",           funct},     
-        {"cf",       callFunct},  
-        {"h",             heap},       
-        {"cm",     checkMalloc}, 
-        {"vi",     variableNum},     
-        {"vn",      varNoValue},
-        {"si",        scanfNum},
-        {"sh",       scanfHeap},
-        {"sc",      checkScanf},
-	    {"csl",    checkScanfL},
-        {"sp",      cppStrings},
-        {"cp",        estringp},    
-        {"aap",        arraysp}, 
-        {"ip",    ifStatementp},
-        {"ep",         elseIfp},
-        {"mip",     multiIfCpp}, 	
-        {"up",       userInput},
-        {"cbp",      clearBuff},	
-        {"mp",             map},        
-        {"ma",       mapAccess},  
-        {"vp",       variablep},   
-        {"vvp", variableValuep}, 
-        {"cyp",          copyy},
+        {"ch",            choice},
+        {"cy",              copy},
+        {"a",             string},
+        {"c",        stringEmpty},
+	    {"bl",     stringLiteral},
+        {"f",             fgetss},
+        {"fs",       fgetsSizeof},
+	    {"fb",       fgetsBuffer},
+	    {"fcb",       checkFgets},
+	    {"fi",       stringToInt},
+        {"s",             scanff},
+	    {"scb",  CheckScanfClear},
+        {"sb",        scanfBasic},
+	    {"cb",        clearBuffC},
+        {"i",        ifStatement}, 
+        {"e",             elseIf},
+        {"mi",           multiIf},
+	    {"min",    multiIfNumber},
+        {"in",          ifNumber},  
+        {"im",            ifHeap}, 
+        {"v",           variable},     
+        {"vv",     variableValue},   
+        {"aa",             array},
+        {"ia",          numArray},
+	    {"sm",         mapArrays},
+	    {"mn",            mapNum},
+        {"fc",             funct},     
+        {"cf",         callFunct},  
+        {"h",               heap},       
+        {"cm",       checkMalloc}, 
+        {"vi",       variableNum},     
+        {"vn",        varNoValue},
+        {"si",          scanfNum},
+        {"sh",         scanfHeap},
+        {"sc",        checkScanf},
+	    {"csl",      checkScanfL},
+        {"sp",        cppStrings},
+        {"cp",          estringp},    
+        {"aap",          arraysp}, 
+        {"ip",      ifStatementp},
+        {"ep",           elseIfp},
+        {"mip",       multiIfCpp}, 	
+        {"up",         userInput},
+        {"cbp",        clearBuff},	
+        {"mp",               map},        
+        {"ma",         mapAccess},  
+        {"vp",         variablep},   
+        {"vvp",   variableValuep}, 
+        {"cyp",            copyy},
     };
 
     std::string sw;

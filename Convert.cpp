@@ -470,6 +470,7 @@ void CheckScanfClear() {
         std::cout << t[7] << t[7] << t[11] << "\n"; 
         std::cout << t[7] << t[10] << "\n\n";
 		if (repeat != "r") {
+			break;
 		}
     }
 }

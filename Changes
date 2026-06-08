@@ -94,3 +94,5 @@ String literals was added.
 Check bl in choices.
 Convert.cpp was changed to try catch for Key error handling.
 April 19 2026.
+Convert.c menu has been changed to a struct from a if statement to change choices.
+

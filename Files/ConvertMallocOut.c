@@ -3913,7 +3913,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<50;i++) {
+        for(int i = 0; i<51;i++) {
             if(strcmp(sw, keys[i])==0){
                 index = i;
             }

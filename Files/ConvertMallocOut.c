@@ -730,7 +730,7 @@ void CheckScanfClear() {
         }
         var[strcspn(var, "\n")] = 0;
         if (strlen(var) >= MAX) {
-            clear();
+            clean();
         }
         if (strcmp(var, "m") == 0) {
             break;
@@ -744,7 +744,7 @@ void CheckScanfClear() {
             }
             mem[strcspn(mem, "\n")] = 0;
             if (strlen(mem) >= 9) {
-                clear();
+                clean();
             }
             m = atoi(mem);
             if(m < 5) {
@@ -760,7 +760,7 @@ void CheckScanfClear() {
        }
        buff[strcspn(buff,"\n")]=0;
        if(strlen(buff) >= MAX) {
-           clear();
+           clean();
        }
        printf("//Enter a error message. Enter valid text only will do.\n");
        printf("//");
@@ -769,7 +769,7 @@ void CheckScanfClear() {
        }
        err[strcspn(err, "\n")] = 0;
        if(strlen(err) >= MAX) {
-           clear();
+           clean();
        }
        printf("\n%s%s%d%s%s%s%s\n",t[0],t[2],m-1,t[4],t[5],var,t[6]);
        printf("%s%s%s\n",t[7],buff,t[8]);       

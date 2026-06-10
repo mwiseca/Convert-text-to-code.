@@ -28,3 +28,6 @@ March 30 2026.
 String literals was added to ConvertMallocOut.c.
 Check bl in choices.
 April 19 2026.
+Added a scanf for strings that clears input buffer after cb is selected to ConvertMallocOut.c.
+check scb in choices.
+June 10 2026.

@@ -23,6 +23,7 @@ def choice():
     print("//Enter fi to convert a string to int or double to use with fgets.")
     print("//Enter fc for void functions C C++.")
     print("//Enter s for scanf for strings.")
+    print("//Enter scb to check scanf and clear buffer.\n")
     print("//Enter sb for scanf basic no white spaces.")
     print("//Enter si for scanf for integers and doubles.")
     print("//Enter sh for scanf for ints and doubles on the heap.")
@@ -327,6 +328,43 @@ def scanf():
         mem = input("//")
         print("\n" + t[0] + mem + t[1]  + var  + t[2])
         print(t[3] + "\n")
+        if repeat != "r":
+            return ""
+
+def CheckScanfClear():
+    t = ['while(scanf("','if(scanf("' ,"%","while(1) {", '[^\\n]"', ",", ")!=1) {","    ","();","clearerr(stdin);","}","continue;"]
+    error = ['printf("', "\\n", '");']
+    
+    while True: 
+        var = input("//Enter the name of variable m for main.\n//")
+        if var == "m":
+            break 
+        print("//Enter memory allocated to variable or 2 or more.")
+    
+        while True:
+            try:
+                mem = int(input("//"))
+                if mem < 2:
+                    print("\nEnter 2 or more.\n//")
+                else:
+                    break
+            except ValueError:
+                print("\nEnter 2 or more.\n") 
+        buff = input("//Enter the name of the function to flush input buffer.\n//")
+        err = input("//Enter a error message. Enter valid text only will do.\n//")
+           
+        print(f"\n {t[0]}{t[2]}{mem-1}{t[4]}{t[5]}{var}{t[6]}")
+        print(t[7] + buff + t[8])       
+        print(t[7] + error[0] + error[1] + err + error[1] + error[1], error[2])
+        print(t[7] + t[9])
+        print(t[10] + "\n")
+        print(t[3]);
+        print(f"{t[7]}{t[1]}{t[2]}{mem-1}{t[4]}{t[5]}{var}{t[6]}")
+        print(t[7] + t[7] + buff + t[8])       
+        print(t[7] + t[7] + error[0] + error[1] + err + error[1] + error[1] + error[2])
+        print(t[7] + t[7] + t[9])
+        print(t[7] + t[7] + t[11])
+        print(t[7] + t[10] + "\n")
         if repeat != "r":
             return ""
 
@@ -1422,6 +1460,7 @@ switch = {
          "fcb": check_fgets,
          "fi": string_to_int,
          "s": scanf,
+         "scb": CheckScanfClear,
          "sb": scanf_basic,
          "cb": clear_buffC,
          "i": if_statement,

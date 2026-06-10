@@ -48,6 +48,7 @@ void choice() {
     printf("//Enter fi to convert a string to a int or double to use with fgets.\n");
     printf("//Enter fib to convert a string to a int or double with only one error message.\n");
     printf("//Enter s for scanf for strings to allow for white spaces.\n");
+    printf("//Enter scb to check scanf and clear buffer.\n");
     printf("//Enter sb for scanf basic no white spaces.\n");
     printf("//Enter si for scanf for integers and doubles.\n");
     printf("//Enter sh for scanf for ints and doubles on the heap.\n");
@@ -107,7 +108,6 @@ void string() {
 void stringEmpty() {
     char t[2][12] = {"printf(", ");"};
     char text[SIZE];
-
     printf("//Enter text m for main.\n");
     while (1) {
         printf("//");
@@ -315,7 +315,7 @@ void fgetsBuffer() {
 }
 
 void checkFgets() {
-    char f[12][25] = {"while(fgets(", ",", "stdin) == NULL) {", "[strcspn(", "\"\\n", "\")]=0;", "    ","sizeof(","),stdin) == NULL) {","printf(\"","\\n","\");"};
+    char f[14][25] = {"while(1) {","if(fgets(","while(fgets(", ",", "stdin) == NULL) {", "[strcspn(", "\"\\n", "\")]=0;", "    ","sizeof(","),stdin) == NULL) {","printf(\"","\\n","\");"};
     char v[SIZE];
     char me [10];
     char em [SIZE];
@@ -326,7 +326,7 @@ void checkFgets() {
         printf("//Enter name of variable m for main.\n");
         printf("//");
         while(fgets(v, SIZE, stdin) == NULL) {
-            checkInput();    
+            checkInput();
         }
         v[strcspn(v, "\n")] = 0;
         if(strlen(v) >= 9){
@@ -338,67 +338,87 @@ void checkFgets() {
         printf("//Enter the memory to be allocated to the variable 5 minimum.\n");
         printf("//");
         while(fgets(me, sizeof(me), stdin) == NULL || (1)) {
-            clearerr(stdin);    
+            clearerr(stdin);
             if(strlen(me) >= 9){
                 clear();
-            }            
+            }
             m = atoi(me);
             if(m <=4) {
                 printf("\n//Enter a number 5 or more.\n\n");
             } else {
                 break;
             }
-        } 
+        }
         me[strcspn(me, "\n")] = 0;
         printf("//Enter a error message. Invalid input is good.\n");
         while(fgets(em,SIZE,stdin) == NULL) {
-            checkInput();     
+            checkInput();
         }
         em[strcspn(em,"\n")]=0;
         if(strlen(em) >= MAX){
             clear();
         }
-        printf("//Enter the function name.\n");
+        printf("//Enter the name of the function to clear input buffer.\n");
         while(fgets(function,SIZE,stdin) == NULL) {
-            checkInput();     
+            checkInput();
         }
         function[strcspn(function,"\n")]=0;
         if(strlen(function) >= MAX){
             clear();
         }
-        printf("\n%s%s%s%s%s%s\n",f[0], v, f[1], me, f[1], f[2]);
-        printf("%sclearerr(stdin);\n",f[6]);
-        printf("%s%s%s%s%s%s%s\n",f[6],f[9],f[10],em,f[10],f[10],f[11]); 
+        printf("\n%s%s%s%s%s%s\n",f[2], v, f[3], me, f[3], f[4]);
+        printf("%sclearerr(stdin);\n",f[8]);
+        printf("%s%s%s%s%s%s%s\n",f[8],f[11],f[12],em,f[12],f[12],f[13]);
         printf("}\n");
-        printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
+        printf("%s%s%s%s%s%s\n", v, f[5], v, f[3], f[6], f[7]);
         printf("if(strlen(%s) >= %d) {\n",v,m - 1);
         printf("    %s();\n",function);
         printf("}\n\n");
-        printf("\n%s%s%s%s%s%s\n",f[0], v, f[1],f[7],v, f[8]);
-        printf("%sclearerr(stdin);\n",f[6]);
-        printf("%s%s%s%s%s%s%s\n",f[6],f[9],f[10],em,f[10],f[10],f[11]);
+        printf("\n%s%s%s%s%s%s\n",f[2], v, f[3],f[9],v, f[10]);
+        printf("%sclearerr(stdin);\n",f[8]);
+        printf("%s%s%s%s%s%s%s\n",f[8],f[11],f[12],em,f[12],f[12],f[13]);
         printf("}\n");
-        printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
+        printf("%s%s%s%s%s%s\n", v, f[5], v, f[3], f[6], f[7]);
         printf("if(strlen(%s) >= %d) {\n",v,m - 1);
         printf("    %s();\n",function);
         printf("}\n\n");
-        printf("\n%s%s%s%s%s%s\n",f[0], v, f[1], me, f[1], f[2]);
-        printf("%sclearerr(stdin);\n",f[6]);
-        printf("%s%s%s%s%s%s%s\n",f[6],f[9],f[10],em,f[10],f[10],f[11]); 
+        printf("\n%s\n",f[0]);
+        printf("%s%s%s%s%s%s%s\n",f[8],f[1], v, f[3], me, f[3], f[4]);
+        printf("%s%sclearerr(stdin);\n",f[8],f[8]);
+        printf("%s%s%s%s%s%s%s%s\n",f[8],f[8],f[11],f[12],em,f[12],f[12],f[13]);
+        printf("%s%scontinue;\n",f[8],f[8]);
+        printf("%s}\n",f[8]);
+        printf("%s%s%s%s%s%s%s\n",f[8], v, f[5], v, f[3], f[6], f[7]);
+        printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
+        printf("        %s();\n",function);
+        printf("%s}\n\n",f[8]);
+        printf("\n%s\n",f[0]);
+        printf("%s%s%s%s%s%s%s\n",f[8],f[1], v, f[3],f[9],v, f[10]);
+        printf("%s%sclearerr(stdin);\n",f[8],f[8]);
+        printf("%s%s%s%s%s%s%s%s\n",f[8],f[8],f[11],f[12],em,f[12],f[12],f[13]);
+        printf("%s%scontinue;\n",f[8],f[8]);
+        printf("%s}\n",f[8]);
+        printf("%s%s%s%s%s%s%s\n",f[8], v, f[5], v, f[3], f[6], f[7]);
+        printf("    if(strlen(%s) >= %d) {\n",v,m - 1);
+        printf("        %s();\n",function);
+        printf("    }\n\n");
+        printf("\n%s%s%s%s%s%s\n",f[2], v, f[3], me, f[3], f[4]);
+        printf("%sclearerr(stdin);\n",f[8]);
+        printf("%s%s%s%s%s%s%s\n",f[8],f[11],f[12],em,f[12],f[12],f[13]);
         printf("}\n");
-        printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
+        printf("%s%s%s%s%s%s\n", v, f[5], v, f[3], f[6], f[7]);
         printf("\n\n");
-        printf("\n%s%s%s%s%s%s\n",f[0], v, f[1],f[7],v, f[8]);
-        printf("%sclearerr(stdin);\n",f[6]);
-        printf("%s%s%s%s%s%s%s\n",f[6],f[9],f[10],em,f[10],f[10],f[11]);
+        printf("\n%s%s%s%s%s%s\n",f[2], v, f[3],f[9],v, f[10]);
+        printf("%sclearerr(stdin);\n",f[8]);
+        printf("%s%s%s%s%s%s%s\n",f[8],f[11],f[12],em,f[12],f[12],f[13]);
         printf("}\n");
-        printf("%s%s%s%s%s%s\n", v, f[3], v, f[1], f[4], f[5]);
+        printf("%s%s%s%s%s%s\n", v, f[5], v, f[3], f[6], f[7]);
         printf("\n\n");
         memset(me, '\0', sizeof(me));
         if (strcmp(repeat, "r") != 0) {
-        break;
+            break;
         }
-    }	    
+    }
 }
 
 void stringToInt() {
@@ -664,6 +684,86 @@ void scanff() {
         printf("\n%s%s%d%s%s%s%s\n", t[0], t[1], m - 1, t[2], t[3], var, t[4]);
         printf("%s\n\n", t[5]);
         memset(mem, '\0', sizeof(mem));
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }
+    }
+}
+
+
+void CheckScanfClear() {
+    char t[12][20] = {"while(scanf(\"","if(scanf(\"" ,"%","while(1) {", "[^\\n]\"", ",", ")!=1) {","    ","();","clearerr(stdin);","}","continue;" };
+    char error[3] [15] = {"printf(\"", "\\n", "\");"};
+    char var[SIZE];
+    char mem[10];
+    int m;
+    char buff [SIZE];
+    char err [SIZE];
+    
+    
+
+    while (1) {
+        printf("//Enter the name of variable m for main.\n");
+        printf("//");
+        while(fgets(var,SIZE, stdin) == NULL) {
+            checkInput();
+        }
+        var[strcspn(var, "\n")] = 0;
+        if (strlen(var) >= MAX) {
+            clear();
+        }
+        if (strcmp(var, "m") == 0) {
+            break;
+        }
+        printf("//Enter memory allocated to variable or more.\n");
+        printf("//");
+        while(1) {
+            if(fgets(mem,sizeof(mem), stdin) == NULL){
+                checkInput();
+                continue;
+            }
+            mem[strcspn(mem, "\n")] = 0;
+            if (strlen(mem) >= 9) {
+                clear();
+            }
+            m = atoi(mem);
+            if (m < 5){
+                printf("\n//Enter a valid number  5 or more only.\n\n");
+                printf("//");
+            } else {
+                break;
+            }
+        }
+        printf("//Enter the name of the function to flush input buffer.\n");
+        printf("//");
+        while(fgets(buff,SIZE,stdin)== NULL) {
+            checkInput();
+       }
+       buff[strcspn(buff,"\n")]=0;
+       if (strlen(buff) >= MAX) {
+           clear();
+       }
+       printf("//Enter a error message. Enter valid text only will do.\n");
+       printf("//");
+       while(fgets(err,SIZE, stdin) == NULL) {
+           checkInput();
+       }
+       err[strcspn(err, "\n")] = 0;
+       if (strlen(err) >= MAX) {
+           clear();
+       }
+       printf("\n%s%s%d%s%s%s%s\n",t[0],t[2],m-1,t[4],t[5],var,t[6]);
+       printf("%s%s%s\n",t[7],buff,t[8]);       
+       printf("%s%s%s%s%s%s%s\n",t[7], error[0], error[1], err, error[1],error[1], error[2]);
+       printf("%s%s\n",t[7],t[9]);
+       printf("%s\n\n",t[10]);
+       printf("\n%s\n",t[3]);
+       printf("%s%s%s%d%s%s%s%s\n",t[7],t[1],t[2],m-1,t[4],t[5],var,t[6]);
+       printf("%s%s%s%s\n",t[7],t[7],buff,t[8]);       
+       printf("%s%s%s%s%s%s%s%s\n",t[7],t[7], error[0], error[1], err, error[1],error[1], error[2]);
+       printf("%s%s%s\n",t[7],t[7],t[9]);
+       printf("%s%s%s\n",t[7],t[7],t[11]);
+       printf("%s%s\n\n",t[7],t[10]);
         if (strcmp(repeat, "r") != 0) {
             break;
         }
@@ -2889,14 +2989,77 @@ void copyy() {
     printf("\n");
 }
 
+struct Menu {
+    const char* keys;
+    void(*values)(void);  
+};
+
 int main() {
+
+    struct Menu m1[] = {
+        {"ch",             choice},
+        {"cy",               copy}, 
+        {"a",              string},
+        {"c",         stringEmpty}, 
+        {"bl",      stringLiteral},
+        {"f",             fgetss },
+        {"fs",        fgetsSizeof},
+        {"fb",        fgetsBuffer},
+        {"fcb",        checkFgets},            
+        {"fi",        stringToInt},   
+        {"fib",  stringToIntBasic},
+        {"s",              scanff},
+        {"scb",   CheckScanfClear},
+        {"sb",         scanfBasic},
+        {"cb",         clearBuffC},
+        {"i",         ifStatement},
+        {"e",              elseIf},   
+        {"mi",            multiIf},
+        {"min",     multiIfNumber},
+        {"in",           ifNumber},
+        {"im",             ifHeap},  
+        {"v",            variable},
+        {"vv",      variableValue},  
+        {"aa",              array},        
+        {"ia",           numArray}, 
+        {"sm",          mapArrays},
+        {"mn",             mapNum},
+        {"fc",              funct},      
+        {"cf",          callFunct},
+        {"h",                heap},
+        {"hi",            heapNum},
+        {"cm",        checkMalloc}, 
+        {"vi",        variableNum},
+        {"vn",         varNoValue},
+        {"si",           scanfNum},
+        {"sh",          scanfHeap},
+        {"sc",         checkScanf},
+        {"csl",       checkScanfL},
+        {"sp",         cppStrings},
+        {"cp",           estringp},
+        {"aap",           arraysp},
+        {"ip",       ifStatementp}, 
+        {"ep",            elseIfp},
+        {"mip",        multiIfCpp},
+        {"up",          userInput},
+        {"cbp",         clearBuff},
+        {"mp",                map},
+        {"ma",          mapAccess},
+        {"vp",          variablep},
+        {"vvp",    variableValuep},
+        {"cyp",             copyy},
+
+    };
+
     char sw[SIZE];
 
-    printf("          copyright 2023-2026 Mitchell E Wise\n");
+    printf("\n          copyright 2023-2026 Mitchell E Wise\n");
     printf("          SPDX-License-Identifier: Apache-20\n\n\n");
 
     printf("//Enter r to repeat choices enter to not.\n");
-    fgets(repeat,SIZE, stdin);
+    while(fgets(repeat,SIZE, stdin) == NULL) {
+        checkInput();
+    }
     repeat[strcspn(repeat, "\n")] = 0;
     if (strlen(repeat) >= MAX) {
         clear(); 
@@ -2905,118 +3068,33 @@ int main() {
     while (1) {
         printf("//Enter a selection from choices x to exit ch for choices.\n");
         printf("//");
-        fgets(sw,SIZE, stdin);
+        while(fgets(sw,SIZE, stdin) == NULL) {
+            checkInput();
+        }
         sw[strcspn(sw, "\n")] = 0;
         if (strlen(sw) >= MAX) {
             clear(); 
         }
-        if(strcmp(sw,"ch")==0){
-            choice();
-        } else if(strcmp(sw,"cy")==0) {
-            copy();
-        } else if(strcmp(sw, "a")==0) {
-            string();
-        } else if(strcmp(sw, "c")==0) {
-            stringEmpty();
-        } else if(strcmp(sw, "bl")==0) {
-            stringLiteral();  
-        } else if(strcmp(sw,"f")==0) {
-            fgetss();
-        } else if(strcmp(sw, "fs")==0) {
-            fgetsSizeof();
-        } else if(strcmp(sw, "fb")==0) {
-            fgetsBuffer(); 
-        } else if(strcmp(sw, "fcb")==0) {
-            checkFgets();
-        } else if(strcmp(sw, "fi")==0) {
-            stringToInt();
-        } else if(strcmp(sw, "fib")==0) {
-            stringToIntBasic();
-        } else if(strcmp(sw, "s")==0) {
-            scanff();
-        } else if(strcmp(sw, "sb")==0) {
-            scanfBasic();
-        } else if(strcmp(sw, "cb")==0) {
-            clearBuffC();
-        } else if(strcmp(sw, "i")==0) {
-            ifStatement();
-        } else if(strcmp(sw, "e")==0) {
-            elseIf();
-        } else if(strcmp(sw, "mi")==0) {
-            multiIf();
-        } else if(strcmp(sw, "min")==0) {  
-            multiIfNumber();
-        } else if(strcmp(sw, "in")==0) {
-            ifNumber();
-        } else if(strcmp(sw, "im")==0) {
-            ifHeap();
-        } else if(strcmp(sw, "v")==0) {
-            variable();    
-        } else if(strcmp(sw, "vv")==0) { 
-            variableValue();  
-        } else if(strcmp(sw, "aa")==0) { 
-            array(); 
-        } else if(strcmp(sw, "ia")==0) {
-            numArray(); 
-        } else if(strcmp(sw, "sm")==0) {
-            mapArrays();
-        } else if(strcmp(sw, "mn")==0) {
-            mapNum();  
-        } else if(strcmp(sw, "fc")==0) {
-            funct();
-        } else if(strcmp(sw, "cf")==0) {
-            callFunct();
-        } else if(strcmp(sw, "h")==0) {
-            heap();
-        } else if(strcmp(sw, "hi")==0) {
-            heapNum();
-        } else if(strcmp(sw, "cm")==0) {
-            checkMalloc(); 
-        } else if(strcmp(sw, "vi")==0) {
-            variableNum();   
-        } else if(strcmp(sw, "vn")==0) {
-            varNoValue(); 
-        } else if(strcmp(sw, "si")==0) {
-            scanfNum();   
-        } else if(strcmp(sw, "sh")==0) {
-            scanfHeap();
-        } else if(strcmp(sw, "sc")==0) {
-            checkScanf();
-        } else if(strcmp(sw, "csl")==0) {
-            checkScanfL();
-        } else if(strcmp(sw, "sp")==0) {
-            cppStrings(); 
-        } else if(strcmp(sw, "cp")==0) {
-            estringp();        
-        } else if(strcmp(sw, "aap")==0) {
-            arraysp();   
-        } else if(strcmp(sw, "ip")==0) {
-            ifStatementp();  
-        } else if(strcmp(sw, "ep")==0) {
-            elseIfp();
-        } else if(strcmp(sw, "mip")==0) {
-            multiIfCpp();	
-        } else if(strcmp(sw, "up")==0) {
-            userInput();
-        } else if(strcmp(sw, "cbp")==0) {
-            clearBuff();	
-        } else if(strcmp(sw, "mp")==0) {
-            map();
-        } else if(strcmp(sw, "ma")==0) {
-            mapAccess();  
-        } else if(strcmp(sw, "vp")==0) {
-            variablep();  
-        } else if(strcmp(sw, "vvp")==0) {
-            variableValuep(); 
-        } else if(strcmp(sw, "cyp")==0) {
-            copyy();
-        } else if (strcmp(sw, "x") == 0) {
+        if(strcmp(sw,"x")==0){
             break;
-        } else {
-            printf("//Enter a letter in main.\n");
         } 
-    }  
-    return 0;
+        int index = -1;
+        for(int i = 0; i<51;i++) {
+            if(strcmp(sw, m1[i].keys)==0){
+                index = i;
+            }
+        }
+        if(index == -1) {
+            printf("\n//Enter a name in choices.\n\n");
+            continue;
+        }
+        m1[index].values();
+    }
+return 0;
 }
+
+
+
+
 
 

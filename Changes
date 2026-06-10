@@ -95,4 +95,6 @@ Check bl in choices.
 Convert.cpp was changed to try catch for Key error handling.
 April 19 2026.
 Convert.c menu has been changed to a struct from a if statement to change choices.
+Added a scanf for strings that clears input buffer after cb is selected.
+June 10 2026.
 

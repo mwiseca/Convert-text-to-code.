@@ -1311,7 +1311,9 @@ void variableNum() {
     while (true) {
         std::cout << "//Choose i for int d for double, m for main.\n";
         std::cout << "//";
-        getline(std::cin, ch);
+        while(!getline(std::cin, ch)) {
+			checkInput();
+		}
         if (ch == "m") {
             break;
         } else if (ch != "i" && ch != "d") {
@@ -1320,10 +1322,14 @@ void variableNum() {
         }
         std::cout << "Enter the name.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         std::cout << "Enter a value.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         if (ch == "i") {
             std::cout << "\n" << t[1] << name << t[2] << value << t[3] << "\n\n";
             if (repeat != "r") {
@@ -1345,7 +1351,9 @@ void varNoValue() {
     while (true) {
         std::cout << "//Choose i for int d for double, m for main.\n";
         std::cout << "//";
-        getline(std::cin, ch);
+        while(!getline(std::cin, ch)) {
+			checkInput();
+		}
         if (ch == "m") {
             break;
         } else if (ch != "i" && ch != "d") {
@@ -1354,7 +1362,9 @@ void varNoValue() {
         }
         std::cout << "Enter the name.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (ch == "i") {
             std::cout << "\n" << t[1] << name << t[2] << "\n\n";
             if (repeat != "r") {
@@ -1376,7 +1386,9 @@ void scanfNum() {
     while (true) {
         std::cout << "//Choose i for int d for double or m for main.\n";
         std::cout << "//";
-        getline(std::cin, ch);
+        while(!getline(std::cin, ch)) {
+			checkInput();
+		}
         if (ch == "m") {
             break;
         } else if (ch != "i" && ch != "d") {
@@ -1385,7 +1397,9 @@ void scanfNum() {
         }
         std::cout << "//Enter the name of variable.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (ch == "i") {
             std::cout << "\n" << t[0] << t[1] << t[3] << t[4] << name << t[5] << "\n\n";
             if (repeat != "r") {
@@ -1407,7 +1421,9 @@ void scanfHeap() {
     while (true) {
         std::cout << "//Choose i for int f for float or d for double or m for main.\n";
         std::cout << "//";
-        getline(std::cin, ch);
+        while(!getline(std::cin, ch)) {
+			checkInput();
+		}
         if (ch == "m") {
             break;
         } else if (ch != "i" && ch != "f" && ch != "d") {
@@ -1416,7 +1432,9 @@ void scanfHeap() {
         }
         std::cout << "//Enter the name of variable.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (ch == "i") {
             std::cout << "\n" << t[0] << t[1] << t[3] << name << t[4] << "\n\n";
 	    if (repeat != "r") {
@@ -1645,13 +1663,17 @@ void ifStatementp() {
     while (true) {
         std::cout << "//Enter name of the if statement m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the value.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << name << f[1] << f[2] << value << f[2] << f[3] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1667,13 +1689,17 @@ void elseIfp() {
     while (true) {
         std::cout << "//Enter name of the else if statement m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the value.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << name << f[1] << f[2] << value << f[2] << f[3] << "\n\n";
         if (repeat != "r") {
             break;

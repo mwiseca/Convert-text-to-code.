@@ -421,13 +421,17 @@ void scanff() {
     while (true) {
         std::cout << "//Enter the name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, var);
+        while(!getline(std::cin, var)) {
+			checkInput();
+		}
         if (var == "m") {
             break;
         }
         std::cout << "//Enter memory allocated to variable -1 byte.\n";
         std::cout << "//";
-        getline(std::cin, mem);
+        while(!getline(std::cin, mem)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[3] << var << t[4] << "\n";
         std::cout << t[5] << "\n\n";
         if (repeat != "r") {
@@ -527,7 +531,9 @@ void clearBuffC() {
     while (true) {
 	    std::cout << "//Name function m for main.\n";
 	    std::cout << "//";
-	    getline(std::cin,name);
+	    while(!getline(std::cin,name)) {
+			checkInput();
+		}
         if (name == "m") {
 	        break;
         }
@@ -550,13 +556,17 @@ void ifStatement() {
     while (true) {
         std::cout << "//Enter name of the if statement m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the value.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << name << f[1] << f[2] << value << f[2] << f[3] << "\n\n";
         if (repeat != "r") {
             break;
@@ -571,13 +581,17 @@ void elseIf() {
     while (true) {
         std::cout << "//Enter name of the else if statement m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the value.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << name << f[1] << f[2] << value << f[2] << f[3] << "\n\n";
         if (repeat != "r") {
             break;

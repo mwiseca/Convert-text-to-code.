@@ -907,13 +907,17 @@ void variable() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the memory to be allocated to the variable.\n";
         std::cout << "//";
-        getline(std::cin, mem);
+        while(!getline(std::cin, mem)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << name << f[1] << mem << f[2] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1192,13 +1196,17 @@ void funct() {
     while (true) {
         std::cout << "//Name function m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter parameters.\n";
         std::cout << "//";
-        getline(std::cin, per);
+        while(!getline(std::cin, per)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << name << t[1] << per << t[2] << "\n\n\n" << t[3] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1213,13 +1221,17 @@ void callFunct() {
     while (true) {
         std::cout << "//Enter the name of function m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter values for parameters.\n";
         std::cout << "//";
-        getline(std::cin, per);
+        while(!getline(std::cin, per)) {
+			checkInput();
+		}
         std::cout << "\n" << name << t[0] << per << t[1] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1431,7 +1443,9 @@ void checkScanf() {
     while (true) {
         std::cout << "//Choose i for int d for double or m for main.\n";
         std::cout << "//";
-        getline(std::cin, ch);
+        while(!getline(std::cin, ch)) {
+			checkInput();
+		}
         if (ch == "m") {
             break;
         } else if (ch != "i" && ch != "d") {
@@ -1440,7 +1454,9 @@ void checkScanf() {
         }
         std::cout << "//Enter the name of variable.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (ch == "i") {
             std::cout << "\n" << t[0] << t[1] << t[3] << t[4] << name << t[5] << "\n\n";
             std::cout << "\n" << t[0] << t[1] << t[3] << name << t[5] << "     //Use with malloc.\n\n";
@@ -1471,7 +1487,9 @@ void checkScanfL() {
     while (true) {
         std::cout << "//Choose i for int d for double or m for main.\n";
         std::cout << "//";
-        getline(std::cin,ch);
+        while(!getline(std::cin,ch)) {
+			checkInput();
+		}
         if (ch == "m") {
             break;
         } else if (ch != "i"  && ch != "d") {
@@ -1480,10 +1498,14 @@ void checkScanfL() {
 	    }
 	    std::cout << "//Enter the name of variable.\n";
 	    std::cout << "//";
-	    getline(std::cin,name);
+	    while(!getline(std::cin,name)) {
+			checkInput();
+		}
 	    std::cout << "//Enter memory allocated to variable.\n";
 	    std::cout << "//";
-	    getline(std::cin,mem);
+	    while(!getline(std::cin,mem)) {
+			checkInput();
+		}
 	    if (ch == "i") {
 	    std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[4] << t[5] << name << t[6] << "\n\n";
 	    std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[4] << name << t[6] << "    //Use with malloc.\n\n";
@@ -1554,7 +1576,9 @@ void cppStrings() {
     std::cout << "//Enter your string, m for main.\n";
     while (true) {
         std::cout << "//";
-        getline(std::cin, text);
+        while(!getline(std::cin, text)) {
+			checkInput();
+		}
         if (text == "m") {
             break;
         }
@@ -1575,7 +1599,9 @@ void estringp() {
     std::cout << "//Enter text m for main.\n";
     while (true) {
         std::cout << "//";
-        getline(std::cin, text);
+        while(!getline(std::cin, text)) {
+			checkInput();
+		}
         if (text == "m") {
             break;
         }

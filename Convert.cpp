@@ -7,6 +7,11 @@
 
 std::string repeat;
 
+void checkInput() {
+    std::cerr << "\nInvalid input.\n\n";
+    std::cin.clear();
+}
+
 void choice() {
     using namespace std;
     cout << "//Enter ch for choices.\n";
@@ -67,7 +72,9 @@ void string() {
     std::cout << "//Enter your string, m for main.\n";
     while (true) {
         std::cout << "//";
-        getline(std::cin, text);
+	    while(!getline(std::cin, text)) {
+		    checkInput();
+	    }
         if (text == "m") {
             break;
         }
@@ -87,7 +94,9 @@ void stringEmpty() {
     std::cout << "//Enter text m for main.\n";
     while (true) {
         std::cout << "//";
-        getline(std::cin, text);
+        while(!getline(std::cin, text)) {
+			checkInput();
+		}
         if (text == "m") {
             break;
         }
@@ -105,19 +114,25 @@ void stringLiteral() {
     std::string nextString;
     while(1) {
         std::cout << "//Enter a string m for main.\n";
-        std::getline(std::cin,string);
+        while(!getline(std::cin,string)) {
+			checkInput();
+		}
         if(string == "m") {
             break;
         }
         std::cout << "//To add another string with a comma between enter c. ";
         std::cout << "Or press enter.\n";
-        std::getline(std::cin,cont);
+        while(!getline(std::cin,cont)) {
+			checkInput();
+		}
         if(cont != "c") {
             std::cout << "\n" << data[0] << string << data[0] << "\n";
             std::cout << data[0] << string << data[0] << data[1] << "\n\n";
         } else if (cont == "c") {
             std::cout << "//Enter the next string.\n";
-            std::getline(std::cin,nextString);
+            while(!getline(std::cin,nextString)) {
+				checkInput();
+			}
             std::cout << "\n" << data[0] << string << data[0] << data[1] << data[0] << nextString << data[0] << "\n";
             std::cout << data[0] << string << data[0] << data[1] << data[0] << nextString << data[0] << data[1] << "\n"; 
         } 
@@ -134,13 +149,17 @@ void fgetss() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, v);
+        while(!getline(std::cin, v)) {
+			checkInput();
+		}
         if (v == "m") {
             break;
         }
         std::cout << "//Enter the memory to be allocated to the variable.\n";
         std::cout << "//";
-        getline(std::cin, me);
+        while(!getline(std::cin, me)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << v << f[1] << me << f[1] << f[2] << "\n";
         std::cout << v << f[3] << v << f[1] << f[4] << f[5] << "\n\n";
         std::cout << w[0] << v << w[1] << me << w[1] << w[2] << "\n";
@@ -160,7 +179,9 @@ void fgetsSizeof() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
 	    std::cout << "//";
-	    getline(std::cin,name);
+	    while(!getline(std::cin,name)) {
+			checkInput();
+		}
 	    if (name == "m") {
 	        break;
 	    }
@@ -482,13 +503,17 @@ void scanfBasic() {
     while (true) {
         std::cout << "//Enter the name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, var);
+        while(!getline(std::cin, var)) {
+			checkInput();
+		}
         if (var == "m") {
             break;
         }
         std::cout << "//Enter memory allocated to variable -1 byte.\n";
         std::cout << "//";
-        getline(std::cin, mem);
+        while(!getline(std::cin, mem)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << t[1] << mem << t[2] << t[3] << var << t[4] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1972,6 +1997,7 @@ void copyy() {
 }
 
 int main() {
+	std::ios_base::sync_with_stdio(false);
 	std::unordered_map<std::string, void(*)()> f = {
         {"ch",            choice},
         {"cy",              copy},

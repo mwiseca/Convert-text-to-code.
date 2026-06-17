@@ -207,7 +207,9 @@ void fgetsBuffer() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
 	    std::cout << "//";
-	    getline(std::cin,v);
+	    while(!getline(std::cin,v)) {
+			checkInput();
+		}
 	    if (v  ==  "m") {
 	       break;
 	    }
@@ -215,7 +217,10 @@ void fgetsBuffer() {
 	    std::cout << "//";
         while(true) {
 	        try {	
-                getline(std::cin,me);	        
+                if(!getline(std::cin,me)) {
+					checkInput();
+					continue;
+				}
 	            m = std::stoi(me);
 	            if(m <=4) {
 	                std::cout << "\n//Enter a number 5 or more.\n\n";
@@ -230,7 +235,9 @@ void fgetsBuffer() {
 	    }
 	    std::cout << "//enter the function name.\n";
 	    std::cout << "//";
-	    getline(std::cin,function);
+	    while(!getline(std::cin,function)) {
+			checkInput();
+		}
 	    std::cout << "\n" <<  f[0] << v << f[1] << me << f[1] << f[2] << "\n";
 	    std::cout << v << f[3] << v << f[1] << f[4] << f[5] << "\n";
 	    std::cout << "if(strlen(" << v << ")" <<  " >= "  << m-1 << ") {\n";
@@ -269,7 +276,9 @@ void checkFgets() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin,v);
+        while(!getline(std::cin,v)) {
+			checkInput();
+		}
         if (v == "m") {
             break;
         }
@@ -277,7 +286,10 @@ void checkFgets() {
         std::cout << "//";
         while(true) {
             try {
-                std::getline(std::cin,me); 
+                if(!getline(std::cin,me)) {
+					checkInput();
+					continue;
+				}
                 m = std::stoi(me);
             }catch(std::invalid_argument) {
                 std::cout << "\nEnter a valid number.\n\n";
@@ -293,9 +305,13 @@ void checkFgets() {
             }
         } 
         std::cout << "//Enter a error message. Invalid input is good.\n";
-        getline(std::cin,em);
+        while(!getline(std::cin,em)) {
+			checkInput();
+		}
         std::cout << "//Enter the function name.\n";
-        getline(std::cin,function);     
+        while(!getline(std::cin,function)) {
+			checkInput();
+		}
         std::cout << "\n" << f[0] << v << f[1] << me << f[1] << f[2] << "\n";
         std::cout << f[6] << "clearerr(stdin);\n";
         std::cout << f[6] << f[9] << f[10] << em << f[10] << f[10] << f[11] << "\n"; 
@@ -343,28 +359,44 @@ void stringToInt() {
 	
     while(true){
         std::cout << "//Enter type i for int d for double.\n";
-        getline(std::cin,type);
+        while(!getline(std::cin,type)) {
+			checkInput();
+		}
         if(type != "i"  && type != "d") {
             std::cout << "\n//Enter i or d only.\n\n";
             continue;
         }
         std::cout << "//Enter the string name to be converted m for main.\n";
-        getline(std::cin,string);
+        while(!getline(std::cin,string)) {
+			checkInput();
+		}
         if(string == "m") {
             break;
         }
         std::cout << "//Enter the converted integer or double name.\n";
-        getline(std::cin,longInt);
+        while(!getline(std::cin,longInt)) {
+			checkInput();
+		}
         std::cout <<"//Enter the name of the pointer endptr or ptr will do.\n";
-        getline(std::cin, ptrName);
+        while(!getline(std::cin, ptrName)) {
+			checkInput();
+		}
         std::cout << "//Enter a error message for out of range.\n";
-        getline(std::cin, rangePrintf);
+        while(!getline(std::cin, rangePrintf)) {
+			checkInput();
+		}
         std::cout << "//Enter a error message for spaces between numbers.\n";
-        getline(std::cin,spacesPrintf);
+        while(!getline(std::cin,spacesPrintf)) {
+			checkInput();
+		}
         std::cout << "//Enter a error message for enter a number only.\n";
-        getline(std::cin,numberOnly);
+        while(!getline(std::cin,numberOnly)) {
+			checkInput();
+		}
         std::cout << "//Enter a error message for text after number.\n";
-        getline(std::cin,textAfterNumber);
+        while(!getline(std::cin,textAfterNumber)) {
+			checkInput();
+		}
         std::cout << "\n#include <errno.h>          Place at top of file.\n\n";
         if(type == "i") {
             std::cout << "long int " << longInt << ";\n";
@@ -452,15 +484,20 @@ void CheckScanfClear() {
     while (true) {
         std::cout << "//Enter the name of variable m for main.\n";
         std::cout << "//";
-        std::getline(std::cin,var);
+        while(!getline(std::cin,var)) {
+			checkInput();
+		}
         if (var == "m") {
             break;
         }
         std::cout << "//Enter memory allocated to variable  5 or more.\n";
         std::cout << "//";
-        while(1) {
+        while(true) {
             try {
-                std::getline(std::cin,mem);
+                if(!getline(std::cin,mem)) {
+					checkInput();
+				    continue;
+				}
                 m = stoi(mem);
                 }catch (std::invalid_argument) {
                     std::cout << "\nEnter a number only.\n\n";
@@ -478,10 +515,14 @@ void CheckScanfClear() {
         }
         std::cout << "//Enter the name of the function to flush input buffer.\n";
         std::cout << "//";
-        std::getline(std::cin,buff);
+        while(!getline(std::cin,buff)) {
+			checkInput();
+		}
         std::cout << "//Enter a error message. Enter valid text only will do.\n";
         std::cout << "//";
-        std::getline(std::cin,err);
+        while(!getline(std::cin,err)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << t[2] << m-1 << t[4] << t[5] << var << t[6]  << "\n";
         std::cout << t[7] << buff << t[8] << "\n";       
         std::cout << t[7] << error[0] << error[1] << err << error[1] << error[1] << error[2] << "\n";

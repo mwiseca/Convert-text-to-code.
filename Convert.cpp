@@ -978,7 +978,7 @@ void array() {
 		}
         std::cout << "//Enter memory allocated to elements.\n";
         std::cout << "//";
-        while(!getline(std::cin, m) {
+        while(!getline(std::cin, m)) {
 			checkInput();
 		}
         std::cout << "//Enter elements with quotations and commas between each.\n";

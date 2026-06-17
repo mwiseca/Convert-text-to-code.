@@ -1173,7 +1173,7 @@ void mapArrays() {
             break;
         }
         std::cout << "//Enter the value array name m for main.\n";
-        while(!getline(std::cin,valueArray) {
+        while(!getline(std::cin,valueArray)) {
 			checkInput();
 		}
         if(valueArray == "m") {

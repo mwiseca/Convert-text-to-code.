@@ -653,7 +653,11 @@ void multiIf() {
 
     while (true) {
 	std::cout << "//Enter i for if, e for else if.\n";
-        while (getline(std::cin,select)) {
+		while(true) {
+            if(!getline(std::cin,select)) {
+			    checkInput();
+				continue;
+			}
             if (select != "i" && select != "e") {
 	        std::cout << "//Enter i or e only.\n";
             } else {
@@ -667,7 +671,9 @@ void multiIf() {
         }
 	    std::cout << "//Enter a name of first m for main.\n";
 	    std::cout << "//";
-        getline(std::cin,name);
+        while(!getline(std::cin,name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
@@ -676,7 +682,11 @@ void multiIf() {
         getline(std::cin,value);
 	    std::cout << "//Enter a comparison a for equal b for not equal.\n";
 	    std::cout << "//";
-        while (getline(std::cin,compare)) {
+		while(true) {
+            if (!getline(std::cin,compare)) {
+			    checkInput();
+			    continue;
+			}
             if (compare != "a" && compare != "b") {
 	        std::cout << "//Enter a or b only.\n";
             } else {
@@ -690,7 +700,10 @@ void multiIf() {
         }
 	    std::cout << "//Enter a operator a for and o for or.\n";
 	    std::cout << "//";
-        while (getline(std::cin,op)) {
+		while(true) {
+            if (!getline(std::cin,op)) {
+			    checkInput();
+			}
             if (op !=  "a" && op != "o") {
 	        std::cout << "//Enter a or o only.\n";
             } else {
@@ -705,13 +718,21 @@ void multiIf() {
 
 	    std::cout << "//Enter the second name,\n";
 	    std::cout << "//";
-        getline(std::cin,sname);
+        while(!getline(std::cin,sname)) {
+			checkInput();
+		}
 	    std::cout << "Enter the second value.\n";
 	    std::cout << "//";
-        getline(std::cin,svalue);
+        while(!getline(std::cin,svalue)) {
+			checkInput();
+		}
 	    std::cout << "Enter a second comparison a for equal b for not equal\n";
 	    std::cout << "//";
-        while (getline(std::cin,scompare)) {
+		while(true) {
+            if (!getline(std::cin,scompare)) {
+				checkInput();
+			    continue;
+			}
             if (scompare != "a" && scompare != "b") {
 	        std::cout << "//Enter a or b only.\n";
             } else {

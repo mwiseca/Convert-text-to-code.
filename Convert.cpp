@@ -764,7 +764,11 @@ void multiIfNumber() {
 
     while (true) {
         std::cout << "//Enter i for if, e for else if.\n";
-        while(getline(std::cin,select)) {
+		while(true) {
+            if(!getline(std::cin,select)) {
+				checkInput();
+				continue;
+			}
             if(select != "i"  && select != "e") {
                 std::cout << "\n//Enter i or e only.\n\n";
             } else {
@@ -778,13 +782,19 @@ void multiIfNumber() {
         }
         std::cout << "//Enter a name of first m for main.\n";
         std::cout << "//";
-        getline(std::cin,name);
+        while(!getline(std::cin,name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter a comparison a for less or equal b for equal c for greater or equal d for not equal.\n";
         std::cout << "//";
-        while(getline(std::cin,compare)) {
+		while(true) {
+            if(!getline(std::cin,compare)) {
+			    checkInput();
+				continue;
+			}
             if (compare != "a" && compare != "b" && compare != "c" && compare != "d") {
                 std::cout << "\n//Enter a b c or d only.\n\n";
             } else {
@@ -802,10 +812,16 @@ void multiIfNumber() {
         }
         std::cout << "//Enter a value number.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "//Enter a operator a for and o for or.\n";
         std::cout << "//";
-        while (getline(std::cin,op)) { 
+		while(true) {
+            if (!getline(std::cin,op)) { 
+				checkInput();
+				continue;
+			}
             if (op != "a"  && op != "o") {
                 std::cout << "\n//Enter a or o only.\n\n";
             } else {
@@ -819,10 +835,16 @@ void multiIfNumber() {
         }
         std::cout << "//Enter the second name,\n";
         std::cout << "//";
-        getline(std::cin,sname);
+        while(!getline(std::cin,sname)) {
+			checkInput();
+		}
         std::cout << "//Enter a second comparison a for less or equal b for equal c for Greater or equal d for not equal.\n";
         std::cout << "//";
-        while (getline(std::cin,scompare)) {
+		while(true) {
+            if (!getline(std::cin,scompare)) {
+				checkInput();
+				continue;
+			}
             if (scompare != "a" && scompare != "b" && scompare != "c" && scompare != "d") {
                 std::cout << "\n//Enter a  b c or d only.\n\n";
             } else {
@@ -840,7 +862,9 @@ void multiIfNumber() {
         }  
         std::cout << "Enter the second value number.\n";
         std::cout << "//";
-        getline(std::cin,svalue);
+        while(!getline(std::cin,svalue)) {
+			checkInput();
+		}
         std::cout << "\n" << select << name << compare << value << op << sname << scompare << svalue << t[8] << "\n\n";
         if (repeat != "r") {
         break;
@@ -857,19 +881,27 @@ void ifNumber() {
     while (true) {
         std::cout << "//Enter s for strlen  or i for regular if statement. Enter e for else if.\n";
         std::cout << "//";
-        getline(std::cin, select);
+        while(!getline(std::cin, select)) {
+			checkInput();
+		}
         if (select != "s" && select != "i" && select != "e") {
             std::cout << "//Enter s or i or e only.\n";
             continue;
         }
         std::cout << "//Enter the name of if or else if statement  enter m for main.\n";
-        getline(std::cin, var);
+        while(!getline(std::cin, var)) {
+			checkInput();
+		}
         if (var == "m") {
             break;
         }
         std::cout << "//Enter an operator, a for less than, b for equal to, c for greater than, d for not equal\n";
         std::cout << "//";
-        while (getline(std::cin, op)) {
+		while(true) {
+            if (!getline(std::cin, op)) {
+				checkInput();
+				continue;
+			}
             if (op != "a" && op != "b" && op != "c" && op != "d") {
                 std::cout << "//Enter a or b or c or d only.\n";
             } else {
@@ -887,7 +919,9 @@ void ifNumber() {
         }
         std::cout << "//Enter a number to compare to.\n";
         std::cout << "//";
-        getline(std::cin, num);
+        while(!getline(std::cin, num)) {
+			checkInput();
+		}
         if (select == "s") {
             std::cout << "\n" << t[0] << t[2] << t[7] << var << t[8] << op << num << t[9] << "\n\n";
 	    if (repeat != "r") {
@@ -916,19 +950,27 @@ void ifHeap() {
     while (true) {
         std::cout << "//Enter i for if statement. Enter e for else if.\n";
         std::cout << "//";
-        getline(std::cin, select);
+        while(!getline(std::cin, select)) {
+			checkInput();
+		}
         if (select != "i" && select != "e") {
             std::cout << "//Enter i or e only.\n";
             continue;
         }
         std::cout << "//Enter the name of if or else if statement  enter m for main.\n";
-        getline(std::cin, var);
+        while(!getline(std::cin, var)) {
+			checkInput();
+		}
         if (var == "m") {
             break;
         }
         std::cout << "//Enter an operator, a for less than, b for equal to, c for greater than, d for not equal\n";
         std::cout << "//";
-        while (getline(std::cin, op)) {
+		while(true) {
+            if (!getline(std::cin, op)) {
+				checkInput();
+				continue;
+			}
             if (op != "a" && op != "b" && op != "c" && op != "d") {
                 std::cout << "//Enter a or b or c or d only.\n";
             } else {
@@ -946,7 +988,9 @@ void ifHeap() {
         }
         std::cout << "//Enter a number to compare to.\n";
         std::cout << "//";
-        getline(std::cin, num);
+        while(!getline(std::cin, num)) {
+			checkInput();
+		}
         if (select == "i") {
             std::cout << "\n" << t[0] << var << op << num << t[8] << "\n\n";
             if (repeat != "r") {

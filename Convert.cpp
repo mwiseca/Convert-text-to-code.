@@ -933,16 +933,22 @@ void variableValue() {
     while (true) {
         std::cout << "//Enter a name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the amount of memory to allocate or press enter to not allocate m for main.\n";
         std::cout << "//";
-        getline(std::cin, mem);
+        while(!getline(std::cin, mem)) {
+			checkInput();
+		}
         std::cout << "//enter a value\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "\n" << v[0] << name << v[1] << mem << v[2] << v[3] << v[4] << value << v[4] << v[5] << "\n\n";
         if (repeat != "r") {
             break;
@@ -959,19 +965,27 @@ void array() {
     while (true) {
         std::cout << "//Enter the name of array m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the amount of elements.\n";
         std::cout << "//";
-        getline(std::cin, ne);
+        while(!getline(std::cin, ne)) {
+			checkInput();
+		}
         std::cout << "//Enter memory allocated to elements.\n";
         std::cout << "//";
-        getline(std::cin, m);
+        while(!getline(std::cin, m) {
+			checkInput();
+		}
         std::cout << "//Enter elements with quotations and commas between each.\n";
         std::cout << "//";
-        getline(std::cin, elements);
+        while(!getline(std::cin, elements)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << name << t[1] << ne << t[2] << t[1] << m << t[3] << elements << t[4] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1252,13 +1266,17 @@ void heap() {
     while (true) {
         std::cout << "//Enter the name of the variable m for main.\n";
         std::cout << "//";
-        std::getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter memory to allocate.\n";
         std::cout << "//";
-        std::getline(std::cin, mem);
+        while(!getline(std::cin, mem)) {
+			checkInput();
+		}
         std::cout << "\n";
         std::cout << "\n" << t[0] << t[1] << name << t[2] << "\n\n";
         std::cout << i[0] << i[1] << name << i[2] << "\n\n";
@@ -1283,13 +1301,17 @@ void checkMalloc() {
     while (true) {
         std::cout << "//Enter the name m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter an error message.\n";
         std::cout << "//";
-        getline(std::cin, em);
+        while(!getline(std::cin, em)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << name << t[1] << "\n";
         std::cout << t[2] << em << t[3] << t[4] << "\n";
         std::cout << t[5] << "\n\n";
@@ -1638,16 +1660,22 @@ void arraysp() {
     while (true) {
         std::cout << "//Enter the name of array m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the amount of elements.\n";
         std::cout << "//";
-        getline(std::cin, ne);
+        while(!getline(std::cin, ne)) {
+			checkInput();
+		}
         std::cout << "//Enter elements with quotations and commas between each.\n";
         std::cout << "//";
-        getline(std::cin, elements);
+        while(!getline(std::cin, elements)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << name << t[1] << ne << t[2] << elements << t[3] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1805,7 +1833,9 @@ void userInput() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, v);
+	    while(!getline(std::cin, v)) {
+		    checkInput();
+		}
         if (v == "m") {
             break;
         }
@@ -1830,7 +1860,9 @@ void clearBuff() {
     while (true) {
         std::cout << "//Name function m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
@@ -1984,7 +2016,9 @@ void variablep() {
     while (true) {
         std::cout << "//Enter name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
@@ -2002,13 +2036,17 @@ void variableValuep() {
     while (true) {
         std::cout << "//Enter a name of variable m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//enter a value\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "\n" << v[0] << name << v[1] << v[2] << value << v[2] << v[3] << "\n\n";
         if (repeat != "r") {
             break;

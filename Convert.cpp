@@ -1109,7 +1109,11 @@ void numArray() {
     while (true) {
         std::cout << "//Enter a data type i for int d for double.\n";
         std::cout << "//";
-        while (std::getline(std::cin, typ)) {
+		while(true) {
+            if (!getline(std::cin, typ)) {
+				checkInput();
+				continue;
+			}
             if (typ != "i" && typ != "d") {
                 std::cout << "//Enter i or d only.\n";
             } else {
@@ -1123,16 +1127,22 @@ void numArray() {
         }
         std::cout << "//Enter the name of the array m for main.\n";
         std::cout << "//";
-        std::getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter number of elements m for main.\n";
         std::cout << "//";
-        std::getline(std::cin, num);
+        while(!getline(std::cin, num)) {
+			checkInput();
+		}
         std::cout << "//Enter elements with a comma between them.\n";
         std::cout << "//";
-        std::getline(std::cin, elements);
+        while(!getline(std::cin, elements)) {
+			checkInput();
+		}
         std::cout << "\n" << typ << name << a[2] << num << a[3] << a[4] << elements << a[5] << "\n\n";
         if (repeat != "r") {
             break;
@@ -1156,45 +1166,61 @@ void mapArrays() {
 
     while(true) {
         std::cout << "//Enter the name of the key array m for main.\n";
-        getline(std::cin,keyArray);
+        while(!getline(std::cin,keyArray)) {
+			checkInput();
+		}
         if(keyArray == "m") {
             break;
         }
         std::cout << "//Enter the value array name m for main.\n";
-        getline(std::cin,valueArray);
+        while(!getline(std::cin,valueArray) {
+			checkInput();
+		}
         if(valueArray == "m") {
             break;
         }
         std::cout << "//Enter the name of the user input m for main.\n";
-        getline(std::cin,select);
+        while(!getline(std::cin,select)) {
+			checkInput();
+		}
         if(select == "m") {
             break;
         }
         std::cout << "//Select the name of the variable that stores the key to be selected.\n";
         std::cout << "//Index or number is good. m for main.\n";
-        getline(std::cin,input);
+        while(!getline(std::cin,input)) {
+			checkInput();
+		}
         if(input == "m") {
             break;
         }
         std::cout << "//Select a name for the for loop int i is the usual.\n";
-        getline(std::cin,forLoopInt);
+        while(!getline(std::cin,forLoopInt)) {
+			checkInput();
+		}
         if(input == "m") {
             break;
         }
         std::cout << "//Enter the number of elements in arrays.\n";
-        getline(std::cin,elements);
+        while(!getline(std::cin,elements)) {
+			checkInput();
+		}
         if(elements == "m") {
             break;
         }
         std::cout << "//Enter a key error message m for main.\n";
-        getline(std::cin,error);
+        while(!getline(std::cin,error)) {
+			checkInput();
+		}
         if(error == "m") {
             break;
         }
         std::cout << "//Enter a format specifier s for string i for int d for double..\n";
         while(true) {
-        getline(std::cin,format);
-            clearerr(stdin);
+            if(!getline(std::cin,format)) {
+                checkInput();
+				continue;
+			}
             if(format != "s" && format != "i" && format != "d"){
                 std::cout << "//\nEnter s i or d only.\n\n";
             }else{
@@ -1240,45 +1266,61 @@ void mapNum() {
 
     while(true) {
         std::cout << "//Enter the name of the int or double key array m for main.\n";
-        getline(std::cin,keyArray);
+        while(!getline(std::cin,keyArray)) {
+			checkInput();
+		}
         if(keyArray == "m") {
             break;
         }
         std::cout << "//Enter the value array name m for main.\n";
-        getline(std::cin,valueArray);
+        while(!getline(std::cin,valueArray)) {
+			checkInput();
+		}
         if(valueArray == "m") {
             break;
         }
         std::cout << "//Enter the name of the user input m for main.\n";
-        getline(std::cin,select);
+        while(!getline(std::cin,select)) {
+			checkInput();
+		}
         if(select == "m") {
             break;
         }
         std::cout << "//Select the name of the variable that stores the key to be selected.\n";
         std::cout << "//Index or number is good. m for main.\n";
-        getline(std::cin,input);
+        while(!getline(std::cin,input)) {
+			checkInput();
+		}
         if(input == "m") {
             break;
         }
         std::cout << "//Select a name for the for loop int i is the usual.\n";
-        getline(std::cin,forLoopInt);
+        while(!getline(std::cin,forLoopInt)) {
+			checkInput();
+		}
         if(input == "m") {
             break;
         }
         std::cout << "//Enter the number of elements in arrays.\n";
-        getline(std::cin,elements);
+        while(!getline(std::cin,elements)) {
+			checkInput();
+		}
         if(elements == "m") {
             break;
         }
         std::cout << "//Enter a key error message m for main.\n";
-        getline(std::cin,error);
+        while(!getline(std::cin,error)) {
+			checkInput();
+		}
         if(error == "m") {
             break;
         }
         std::cout << "//Enter a format specifier for the value array s for string i for int d for double..\n";
         while(true) {
-        getline(std::cin,format);
-            clearerr(stdin);
+            if(!getline(std::cin,format)) {
+                checkInput();
+				continue;
+			}
             if(format != "s" && format != "i" && format != "d"){
                 std::cout << "//\nEnter s i or d only.\n\n";
             }else{
@@ -2071,17 +2113,23 @@ void mapAccess() {
     while (true) {
         std::cout << "//Enter the name of the map m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter the name of the variable.\n";
         std::cout << "//";
-        getline(std::cin, var);
+        while(!getline(std::cin, var)) {
+			checkInput();
+		}
         std::cout << "To enter a key error message for exception press e.\n";
         std::cout << "//Press enter to not enter a error message.\n";
         std::cout << "//";
-        getline(std::cin, em);
+        while(!getline(std::cin, em)) {
+			checkInput();
+		}
         if (em != "e") {
             std::cout << "\n" << t[0] << name << t[5] << var << t[6] << t[3] << "\n\n";
             std::cout << "\n" << t[0] << name << t[7] << var << t[8] << t[3] << "\n\n";
@@ -2098,7 +2146,9 @@ void mapAccess() {
         } else if (em == "e") {
             std::cout << "//Enter error message.\n";
             std::cout << "//";
-            getline(std::cin, text);
+            while(!getline(std::cin, text)) {
+				checkInput();
+			}
             std::cout << "\n" << t[0] << name << t[5] << var << t[6] << t[3] << "\n\n";
             std::cout << "\n }" << "\n\n";
             std::cout << "\n"

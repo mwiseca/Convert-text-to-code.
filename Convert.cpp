@@ -1969,7 +1969,9 @@ void multiIfCpp(){
 		}
 	    std::cout << "Enter the second value.\n";
 	    std::cout << "//";
-        getline(std::cin,svalue);
+        while(!getline(std::cin,svalue)) {
+			checkInput();
+		}
 	    std::cout << "Enter a second comparison a for equal b for not equal\n";
 	    std::cout << "//";
 		while(true) {

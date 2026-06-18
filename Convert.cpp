@@ -1896,7 +1896,11 @@ void multiIfCpp(){
 
     while (true) {
 	    std::cout << "//Enter i for if, e for else if.\n";
-        while (getline(std::cin,select)) {
+		while (true) {
+            if (!getline(std::cin,select)) {
+				checkInput();
+				continue;
+			}
             if (select != "i" && select != "e") {
 	        std::cout << "//Enter i or e only.\n";
             } else {
@@ -1910,16 +1914,24 @@ void multiIfCpp(){
         }
 	    std::cout << "//Enter a name of first m for main.\n";
 	    std::cout << "//";
-        getline(std::cin,name);
+        while(!getline(std::cin,name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
 	    std::cout << "//Enter a value.\n";
 	    std::cout << "//";
-        getline(std::cin,value);
+        while(!getline(std::cin,value)) {
+			checkInput();
+		}
 	    std::cout << "//Enter a comparison a for equal b for not equal.\n";
 	    std::cout << "//";
-        while (getline(std::cin,compare)) {
+		while(true) {
+            if (!getline(std::cin,compare)) {
+				checkInput();
+			    continue;
+			}
             if (compare != "a" && compare != "b") {
 	        std::cout << "//Enter a or b only.\n";
             } else {
@@ -1933,7 +1945,11 @@ void multiIfCpp(){
         }
 	    std::cout << "//Enter a operator a for and o for or.\n";
 	    std::cout << "//";
-        while (getline(std::cin,op)) {
+		while(true) {
+            if (!getline(std::cin,op)) {
+			    checkInput();
+				continue;
+			}
             if (op !=  "a" && op != "o") {
 	        std::cout << "//Enter a or o only.\n";
             } else {
@@ -1948,13 +1964,18 @@ void multiIfCpp(){
 
 	    std::cout << "//Enter the second name,\n";
 	    std::cout << "//";
-        getline(std::cin,sname);
+        while(!getline(std::cin,sname)) {
+			checkInput();
+		}
 	    std::cout << "Enter the second value.\n";
 	    std::cout << "//";
         getline(std::cin,svalue);
 	    std::cout << "Enter a second comparison a for equal b for not equal\n";
 	    std::cout << "//";
-        while (getline(std::cin,scompare)) {
+		while(true) {
+            if (!getline(std::cin,scompare)) {
+				checkInput();
+			}
             if (scompare != "a" && scompare != "b") {
 	        std::cout << "//Enter a or b only.\n";
             } else {
@@ -2039,13 +2060,17 @@ void map() {
     while (true) {
         std::cout << "//Enter the name of the map m for main.\n";
         std::cout << "//";
-        getline(std::cin, name);
+        while(!getline(std::cin, name)) {
+			checkInput();
+		}
         if (name == "m") {
             break;
         }
         std::cout << "//Enter a key type, s for string, i for int d for double.\n";
         std::cout << "//";
-        getline(std::cin, key_type);
+        while(!getline(std::cin, key_type)) {
+			checkInput();
+		}
         if (key_type != "s" && key_type != "i" && key_type != "d") {
             std::cout << "Enter s i or d only.\n";
             continue;
@@ -2059,7 +2084,11 @@ void map() {
         }
         std::cout << "//Enter a value type, s for string, i for int d for double.\n";
         std::cout << "//";
-        while (getline(std::cin, value_type)) {
+		while(true) {
+            if (!getline(std::cin, value_type)) {
+				checkInput();
+				continue;
+			}
             if (value_type != "s" && value_type != "i" && value_type != "d") {
                 std::cout << "//Enter s i or d only.\n";
             } else {
@@ -2075,16 +2104,24 @@ void map() {
         }
         std::cout << "//Enter a key.\n";
         std::cout << "//";
-        getline(std::cin, key);
+        while(!getline(std::cin, key)) {
+			checkInput();
+		}
         std::cout << "//Enter s if key is a string.\n";
         std::cout << "//";
-        getline(std::cin, key_t);
+        while(!getline(std::cin, key_t)) {
+			checkInput();
+		}
         std::cout << "//Enter a value.\n";
         std::cout << "//";
-        getline(std::cin, value);
+        while(!getline(std::cin, value)) {
+			checkInput();
+		}
         std::cout << "//Enter s if the value is a string.\n";
         std::cout << "//";
-        getline(std::cin, value_t);
+        while(!getline(std::cin, value_t)) {
+			checkInput();
+		}
         std::cout << "\n" << t[0] << t[1] << key_type << t[6] << value_type << t[5] << name << t[7] << "\n";
         if (key_t == "s") {
             std::cout << b[0] << b[4] << key << b[4] << b[5] << b[6];
@@ -2317,14 +2354,17 @@ int main() {
     std::cout << "          SPDX-License-Identifier: Apache-20\n\n\n";
 
     std::cout << "//Enter r to repeat choices enter to not.\n";
-    std::getline(std::cin, repeat);
-
+    while(!getline(std::cin, repeat)) {
+		checkInput();
+	}
     choice();
     while (true) {
 		try {
             std::cout << "//Enter a selection from choices x to exit ch for choices.\n";
             std::cout << "//";
-            std::getline(std::cin, sw);
+            while(!getline(std::cin, sw)) {
+				checkInput();
+			}
             if (sw == "x") {
                 break;
             }

@@ -426,7 +426,7 @@ void stringToInt() {
         } else if(type == "d") {
             std::cout << longInt << t[22] << string << t[21] << t[24] << ptrName << t[25] << "\n";
         }
-        printf("if(errno == ERANGE) {\n");
+        std::cout << "if(errno == ERANGE) {\n";
         std::cout << t[6] << t[7] << t[8] << rangePrintf << t[8] << t[8] << t[9] << "\n"; 
         std::cout << t[6] << "continue;\n";
         std::cout << t[10] << t[11] << ptrName << t[12] << "\n";

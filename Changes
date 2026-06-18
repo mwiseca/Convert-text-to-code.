@@ -97,4 +97,6 @@ April 19 2026.
 Convert.c menu has been changed to a struct from a if statement to change choices.
 Added a scanf for strings that clears input buffer after cb is selected.
 June 10 2026.
+Implement error checking for all user inputs.
+June 18 2026.
 

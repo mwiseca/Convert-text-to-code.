@@ -99,4 +99,7 @@ Added a scanf for strings that clears input buffer after cb is selected.
 June 10 2026.
 Implement error checking for all user inputs Convert.cpp.
 June 18 2026.
+Arrays have been changed to include syntax for up to 10 elements in Convert.c and ConvertC.cpp.
+check aa and ia and ap in choices.
+July 5 2026.
 

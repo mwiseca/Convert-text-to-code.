@@ -2392,45 +2392,55 @@ void estringp() {
 
 void arraysp() {
     char t[4][20] = {"std::string ", " [", "] = {", "};"};
+    char elements[10][100];
     char name[SIZE];
     char ne[SIZE];
-    char elements[SIZE];
-    while (1) {
-        printf("//Enter the name of array m for main.\n");
-        printf("//");
-        while(fgets(name, SIZE, stdin) == NULL) {
-		    checkInput();
-		}
-        name[strcspn(name, "\n")] = 0;
-	    if (strlen(name) >= MAX) {
-            clear(); 
-        } 
-        if (strcmp(name, "m") == 0) {
-            break;
-        }
-        printf("//Enter the amount of elements.\n");
-        printf("//");
-        while(fgets(ne, SIZE, stdin) == NULL) {
-		    checkInput();
-		}
-        ne[strcspn(ne, "\n")] = 0;
-	    if (strlen(ne) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter elements with quotations and commas between each.\n");
-        printf("//");
-        while(fgets(elements,SIZE, stdin) == NULL) {
-		    checkInput();
-		}
-        elements[strcspn(elements, "\n")] = 0;
-	    if (strlen(ne) >= MAX) {
-            clear(); 
-        } 
-        printf("\n%s%s%s%s%s%s%s\n\n", t[0], name, t[1], ne, t[2], elements, t[3]);
-        if (strcmp(repeat, "r") != 0) {
-            break;
-        }
+    int count = 0;
+    printf("//Enter the name of array m for main.\n");
+    printf("//");
+    while(fgets(name, SIZE, stdin) == NULL) {
+        checkInput();
     }
+    name[strcspn(name, "\n")] = 0;
+    if (strlen(name) >= MAX) {
+        clear();
+    }
+    if (strcmp(name, "m") == 0) {
+        return;
+    }
+    printf("//Enter the amount of elements.\n");
+    printf("//");
+    while(fgets(ne, SIZE, stdin) == NULL) {
+        checkInput();
+    }
+    ne[strcspn(ne, "\n")] = 0;
+    if (strlen(ne) >= MAX) {
+        clear();
+    }
+    while(count < 10) {
+
+        printf("//Enter a element press # to stop.\n"); 
+        while(fgets(elements[count],100, stdin) == NULL) { 
+            checkInput();
+        }
+        elements[count][strcspn(elements[count], "\n")] = 0;
+        if (strlen(elements[count]) > 98) {
+            clear();
+        }
+        if(strcmp(elements[count],"#")==0) {
+            break;
+        }else{
+            count++;
+        }
+    }        
+    printf("\n%s%s%s%s%s", t[0], name, t[1], ne, t[2]);
+    for (int i = 0; i < count; i++) {
+        printf("%s%s%s","\"",elements[i],"\"");
+        if(i < count -1) {
+            printf(","); 
+        } 
+    }
+    printf("%s\n\n",t[3]); 
 }
 
 void ifStatementp() {

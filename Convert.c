@@ -55,6 +55,7 @@ void choice() {
     printf("//Enter sc for check scanf.\n");
     printf("//Enter csl to check scanf and limit size.\n");
     printf("//Enter cb to clear input buffer in C.\n");
+    printf("//Enter bh to convert letters to binary and hexadecimal numbers.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
     printf("//Enter cm to check malloc.\n");
@@ -3260,6 +3261,7 @@ int main() {
         {"scb",   CheckScanfClear},
         {"sb",         scanfBasic},
         {"cb",         clearBuffC},
+        {"bh",             binHex},
         {"i",         ifStatement},
         {"e",              elseIf},   
         {"mi",            multiIf},
@@ -3327,7 +3329,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<51;i++) {
+        for(int i = 0; i<52;i++) {
             if(strcmp(sw, m1[i].keys)==0){
                 index = i;
             }

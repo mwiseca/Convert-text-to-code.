@@ -32,6 +32,8 @@ void choice() {
     printf("//Enter ia for arrays with numbers C C++.\n");
     printf("//Enter sm to build a simple map that maps 2 arrays.\n");
     printf("//Enter mn to build a simple map were the key array is numbers.\n");
+    printf("//Enter sf for a struct with a function pointer for a menu program.\n");
+    printf("//Enter ms to build a simple menu program using a struct with keys as strings after selecting sf.\n");
     printf("//Enter c for strings with no quotation marks.\n");
     printf("//Enter bl for string literals.\n");
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");

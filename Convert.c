@@ -76,7 +76,7 @@ void choice() {
     printf("//Enter mip for if statements with 2 conditions C++.\n");
     printf("//Enter up for C++ user input.\n");
     printf("//Enter cbp for a function to clear input buffer C++.\n");
-    printf("//Enter mp to start a C++ map.\n");
+    printf("//Enter mp for a C++ map with up to 10 key value pairs.\n");
     printf("//Enter ma for map access C++.\n");
     printf("//Enter vp for string variables no value C++.\n");
     printf("//Enter vvp for string variables with a value c++.\n");

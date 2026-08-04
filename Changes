@@ -104,11 +104,11 @@ check aa and ia and aap in choices.
 July 5 2026.
 Convert letters to binary and hexadecamal was added to convert.C only.
 Check bh in choices.
-A struct with function pointer for a menu program was added.
+A struct with function pointer for a menu program was added to Convert.c only.
 Check sf in choices.
-A menu program using the struct sf was added. 
+A menu program using the struct sf was added to Convert.c only. 
 Check ms in choices.
-The C++ map has been changed from one key value pair to 10.
+The C++ map has been changed from one key value pair to 10 to Convert.c only.
 Check mp in choices.
 
 

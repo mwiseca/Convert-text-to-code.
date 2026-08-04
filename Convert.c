@@ -3181,121 +3181,132 @@ void map() {
     char key_type[SIZE];
     char value_type[SIZE];
     char name[SIZE];
-    char key[SIZE];
-    char key_t[SIZE];
-    char value[SIZE];
-    char value_t[SIZE];
+    char key[10] [150];
+    char key_t[10] [150];
+    char value[10] [150];
+    char value_t[10] [150];
+    int countKey = 0;
+    int countKeyT =0;
+    int countValue = 0;
+    int countValueT =0;
 
-    while (1) {
-        printf("//Enter the name of the map m for main.\n");
-        printf("//");
-        while(fgets(name,SIZE, stdin) == NULL) {
+    printf("//Enter the name of the map m for main.\n");
+    printf("//");
+    while(fgets(name,SIZE, stdin) == NULL) {
+        checkInput();
+    }
+    name[strcspn(name, "\n")] = 0;
+    if (strlen(name) >= MAX) {
+        clear(); 
+    } 
+    if (strcmp(name, "m") == 0) {
+        return;
+    }
+    printf("//Enter a key type, s for string, i for int d for double.\n");
+    printf("//");
+    while(1) {
+        if(fgets(key_type,SIZE, stdin) == NULL) {
             checkInput();
-        }
-        name[strcspn(name, "\n")] = 0;
-        if (strlen(name) >= MAX) {
-            clear(); 
-        } 
-        if (strcmp(name, "m") == 0) {
-            break;
-        }
-        printf("//Enter a key type, s for string, i for int d for double.\n");
-        printf("//");
-        while(fgets(key_type,SIZE, stdin) == NULL) {
-            checkInput();
+            continue;
         }
         key_type[strcspn(key_type, "\n")] = 0;
         if (strlen(key_type) >= MAX) {
             clear(); 
         } 
         if (strcmp(key_type, "s") != 0 && strcmp(key_type, "i") != 0 && strcmp(key_type, "d") != 0) {
-            printf("Enter s i or d only start again.\n");
-            continue;
-        }
-        if (strcmp(key_type, "s") == 0) {
-            strcpy(key_type, t[2]);
-        } else if (strcmp(key_type, "i") == 0) {
-            strcpy(key_type, t[3]);
-        } else if (strcmp(key_type, "d") == 0) {
-            strcpy(key_type, t[4]);
-        }
-        printf("//Enter a value type, s for string, i for int d for double.\n");
-        printf("//");
-        while (fgets(value_type,SIZE, stdin) == NULL || (1)) {
-            clearerr(stdin); 
-            if (strlen(value_type) >= MAX) {
-                clear(); 
-            } 
-            value_type[strcspn(value_type, "\n")] = 0;
-            if (strcmp(value_type, "s") != 0 && strcmp(value_type, "i") != 0 && strcmp(value_type, "d") != 0) {
-                printf("//Enter s i or d only.\n");
-            } else {
-                break;
-            }
-        }
-        if (strcmp(value_type, "s") == 0) {
-            strcpy(value_type, t[2]);
-        } else if (strcmp(value_type, "i") == 0) {
-            strcpy(value_type, t[3]);
-        } else if (strcmp(value_type, "d") == 0) {
-            strcpy(value_type, t[4]);
-        }
-        printf("//Enter a key.\n");
-        printf("//");
-        while(fgets(key,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        key[strcspn(key, "\n")] = 0;
-        if (strlen(key) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter s if key is a string.\n");
-        printf("//");
-        while(fgets(key_t,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        key_t[strcspn(key_t, "\n")] = 0;
-        if (strlen(key_t) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter a value.\n");
-        printf("//");
-        while(fgets(value,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        value[strcspn(value, "\n")] = 0;
-        if (strlen(value) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter s if the value is a string.\n");
-        printf("//");
-        while(fgets(value_t,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        value_t[strcspn(value_t, "\n")] = 0;
-        if (strlen(value_t) >= MAX) {
-            clear(); 
-        } 
-        printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
-        if (strcmp(key_t, "s") == 0) {
-            printf("%s%s%s%s%s%s", b[0], b[4], key, b[4], b[5], b[6]);
-        } else if (strcmp(key_t, "s") != 0) {
-            printf("%s%s%s%s", b[0], key, b[5], b[6]);
-        }
-        if (strcmp(value_t, "s") == 0) {
-            printf("%s%s%s%s\n", b[4], value, b[4], b[1]);
-            printf("%s\n\n", b[3]);
-            if (strcmp(repeat, "r") != 0) {
-                break;
-            }
-        } else if (strcmp(value_t, "s") != 0) {
-            printf("%s%s\n", value, b[1]);
-            printf("%s\n\n", b[3]);
-        }
-        if (strcmp(repeat, "r") != 0) {
+            printf("Enter s i or d only.\n");
+        }else{
             break;
         }
     }
+    if (strcmp(key_type, "s") == 0) {
+        strcpy(key_type, t[2]);
+    } else if (strcmp(key_type, "i") == 0) {
+        strcpy(key_type, t[3]);
+    } else if (strcmp(key_type, "d") == 0) {
+        strcpy(key_type, t[4]);
+    }
+    printf("//Enter a value type, s for string, i for int d for double.\n");
+    printf("//");
+    while (fgets(value_type,SIZE, stdin) == NULL || (1)) {
+        clearerr(stdin); 
+        if (strlen(value_type) >= MAX) {
+            clear(); 
+        } 
+        value_type[strcspn(value_type, "\n")] = 0;
+        if (strcmp(value_type, "s") != 0 && strcmp(value_type, "i") != 0 && strcmp(value_type, "d") != 0) {
+            printf("//Enter s i or d only.\n");
+        } else {
+            break;
+        }
+    }
+    if (strcmp(value_type, "s") == 0) {
+        strcpy(value_type, t[2]);
+    } else if (strcmp(value_type, "i") == 0) {
+        strcpy(value_type, t[3]);
+    } else if (strcmp(value_type, "d") == 0) {
+        strcpy(value_type, t[4]);
+    }
+    while(countKey < 10 && countKeyT < 10 && countValue < 10 && countValueT < 10) { 
+        printf("//Enter a key # to finish.\n");
+        printf("//");
+        while(fgets(key[countKey],150, stdin) == NULL) {
+            checkInput();
+        }
+        key[countKey][strcspn(key[countKey], "\n")] = 0;
+        if (strlen(key[countKey]) >= 149) {
+            clear(); 
+        } 
+        if(strcmp(key[countKey],"#")==0) {
+            break;
+        }else{
+            countKey++;
+        }
+        printf("//Enter s if key is a string.\n");
+        printf("//");
+        while(fgets(key_t[countKeyT],150, stdin) == NULL) {
+            checkInput();
+        }
+        key_t[countKeyT][strcspn(key_t[countKeyT], "\n")] = 0;
+        if (strlen(key_t[countKeyT]) >= 149) {
+            clear(); 
+        }
+        countKeyT++; 
+        printf("//Enter a value.\n");
+        printf("//");
+        while(fgets(value[countValue],150, stdin) == NULL) {
+            checkInput();
+        }
+        value[countValue][strcspn(value[countValue], "\n")] = 0;
+        if (strlen(value[countValue]) >= 149) {
+            clear(); 
+        } 
+        countValue++;
+        printf("//Enter s if the value is a string.\n");
+        printf("//");
+        while(fgets(value_t[countValueT],150, stdin) == NULL) {
+            checkInput();
+        }
+        value_t[countValueT][strcspn(value_t[countValueT], "\n")] = 0;
+        if (strlen(value_t[countValueT]) >= 149) {
+            clear(); 
+        }
+        countValueT++; 
+    }
+    printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
+    for(int i = 0; i < countKey && i < countKeyT && i < countValue && i < countValueT;i++) {
+        if (strcmp(key_t[i], "s") == 0) {
+            printf("%s%s%s%s%s%s", b[0], b[4], key[i], b[4], b[5], b[6]);
+        } else if (strcmp(key_t[i], "s") != 0) {
+            printf("%s%s%s%s", b[0], key[i], b[5], b[6]);
+        }
+        if (strcmp(value_t[i], "s") == 0) {
+            printf("%s%s%s%s\n", b[4], value[i], b[4], b[1]);
+        } else if (strcmp(value_t[i], "s") != 0) {
+            printf("%s%s\n", value[i], b[1]);
+        } 
+    }
+    printf("%s\n\n", b[3]);
 }
 
 void mapAccess() {

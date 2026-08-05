@@ -32,6 +32,8 @@ void choice() {
     printf("//Enter ia for arrays with numbers C C++.\n");
     printf("//Enter sm to build a simple map that maps 2 arrays.\n");
     printf("//Enter mn to build a simple map were the key array is numbers.\n");
+    printf("//Enter sf for a struct with a function pointer for a menu program.\n");
+    printf("//Enter ms to build a simple menu program using a struct with keys as strings after selecting sf.\n");
     printf("//Enter c for strings with no quotation marks.\n");
     printf("//Enter bl for string literals.\n");
     printf("//Enter cy for what's needed to copy and paste to finish a simple program.\n");
@@ -55,6 +57,7 @@ void choice() {
     printf("//Enter sc for check scanf.\n");
     printf("//Enter csl to check scanf and limit size.\n");
     printf("//Enter cb to clear input buffer in C.\n");
+    printf("//Enter bh to convert letters to binary and hexadecimal numbers.\n");
     printf("//Enter h to allocate memory on the heap.\n");
     printf("//Enter hi to allocate numbers on the heap.\n");
     printf("//Enter cm to check malloc.\n");
@@ -73,7 +76,7 @@ void choice() {
     printf("//Enter mip for if statements with 2 conditions C++.\n");
     printf("//Enter up for C++ user input.\n");
     printf("//Enter cbp for a function to clear input buffer C++.\n");
-    printf("//Enter mp to start a C++ map.\n");
+    printf("//Enter mp for a C++ map with up to 10 key value pairs.\n");
     printf("//Enter ma for map access C++.\n");
     printf("//Enter vp for string variables no value C++.\n");
     printf("//Enter vvp for string variables with a value c++.\n");
@@ -841,6 +844,226 @@ void clearBuffC() {
             break;
         }
     }	
+}
+
+void keys() {
+    printf("      A\n");
+    printf("      B\n");
+    printf("      C\n");
+    printf("      D\n");
+    printf("      E\n");
+    printf("      F\n");
+    printf("      G\n");
+    printf("      H\n");
+    printf("      I\n");
+    printf("      J\n");
+    printf("      k\n");
+    printf("      L\n");
+    printf("      M\n");
+    printf("      N\n");
+    printf("      O\n");
+    printf("      P\n");
+    printf("      Q\n");
+    printf("      R\n");
+    printf("      S\n");
+    printf("      T\n");
+    printf("      U\n");
+    printf("      V\n");
+    printf("      W\n");
+    printf("      X\n");
+    printf("      Y\n");
+    printf("      Z\n");
+    printf("      a\n");
+    printf("      b\n");
+    printf("      c\n");
+    printf("      d\n");
+    printf("      e\n");
+    printf("      f\n");
+    printf("      g\n");
+    printf("      h\n");
+    printf("      i\n");
+    printf("      j\n");
+    printf("      k\n");
+    printf("      l\n");
+    printf("      m\n");
+    printf("      n\n");
+    printf("      o\n");
+    printf("      p\n");
+    printf("      q\n");
+    printf("      r\n");
+    printf("      s\n");
+    printf("      t\n");
+    printf("      u\n");
+    printf("      v\n");
+    printf("      w\n");
+    printf("      x\n");
+    printf("      y\n");
+    printf("      z\n");
+    printf("      .\n");
+    printf("      \\n  \n");
+    printf("      sp space\n");
+    printf("      ,\n");
+    printf("      ;\n");
+    printf("      :\n");
+    printf("      !\n");
+}
+
+void binHex() {
+    char key [59] [100];
+    sprintf(key[0],    "A");
+    sprintf(key[1],    "B");
+    sprintf(key[2],    "C");
+    sprintf(key[3],    "D");
+    sprintf(key[4],    "E");
+    sprintf(key[5],    "F");
+    sprintf(key[6],    "G");
+    sprintf(key[7],    "H");
+    sprintf(key[8],    "I");
+    sprintf(key[9],    "J");
+    sprintf(key[10],   "K");
+    sprintf(key[11],   "L");
+    sprintf(key[12],   "M");
+    sprintf(key[13],   "N");
+    sprintf(key[14],   "O");
+    sprintf(key[15],   "P");
+    sprintf(key[16],   "Q");
+    sprintf(key[17],   "R");
+    sprintf(key[18],   "S");
+    sprintf(key[19],   "T");
+    sprintf(key[20],   "U");
+    sprintf(key[21],   "V");
+    sprintf(key[22],   "W");
+    sprintf(key[23],   "X");
+    sprintf(key[24],   "Y");
+    sprintf(key[25],   "Z");
+    sprintf(key[26],   "a");
+    sprintf(key[27],   "b");
+    sprintf(key[28],   "c");
+    sprintf(key[29],   "d");
+    sprintf(key[30],   "e");
+    sprintf(key[31],   "f");
+    sprintf(key[32],   "g");
+    sprintf(key[33],   "h");
+    sprintf(key[34],   "i");
+    sprintf(key[35],   "j");
+    sprintf(key[36],   "k");
+    sprintf(key[37],   "l");
+    sprintf(key[38],   "m");
+    sprintf(key[39],   "n");
+    sprintf(key[40],   "o");
+    sprintf(key[41],   "p");
+    sprintf(key[42],   "q");
+    sprintf(key[43],   "r");
+    sprintf(key[44],   "s");
+    sprintf(key[45],   "t");
+    sprintf(key[46],   "u");
+    sprintf(key[47],   "v");
+    sprintf(key[48],   "w");
+    sprintf(key[49],   "x");
+    sprintf(key[50],   "y");
+    sprintf(key[51],   "z");
+    sprintf(key[52],   ".");
+    sprintf(key[53], "\\n");
+    sprintf(key[54],  "sp");
+    sprintf(key[55],   ",");
+    sprintf(key[56],   ";");
+    sprintf(key[57],   ":");
+    sprintf(key[58],   "!");
+
+    char value [59] [100];
+    sprintf(value[0],  "\n01000001\n\n0b01000001\n\n41\n\n0x41\n");
+    sprintf(value[1],  "\n01000010\n\n0b01000010\n\n42\n\n0x42\n");
+    sprintf(value[2],  "\n01000011\n\n0b01000011\n\n43\n\n0x43\n");
+    sprintf(value[3],  "\n01000100\n\n0b01000100\n\n44\n\n0x44\n");
+    sprintf(value[4],  "\n01000101\n\n0b01000101\n\n45\n\n0x45\n");
+    sprintf(value[5],  "\n01000110\n\n0b01000110\n\n46\n\n0x46\n");
+    sprintf(value[6],  "\n01000111\n\n0b01000111\n\n47\n\n0x47\n");
+    sprintf(value[7],  "\n01001000\n\n0b01001000\n\n48\n\n0x48\n");
+    sprintf(value[8],  "\n01001001\n\n0b01001001\n\n49\n\n0x49\n");
+    sprintf(value[9],  "\n01001010\n\n0b01001010\n\n4A\n\n0x4A\n");
+    sprintf(value[10], "\n01001011\n\n0b01001011\n\n4B\n\n0x4B\n");
+    sprintf(value[11], "\n01001100\n\n0b01001100\n\n4C\n\n0x4C\n");
+    sprintf(value[12], "\n01001101\n\n0b01001101\n\n4D\n\n0x4D\n");
+    sprintf(value[13], "\n01001110\n\n0b01001110\n\n4E\n\n0x4E\n");
+    sprintf(value[14], "\n01001111\n\n0b01001111\n\n4F\n\n0x4F\n");
+    sprintf(value[15], "\n01010000\n\n0b01010000\n\n50\n\n0x50\n");
+    sprintf(value[16], "\n01010001\n\n0b01010001\n\n51\n\n0x51\n");
+    sprintf(value[17], "\n01010010\n\n0b01010010\n\n52\n\n0x52\n");
+    sprintf(value[18], "\n01010011\n\n0b01010011\n\n53\n\n0x53\n");
+    sprintf(value[19], "\n01010100\n\n0b01010100\n\n54\n\n0x54\n");
+    sprintf(value[20], "\n01010101\n\n0b01010101\n\n55\n\n0x55\n");
+    sprintf(value[21], "\n01010110\n\n0b01010110\n\n56\n\n0x56\n");
+    sprintf(value[22], "\n01010111\n\n0b01010111\n\n57\n\n0x57\n");
+    sprintf(value[23], "\n01011000\n\n0b01011000\n\n58\n\n0x58\n");
+    sprintf(value[24], "\n01011001\n\n0b01011001\n\n59\n\n0x59\n");
+    sprintf(value[25], "\n01011010\n\n0b01011010\n\n5A\n\n0x5A\n");
+    sprintf(value[26], "\n01100001\n\n0b01100001\n\n61\n\n0x61\n");
+    sprintf(value[27], "\n01100010\n\n0b01100010\n\n62\n\n0x62\n");
+    sprintf(value[28], "\n01100011\n\n0b01100011\n\n63\n\n0x63\n");
+    sprintf(value[29], "\n01100100\n\n0b01100100\n\n64\n\n0x64\n");
+    sprintf(value[30], "\n01100101\n\n0b01100101\n\n65\n\n0x65\n");
+    sprintf(value[31], "\n01100110\n\n0b01100110\n\n66\n\n0x66\n");
+    sprintf(value[32], "\n01100111\n\n0b01100111\n\n67\n\n0x67\n");
+    sprintf(value[33], "\n01101000\n\n0b01101000\n\n68\n\n0x68\n");
+    sprintf(value[34], "\n01101001\n\n0b01101001\n\n69\n\n0x69\n");
+    sprintf(value[35], "\n01101010\n\n0b01101010\n\n6A\n\n0x6A\n");
+    sprintf(value[36], "\n01101011\n\n0b01101011\n\n6B\n\n0x6B\n");
+    sprintf(value[37], "\n01101100\n\n0b01101100\n\n6C\n\n0x6C\n");
+    sprintf(value[38], "\n01101101\n\n0b01101101\n\n6D\n\n0x6D\n");
+    sprintf(value[39], "\n01101110\n\n0b01101110\n\n6E\n\n0x6E\n");
+    sprintf(value[40], "\n01101111\n\n0b01101111\n\n6F\n\n0x6F\n");
+    sprintf(value[41], "\n01110000\n\n0b01110000\n\n70\n\n0x70\n");
+    sprintf(value[42], "\n01110001\n\n0b01110001\n\n71\n\n0x71\n");
+    sprintf(value[43], "\n01110010\n\n0b01110010\n\n72\n\n0x72\n");
+    sprintf(value[44], "\n01110011\n\n0b01110011\n\n73\n\n0x73\n");
+    sprintf(value[45], "\n01110100\n\n0b01110100\n\n74\n\n0x74\n");
+    sprintf(value[46], "\n01110101\n\n0b01110101\n\n75\n\n0x75\n");
+    sprintf(value[47], "\n01110110\n\n0b01110110\n\n76\n\n0x76\n");
+    sprintf(value[48], "\n01110111\n\n0b01110111\n\n77\n\n0x77\n");
+    sprintf(value[49], "\n01111000\n\n0b01111000\n\n78\n\n0x78\n");
+    sprintf(value[50], "\n01111001\n\n0b01111001\n\n79\n\n0x79\n");
+    sprintf(value[51], "\n01111010\n\n0b01111010\n\n7A\n\n0x7A\n");
+    sprintf(value[52], "\n00101110\n\n0b00101110\n\n2E\n\n0x2E\n");
+    sprintf(value[53], "\n00001010\n\n0b00001010\n\n0A\n\n0x0A\n");
+    sprintf(value[54], "\n00100000\n\n0b00100000\n\n20\n\n0x20\n");
+    sprintf(value[55], "\n00101100\n\n0b00101100\n\n2C\n\n0x2C\n");
+    sprintf(value[56], "\n00111011\n\n0b00111011\n\n3B\n\n0x3B\n");
+    sprintf(value[57], "\n00111010\n\n0b00111010\n\n3A\n\n0x3A\n");
+    sprintf(value[58], "\n00100001\n\n0b00100001\n\n21\n\n0x21\n");
+
+    char select [10];
+
+    while(1) {
+        int number = -1;
+        int i = 0;
+        printf("//Enter a letter to get a binary and hexadecimal number.\n");
+        printf("//Enter ii for index mn for main.\n");
+        while(fgets(select,sizeof(select),stdin) == NULL){
+            clearerr(stdin);
+            printf("\nInvalid input.\n\n");
+        }
+        select[strcspn(select,"\n")]=0;
+        if(strlen(select) >= 9) {
+            clear();
+        }
+        if(strcmp(select,"ii")==0) {
+            keys();
+            continue;
+        } else if(strcmp(select,"mn")==0) {
+            break;
+        }
+        while( i < 59){
+            if(strcmp(select,key[i])==0){
+                number = i;
+            }
+            i++;
+        }
+        if( number == -1){
+            printf("\n//Enter a name in index.\n\n");
+            continue;
+        }
+        printf("%s\n",value[number]);
+    }
 }
 
 void ifStatement() {
@@ -1823,6 +2046,241 @@ void mapNum() {
     }
 }
 
+void structMenu() {
+    char structVar [7] [20] = {"struct "," {","const char* ","int ","double ",";","    "};
+    char fptr [4] [20] = {"void(*",")","(void);","};"};
+    char structArray [8] [20] = {"struct ","[] = {","{","\"",",","     ","};","},"};
+    char arrayKey [10] [150];
+    char function [10] [150];
+
+    char name [SIZE];
+    char keyType [SIZE];
+    char keyName [SIZE];
+    char ptrName [SIZE];
+    char varName [SIZE];
+    int count = 0;
+    int counts = 0;
+    printf("//Name the struct m for main.\n");
+    while(fgets(name,SIZE,stdin) == NULL) {
+        checkInput();
+    }
+    name[strcspn(name,"\n")] =0;
+    if(strlen(name) >= MAX) {
+        clear();
+    }
+    if(strcmp(name,"m")==0) {
+        return;
+    }
+    printf("//Enter the type for keys s for string i for int d for double.\n");
+    while(1) {
+        if(fgets(keyType,SIZE,stdin) == NULL) {
+            checkInput();
+            continue;
+        }
+        keyType[strcspn(keyType,"\n")]=0;
+        if(strlen(keyType) >= MAX) {
+            clear();
+        }
+        if(strcmp(keyType,"s")!=0 && strcmp(keyType,"i")!=0 && strcmp(keyType,"d")!=0) {
+            printf("\n//Enter s i or d only.\n\n");
+        } else {
+            break;
+        }
+    }
+    if(strcmp(keyType,"s")==0) {
+        strcpy(keyType, structVar[2]);
+    } else if(strcmp(keyType,"i")==0) {
+        strcpy(keyType, structVar[3]);
+    } else if(strcmp(keyType,"d")==0) {
+        strcpy(keyType, structVar[4]);
+    }
+    printf("//Enter a key name.\n");
+    while(fgets(keyName,SIZE,stdin) == NULL) {
+        checkInput();
+    }
+    keyName[strcspn(keyName,"\n")] =0;
+    if(strlen(keyName) >= MAX) {
+        clear();
+    }
+    if(strcmp(keyName,"x")==0) {
+        return;
+    }
+    printf("//Enter the name of the values function pointer.\n");
+    while(fgets(ptrName,SIZE,stdin) == NULL) {
+        checkInput();
+    }
+    ptrName[strcspn(ptrName,"\n")]=0;
+    if(strlen(ptrName) >= MAX) {
+        clear();
+    }
+    printf("//Enter the Variable Identifier.\n");
+    while(fgets(varName,SIZE,stdin) == NULL) {
+        checkInput();
+    }
+    varName[strcspn(varName,"\n")]=0;
+    if(strlen(varName) >= MAX) {
+        clear();
+    }
+    while(count < 10 && counts < 10){
+        printf("//Enter a array key press # to stop.\n");
+        while(fgets(arrayKey[count],150,stdin) == NULL) {
+            checkInput();
+        }
+        arrayKey[count][strcspn(arrayKey[count],"\n")]=0;
+        if(strlen(arrayKey[count]) >= 148) {
+            clear();
+        }
+        if(strcmp(arrayKey[count],"#")==0) {
+            break;
+        }else{
+            count++;
+        }
+        printf("//Enter a value function.\n");
+        while(fgets(function[counts],150,stdin) == NULL) {
+            checkInput();
+        }
+        function[counts][strcspn(function[counts],"\n")]=0;
+        if(strlen(function[counts]) >= 148) {
+            clear();
+        }
+        counts++;
+    }
+    printf("\n%s%s%s\n",structVar[0],name, structVar[1]);
+    printf("%s%s%s%s\n",structVar[6],keyType,keyName,structVar[5]);
+    printf("%s%s%s%s%s\n",structVar[6],fptr[0],ptrName,fptr[1],fptr[2]);
+    printf("%s%s\n\n",fptr[3],"      //Place this code above the main function\n\n");
+    printf("%s%s %s%s\n",structArray[0],name,varName,structArray[1]);
+    for (int i = 0; i < count   && i < counts; i++) {
+        if(strcmp(keyType,structVar[2])==0) {
+            printf("%s%s%s%s%s%s%s%s%s\n",structArray[5],structArray[2],structArray[3],arrayKey[i],structArray[3],structArray[4],structArray[5],function[i],structArray[7]);
+        } else {
+            printf("%s%s%s%s%s%s%s\n",structArray[5],structArray[2],arrayKey[i],structArray[4],structArray[5],function[i],structArray[7]);
+        }
+    }
+    printf("%s\n\n",structArray[6]);
+}
+
+
+void mapStruct() {
+    char loop [7] [25] = {"int "," = -1;","for(int "," = 0;","<",";","++) {"};
+    char ifStatement [12] [25] = {"    if(strcmp(",", ","[","]",".",") == 0) {"," = ",";","}","    }","}","        "};
+    char keyError [7] [25] = {"if(", " == -1) {", "    printf(\"", "\\n", "\");","    continue;","}"};
+    const char *end [] = {"[","]",".","();"};
+    char keys [SIZE];
+    char values [SIZE];
+    char select [SIZE];
+    char varId[SIZE];
+    char input [SIZE];
+    char forLoopInt [SIZE];
+    char elements [SIZE];
+    char error [SIZE];
+
+
+    while(1) {
+        printf("//Enter the name of the keys m for main.\n");
+        while(fgets(keys,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        keys[strcspn(keys,"\n")]=0;
+        if(strlen(keys) >= MAX) {
+            clear();
+        }
+        if(strcmp(keys,"m") == 0) {
+            break;
+        }
+        printf("//Enter the value for the function pointer m for main.\n");
+        while(fgets(values,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        values[strcspn(values,"\n")]=0;
+        if(strlen(values) >= MAX) {
+            clear();
+        }
+        if(strcmp(values,"m") == 0) {
+            break;
+        }
+        printf("//Enter the name of the user input m for main.\n");
+        while(fgets(select,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        select[strcspn(select,"\n")]=0;
+        if(strlen(select) >= MAX) {
+            clear();
+        }
+        if(strcmp(select,"m") == 0) {
+            break;
+        }
+        printf("Enter the name of the variable identifier.\n");
+        while(fgets(varId,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        varId[strcspn(varId,"\n")]=0;
+        if(strlen(varId) >= MAX) {
+            clear();
+        }
+        printf("//Select the name of the variable that stores the key to be selected.\n");
+        printf("//Index or number is good. m for main.\n");
+        while(fgets(input,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        input[strcspn(input,"\n")]=0;
+        if(strlen(input) >= MAX) {
+            clear();
+        }
+        if(strcmp(input,"m") == 0) {
+            break;
+        }
+        printf("//Select a name for the for loop int i is the usual.\n");
+        while(fgets(forLoopInt,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        forLoopInt[strcspn(forLoopInt,"\n")]=0;
+        if(strlen(forLoopInt) >= MAX) {
+            clear();
+        }
+        if(strcmp(input,"m") == 0) {
+            break;
+        }
+        printf("//Enter the number of elements in struct.\n");
+        while(fgets(elements,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        elements[strcspn(elements,"\n")]=0;
+        if(strlen(elements) >= MAX) {
+            clear();
+        }
+        if(strcmp(elements,"m") == 0) {
+            break;
+        }
+        printf("//Enter a key error message m for main.\n");
+        while(fgets(error,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        error[strcspn(error,"\n")]=0;
+        if(strlen(error) >= MAX) {
+            clear();
+        }
+        if(strcmp(error,"m") == 0) {
+            break;
+        }
+
+        printf("\n%s%s%s\n",loop[0],input,loop[1]);
+        printf("%s%s%s%s%s%s%s%s%s\n",loop[2],forLoopInt,loop[3],forLoopInt,loop[4],elements,loop[5],forLoopInt,loop[6]);
+        printf("%s%s%s%s%s%s%s%s",ifStatement[0],select,ifStatement[1],varId,ifStatement[2],forLoopInt,ifStatement[3],ifStatement[4]);
+        printf("%s%s\n",keys,ifStatement[5]);
+        printf("%s%s%s%s%s\n",ifStatement[11],input,ifStatement[6],forLoopInt,ifStatement[7]);
+        printf("%s\n%s\n",ifStatement[9],ifStatement[8]);
+        printf("%s%s%s\n",keyError[0],input,keyError[1]);
+        printf("%s%s%s%s%s%s\n",keyError[2],keyError[3],error,keyError[3],keyError[3],keyError[4]);
+        printf("%s\n",keyError[5]);
+        printf("%s\n",keyError[6]);
+        printf("%s%s%s%s%s%s%s\n\n",varId,end[0],input,end[1],end[2],values,end[3]);
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }
+    }
+}
+
 void funct() {
     char t[4][12] = {"void ", "(", "){", "}"};
     char name[SIZE];
@@ -2723,121 +3181,132 @@ void map() {
     char key_type[SIZE];
     char value_type[SIZE];
     char name[SIZE];
-    char key[SIZE];
-    char key_t[SIZE];
-    char value[SIZE];
-    char value_t[SIZE];
+    char key[10] [150];
+    char key_t[10] [150];
+    char value[10] [150];
+    char value_t[10] [150];
+    int countKey = 0;
+    int countKeyT =0;
+    int countValue = 0;
+    int countValueT =0;
 
-    while (1) {
-        printf("//Enter the name of the map m for main.\n");
-        printf("//");
-        while(fgets(name,SIZE, stdin) == NULL) {
+    printf("//Enter the name of the map m for main.\n");
+    printf("//");
+    while(fgets(name,SIZE, stdin) == NULL) {
+        checkInput();
+    }
+    name[strcspn(name, "\n")] = 0;
+    if (strlen(name) >= MAX) {
+        clear(); 
+    } 
+    if (strcmp(name, "m") == 0) {
+        return;
+    }
+    printf("//Enter a key type, s for string, i for int d for double.\n");
+    printf("//");
+    while(1) {
+        if(fgets(key_type,SIZE, stdin) == NULL) {
             checkInput();
-        }
-        name[strcspn(name, "\n")] = 0;
-        if (strlen(name) >= MAX) {
-            clear(); 
-        } 
-        if (strcmp(name, "m") == 0) {
-            break;
-        }
-        printf("//Enter a key type, s for string, i for int d for double.\n");
-        printf("//");
-        while(fgets(key_type,SIZE, stdin) == NULL) {
-            checkInput();
+            continue;
         }
         key_type[strcspn(key_type, "\n")] = 0;
         if (strlen(key_type) >= MAX) {
             clear(); 
         } 
         if (strcmp(key_type, "s") != 0 && strcmp(key_type, "i") != 0 && strcmp(key_type, "d") != 0) {
-            printf("Enter s i or d only start again.\n");
-            continue;
-        }
-        if (strcmp(key_type, "s") == 0) {
-            strcpy(key_type, t[2]);
-        } else if (strcmp(key_type, "i") == 0) {
-            strcpy(key_type, t[3]);
-        } else if (strcmp(key_type, "d") == 0) {
-            strcpy(key_type, t[4]);
-        }
-        printf("//Enter a value type, s for string, i for int d for double.\n");
-        printf("//");
-        while (fgets(value_type,SIZE, stdin) == NULL || (1)) {
-            clearerr(stdin); 
-            if (strlen(value_type) >= MAX) {
-                clear(); 
-            } 
-            value_type[strcspn(value_type, "\n")] = 0;
-            if (strcmp(value_type, "s") != 0 && strcmp(value_type, "i") != 0 && strcmp(value_type, "d") != 0) {
-                printf("//Enter s i or d only.\n");
-            } else {
-                break;
-            }
-        }
-        if (strcmp(value_type, "s") == 0) {
-            strcpy(value_type, t[2]);
-        } else if (strcmp(value_type, "i") == 0) {
-            strcpy(value_type, t[3]);
-        } else if (strcmp(value_type, "d") == 0) {
-            strcpy(value_type, t[4]);
-        }
-        printf("//Enter a key.\n");
-        printf("//");
-        while(fgets(key,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        key[strcspn(key, "\n")] = 0;
-        if (strlen(key) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter s if key is a string.\n");
-        printf("//");
-        while(fgets(key_t,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        key_t[strcspn(key_t, "\n")] = 0;
-        if (strlen(key_t) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter a value.\n");
-        printf("//");
-        while(fgets(value,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        value[strcspn(value, "\n")] = 0;
-        if (strlen(value) >= MAX) {
-            clear(); 
-        } 
-        printf("//Enter s if the value is a string.\n");
-        printf("//");
-        while(fgets(value_t,SIZE, stdin) == NULL) {
-            checkInput();
-        }
-        value_t[strcspn(value_t, "\n")] = 0;
-        if (strlen(value_t) >= MAX) {
-            clear(); 
-        } 
-        printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
-        if (strcmp(key_t, "s") == 0) {
-            printf("%s%s%s%s%s%s", b[0], b[4], key, b[4], b[5], b[6]);
-        } else if (strcmp(key_t, "s") != 0) {
-            printf("%s%s%s%s", b[0], key, b[5], b[6]);
-        }
-        if (strcmp(value_t, "s") == 0) {
-            printf("%s%s%s%s\n", b[4], value, b[4], b[1]);
-            printf("%s\n\n", b[3]);
-            if (strcmp(repeat, "r") != 0) {
-                break;
-            }
-        } else if (strcmp(value_t, "s") != 0) {
-            printf("%s%s\n", value, b[1]);
-            printf("%s\n\n", b[3]);
-        }
-        if (strcmp(repeat, "r") != 0) {
+            printf("Enter s i or d only.\n");
+        }else{
             break;
         }
     }
+    if (strcmp(key_type, "s") == 0) {
+        strcpy(key_type, t[2]);
+    } else if (strcmp(key_type, "i") == 0) {
+        strcpy(key_type, t[3]);
+    } else if (strcmp(key_type, "d") == 0) {
+        strcpy(key_type, t[4]);
+    }
+    printf("//Enter a value type, s for string, i for int d for double.\n");
+    printf("//");
+    while (fgets(value_type,SIZE, stdin) == NULL || (1)) {
+        clearerr(stdin); 
+        if (strlen(value_type) >= MAX) {
+            clear(); 
+        } 
+        value_type[strcspn(value_type, "\n")] = 0;
+        if (strcmp(value_type, "s") != 0 && strcmp(value_type, "i") != 0 && strcmp(value_type, "d") != 0) {
+            printf("//Enter s i or d only.\n");
+        } else {
+            break;
+        }
+    }
+    if (strcmp(value_type, "s") == 0) {
+        strcpy(value_type, t[2]);
+    } else if (strcmp(value_type, "i") == 0) {
+        strcpy(value_type, t[3]);
+    } else if (strcmp(value_type, "d") == 0) {
+        strcpy(value_type, t[4]);
+    }
+    while(countKey < 10 && countKeyT < 10 && countValue < 10 && countValueT < 10) { 
+        printf("//Enter a key # to finish.\n");
+        printf("//");
+        while(fgets(key[countKey],150, stdin) == NULL) {
+            checkInput();
+        }
+        key[countKey][strcspn(key[countKey], "\n")] = 0;
+        if (strlen(key[countKey]) >= 149) {
+            clear(); 
+        } 
+        if(strcmp(key[countKey],"#")==0) {
+            break;
+        }else{
+            countKey++;
+        }
+        printf("//Enter s if key is a string.\n");
+        printf("//");
+        while(fgets(key_t[countKeyT],150, stdin) == NULL) {
+            checkInput();
+        }
+        key_t[countKeyT][strcspn(key_t[countKeyT], "\n")] = 0;
+        if (strlen(key_t[countKeyT]) >= 149) {
+            clear(); 
+        }
+        countKeyT++; 
+        printf("//Enter a value.\n");
+        printf("//");
+        while(fgets(value[countValue],150, stdin) == NULL) {
+            checkInput();
+        }
+        value[countValue][strcspn(value[countValue], "\n")] = 0;
+        if (strlen(value[countValue]) >= 149) {
+            clear(); 
+        } 
+        countValue++;
+        printf("//Enter s if the value is a string.\n");
+        printf("//");
+        while(fgets(value_t[countValueT],150, stdin) == NULL) {
+            checkInput();
+        }
+        value_t[countValueT][strcspn(value_t[countValueT], "\n")] = 0;
+        if (strlen(value_t[countValueT]) >= 149) {
+            clear(); 
+        }
+        countValueT++; 
+    }
+    printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
+    for(int i = 0; i < countKey && i < countKeyT && i < countValue && i < countValueT;i++) {
+        if (strcmp(key_t[i], "s") == 0) {
+            printf("%s%s%s%s%s%s", b[0], b[4], key[i], b[4], b[5], b[6]);
+        } else if (strcmp(key_t[i], "s") != 0) {
+            printf("%s%s%s%s", b[0], key[i], b[5], b[6]);
+        }
+        if (strcmp(value_t[i], "s") == 0) {
+            printf("%s%s%s%s\n", b[4], value[i], b[4], b[1]);
+        } else if (strcmp(value_t[i], "s") != 0) {
+            printf("%s%s\n", value[i], b[1]);
+        } 
+    }
+    printf("%s\n\n", b[3]);
 }
 
 void mapAccess() {
@@ -3040,6 +3509,7 @@ int main() {
         {"scb",   CheckScanfClear},
         {"sb",         scanfBasic},
         {"cb",         clearBuffC},
+        {"bh",             binHex},
         {"i",         ifStatement},
         {"e",              elseIf},   
         {"mi",            multiIf},
@@ -3052,6 +3522,8 @@ int main() {
         {"ia",           numArray}, 
         {"sm",          mapArrays},
         {"mn",             mapNum},
+        {"sf",         structMenu},
+        {"ms",          mapStruct},
         {"fc",              funct},      
         {"cf",          callFunct},
         {"h",                heap},
@@ -3107,7 +3579,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<51;i++) {
+        for(int i = 0; i<54;i++) {
             if(strcmp(sw, m1[i].keys)==0){
                 index = i;
             }

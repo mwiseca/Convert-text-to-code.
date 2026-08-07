@@ -75,6 +75,7 @@ void choice() {
     printf("//Enter ep for C++ string else if statements.\n");
     printf("//Enter mip for if statements with 2 conditions C++.\n");
     printf("//Enter up for C++ user input.\n");
+    printf("//Enter cg for getline with error checking.\n");
     printf("//Enter cbp for a function to clear input buffer C++.\n");
     printf("//Enter mp for a C++ map with up to 10 key value pairs.\n");
     printf("//Enter ma for map access C++.\n");
@@ -3148,6 +3149,51 @@ void userInput() {
     }
 }
 
+void checkGetline() {
+    char f[9][20] = {"while(true) {","if(!getline(","while(!getline(", "std::cin", ",", ");", ";",")) {","    "};
+    char string[4][15] = {"    ","printf(\"", "\\n", "\");"};
+    char v[SIZE];
+    char error [SIZE];
+
+    while (1) {
+        printf("//Enter name of variable m for main.\n");
+        printf("//");
+        while(fgets(v,SIZE, stdin) == NULL) {
+            checkInput();
+        }
+        v[strcspn(v, "\n")] = 0;
+        if (strlen(v) >= MAX) {
+            clear(); 
+        } 
+        if (strcmp(v, "m") == 0) {
+            break;
+        }
+        printf("//Enter a error message.\n");
+        printf("//");
+        while(fgets(error,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        error[strcspn(error,"\n")]=0;
+        if(strlen(error) >= SIZE) {
+            clear();
+        }
+        printf("\n%s%s%s%s%s\n",f[2],f[3],f[4],v,f[7]); 
+        printf("%s%s%s%s%s%s%s\n",string[0],string[1], string[2],error, string[2],string[2], string[3]);
+        printf("    std::cin.clear();\n");
+        printf("}\n\n");
+        printf("\n%s\n",f[0]);
+        printf("%s%s%s%s%s%s\n",f[8],f[1],f[3],f[4],v,f[7]); 
+        printf("%s%s%s%s%s%s%s%s\n",f[8],string[0],string[1], string[2],error, string[2],string[2], string[3]);
+        printf("        std::cin.clear();\n");
+        printf("        continue;\n");
+        printf("    }\n\n");
+        printf("std::ios_base::sync_with_stdio(false);        //This must be placed just below main for std::cin.clear(); to clear all errors.\n\n");
+        if (strcmp(repeat, "r") != 0) {
+            break;
+        }
+    }
+}
+
 void clearBuff() {
     char t[5][12] = {"void ", "(", "){", "}","();"};
     char name[SIZE];
@@ -3474,6 +3520,8 @@ void copyy() {
     printf("\n");
     printf("try {\n");
     printf("\n");
+    printf("std::ios_base::sync_with_stdio(false);\n");
+    printf("\n");
     printf("}catch(std::out_of_range){\n");
     printf("\n");
     printf("std::cin.clear();\n");
@@ -3542,6 +3590,7 @@ int main() {
         {"ep",            elseIfp},
         {"mip",        multiIfCpp},
         {"up",          userInput},
+        {"cg",       checkGetline},
         {"cbp",         clearBuff},
         {"mp",                map},
         {"ma",          mapAccess},
@@ -3579,7 +3628,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<54;i++) {
+        for(int i = 0; i<55;i++) {
             if(strcmp(sw, m1[i].keys)==0){
                 index = i;
             }

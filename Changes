@@ -112,5 +112,6 @@ Check ms in choices.
 The C++ map has been changed from one key value pair to up to 10 to Convert.c only.
 Check mp in choices.
 August 5 2026.
-
+A getline with error checking has been added to Convert.c Convert.cpp and ConvertC.cpp.
+Check cg in choices.
 

@@ -2320,6 +2320,8 @@ void copyy() {
     std::cout << "\n";
     std::cout << "try {\n";
     std::cout << "\n";
+	std::cout << "std::ios_base::sync_with_stdio(false);\n"; 
+	std::cout << "\n";
     std::cout << "}catch(std::out_of_range){\n";
     std::cout << "\n";
     std::cout << "std::cin.clear();\n";

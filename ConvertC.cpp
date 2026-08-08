@@ -3040,6 +3040,8 @@ void copyy() {
     printf("\n");
     printf("try {\n");
     printf("\n");
+	printf("std::ios_base::sync_with_stdio(false);\n"); 
+	printf("\n");
     printf("}catch(std::out_of_range){\n");
     printf("\n");
     printf("std::cin.clear();\n");

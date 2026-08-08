@@ -2055,7 +2055,7 @@ void checkGetline() {
         std::cout << "        continue;\n";
         std::cout << "    }\n\n";
         std::cout << "std::ios_base::sync_with_stdio(false);        //This must be placed just below main for std::cin.clear(); to clear all errors.\n\n";
-        if (repeat == "r") {
+        if (repeat != "r") {
             break;
         }
     }

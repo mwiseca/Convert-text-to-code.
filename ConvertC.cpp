@@ -2718,6 +2718,7 @@ void checkGetline() {
         printf("        continue;\n");
         printf("    }\n\n");
         printf("std::ios_base::sync_with_stdio(false);        //This must be placed just below main for std::cin.clear(); to clear all errors.\n\n");
+		
         if (strcmp(repeat, "r") != 0) {
             break;
         }

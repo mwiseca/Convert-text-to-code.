@@ -3151,7 +3151,7 @@ void userInput() {
 
 void checkGetline() {
     char f[9][20] = {"while(true) {","if(!getline(","while(!getline(", "std::cin", ",", ");", ";",")) {","    "};
-    char string[4][15] = {"    ","printf(\"", "\\n", "\");"};
+    char string[4][15] = {"    ","std::cout << \"", "\\n", "\";"};
     char v[SIZE];
     char error [SIZE];
 

@@ -1268,7 +1268,7 @@ def user_input():
 
 def checkGetline():
     f = ["while(true) {","if(!getline(","while(!getline(", "std::cin", ",", ");", ";",")) {","    "]
-    string = ["    ",'printf("',"\\n", '");']
+    string = ["    ",'std::cout << "',"\\n", '";']
 
     while True:
         v = input("//Enter name of variable m for main.\n//")

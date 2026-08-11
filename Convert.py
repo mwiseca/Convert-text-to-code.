@@ -1277,7 +1277,7 @@ def checkGetline():
         error = input("//Enter a error message.\n//")
         print("\n" + f[2] + f[3] + f[4] + v + f[7]) 
         print(string[0] + string[1] + string[2] + error +  string[2] + string[2] + string[3])
-        print("    std::cin.clear();\n")
+        print("    std::cin.clear();")
         print("}\n\n")
         print("\n" + f[0])
         print(f[8] + f[1] + f[3] + f[4] + v + f[7]) 

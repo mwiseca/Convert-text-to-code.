@@ -109,7 +109,7 @@ Check sf in choices.
 A menu program using the struct sf was added to Convert.c only.
 This calls functions with user input.
 Check ms in choices.
-The C++ map has been changed from one key value pair to up to 10 to Convert.c only.
+The C++ map option has been changed from one key value pair to up to 10 to Convert.c only.
 Check mp in choices.
 August 5 2026.
 A getline with error checking has been added to Convert.c Convert.cpp ConvertC.cpp and Convert.py.

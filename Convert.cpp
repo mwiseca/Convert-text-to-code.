@@ -2027,7 +2027,7 @@ void userInput() {
 
 void checkGetline() {
     std::string f[9] = {"while(true) {","if(!getline(","while(!getline(", "std::cin", ",", ");", ";",")) {","    "};
-    std::string string[4] = {"    ","printf(\"", "\\n", "\");"};
+    std::string string[4] = {"    ","std::cout << \"", "\\n", "\";"};
     std::string v;
     std::string error;
 

@@ -115,4 +115,6 @@ August 5 2026.
 A getline with error checking has been added to Convert.c Convert.cpp ConvertC.cpp and Convert.py.
 Check cg in choices.
 August 10 2026.
-
+The C++ map option has been changed from one key value pair to up to 10 to Convert.cpp.
+Check mp in choices.
+August 16 2026.

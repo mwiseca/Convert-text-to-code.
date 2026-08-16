@@ -2091,92 +2091,106 @@ void map() {
     std::string key_type;
     std::string value_type;
     std::string name;
-    std::string key;
-    std::string key_t;
-    std::string value;
-    std::string value_t;
+    std::string key[10];
+    std::string key_t[10];
+    std::string value[10];
+    std::string value_t[10];
+    int countKey = 0;
+    int countKeyT = 0;
+    int countValue = 0;
+    int countValueT = 0;
 
-    while (true) {
-        std::cout << "//Enter the name of the map m for main.\n";
-        std::cout << "//";
-        while(!getline(std::cin, name)) {
-			checkInput();
-		}
-        if (name == "m") {
-            break;
-        }
-        std::cout << "//Enter a key type, s for string, i for int d for double.\n";
-        std::cout << "//";
-        while(!getline(std::cin, key_type)) {
-			checkInput();
-		}
-        if (key_type != "s" && key_type != "i" && key_type != "d") {
-            std::cout << "Enter s i or d only.\n";
+    std::cout << "//Enter the name of the map m for main.\n";
+    std::cout << "//";
+    while(!getline(std::cin, name)) {
+        checkInput();
+    }
+    if (name == "m") {
+        return;
+    }
+    std::cout << "//Enter a key type, s for string, i for int d for double.\n";
+    std::cout << "//";
+    while(true) {
+        if(!getline(std::cin, key_type)) {
+            checkInput();
             continue;
         }
-        if (key_type == "s") {
-            key_type = t[2];
-        } else if (key_type == "i") {
-            key_type = t[3];
-        } else if (key_type == "d") {
-            key_type = t[4];
-        }
-        std::cout << "//Enter a value type, s for string, i for int d for double.\n";
-        std::cout << "//";
-		while(true) {
-            if (!getline(std::cin, value_type)) {
-				checkInput();
-				continue;
-			}
-            if (value_type != "s" && value_type != "i" && value_type != "d") {
-                std::cout << "//Enter s i or d only.\n";
-            } else {
-                break;
-            }
-        }
-        if (value_type == "s") {
-            value_type = t[2];
-        } else if (value_type == "i") {
-            value_type = t[3];
-        } else if (value_type == "d") {
-            value_type = t[4];
-        }
-        std::cout << "//Enter a key.\n";
-        std::cout << "//";
-        while(!getline(std::cin, key)) {
-			checkInput();
-		}
-        std::cout << "//Enter s if key is a string.\n";
-        std::cout << "//";
-        while(!getline(std::cin, key_t)) {
-			checkInput();
-		}
-        std::cout << "//Enter a value.\n";
-        std::cout << "//";
-        while(!getline(std::cin, value)) {
-			checkInput();
-		}
-        std::cout << "//Enter s if the value is a string.\n";
-        std::cout << "//";
-        while(!getline(std::cin, value_t)) {
-			checkInput();
-		}
-        std::cout << "\n" << t[0] << t[1] << key_type << t[6] << value_type << t[5] << name << t[7] << "\n";
-        if (key_t == "s") {
-            std::cout << b[0] << b[4] << key << b[4] << b[5] << b[6];
-        } else if (key_t != "s") {
-            std::cout << b[0] << key << b[5] << b[6];
-        }
-        if (value_t == "s") {
-            std::cout << b[4] << value << b[4] << b[1] << "\n";
-        } else if (value_t != "s") {
-            std::cout << value << b[1] << "\n";
-        }
-        std::cout << b[3] << "\n\n";
-        if (repeat != "r") {
+        if (key_type != "s" && key_type != "i" && key_type != "d") {
+            std::cout << "Enter s i or d only.\n";
+        }else{
             break;
         }
     }
+    if (key_type == "s") {
+        key_type = t[2];
+    } else if (key_type == "i") {
+        key_type = t[3];
+    } else if (key_type == "d") {
+        key_type = t[4];
+    }
+    std::cout << "//Enter a value type, s for string, i for int d for double.\n";
+    std::cout << "//";
+    while(true) {
+        if (!getline(std::cin, value_type)) {
+            checkInput();
+            continue;
+        }
+        if (value_type != "s" && value_type != "i" && value_type != "d") {
+            std::cout << "//Enter s i or d only.\n";
+        } else {
+            break;
+        }
+    }
+    if (value_type == "s") {
+        value_type = t[2];
+    } else if (value_type == "i") {
+        value_type = t[3];
+    } else if (value_type == "d") {
+        value_type = t[4];
+    }
+    while(countKey < 10 && countKeyT < 10 && countValue < 10 && countValueT < 10) {
+        std::cout << "//Enter a key # to finish.\n";
+        std::cout << "//";
+        while(!getline(std::cin, key[countKey])) {
+            checkInput();
+        }
+        if (key[countKey] == "#") {
+            break;
+        }
+        countKey++;
+        std::cout << "//Enter s if key is a string.\n";
+        std::cout << "//";
+        while(!getline(std::cin, key_t[countKeyT])) {
+            checkInput();
+        }
+        countKeyT++;
+        std::cout << "//Enter a value.\n";
+        std::cout << "//";
+        while(!getline(std::cin, value[countValue])) {
+            checkInput();
+        }
+        countValue++;
+        std::cout << "//Enter s if the value is a string.\n";
+        std::cout << "//";
+        while(!getline(std::cin, value_t[countValueT])) {
+            checkInput();
+        }
+        countValueT++;
+    }
+    std::cout << "\n" << t[0] << t[1] << key_type << t[6] << value_type << t[5] << name << t[7] << "\n";
+    for(int i = 0; i < countKey && i < countKeyT && i < countValue && i < countValueT;i++) {
+        if (key_t[i] == "s") {
+            std::cout << b[0] << b[4] << key[i] << b[4] << b[5] << b[6];
+        } else if (key_t[i] != "s") {
+            std::cout << b[0] << key[i] << b[5] << b[6];
+        }
+        if (value_t[i] == "s") {
+            std::cout << b[4] << value[i] << b[4] << b[1] << "\n";
+        } else if (value_t[i] != "s") {
+            std::cout << value[i] << b[1] << "\n";
+        }
+    }
+    std::cout << b[3] << "\n\n";
 }
 
 void mapAccess() {

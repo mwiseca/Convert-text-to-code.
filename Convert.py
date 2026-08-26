@@ -1522,6 +1522,7 @@ switch = {
          "im": if_malloc,
          "v": variable,
          "vv": variable_value,
+         "cv": changeVar,
          "aa": array,
          "ia": num_array,
          "sm": mapArrays,

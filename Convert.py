@@ -42,6 +42,7 @@ def choice():
     print("//Enter im for if and else if statements for numbers if malloc is used.")
     print("//Enter v for variables without assigning a value.")
     print("//Enter vv for variables with assigning a string value.")
+    print("//Enter cv to change the value of a variable with strcpy.")
     print("//Enter vi for int and double variables. C C++")
     print("//Enter vn for int and double variables with no value. C C++") 
     print("//Make sure #include <string.h> is used for fgets and if statements for strings.")
@@ -677,6 +678,27 @@ def variable_value():
         if repeat != "r":
             return ""
 
+def changeVar():
+    t = ["char ","[","]"," = ",";","strcpy(",",", '"','");']    
+    while True:
+        name = input("//Enter a variable name m for main.\n//")
+        if name == "m":
+            return ""
+        value = input("//Enter the value assigned.\n//")
+        print("//Enter the new value m for main.")
+        while True:
+            nv = input("//")
+            if nv == "m":
+                return "" 
+            if len(nv) + 2 > len(value):  
+                print("//Enter a string maximum 2 bytes less than original value.\n")
+            else: 
+                break
+        print(f"\n{t[0]}{name}{t[1]}{t[2]}{t[3]}{t[7]}{value}{t[7]}{t[4]}      //Place code with variables")
+        print(f"{t[5]}{name}{t[6]}{t[7]}{nv}{t[8]}      //Place code were vairable value is to be changed.\n")
+        if repeat != "r":
+            return ""
+    
 
 def array():
     while True:

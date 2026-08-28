@@ -65,6 +65,7 @@ void choice() {
     printf("//Enter cf to call functions C-C++.\n");
     printf("//Enter v for variables without assigning a value.\n");
     printf("//Enter vv for variables with assigning a string value.\n");
+    printf("//Enter cv to change the value of a variable with strcpy.\n");
     printf("//Enter vi for int and double variables C-C++.\n");
     printf("//Enter vn for int and double variables with no value C-C++.\n");
     printf("//Enter m for main x to exit.\n");
@@ -1652,6 +1653,64 @@ void variableValue() {
     }
 }
 
+void changeVar() {
+    char t [9]  [25] = {"char ","[","]"," = ",";","strcpy(",",", "\"","\");"};
+    char name [SIZE] = {0};
+    char value [SIZE] = {0};
+    char nv [SIZE] = {0};
+
+
+    while(1) {
+        printf("//Enter a variable name m for main.\n");
+        printf("//");
+        while(fgets(name,SIZE,stdin) == NULL) {
+            checkInput();
+        }
+        name[strcspn(name,"\n")]=0;
+        if(strlen(name) >= MAX) {
+            clear();
+        }
+        if(strcmp(name,"m")==0) {
+            break;
+        }
+
+        printf("//Enter the value assigned.\n");
+        printf("//");
+        while(fgets(value,sizeof(value),stdin) == NULL) {
+            checkInput();
+        }
+        value[strcspn(value,"\n")]=0;
+        if(strlen(value) >= MAX) {
+            clear(); 
+        }
+        printf("//Enter the new value m for main.\n");
+        printf("//");
+        while(1) {
+            if(fgets(nv,sizeof(nv),stdin) == NULL) {
+                checkInput();
+                continue;
+            }
+            nv[strcspn(nv,"\n")]=0;
+            if(strlen(nv) >= MAX) {
+                clear(); 
+            }
+             if(strcmp(nv,"m")==0){
+                 return; 
+             }
+             if (strlen(nv) + 2 > strlen(value)) { 
+                printf("//Enter a string maximum 2 bytes less than original value.\n");
+            } else {
+                break;
+            } 
+        }
+        printf("\n%s%s%s%s%s%s%s%s%s      //Place code with vairables\n\n",t[0],name,t[1],t[2],t[3],t[7],value,t[7],t[4] );
+        printf("%s%s%s%s%s%s      //Place code were vairable value is to be changed.\n\n",t[5],name,t[6],t[7],nv,t[8]);
+        if(strcmp(repeat,"r")!=0) {
+            break;
+        }
+    }
+}
+
 void array() {
     char t[5][15] = {"char ", " [", "] ", "] = {", "};"};
     char elements[10][150];
@@ -3228,13 +3287,9 @@ void map() {
     char value_type[SIZE];
     char name[SIZE];
     char key[10] [150];
-    char key_t[10] [150];
     char value[10] [150];
-    char value_t[10] [150];
     int countKey = 0;
-    int countKeyT =0;
     int countValue = 0;
-    int countValueT =0;
 
     printf("//Enter the name of the map m for main.\n");
     printf("//");
@@ -3293,7 +3348,7 @@ void map() {
     } else if (strcmp(value_type, "d") == 0) {
         strcpy(value_type, t[4]);
     }
-    while(countKey < 10 && countKeyT < 10 && countValue < 10 && countValueT < 10) { 
+    while(countKey < 10  && countValue < 10) { 
         printf("//Enter a key # to finish.\n");
         printf("//");
         while(fgets(key[countKey],150, stdin) == NULL) {
@@ -3308,16 +3363,6 @@ void map() {
         }else{
             countKey++;
         }
-        printf("//Enter s if key is a string.\n");
-        printf("//");
-        while(fgets(key_t[countKeyT],150, stdin) == NULL) {
-            checkInput();
-        }
-        key_t[countKeyT][strcspn(key_t[countKeyT], "\n")] = 0;
-        if (strlen(key_t[countKeyT]) >= 149) {
-            clear(); 
-        }
-        countKeyT++; 
         printf("//Enter a value.\n");
         printf("//");
         while(fgets(value[countValue],150, stdin) == NULL) {
@@ -3328,27 +3373,17 @@ void map() {
             clear(); 
         } 
         countValue++;
-        printf("//Enter s if the value is a string.\n");
-        printf("//");
-        while(fgets(value_t[countValueT],150, stdin) == NULL) {
-            checkInput();
-        }
-        value_t[countValueT][strcspn(value_t[countValueT], "\n")] = 0;
-        if (strlen(value_t[countValueT]) >= 149) {
-            clear(); 
-        }
-        countValueT++; 
     }
     printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
-    for(int i = 0; i < countKey && i < countKeyT && i < countValue && i < countValueT;i++) {
-        if (strcmp(key_t[i], "s") == 0) {
+    for(int i = 0; i < countKey &&  i < countValue;i++) {
+        if (strcmp(key_type, t[2]) == 0) {
             printf("%s%s%s%s%s%s", b[0], b[4], key[i], b[4], b[5], b[6]);
-        } else if (strcmp(key_t[i], "s") != 0) {
+        } else {
             printf("%s%s%s%s", b[0], key[i], b[5], b[6]);
         }
-        if (strcmp(value_t[i], "s") == 0) {
+        if (strcmp(value_type, t[2]) == 0) {
             printf("%s%s%s%s\n", b[4], value[i], b[4], b[1]);
-        } else if (strcmp(value_t[i], "s") != 0) {
+        } else {
             printf("%s%s\n", value[i], b[1]);
         } 
     }
@@ -3565,7 +3600,8 @@ int main() {
         {"in",           ifNumber},
         {"im",             ifHeap},  
         {"v",            variable},
-        {"vv",      variableValue},  
+        {"vv",      variableValue},
+        {"cv",          changeVar},
         {"aa",              array},        
         {"ia",           numArray}, 
         {"sm",          mapArrays},
@@ -3628,7 +3664,7 @@ int main() {
             break;
         } 
         int index = -1;
-        for(int i = 0; i<55;i++) {
+        for(int i = 0; i<56;i++) {
             if(strcmp(sw, m1[i].keys)==0){
                 index = i;
             }

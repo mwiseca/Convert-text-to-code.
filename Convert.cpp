@@ -48,6 +48,7 @@ void choice() {
     cout << "//Enter cf to call functions C-C++.\n";
     cout << "//Enter v for variables without assigning a value.\n";
     cout << "//Enter vv for variables with assigning a string value.\n";
+	cout << "//Enter cv to change the value of a variable with strcpy.\n";
     cout << "//Enter vi for int and double variables C-C++.\n";
     cout << "//Enter vn for int and double variables with no value C-C++.\n";
     cout << "//Enter m for main x to exit.\n";
@@ -1057,6 +1058,49 @@ void variableValue() {
 			checkInput();
 		}
         std::cout << "\n" << v[0] << name << v[1] << mem << v[2] << v[3] << v[4] << value << v[4] << v[5] << "\n\n";
+        if (repeat != "r") {
+            break;
+        }
+    }
+}
+
+void changeVar() { std::string t [9] = {"char ","[","]"," = ",";","strcpy(",",", "\"","\");"}; 
+    std::string name;
+    std::string value;
+    std::string nv;
+
+    while(true) {
+        std::cout << "//Enter a variable name m for main.\n";
+        std::cout << "//";
+        while(!getline(std::cin,name)) {
+            checkInput();
+        }
+        if(name == "m") {
+            break;
+        }
+        std::cout << "//Enter the value assigned.\n";
+        std::cout << "//";
+        while(!getline(std::cin,value)) {
+            checkInput();
+        }
+        std::cout << "//Enter the new value m for main.\n";
+        printf("//");
+        while(true) {
+            if(!getline(std::cin,nv)) {
+                checkInput();
+                continue;
+            }
+             if(nv == "m") {
+                 return; 
+             }
+             if (nv.length() + 2 > value.length()) { 
+                 std::cout << "//Enter a string maximum 2 bytes less than original value.\n";
+            } else {
+                break;
+            } 
+        }
+        std::cout << t[0] << name << t[1] << t[2] << t[3] << t[7] << value << t[7] << t[4] << "      //Place code with vairables\n\n";
+        std::cout <<  t[5] << name << t[6] << t[7] << nv << t[8] << "      //Place code were vairable value is to be changed.\n\n";
         if (repeat != "r") {
             break;
         }
@@ -2372,7 +2416,8 @@ int main() {
         {"in",          ifNumber},  
         {"im",            ifHeap}, 
         {"v",           variable},     
-        {"vv",     variableValue},   
+        {"vv",     variableValue},
+	    {"cv",         changeVar},
         {"aa",             array},
         {"ia",          numArray},
 	    {"sm",         mapArrays},

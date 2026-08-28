@@ -118,3 +118,11 @@ August 10 2026.
 The C++ map option has been changed from one key value pair to up to 10 to Convert.cpp.
 Check mp in choices.
 August 16 2026.
+Added: Change the value of a variable with strcpy with reduced risk of buffer overflow.
+This was added to Convert.c ConvertC.cpp Convert.py and Convert.cpp. 
+Check cv in choices.
+The C++ map option was added to ConvertC.cpp.
+Check mp in choices.
+The C++ map option was updated so all key value pairs will be strings based on first selection.
+This was updated on Convert.c and is on ConvertC.cpp.
+August 28 2026.

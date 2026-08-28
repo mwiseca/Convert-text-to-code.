@@ -3287,13 +3287,9 @@ void map() {
     char value_type[SIZE];
     char name[SIZE];
     char key[10] [150];
-    char key_t[10] [150];
     char value[10] [150];
-    char value_t[10] [150];
     int countKey = 0;
-    int countKeyT =0;
     int countValue = 0;
-    int countValueT =0;
 
     printf("//Enter the name of the map m for main.\n");
     printf("//");
@@ -3352,7 +3348,7 @@ void map() {
     } else if (strcmp(value_type, "d") == 0) {
         strcpy(value_type, t[4]);
     }
-    while(countKey < 10 && countKeyT < 10 && countValue < 10 && countValueT < 10) { 
+    while(countKey < 10  && countValue < 10) { 
         printf("//Enter a key # to finish.\n");
         printf("//");
         while(fgets(key[countKey],150, stdin) == NULL) {
@@ -3367,16 +3363,6 @@ void map() {
         }else{
             countKey++;
         }
-        printf("//Enter s if key is a string.\n");
-        printf("//");
-        while(fgets(key_t[countKeyT],150, stdin) == NULL) {
-            checkInput();
-        }
-        key_t[countKeyT][strcspn(key_t[countKeyT], "\n")] = 0;
-        if (strlen(key_t[countKeyT]) >= 149) {
-            clear(); 
-        }
-        countKeyT++; 
         printf("//Enter a value.\n");
         printf("//");
         while(fgets(value[countValue],150, stdin) == NULL) {
@@ -3387,27 +3373,17 @@ void map() {
             clear(); 
         } 
         countValue++;
-        printf("//Enter s if the value is a string.\n");
-        printf("//");
-        while(fgets(value_t[countValueT],150, stdin) == NULL) {
-            checkInput();
-        }
-        value_t[countValueT][strcspn(value_t[countValueT], "\n")] = 0;
-        if (strlen(value_t[countValueT]) >= 149) {
-            clear(); 
-        }
-        countValueT++; 
     }
     printf("\n%s%s%s%s%s%s%s%s\n", t[0], t[1], key_type, t[6], value_type, t[5], name, t[7]);
-    for(int i = 0; i < countKey && i < countKeyT && i < countValue && i < countValueT;i++) {
-        if (strcmp(key_t[i], "s") == 0) {
+    for(int i = 0; i < countKey &&  i < countValue;i++) {
+        if (strcmp(key_type, t[2]) == 0) {
             printf("%s%s%s%s%s%s", b[0], b[4], key[i], b[4], b[5], b[6]);
-        } else if (strcmp(key_t[i], "s") != 0) {
+        } else {
             printf("%s%s%s%s", b[0], key[i], b[5], b[6]);
         }
-        if (strcmp(value_t[i], "s") == 0) {
+        if (strcmp(value_type, t[2]) == 0) {
             printf("%s%s%s%s\n", b[4], value[i], b[4], b[1]);
-        } else if (strcmp(value_t[i], "s") != 0) {
+        } else {
             printf("%s%s\n", value[i], b[1]);
         } 
     }

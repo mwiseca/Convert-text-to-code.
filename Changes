@@ -126,3 +126,6 @@ Check mp in choices.
 The C++ map option was updated so all key value pairs will be strings based on first selection.
 This was updated on Convert.c and is on ConvertC.cpp.
 August 28 2026.
+The C++ map option was updated so all key value pairs will be strings based on first selection.
+This was updated on Convert.cpp.
+August 30 2026.

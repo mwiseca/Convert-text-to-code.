@@ -1865,34 +1865,43 @@ void estringp() {
 }
 
 void arraysp() {
-    std::string t[5] = {"std::string ", " [", "] = {", "};"};
+    std::string t[4] = {"std::string ", " [", "] = {", "};"};
+    std::string elements[10];
     std::string name;
     std::string ne;
-    std::string elements;
-    while (true) {
-        std::cout << "//Enter the name of array m for main.\n";
-        std::cout << "//";
-        while(!getline(std::cin, name)) {
-			checkInput();
-		}
-        if (name == "m") {
-            break;
+    int count = 0;
+    std::cout << "//Enter the name of array m for main.\n";
+    std::cout << "//";
+    while(!getline(std::cin,name)) {
+        checkInput();
+    }
+    if (name == "m") {
+        return;
+    }
+    std::cout << "//Enter the amount of elements.\n";
+    std::cout << "//";
+    while(!getline(std::cin,ne)) {
+        checkInput();
+    }
+    while(count < 10) {
+        std::cout << "//Enter a element press # to stop.\n";
+        while(!getline(std::cin, elements[count])) {
+            checkInput();
         }
-        std::cout << "//Enter the amount of elements.\n";
-        std::cout << "//";
-        while(!getline(std::cin, ne)) {
-			checkInput();
-		}
-        std::cout << "//Enter elements with quotations and commas between each.\n";
-        std::cout << "//";
-        while(!getline(std::cin, elements)) {
-			checkInput();
-		}
-        std::cout << "\n" << t[0] << name << t[1] << ne << t[2] << elements << t[3] << "\n\n";
-        if (repeat != "r") {
+        if(elements[count] == "#") {
             break;
+        }else{
+            count++;
         }
     }
+    std::cout <<"\n" <<  t[0] <<  name << t[1] << ne << t[2];
+    for (int i = 0; i < count; i++) {
+        std::cout << "\"" << elements[i] << "\"";
+        if(i < count -1) {
+            std::cout << ",";
+        }
+    }
+    std::cout << t[3] << "\n\n";
 }
 
 void ifStatementp() {

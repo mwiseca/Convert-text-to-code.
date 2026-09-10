@@ -1166,7 +1166,7 @@ void numArray() {
     std::cout << "//";
     while (true) {
         if (!getline(std::cin,typ)) {
-            checkInput;
+            checkInput();
             continue;
         }
         if (typ != "i" && typ != "d") {

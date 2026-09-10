@@ -1109,90 +1109,109 @@ void changeVar() { std::string t [9] = {"char ","[","]"," = ",";","strcpy(",",",
 
 void array() {
     std::string t[5] = {"char ", " [", "] ", "] = {", "};"};
+    std::string elements[10];
+    int count = 0;
     std::string name;
     std::string ne;
     std::string m;
-    std::string elements;
-    while (true) {
-        std::cout << "//Enter the name of array m for main.\n";
-        std::cout << "//";
-        while(!getline(std::cin, name)) {
-			checkInput();
-		}
-        if (name == "m") {
-            break;
+    std::cout << "//Enter the name of array m for main.\n";
+    std::cout << "//";
+    while(!getline(std::cin,name)){
+        checkInput();
+    }
+    if (name == "m") {
+        exit(0);
+    }
+    std::cout << "//Enter the amount of elements.\n";
+    std::cout << "//";
+    while(!getline(std::cin,ne)) {
+        checkInput();
+    }
+    std::cout << "//Enter memory allocated to elements.\n";
+    std::cout << "//";
+    while(!getline(std::cin,m)) {
+        checkInput();
+    }
+    while (count < 10) {
+        std::cout << "//Enter a element press # to stop.\n";
+        while(!getline(std::cin,elements[count])) {
+            checkInput();
         }
-        std::cout << "//Enter the amount of elements.\n";
-        std::cout << "//";
-        while(!getline(std::cin, ne)) {
-			checkInput();
-		}
-        std::cout << "//Enter memory allocated to elements.\n";
-        std::cout << "//";
-        while(!getline(std::cin, m)) {
-			checkInput();
-		}
-        std::cout << "//Enter elements with quotations and commas between each.\n";
-        std::cout << "//";
-        while(!getline(std::cin, elements)) {
-			checkInput();
-		}
-        std::cout << "\n" << t[0] << name << t[1] << ne << t[2] << t[1] << m << t[3] << elements << t[4] << "\n\n";
-        if (repeat != "r") {
+        if(elements[count] == "#") {
             break;
+        }else{
+            count++;
         }
     }
+    std::cout << "\n" << t[0] << name << t[1] << ne << t[2] << t[1] << m << t[3];
+    for (int i = 0; i < count; i++) {
+        std::cout << "\"" << elements[i] << "\"";
+        if(i < count -1) {
+            std::cout << ",";
+        }
+    }
+    std::cout << t[4] << "\n\n";
 }
 
 void numArray() {
-    std::string a[6] = {"int ", "double ", "[", "]", " = {", "};"};
+    std::string a[6] = {"int ", "double ", "[", "]", " = {", "};",};
+    std::string elements[10];
+    int count = 0;
     std::string typ;
     std::string name;
     std::string num;
-    std::string elements;
 
+
+    std::cout << "//Enter a data type i for int d for double.\n";
+    std::cout << "//";
     while (true) {
-        std::cout << "//Enter a data type i for int d for double.\n";
-        std::cout << "//";
-		while(true) {
-            if (!getline(std::cin, typ)) {
-				checkInput();
-				continue;
-			}
-            if (typ != "i" && typ != "d") {
-                std::cout << "//Enter i or d only.\n";
-            } else {
-                break;
-            }
+        if (!getline(std::cin,typ)) {
+            checkInput;
+            continue;
         }
-        if (typ == "i") {
-            typ = a[0];
-        } else if (typ == "d") {
-            typ = a[1];
-        }
-        std::cout << "//Enter the name of the array m for main.\n";
-        std::cout << "//";
-        while(!getline(std::cin, name)) {
-			checkInput();
-		}
-        if (name == "m") {
-            break;
-        }
-        std::cout << "//Enter number of elements m for main.\n";
-        std::cout << "//";
-        while(!getline(std::cin, num)) {
-			checkInput();
-		}
-        std::cout << "//Enter elements with a comma between them.\n";
-        std::cout << "//";
-        while(!getline(std::cin, elements)) {
-			checkInput();
-		}
-        std::cout << "\n" << typ << name << a[2] << num << a[3] << a[4] << elements << a[5] << "\n\n";
-        if (repeat != "r") {
+        if (typ != "i" && typ != "d") {
+            std::cout << "//Enter i or d.\n";
+        } else {
             break;
         }
     }
+    if (typ == "i") {
+        typ = a[0];
+    } else if (typ  == "d") {
+        typ = a[1];
+    }
+    std::cout << "//Enter the name of the array m for main.\n";
+    std::cout << "//";
+    while(!getline(std::cin,name)) {
+        checkInput();
+    }
+    if (name == "m") {
+        return;
+    }
+    std::cout << "//Enter number of elements m for main.\n";
+    std::cout << "//";
+    while(!getline(std::cin,num)) {
+        checkInput();
+    }
+    while(count < 10) {
+        std::cout << "//Enter a element press # to stop.\n";
+        while(!getline(std::cin,elements[count])) {
+            checkInput();
+        }
+        if(elements[count] == "#") {
+            break;
+        }else{
+            count++;
+        }
+    }
+    std::cout << "\n" << typ << name << a[2] << num << a[3] << a[4];
+    for (int i = 0; i < count; i++) {
+        std::cout << elements[i];
+        if(i < count -1) {
+            std::cout << ",";
+        }
+    }
+    std::cout << a[5] << "\n\n";
 }
 
 void mapArrays() {

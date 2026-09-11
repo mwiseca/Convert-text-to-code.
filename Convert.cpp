@@ -1279,7 +1279,7 @@ void mapArrays() {
         if(error == "m") {
             break;
         }
-        std::cout << "//Enter a format specifier s for string i for int d for double..\n";
+        std::cout << "//Enter a format specifier for the value array s for string i for int d for double.\n";
         while(true) {
             if(!getline(std::cin,format)) {
                 checkInput();

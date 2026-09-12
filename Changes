@@ -129,3 +129,5 @@ August 28 2026.
 The C++ map option was updated so all key value pairs will be strings based on first selection.
 This was updated on Convert.cpp.
 August 30 2026.
+The array choices have been changed to include commas and Quotes for up to 10 elements in Convert.cpp.
+September 12 2026.

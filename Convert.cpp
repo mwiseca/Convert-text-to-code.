@@ -1416,6 +1416,118 @@ void mapNum() {
     }
 }
 
+
+void structKeyValue() {
+    std::string structVar [7] = {"struct "," {","const char* ","int ","double ",";","    "};
+    std::string values [4] = {"const char* ","int ","double ",";"};
+    std::string structArray [9] = {"struct ","[] = {","{","\"",",","    ","};","},"," "};
+    std::string arrayKey [10];
+    std::string function [10];
+
+    std::string name;
+    std::string keyType;
+    std::string keyName;
+    std::string valueType;
+    std::string valueName;
+    std::string varName;
+    int count = 0;
+    int counts = 0;
+    std::cout << "//Name the struct m for main.\n";
+    while(!getline(std::cin,name)) {
+        checkInput();
+    }
+    if(name == "m") {
+        return;
+    }
+    std::cout << "//Enter the type for keys s for string i for int d for double.\n";
+    while(1) {
+        if(!getline(std::cin,keyType)) {
+            checkInput();
+            continue;
+        }
+        if(keyType != "s" && keyType != "i" && keyType != "d") {
+                std::cout << "\n//Enter s i or d only.\n\n";
+        } else {
+            break;
+        }
+    }
+    if(keyType == "s") {
+        keyType = structVar[2];
+    } else if(keyType == "i") {
+        keyType = structVar[3];
+    } else if(keyType == "d") {
+        keyType = structVar[4];
+    }
+    std::cout << "//Enter a key name(e.g.,keys):\n";
+    while(!getline(std::cin,keyName)) {
+        checkInput();
+    }
+    if(keyName == "x") {
+        return;
+    }
+    std::cout << "//Enter the value type s for string i for int d for double.\n";
+    while(1) {
+        if(!getline(std::cin,valueType)) {
+            checkInput();
+            continue;
+        }
+        if(valueType != "s" && valueType != "i" && valueType != "d") {
+                std::cout << "\n//Enter s i or d only.\n\n";
+        } else {
+            break;
+        }
+    }
+    if(valueType =="s") {
+        valueType = values[0];
+    } else if(valueType == "i") {
+        valueType = values[1];
+    } else if(valueType == "d") {
+        valueType = values[2];
+    }
+    std::cout << "//Enter a value name(e.g.,values):\n";
+    while(!getline(std::cin,valueName)) {
+        checkInput();
+    }
+    std::cout << "//Enter the Variable Identifier.\n";
+    while(!getline(std::cin,varName)) {
+        checkInput();
+    }
+    while(count < 10 && counts < 10){
+        std::cout << "//Enter an array key (press # to stop):\n";
+        while(!getline(std::cin,arrayKey[count])) {
+            checkInput();
+        } 
+        if(arrayKey[count] == "#") {
+            break;
+        }else{
+            count++;
+        }
+        std::cout << "//Enter a array value.\n";
+        while(!getline(std::cin,function[counts])) {
+            checkInput();
+        }
+        counts++;
+    }
+    std::cout << "\n" << structVar[0] << name << structVar[1] << "\n";
+    std::cout << structVar[6] << keyType << keyName << structVar[5] << "\n";
+    std::cout << "    " << valueType << valueName << values[3] << "\n";
+    std::cout << structArray[6] << "\n\n" << "      //Place the above code above the main function\n\n";
+    std::cout << structArray[0] << name << " " << varName << structArray[1] << "\n";
+    for (int i = 0; i < count   && i < counts; i++) {
+        if(keyType == structVar[2]) {
+            std::cout << structArray[5] << structArray[2] << structArray[3] << arrayKey[i] << structArray[3] << structArray[4] << structArray[8]; 
+        } else {
+            std::cout << structArray[5] << structArray[2] << arrayKey[i] << structArray[4] << structArray[8];
+        }
+        if(valueType == values[0]) {
+            std::cout << structArray[3] << function[i] << structArray[3] << structArray[7] << "\n";
+        }else{
+            std::cout << structArray[8] << function[i] << structArray[7] << "\n";
+        }
+    }
+    std::cout << structArray[6] << "\n\n";
+}
+
 void funct() {
     std::string t[4] = {"void ", "(", "){", "}"};
     std::string name;
@@ -2436,6 +2548,7 @@ int main() {
         {"ia",          numArray},
 	    {"sm",         mapArrays},
 	    {"mn",            mapNum},
+	    {"skv",   structKeyValue},
         {"fc",             funct},     
         {"cf",         callFunct},  
         {"h",               heap},       

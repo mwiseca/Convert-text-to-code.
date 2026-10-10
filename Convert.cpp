@@ -18,8 +18,10 @@ void choice() {
     cout << "//Enter a for strings.\n";
     cout << "//Enter aa for arrays.\n";
     cout << "//Enter ia for arrays with numbers C C++.\n";
-	cout << "//Enter sm to build a simple map that maps 2 arrays.\n";
-	cout << "//Enter mn to build a simple map were the key array is numbers.\n";
+	cout << "//Enter sm to build a simple map in C that maps 2 arrays.\n";
+	cout << "//Enter mn to build a simple map in C were the key array is numbers.\n";
+    cout << "//Enter skv to build a struct for key value pairs to build a simple map.\n";
+    cout << "//Enter mkv to Map keys to values from skv.\n";
     cout << "//Enter c for strings with no quotation marks.\n";
 	cout << "//Enter bl for string literals.\n";
     cout << "//Enter cy for what's needed to copy and paste to finish a simple program.\n";

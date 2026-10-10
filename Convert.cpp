@@ -1416,7 +1416,6 @@ void mapNum() {
     }
 }
 
-
 void structKeyValue() {
     std::string structVar [7] = {"struct "," {","const char* ","int ","double ",";","    "};
     std::string values [4] = {"const char* ","int ","double ",";"};
@@ -1526,6 +1525,124 @@ void structKeyValue() {
         }
     }
     std::cout << structArray[6] << "\n\n";
+}
+
+void mapKv() {
+    std::string loop [7] = {"int "," = -1;","for(int "," = 0;","<",";","++) {"};
+    std::string ifStatement [12] = {"    if(strcmp(",", ","[","]",".",") == 0) {"," = ",";","}","    }","}","        "};
+    std::string ifNumber [5] = {"    if("," == ","[","].",") {"};
+    std::string keyError [7] = {"if(", " == -1) {", "    printf(\"", "\\n", "\");","    continue;","}"}; 
+    std::string end [9] = {"printf(\"","%s","%d","%f","\\n\"",",","[","].",");"};
+
+    std::string keys;
+    std::string values;
+    std::string select;
+    std::string ifType;
+    std::string varId;
+    std::string input;
+    std::string forLoopInt;
+    std::string elements;
+    std::string error;
+    std::string valueType;
+
+
+    while(1) {
+        std::cout << "//Enter the name of the keys m for main.\n";
+        while(!getline(std::cin,keys)) {
+            checkInput();
+        }
+        if(keys == "m") {
+            break;
+        }
+        std::cout << "//Enter s if the keys are strings.\n";
+        while(!getline(std::cin,ifType)) {
+            checkInput();
+        }
+        std::cout << "//Enter the name of the values m for main.\n";
+        while(!getline(std::cin,values)) {
+            checkInput();
+        }
+        if(values == "m") {
+            break;
+        }
+        std::cout << "//Enter the name of the user input m for main.\n";
+        while(!getline(std::cin,select)) {
+            checkInput();
+        }
+        if(select == "m") {
+            break;
+        }
+        std::cout << "Enter the name of the variable identifier.\n";
+        while(!getline(std::cin,varId)) {
+            checkInput();
+        }
+        std::cout << "//Select the name of the variable that stores the key to be selected.\n";
+        std::cout << "//Index or number is good. m for main.\n";
+        while(!getline(std::cin,input)) {
+            checkInput();
+        }
+        if(input == "m") {
+            break;
+        }
+        std::cout << "//Select a name for the for loop int i is the usual.\n";
+        while(!getline(std::cin,forLoopInt)) {
+            checkInput();
+        }
+        if(input == "m") {
+            break;
+        }
+        std::cout << "//Enter the number of elements in struct.\n";
+        while(!getline(std::cin,elements)) {
+            checkInput();
+        }
+        if(elements == "m") {
+            break;
+        }
+        std::cout << "//Enter a key error message m for main.\n";
+        while(!getline(std::cin,error)) {
+            checkInput();
+        }
+        if(error == "m") {
+            break;
+        }
+        std::cout << "//Enter the type for the values s for string i for int and d for double.\n";
+        while(1) {
+            if(!getline(std::cin,valueType)) {
+                checkInput();
+                continue;
+            }
+            if((valueType != "s")!=0 && valueType != "i" && valueType != "d") {
+                std::cout << "\n//Enter s i or d only.\n\n";
+            } else {
+                break;
+            }
+        }
+        if(valueType == "s") {
+            valueType = end[1];
+        } else if(valueType == "i") {
+            valueType = end[2];
+        } else if(valueType == "d") {
+            valueType = end[3];
+        }            
+        std::cout << "\n" << loop[0] << input << loop[1] << "\n"; 
+        std::cout << loop[2] << forLoopInt << loop[3] << forLoopInt << loop[4] << elements << loop[5] << forLoopInt << loop[6] << "\n";
+        if(ifType == "s") {
+            std::cout << ifStatement[0] << select << ifStatement[1] << varId << ifStatement[2] << forLoopInt << ifStatement[3] << ifStatement[4]; 
+            std::cout << keys << ifStatement[5] << "\n";
+        } else {
+            std::cout << ifNumber[0] << select << ifNumber[1] << varId << ifNumber[2] << forLoopInt << ifNumber[3] << keys << ifNumber[4] << "\n";
+        }
+        std::cout << ifStatement[11] << input << ifStatement[6] << forLoopInt << ifStatement[7] << "\n";
+        std::cout << ifStatement[9] << "\n" << ifStatement[8] << "\n";
+        std::cout << keyError[0] << input << keyError[1] << "\n";
+        std::cout << keyError[2] << keyError[3] << error << keyError[3] << keyError[3] << keyError[4] << "\n";
+        std::cout << keyError[5] << "\n";
+        std::cout << keyError[6] << "\n"; 
+        std::cout << end[0] << valueType << end[4] << end[5] << varId << end[6] << input << end[7] << values << end[8] << "\n\n";       
+        if (repeat == "r") {
+            break;
+        }
+    }
 }
 
 void funct() {
@@ -2549,6 +2666,7 @@ int main() {
 	    {"sm",         mapArrays},
 	    {"mn",            mapNum},
 	    {"skv",   structKeyValue},
+	    {"mkv",            mapKv},
         {"fc",             funct},     
         {"cf",         callFunct},  
         {"h",               heap},       

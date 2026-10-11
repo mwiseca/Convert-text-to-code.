@@ -1082,9 +1082,18 @@ void changeVar() { std::string t [9] = {"char ","[","]"," = ",";","strcpy(",",",
         }
         std::cout << "//Enter the value assigned.\n";
         std::cout << "//";
-        while(!getline(std::cin,value)) {
-            checkInput();
-        }
+		while(true) {
+            if(!getline(std::cin,value)) {
+                checkInput();
+				continue;
+            }
+			if(value.size() < 4) {
+				std::cout << "\nEnter at least 4 characters.\n\n";
+				continue;
+			} else {
+			    break;
+			}
+		}
         std::cout << "//Enter the new value m for main.\n";
         printf("//");
         while(true) {

@@ -1648,7 +1648,7 @@ void mapKv() {
         std::cout << keyError[5] << "\n";
         std::cout << keyError[6] << "\n"; 
         std::cout << end[0] << valueType << end[4] << end[5] << varId << end[6] << input << end[7] << values << end[8] << "\n\n";       
-        if (repeat == "r") {
+        if (repeat != "r") {
             break;
         }
     }

@@ -135,6 +135,8 @@ Added: A struct for key value pairs for a simple map in C in Convert.c and Conve
 Check skv in choices.
 Added: A feature to map keys to  values in skv in C in Convert.c and Convert.cpp only. 
 Check mkv in choices.
-
+The Value in changeVar has a 4 Character minimum for Convert.c Convert.cpp and ConvertC.cpp.
+Check cv in choices.
+October 14 2026.
 
 

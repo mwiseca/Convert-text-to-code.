@@ -131,3 +131,12 @@ This was updated on Convert.cpp.
 August 30 2026.
 The array choices have been changed to include commas and Quotes for up to 10 elements in Convert.cpp.
 September 12 2026.
+Added: A struct for key value pairs for a simple map in C in Convert.c and Convert.cpp only.
+Check skv in choices.
+Added: A feature to map keys to  values in skv in C in Convert.c and Convert.cpp only. 
+Check mkv in choices.
+The Value in changeVar has a 4 Character minimum for Convert.c Convert.cpp and ConvertC.cpp.
+Check cv in choices.
+October 14 2026.
+
+

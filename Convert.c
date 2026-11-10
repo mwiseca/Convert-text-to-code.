@@ -1338,11 +1338,7 @@ void binHexpf() {
         counts = 0;
         }
     }
-    int main(){
-        binHex();
-        return 0;
-}
-
+    
 void ifStatement() {
     char f[4][15] = {"if(strcmp(", ",", "\"", ")==0) {"};
     char name[SIZE];

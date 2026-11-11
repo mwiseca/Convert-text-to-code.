@@ -44,6 +44,7 @@ void choice() {
     cout << "//Enter sc for check scanf.\n";
     cout << "//Enter csl to check scanf and limit size.\n";
     cout << "//Enter cb to clear input buffer in C.\n";
+	cout << "//Enter pbh to convert letters to printf strings with binary and hexadecimal numbers.\n";
     cout << "//Enter h to allocate memory on the heap.\n";
     cout << "//Enter cm to check malloc.\n";
     cout << "//Enter fc for void functions C-C++.\n";
@@ -593,6 +594,325 @@ void clearBuffC() {
 	    }
     }	
 }
+
+void keys() {
+    std::cout << "      A\n";
+    std::cout << "      B\n";
+    std::cout << "      C\n";
+    std::cout << "      D\n";
+    std::cout << "      E\n";
+    std::cout << "      F\n";
+    std::cout << "      G\n";
+    std::cout << "      H\n";
+    std::cout << "      I\n";
+    std::cout << "      J\n";
+    std::cout << "      k\n";
+    std::cout << "      L\n";
+    std::cout << "      M\n";
+    std::cout << "      N\n";
+    std::cout << "      O\n";
+    std::cout << "      P\n";
+    std::cout << "      Q\n";
+    std::cout << "      R\n";
+    std::cout << "      S\n";
+    std::cout << "      T\n";
+    std::cout << "      U\n";
+    std::cout << "      V\n";
+    std::cout << "      W\n";
+    std::cout << "      X\n";
+    std::cout << "      Y\n";
+    std::cout << "      Z\n";
+    std::cout << "      a\n";
+    std::cout << "      b\n";
+    std::cout << "      c\n";
+    std::cout << "      d\n";
+    std::cout << "      e\n";
+    std::cout << "      f\n";
+    std::cout << "      g\n";
+    std::cout << "      h\n";
+    std::cout << "      i\n";
+    std::cout << "      j\n";
+    std::cout << "      k\n";
+    std::cout << "      l\n";
+    std::cout << "      m\n";
+    std::cout << "      n\n";
+    std::cout << "      o\n";
+    std::cout << "      p\n";
+    std::cout << "      q\n";
+    std::cout << "      r\n";
+    std::cout << "      s\n";
+    std::cout << "      t\n";
+    std::cout << "      u\n";
+    std::cout << "      v\n";
+    std::cout << "      w\n";
+    std::cout << "      x\n";
+    std::cout << "      y\n";
+    std::cout << "      z\n";
+    std::cout << "      .\n";
+    std::cout << "      \\n" << "\n";
+    std::cout << "      sp space\n";
+    std::cout << "      ,\n";
+    std::cout << "      ;\n";
+    std::cout << "      :\n";
+    std::cout << "      !\n";
+}
+
+void binHexpf() {
+    std::string key [59];
+    key[0] = "A";
+    key[1] = "B";
+    key[2] = "C";
+    key[3] = "D";
+    key[4] = "E";
+    key[5] = "F";
+    key[6] = "G";
+    key[7] = "H";
+    key[8] = "I";
+    key[9] = "J";
+    key[10] = "K";
+    key[11] = "L";
+    key[12] = "M";
+    key[13] = "N";
+    key[14] = "O";
+    key[15] = "P";
+    key[16] = "Q";
+    key[17] = "R";
+    key[18] = "S";
+    key[19] = "T";
+    key[20] = "U";
+    key[21] = "V";
+    key[22] = "W";
+    key[23] = "X";
+    key[24] = "Y";
+    key[25] = "Z";
+    key[26] = "a";
+    key[27] = "b";
+    key[28] = "c";
+    key[29] = "d";
+    key[30] = "e";
+    key[31] = "f";
+    key[32] = "g";
+    key[33] = "h";
+    key[34] = "i";
+    key[35] = "j";
+    key[36] = "k";
+    key[37] = "l";
+    key[38] = "m";
+    key[39] = "n";
+    key[40] = "o";
+    key[41] = "p";
+    key[42] = "q";
+    key[43] = "r";
+    key[44] = "s";
+    key[45] = "t";
+    key[46] = "u";
+    key[47] = "v";
+    key[48] = "w";
+    key[49] = "x";
+    key[50] = "y";
+    key[51] = "z";
+    key[52] = ".";
+    key[53] = "\\n";
+    key[54] = "sp";
+    key[55] = ",";
+    key[56] = ";";
+    key[57] = ":";
+    key[58] = "!";
+
+    std::string value [59];
+    value[0] = "0b01000001";
+    value[1] = "0b01000010";
+    value[2] = "0b01000011";
+    value[3] = "0b01000100"; 
+    value[4] = "0b01000101";
+    value[5] = "0b01000110";
+    value[6] = "0b01000111";
+    value[7] = "0b01001000";
+    value[8] = "0b01001001";
+    value[9] = "0b01001010";
+    value[10] = "0b01001011";
+    value[11] = "0b01001100";
+    value[12] = "0b01001101";
+    value[13] = "0b01001110";
+    value[14] = "0b01001111";
+    value[15] = "0b01010000";
+    value[16] = "0b01010001";
+    value[17] = "0b01010010";
+    value[18] = "0b01010011";
+    value[19] = "0b01010100";
+    value[20] = "0b01010101";
+    value[21] = "0b01010110";
+    value[22] = "0b01010111";
+    value[23] = "0b01011000";
+    value[24] = "0b01011001";
+    value[25] = "0b01011010";
+    value[26] = "0b01100001";
+    value[27] = "0b01100010";
+    value[28] = "0b01100011";
+    value[29] = "0b01100100";
+    value[30] = "0b01100101";
+    value[31] = "0b01100110";
+    value[32] = "0b01100111";
+    value[33] = "0b01101000";
+    value[34] = "0b01101001";
+    value[35] = "0b01101010";
+    value[36] = "0b01101011";
+    value[37] = "0b01101100";
+    value[38] = "0b01101101";
+    value[39] = "0b01101110";
+    value[40] = "0b01101111";
+    value[41] = "0b01110000";
+    value[42] = "0b01110001";
+    value[43] = "0b01110010";
+    value[44] = "0b01110011";
+    value[45] = "0b01110100";
+    value[46] = "0b01110101";
+    value[47] = "0b01110110";
+    value[48] = "0b01110111";
+    value[49] = "0b01111000";
+    value[50] = "0b01111001";
+    value[51] = "0b01111010";
+    value[52] = "0b00101110";
+    value[53] = "0b00001010";
+    value[54] = "0b00100000";
+    value[55] = "0b00101100";
+    value[56] = "0b00111011";
+    value[57] = "0b00111010";
+    value[58] = "0b00100001";
+
+
+    std::string hexValue [59];
+    hexValue[0] = "0x41";
+    hexValue[1] = "0x42";
+    hexValue[2] = "0x43";
+    hexValue[3] = "0x44"; 
+    hexValue[4] = "0x45";
+    hexValue[5] = "0x46";
+    hexValue[6] = "0x47";
+    hexValue[7] = "0x48";
+    hexValue[8] = "0x49";
+    hexValue[9] = "0x4A";
+    hexValue[10] = "0x4B";
+    hexValue[11] = "0x4C";
+    hexValue[12] = "0x4D";
+    hexValue[13] = "0x4E";
+    hexValue[14] = "0x4F";
+    hexValue[15] = "0x50";
+    hexValue[16] = "0x51";
+    hexValue[17] = "0x52";
+    hexValue[18] = "0x53";
+    hexValue[19] = "0x54";
+    hexValue[20] = "0x55";
+    hexValue[21] = "0x56";
+    hexValue[22] = "0x57";
+    hexValue[23] = "0x58";
+    hexValue[24] = "0x59";
+    hexValue[25] = "0x5A";
+    hexValue[26] = "0x61";
+    hexValue[27] = "0x62";
+    hexValue[28] = "0x63";
+    hexValue[29] = "0x64";
+    hexValue[30] = "0x65";
+    hexValue[31] = "0x66";
+    hexValue[32] = "0x67";
+    hexValue[33] = "0x68";
+    hexValue[34] = "0x69";
+    hexValue[35] = "0x6A";
+    hexValue[36] = "0x6B";
+    hexValue[37] = "0x6C";
+    hexValue[38] = "0x6D";
+    hexValue[39] = "0x6E";
+    hexValue[40] = "0x6F";
+    hexValue[41] = "0x70";
+    hexValue[42] = "0x71";
+    hexValue[43] = "0x72";
+    hexValue[44] = "0x73";
+    hexValue[45] = "0x74";
+    hexValue[46] = "0x75";
+    hexValue[47] = "0x76";
+    hexValue[48] = "0x77";
+    hexValue[49] = "0x78";
+    hexValue[50] = "0x79";
+    hexValue[51] = "0x7A"; 
+    hexValue[52] = "0x2E";
+    hexValue[53] = "0x0A";
+    hexValue[54] = "0x20";
+    hexValue[55] = "0x2C";
+    hexValue[56] = "0x3B";
+    hexValue[57] = "0x3A";
+    hexValue[58] = "0x21";
+
+    std::string t [5] = {"printf(\"",",","%c","\"",");"};
+
+    std::string base;
+    std::string select[15];
+    int count = 0;
+    int counts = 0;
+    while(true) {
+        std::cout << "//Enter b for binary and  h  for hexadecimal mn to exit.\n";
+        while(true) {
+            if(!getline(std::cin,base)){
+                checkInput();
+                continue;
+            }
+            if(base != "b" && base != "h" && base != "mn") {
+                std::cout << "\nEnter b or h only.\n\n";
+            }else if(base == "mn") {
+                return; 
+            } else {
+                break;
+            }
+        }
+        while(count < 15 && counts < 15) {
+            std::cout << "Enter a Character than press # when finished\n";
+            std::cout << "//Enter ii for index mn for main.\n";
+            if( !getline(std::cin,select[count])) {
+                checkInput();
+                continue;
+            }
+            if(select[count] == "ii") {
+                keys();
+                continue;
+            } else if(select[count] == "mn") {
+                return;
+            } else if(select[count] == "#") {
+                break;
+            }
+            count++;
+            counts++;
+        }  
+        std::cout << "\n" << t[0];
+        for(int j = 0; j < counts; j++) {
+            std::cout << t[2];
+        }
+        std::cout << t[3] << t[1];     
+        int ii = 0;
+        for( ii = 0; ii < count; ii++) {
+            int index = -1;
+            for(int i = 0; i < 59;i++){ 
+                if(select[ii] == key[i]) {
+                    index = i;
+                }
+            } 
+            if(index == -1){
+                std::cout << "[Key Error]";
+                continue; 
+            }
+            if(base == "b") { 
+                std::cout << value[index];
+            }else if(base == "h") { 
+                std::cout << hexValue[index];
+            }
+
+            if(ii < count -1) {
+                std::cout << t[1];
+            }        
+        } 
+        std::cout << t[4] << "\n\n";
+        count = 0;
+        counts = 0;
+        }
+    }
 
 void ifStatement() {
     std::string f[4] = {"if(strcmp(", ",", "\"", ")==0) {"};
@@ -2661,6 +2981,7 @@ int main() {
 	    {"scb",  CheckScanfClear},
         {"sb",        scanfBasic},
 	    {"cb",        clearBuffC},
+	    {"pbh",         binHexpf},
         {"i",        ifStatement}, 
         {"e",             elseIf},
         {"mi",           multiIf},

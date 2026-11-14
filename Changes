@@ -138,5 +138,9 @@ Check mkv in choices.
 The Value in changeVar has a 4 Character minimum for Convert.c Convert.cpp and ConvertC.cpp.
 Check cv in choices.
 October 14 2026.
+Added: A function that converts characters to printf strings with binary or hexadecimal numbers.
+This was added to Convert.c and Convert.cpp only.
+Check pbh in choices.
+November 14 2026.
 
 
